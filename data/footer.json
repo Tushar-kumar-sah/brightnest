@@ -1,0 +1,108 @@
+{
+    "footerServices": [
+        {
+            "name": "Security Systems",
+            "href": "/services/security",
+            "icon": "Shield"
+        },
+        {
+            "name": "Structured Cabling",
+            "href": "/services/cabling",
+            "icon": "Cable"
+        },
+        {
+            "name": "Data Networking",
+            "href": "/services/networking",
+            "icon": "Wifi"
+        },
+        {
+            "name": "Telecom & UC",
+            "href": "/services/telecom",
+            "icon": "Phone"
+        },
+        {
+            "name": "AV Integration",
+            "href": "/services/av",
+            "icon": "Video"
+        },
+        {
+            "name": "Printing Solutions",
+            "href": "/services/printing",
+            "icon": "Printer"
+        },
+        {
+            "name": "LED Lighting",
+            "href": "/services/lighting",
+            "icon": "Lightbulb"
+        },
+        {
+            "name": "Professional Services",
+            "href": "/services/professional",
+            "icon": "Award"
+        }
+    ],
+    "quickLinks": [
+        {
+            "href": "/about",
+            "label": "About Us"
+        },
+        {
+            "href": "/case-studies",
+            "label": "Case Studies"
+        },
+        {
+            "href": "/careers",
+            "label": "Careers"
+        }
+    ],
+    "legalLinks": [
+        {
+            "href": "/legal/privacy",
+            "label": "Privacy Policy"
+        },
+        {
+            "href": "/legal/terms",
+            "label": "Terms of Service"
+        }
+    ],
+    "socialLinks": [
+        {
+            "href": "https://linkedin.com/company/brightnestedu",
+            "icon": "Linkedin",
+            "label": "LinkedIn"
+        },
+        {
+            "href": "https://facebook.com/brightnestedu",
+            "icon": "Facebook",
+            "label": "Facebook"
+        }
+    ],
+    "companyContact": {
+        "email": "info@brightnestedu.com",
+        "phone": "(+91) 93663 55026 / (+91) 98319 11796 / (033)-48109275",
+        "phoneHref": "+919366355026",
+        "address": {
+            "line1": "7/1 Lord Sinha Road, Lords Building",
+            "line2": "Kolkata, West Bengal",
+            "line3": "India - 700071"
+        }
+    },
+    "companyInfo": {
+        "name": "Brightnest",
+        "legalName": "Brightnest Edutainment Pvt Ltd",
+        "tagline": "Engineering Intelligent Infrastructure. Globally.",
+        "initials": "BN",
+        "foundedYear": null
+    },
+    "footerCTA": {
+        "title": "Ready to get started?",
+        "subtitle": "Build secure, scalable, and future-ready infrastructure with Brightnest.",
+        "buttonText": "Book a Site Survey",
+        "buttonHref": "/contact"
+    },
+    "creditInfo": {
+        "text": "Crafted by",
+        "name": "Zynapte",
+        "href": "https://www.zynapte.com"
+    }
+}

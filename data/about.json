@@ -1,0 +1,109 @@
+{
+    "hero": {
+        "badge": "About Us",
+        "title": "Engineering Intelligent",
+        "titleHighlight": "Infrastructure",
+        "description": "Brightnest Edutainment Pvt Ltd is a globally aligned turnkey IT technology solutions provider and system integration company serving Pan-India and international markets."
+    },
+    "companyOverview": {
+        "title": "Globally Aligned. End-to-End. Future-Ready.",
+        "description1": "Headquartered in Kolkata, India, Brightnest designs, deploys, and manages enterprise-grade technology ecosystems for enterprises, institutions, and public sector organizations across Pan-India and international markets.",
+        "description2": "Our expertise spans Telecom, Data Networking, Audio-Visual System Integration, Access Control, CCTV Surveillance, Fire Alarm Systems, Cybersecurity, Cloud Infrastructure, and IT Managed Services. Every engagement is backed by disciplined execution, standards-aligned engineering, and dependable technical support.",
+        "highlights": [
+            "End-to-End Execution",
+            "Pan-India Deployment",
+            "Standards-Aligned Engineering"
+        ],
+        "stats": [
+            {
+                "label": "Deployment Coverage",
+                "value": "Pan-India",
+                "icon": "Target"
+            },
+            {
+                "label": "Managed Support",
+                "value": "24×7",
+                "icon": "Users"
+            },
+            {
+                "label": "Project Lifecycle",
+                "value": "End-to-End",
+                "icon": "Clock"
+            },
+            {
+                "label": "Market Alignment",
+                "value": "Global",
+                "icon": "Globe"
+            }
+        ]
+    },
+    "mission": {
+        "title": "Our Mission",
+        "description": "To deliver secure, scalable, and future-ready IT infrastructure solutions with technical excellence and disciplined execution, enabling organizations to operate efficiently, communicate seamlessly, and achieve their business objectives.",
+        "icon": "Target"
+    },
+    "vision": {
+        "title": "Our Vision",
+        "description": "To become India's most trusted technology partner, recognized for innovative, end-to-end IT and system integration solutions that empower organizations to thrive in a connected digital world.",
+        "icon": "Globe"
+    },
+    "timeline": [
+        {
+            "year": "01",
+            "title": "Consult",
+            "description": "Requirement analysis, stakeholder discovery, and site assessment"
+        },
+        {
+            "year": "02",
+            "title": "Design",
+            "description": "Standards-aligned solution architecture and engineering"
+        },
+        {
+            "year": "03",
+            "title": "Deploy",
+            "description": "Professional installation and coordinated project execution"
+        },
+        {
+            "year": "04",
+            "title": "Commission",
+            "description": "Testing, documentation, commissioning, and handover"
+        },
+        {
+            "year": "05",
+            "title": "Maintain",
+            "description": "Preventive maintenance and annual maintenance contracts"
+        },
+        {
+            "year": "06",
+            "title": "Manage",
+            "description": "SLA-driven managed services and infrastructure support"
+        },
+        {
+            "year": "07",
+            "title": "Optimize",
+            "description": "Continuous improvement, scalability, and lifecycle planning"
+        }
+    ],
+    "values": [
+        {
+            "title": "End-to-End Ownership",
+            "description": "One accountable team from consultation and design through deployment and support",
+            "icon": "Zap"
+        },
+        {
+            "title": "Secure by Design",
+            "description": "Resilient, scalable, and future-ready architecture across every technology layer",
+            "icon": "CheckCircle"
+        },
+        {
+            "title": "Standards Aligned",
+            "description": "Implementation guided by ISO, TIA, NFPA, EN, and relevant industry standards",
+            "icon": "Award"
+        },
+        {
+            "title": "Dependable Support",
+            "description": "Rapid response, disciplined project management, and reliable after-sales support",
+            "icon": "Users"
+        }
+    ]
+}

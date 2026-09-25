@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Security & Low Voltage Systems",
+        "description": "Integrated CCTV, intelligent video analytics, access control, biometric, fire alarm, public address, and life safety solutions.",
+        "icon": "Shield",
+        "href": "/services/security",
+        "color": "from-brand-cyan to-brand-blue",
+        "features": [
+            "CCTV Surveillance",
+            "Access Control",
+            "Fire Alarm",
+            "Fire & Life Safety"
+        ]
+    },
+    {
+        "name": "Structured Cabling & Fiber",
+        "description": "TIA/EIA and ISO/IEC-aligned Cat6/6A copper, fiber optic, backbone, horizontal, and campus cabling.",
+        "icon": "Cable",
+        "href": "/services/cabling",
+        "color": "from-brand-violet to-brand-cyan",
+        "features": [
+            "Cat6/6A Cabling",
+            "Fiber Optic",
+            "Testing & Certification",
+            "Cable Management"
+        ]
+    },
+    {
+        "name": "Data Networking & IT Infrastructure",
+        "description": "Enterprise LAN, WAN, wireless, SD-WAN, MPLS, switching, routing, and data center networking.",
+        "icon": "Wifi",
+        "href": "/services/networking",
+        "color": "from-brand-blue to-primary",
+        "features": [
+            "LAN/WAN Setup",
+            "Wi-Fi Deployment",
+            "Firewall & Security",
+            "SD-WAN"
+        ]
+    },
+    {
+        "name": "Telecom & Unified Communication",
+        "description": "Enterprise IPPBX, VoIP, voice gateways, SIP trunking, call routing, and unified communications.",
+        "icon": "Phone",
+        "href": "/services/telecom",
+        "color": "from-brand-cyan to-brand-blue",
+        "features": [
+            "IPPBX Systems",
+            "SIP Trunking",
+            "Call Centers",
+            "Voice Gateways"
+        ]
+    },
+    {
+        "name": "Audio Visual Integration",
+        "description": "Boardrooms, video conferencing, video walls, digital signage, collaboration, and control systems.",
+        "icon": "Video",
+        "href": "/services/av",
+        "color": "from-brand-violet to-brand-blue",
+        "features": [
+            "Video Conferencing",
+            "Digital Signage",
+            "Smart Boardrooms",
+            "Video Walls"
+        ]
+    },
+    {
+        "name": "Printing & Large Format Solutions",
+        "description": "Enterprise printer sales, service, AMC, and large format printing solutions for all business needs.",
+        "icon": "Printer",
+        "href": "/services/printing",
+        "color": "from-brand-cyan to-brand-blue",
+        "features": [
+            "MFP Solutions",
+            "Large Format Printers",
+            "AMC Services",
+            "Consumables"
+        ]
+    },
+    {
+        "name": "LED Lighting & Electrical",
+        "description": "Commercial and industrial LED lighting solutions with smart controls and power infrastructure.",
+        "icon": "Lightbulb",
+        "href": "/services/lighting",
+        "color": "from-brand-violet to-brand-cyan",
+        "features": [
+            "LED Retrofit",
+            "Smart Lighting",
+            "Road Lighting",
+            "Power Systems"
+        ]
+    },
+    {
+        "name": "Professional Services",
+        "description": "Consultation, engineering, project management, deployment, commissioning, AMC, and SLA-driven managed support.",
+        "icon": "Award",
+        "href": "/services/professional",
+        "color": "from-brand-blue to-primary",
+        "features": [
+            "IT Consulting",
+            "Project Management",
+            "Training",
+            "24×7 Managed Support"
+        ]
+    }
+]

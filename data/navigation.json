@@ -1,0 +1,87 @@
+{
+    "navLinks": [
+        {
+            "href": "/",
+            "label": "Home"
+        },
+        {
+            "href": "/about",
+            "label": "About"
+        },
+        {
+            "href": "/case-studies",
+            "label": "Case Studies"
+        },
+        {
+            "href": "/careers",
+            "label": "Careers"
+        },
+        {
+            "href": "/contact",
+            "label": "Contact"
+        }
+    ],
+    "serviceItems": [
+        {
+            "name": "Security & Low Voltage",
+            "href": "/services/security",
+            "icon": "Shield",
+            "description": "CCTV, Access Control, Biometrics"
+        },
+        {
+            "name": "Structured Cabling",
+            "href": "/services/cabling",
+            "icon": "Cable",
+            "description": "Cat6/6A, Fiber, Testing"
+        },
+        {
+            "name": "Data Networking",
+            "href": "/services/networking",
+            "icon": "Wifi",
+            "description": "LAN/WAN, Wi-Fi, Firewalls"
+        },
+        {
+            "name": "Telecom & UC",
+            "href": "/services/telecom",
+            "icon": "Phone",
+            "description": "IPPBX, SIP, Call Centers"
+        },
+        {
+            "name": "AV Integration",
+            "href": "/services/av",
+            "icon": "Video",
+            "description": "Video Conferencing, Digital Signage"
+        },
+        {
+            "name": "Printing Solutions",
+            "href": "/services/printing",
+            "icon": "Printer",
+            "description": "Printers, Consumables, AMC"
+        },
+        {
+            "name": "LED Lighting",
+            "href": "/services/lighting",
+            "icon": "Lightbulb",
+            "description": "Commercial & Industrial LED"
+        },
+        {
+            "name": "Professional Services",
+            "href": "/services/professional",
+            "icon": "Award",
+            "description": "Consulting, Design, Training"
+        }
+    ],
+    "bannerMessages": [
+        "Engineering Intelligent Infrastructure. Globally.",
+        "Turnkey IT Solutions · System Integration · Managed Services",
+        "Pan-India Deployment · International Market Alignment · 24×7 Support"
+    ],
+    "contactInfo": {
+        "phone": "+91 93663 55026",
+        "email": "info@brightnestedu.com"
+    },
+    "branding": {
+        "primaryName": "BRIGHTNEST",
+        "secondaryName": "EDUTAINMENT"
+    }
+}

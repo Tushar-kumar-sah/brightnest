@@ -1,0 +1,104 @@
+[
+    {
+        "title": "Hybrid Fiber Backbone for 500+ User Campus",
+        "client": "Leading Financial Institution",
+        "industry": "Finance",
+        "category": "Networking",
+        "description": "Designed and deployed a redundant fiber and Cat6A backbone with segmented VLANs, NAC, and firewall high-availability.",
+        "image": "/data-center-infrastructure.jpg",
+        "results": [
+            "99.99% uptime with dual-core architecture",
+            "50% throughput improvement",
+            "Zero unplanned downtime"
+        ],
+        "services": [
+            "Structured Cabling",
+            "Data Networking",
+            "Firewall/SD-WAN"
+        ]
+    },
+    {
+        "title": "Enterprise Security Modernization",
+        "client": "Multinational Corporate Campus",
+        "industry": "Corporate",
+        "category": "Security",
+        "description": "Rolled out IP CCTV, biometric access control, and integrated BMS across five towers with centralized monitoring.",
+        "image": "/security-infrastructure.jpg",
+        "results": [
+            "800+ cameras commissioned",
+            "Biometric access at 120+ doors",
+            "Unified command center dashboard"
+        ],
+        "services": [
+            "Security & Low Voltage",
+            "Professional Services"
+        ]
+    },
+    {
+        "title": "50+ Room Video Collaboration Rollout",
+        "client": "Global Technology Company",
+        "industry": "Technology",
+        "category": "AV Integration",
+        "description": "Standardized conference room kits with 4K video, acoustic treatment, and one-touch meeting join across campuses.",
+        "image": "/modern-conference-room.jpg",
+        "results": [
+            "50 rooms standardized",
+            "4K video and voice clarity",
+            "Reduced meeting start time by 60%"
+        ],
+        "services": [
+            "Audio Visual Integration",
+            "Professional Services"
+        ]
+    },
+    {
+        "title": "Smart Lighting & Power Upgrade",
+        "client": "Manufacturing Plant Network",
+        "industry": "Industrial",
+        "category": "Lighting",
+        "description": "Replaced legacy lighting with LED and smart sensors, reducing power draw and improving safety in production zones.",
+        "image": "/modern-tech-infrastructure-network.jpg",
+        "results": [
+            "38% power savings",
+            "Improved lux levels on shop floor",
+            "IoT-based scheduling and occupancy sensing"
+        ],
+        "services": [
+            "LED Lighting & Electrical"
+        ]
+    },
+    {
+        "title": "Telecom & Contact Center Refresh",
+        "client": "Pan-India Retail Chain",
+        "industry": "Retail",
+        "category": "Telecom",
+        "description": "Implemented IPPBX with SIP trunking, IVR, call recording, and analytics to support distributed store operations.",
+        "image": "/modern-tech-infrastructure-network.jpg",
+        "results": [
+            "40% lower call costs",
+            "N+1 IPPBX redundancy",
+            "Unified reporting across locations"
+        ],
+        "services": [
+            "Telecom & UC",
+            "Data Networking"
+        ]
+    },
+    {
+        "title": "Print Fleet Optimization",
+        "client": "Education Group",
+        "industry": "Education",
+        "category": "Printing",
+        "description": "Deployed managed print services with centralized monitoring, secure print release, and standardized consumables.",
+        "image": "/modern-tech-infrastructure-network.jpg",
+        "results": [
+            "30% cost reduction",
+            "Secure pull-print enabled",
+            "Downtime cut by 45%"
+        ],
+        "services": [
+            "Printing Solutions",
+            "Professional Services"
+        ]
+    }
+]

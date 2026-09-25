@@ -1,0 +1,86 @@
+{
+    "openPositions": [
+        {
+            "title": "Senior Network Engineer",
+            "department": "Engineering",
+            "location": "Kolkata, India",
+            "type": "Full-time",
+            "experience": "5+ years",
+            "description": "Design and implement enterprise network solutions for our clients."
+        },
+        {
+            "title": "Security Systems Specialist",
+            "department": "Security",
+            "location": "Kolkata, India",
+            "type": "Full-time",
+            "experience": "3+ years",
+            "description": "Install and configure CCTV, access control, and security systems."
+        },
+        {
+            "title": "Project Manager",
+            "department": "PMO",
+            "location": "Kolkata / Remote",
+            "type": "Full-time",
+            "experience": "7+ years",
+            "description": "Lead complex IT infrastructure projects from inception to delivery."
+        },
+        {
+            "title": "AV Integration Technician",
+            "department": "AV Solutions",
+            "location": "Kolkata, India",
+            "type": "Full-time",
+            "experience": "2+ years",
+            "description": "Set up video conferencing and audio-visual systems for enterprise clients."
+        }
+    ],
+    "benefits": [
+        {
+            "icon": "Heart",
+            "title": "Health & Wellness",
+            "description": "Comprehensive health insurance for you and your family"
+        },
+        {
+            "icon": "GraduationCap",
+            "title": "Learning & Development",
+            "description": "OEM certifications, training programs, and conference sponsorships"
+        },
+        {
+            "icon": "Coffee",
+            "title": "Work-Life Balance",
+            "description": "Flexible hours, remote work options, and generous PTO"
+        },
+        {
+            "icon": "Zap",
+            "title": "Growth Opportunities",
+            "description": "Clear career paths and internal promotion opportunities"
+        },
+        {
+            "icon": "Users",
+            "title": "Great Team",
+            "description": "Work with passionate experts who love what they do"
+        },
+        {
+            "icon": "Briefcase",
+            "title": "Competitive Pay",
+            "description": "Market-leading salaries with performance bonuses"
+        }
+    ],
+    "values": [
+        {
+            "title": "Innovation",
+            "description": "We embrace new technologies and creative solutions"
+        },
+        {
+            "title": "Excellence",
+            "description": "We deliver the highest quality in everything we do"
+        },
+        {
+            "title": "Collaboration",
+            "description": "We work together to achieve outstanding results"
+        },
+        {
+            "title": "Integrity",
+            "description": "We act with honesty and transparency always"
+        }
+    ]
+}

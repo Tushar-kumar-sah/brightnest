@@ -1,0 +1,513 @@
+{
+    "heroContent": {
+        "rating": 4.9,
+        "clientCount": "End-to-End",
+        "clientLabel": "Technology Solutions",
+        "title": "Complete IT Infrastructure",
+        "titleAccent": "& Security Solutions",
+        "subtitle": "We design, deploy, secure, and manage scalable IT infrastructure and security solutions for modern workplaces — from first consultation to ongoing 24/7 support.",
+        "ctaText": "Book a Site Survey →",
+        "ctaHref": "/contact",
+        "secondaryCtaText": "Talk to an Engineer",
+        "secondaryCtaHref": "/contact",
+        "backgroundText": "Secured",
+        "pillars": ["Design", "Deploy", "Secure", "Manage"]
+    },
+    "statsData": [
+        {
+            "value": "Pan-India",
+            "suffix": "",
+            "label": "Deployment Coverage",
+            "isCounter": false
+        },
+        {
+            "value": "24/7",
+            "suffix": "",
+            "label": "SLA Support",
+            "isCounter": false
+        },
+        {
+            "value": "End-to-End",
+            "suffix": "",
+            "label": "Project Execution",
+            "isCounter": false
+        },
+        {
+            "value": "Global",
+            "suffix": "",
+            "label": "Market Alignment",
+            "isCounter": false
+        }
+    ],
+    "expertiseAreas": [
+        {
+            "id": 1,
+            "title": "GCCs",
+            "image": "/gcc-enterprise-engineer.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Manufacturing",
+            "image": "/manufacturing-industrial-engineer.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Hospitality",
+            "image": "/hospitality-operations-manager.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Data Centers",
+            "image": "/datacenter-infrastructure-engineer.jpg"
+        }
+    ],
+    "serviceAreas": [
+        {
+            "id": 1,
+            "title": "Communication & Voice Solutions",
+            "description": "Enterprise IPPBX, VoIP, unified communications, call routing, and professional telephony infrastructure."
+        },
+        {
+            "id": 2,
+            "title": "Data & Network Infrastructure",
+            "description": "Enterprise LAN, WAN, wireless, SD-WAN, MPLS, data center networking, and standards-compliant structured cabling."
+        },
+        {
+            "id": 3,
+            "title": "Audio Visual & System Integration",
+            "description": "Professional AV solutions for boardrooms, video conferencing, video walls, digital signage, and collaboration environments."
+        },
+        {
+            "id": 4,
+            "title": "Security & Safety Solutions",
+            "description": "Integrated CCTV, video analytics, access control, biometrics, cybersecurity, fire alarm, public address, and life safety systems."
+        }
+    ],
+    "solutionHighlights": [
+        {
+            "number": "01",
+            "title": "Telecom & Structured Cabling Systems",
+            "description": "Standards-compliant voice and cabling infrastructure designed for reliable enterprise connectivity.",
+            "features": [
+                "Copper and fiber structured cabling",
+                "Backbone, horizontal, and campus cabling",
+                "Labelling, testing, and certification"
+            ],
+            "href": "/services/cabling",
+            "accent": "from-brand-violet via-brand-cyan to-brand-blue"
+        },
+        {
+            "number": "02",
+            "title": "Data Networking Infrastructure",
+            "description": "Scalable and secure networking solutions engineered for performance, resilience, and growth.",
+            "features": [
+                "LAN, WAN, wireless, and SD-WAN design",
+                "Data centre network architecture",
+                "Segmentation, redundancy, and security"
+            ],
+            "href": "/services/networking",
+            "accent": "from-brand-cyan to-brand-blue"
+        },
+        {
+            "number": "03",
+            "title": "Audio-Visual System Integration",
+            "description": "Professional AV environments built around enterprise communication, collaboration, and control.",
+            "features": [
+                "Conference rooms and video collaboration",
+                "Video walls, signage, and professional displays",
+                "AV control, automation, and documentation"
+            ],
+            "href": "/services/av",
+            "accent": "from-brand-violet via-brand-cyan to-brand-blue"
+        },
+        {
+            "number": "04",
+            "title": "Fire Alarm & Life Safety Systems",
+            "description": "Code-aligned life safety systems designed for dependable detection, notification, evacuation, and emergency integration.",
+            "features": [
+                "Conventional and addressable fire alarms",
+                "Detection, alarm, and evacuation systems",
+                "BMS, access control, and emergency integration",
+                "Testing, commissioning, and compliance documentation"
+            ],
+            "href": "/services/security",
+            "accent": "from-brand-cyan to-brand-blue"
+        },
+        {
+            "number": "05",
+            "title": "CCTV Surveillance & Video Analytics",
+            "description": "Intelligent surveillance platforms that improve visibility, safety, compliance, and operational control.",
+            "features": [
+                "IP-based CCTV and video management systems",
+                "Automatic number plate recognition",
+                "Parking and vehicle movement analytics",
+                "Event logging, reporting, and integration"
+            ],
+            "href": "/services/security",
+            "accent": "from-brand-violet via-brand-cyan to-brand-blue"
+        },
+        {
+            "number": "06",
+            "title": "Access Control & Integrated Security",
+            "description": "Unified access and identity management solutions for secure, connected enterprise environments.",
+            "features": [
+                "Card, biometric, and mobile access control",
+                "Visitor and credential management",
+                "CCTV, fire alarm, and building integration",
+                "Public addressing and biometric systems"
+            ],
+            "href": "/services/security",
+            "accent": "from-brand-cyan to-brand-blue"
+        },
+        {
+            "number": "07",
+            "title": "Cybersecurity",
+            "description": "Multi-layered security solutions that protect enterprise data, applications, users, and networks from evolving threats.",
+            "features": [
+                "Endpoint and data security",
+                "Network and perimeter security",
+                "Cloud and application security",
+                "Security assessments and compliance support"
+            ],
+            "href": "/services/security",
+            "accent": "from-brand-violet via-brand-cyan to-brand-blue"
+        },
+        {
+            "number": "08",
+            "title": "Cloud Solutions",
+            "description": "Secure and flexible cloud platforms designed to support migration, resilience, scalability, and business continuity.",
+            "features": [
+                "Google Cloud and Microsoft Azure",
+                "Amazon Web Services",
+                "Cloud migration and hybrid environments",
+                "Backup and disaster recovery"
+            ],
+            "href": "/services/networking",
+            "accent": "from-brand-cyan to-brand-blue"
+        },
+        {
+            "number": "09",
+            "title": "End-User Devices",
+            "description": "Reliable, high-performance devices and lifecycle services that help teams work securely and efficiently.",
+            "features": [
+                "Business laptops and desktops",
+                "Enterprise servers",
+                "Engineering and professional workstations",
+                "Deployment, configuration, and lifecycle support"
+            ],
+            "href": "/services/professional",
+            "accent": "from-brand-violet via-brand-cyan to-brand-blue"
+        }
+    ],
+    "coreCapabilities": [
+        {
+            "number": "01",
+            "title": "Network & IT Infrastructure",
+            "description": "TIA/EIA and ISO/IEC-aligned copper and fiber cabling, enterprise LAN, WAN, wireless, SD-WAN, MPLS, switching, routing, and data center networking.",
+            "href": "/services/networking"
+        },
+        {
+            "number": "02",
+            "title": "Unified Communications",
+            "description": "Enterprise IP PBX, IP telephony, VoIP, call routing, and unified communication platforms.",
+            "href": "/services/telecom"
+        },
+        {
+            "number": "03",
+            "title": "Surveillance & Security Solutions",
+            "description": "IP-based and analytics-enabled video surveillance, centralized monitoring, command platforms, access control, and integrated security systems.",
+            "href": "/services/security"
+        },
+        {
+            "number": "04",
+            "title": "Fire Safety & Public Address Systems",
+            "description": "NFPA, EN, and UL-aligned fire detection, alarm, voice evacuation, public address, HVAC, BMS, and fire suppression integration.",
+            "href": "/services/security"
+        },
+        {
+            "number": "05",
+            "title": "Data Center Safety & Environmental Monitoring",
+            "description": "VESDA and aspirating smoke detection, water leak detection, rodent repellent, and environmental monitoring solutions.",
+            "href": "/services/networking"
+        },
+        {
+            "number": "06",
+            "title": "Cybersecurity Solutions",
+            "description": "Endpoint, cloud, application, network, and perimeter security with secure remote access, threat prevention, assessments, and compliance support.",
+            "href": "/services/security"
+        },
+        {
+            "number": "07",
+            "title": "Audio-Visual System Integration",
+            "description": "Conference rooms, executive boardrooms, video walls, digital signage, collaboration, and control systems.",
+            "href": "/services/av"
+        },
+        {
+            "number": "08",
+            "title": "End-User Computing",
+            "description": "Laptops, desktops, servers, and workstations with deployment, configuration, and lifecycle management.",
+            "href": "/services/professional"
+        },
+        {
+            "number": "09",
+            "title": "Cloud Solutions",
+            "description": "Google Cloud, Microsoft Azure, and AWS infrastructure design, migration, hybrid environments, backup, disaster recovery, and business continuity.",
+            "href": "/services/networking"
+        },
+        {
+            "number": "10",
+            "title": "IT Spares & Accessories",
+            "description": "Genuine spares and certified components for network, data centre, computing, and end-user environments.",
+            "href": "/services/professional"
+        },
+        {
+            "number": "11",
+            "title": "Managed Services & AMC",
+            "description": "24×7 infrastructure support, annual maintenance contracts, SLA-driven managed services, preventive maintenance, and technical assistance.",
+            "href": "/services/professional"
+        }
+    ],
+    "whyChooseUs": [
+        {
+            "title": "Turnkey Solutions",
+            "description": "End-to-end implementation from design to deployment",
+            "icon": "Zap",
+            "stat": "100%",
+            "statLabel": "Project Ownership"
+        },
+        {
+            "title": "SLA Support",
+            "description": "24/7 monitoring and rapid response guarantee",
+            "icon": "Clock",
+            "stat": "99.9%",
+            "statLabel": "Uptime SLA"
+        },
+        {
+            "title": "Certified Engineers",
+            "description": "Factory-certified experts with OEM training",
+            "icon": "Award",
+            "stat": "100+",
+            "statLabel": "Certifications"
+        },
+        {
+            "title": "Scalable Infrastructure",
+            "description": "Future-proof solutions that grow with you",
+            "icon": "TrendingUp",
+            "stat": "500+",
+            "statLabel": "Projects Delivered"
+        }
+    ],
+    "processSteps": [
+        {
+            "number": "01",
+            "title": "Consultation",
+            "description": "Understanding your requirements, goals, and operational challenges through detailed discussions",
+            "icon": "message-square"
+        },
+        {
+            "number": "02",
+            "title": "Site Survey",
+            "description": "On-ground infrastructure assessment, measurements, and technical audit of your premises",
+            "icon": "map-pin"
+        },
+        {
+            "number": "03",
+            "title": "Solution Design",
+            "description": "Custom IT and security architecture planning tailored to your specific environment",
+            "icon": "pen-tool"
+        },
+        {
+            "number": "04",
+            "title": "BOQ & Proposal",
+            "description": "Detailed Bill of Quantities with transparent itemization and competitive pricing",
+            "icon": "file-text"
+        },
+        {
+            "number": "05",
+            "title": "Installation",
+            "description": "Professional deployment of hardware, cabling, and systems with minimal disruption",
+            "icon": "wrench"
+        },
+        {
+            "number": "06",
+            "title": "Testing & Commissioning",
+            "description": "Rigorous quality assurance, safety verification, and SLA compliance testing",
+            "icon": "check-circle"
+        },
+        {
+            "number": "07",
+            "title": "Handover & Support",
+            "description": "Comprehensive documentation, training, and ongoing 24/7 managed support",
+            "icon": "headphones"
+        }
+    ],
+    "testimonials": [
+        {
+            "name": "Rajesh Kumar",
+            "title": "CTO, Tech Finance Corp",
+            "image": "/professional-man.png",
+            "content": "Brightnest Edutainment transformed our entire infrastructure. Their team was professional and delivered on time.",
+            "rating": 5,
+            "company": "Enterprise Client"
+        },
+        {
+            "name": "Priya Sharma",
+            "title": "Operations Director, Healthcare Plus",
+            "image": "/professional-woman.png",
+            "content": "The 24/7 SLA support is incredible. We haven't had a single issue they couldn't resolve quickly.",
+            "rating": 5,
+            "company": "Leading Healthcare Provider"
+        },
+        {
+            "name": "Amit Patel",
+            "title": "Facilities Manager, Global Manufacturing",
+            "image": "/diverse-businessman.png",
+            "content": "From cabling to security systems, they handle everything. Truly a one-stop shop for enterprise infrastructure.",
+            "rating": 5,
+            "company": "Manufacturing Giant"
+        }
+    ],
+    "caseStudies": [
+        {
+            "title": "500+ Port Network Upgrade",
+            "client": "Leading Financial Institution",
+            "description": "Complete fiber cabling and network upgrade with zero downtime",
+            "image": "/data-center-infrastructure.jpg",
+            "results": [
+                "99.99% uptime",
+                "50% faster",
+                "Zero downtime"
+            ],
+            "category": "Networking"
+        },
+        {
+            "title": "Enterprise Security System",
+            "client": "Multinational Corporate Campus",
+            "description": "Integrated CCTV, access control, and BMS across 5 buildings",
+            "image": "/security-infrastructure.jpg",
+            "results": [
+                "800+ cameras",
+                "AI monitoring",
+                "100% coverage"
+            ],
+            "category": "Security"
+        },
+        {
+            "title": "Video Conferencing Setup",
+            "client": "Global Tech Company",
+            "description": "AV integration across 50+ meeting rooms",
+            "image": "/modern-conference-room.jpg",
+            "results": [
+                "50 rooms",
+                "4K quality",
+                "Cloud integration"
+            ],
+            "category": "AV Integration"
+        }
+    ],
+    "partners": [
+        {
+            "name": "Partner 1",
+            "logo": "/company/1.png"
+        },
+        {
+            "name": "Partner 2",
+            "logo": "/company/2.png"
+        },
+        {
+            "name": "Partner 3",
+            "logo": "/company/3.png"
+        },
+        {
+            "name": "Partner 4",
+            "logo": "/company/4.png"
+        },
+        {
+            "name": "Partner 5",
+            "logo": "/company/5.png"
+        },
+        {
+            "name": "Partner 6",
+            "logo": "/company/6.png"
+        },
+        {
+            "name": "Partner 7",
+            "logo": "/company/7.png"
+        },
+        {
+            "name": "Partner 8",
+            "logo": "/company/8.png"
+        },
+        {
+            "name": "Partner 9",
+            "logo": "/company/9.png"
+        }
+    ],
+    "industries": [
+        "GCCs",
+        "Manufacturing",
+        "Healthcare",
+        "Banking & Finance",
+        "Hospitality",
+        "Government",
+        "Data Centers",
+        "Retail",
+        "Education",
+        "Telecom",
+        "Real Estate",
+        "Logistics",
+        "Energy"
+    ],
+    "sectionHeadings": {
+        "serviceAreas": {
+            "title": "Service Areas",
+            "subtitle": "Integrated infrastructure solutions designed for enterprises, institutions, and public sector organizations."
+        },
+        "expertiseAreas": {
+            "title": "Areas of Expertise",
+            "subtitle": "Sector-focused technology expertise for secure, resilient, and high-performance operational environments."
+        },
+        "services": {
+            "title": "Comprehensive Service Portfolio",
+            "subtitle": "Integrated solutions across security, networking, infrastructure, and professional services"
+        },
+        "solutions": {
+            "eyebrow": "Integrated Infrastructure",
+            "title": "Our Solutions",
+            "subtitle": "Purpose-built systems that connect people, data, and spaces across your organization."
+        },
+        "capabilities": {
+            "eyebrow": "End-to-End Expertise",
+            "title": "Core Capabilities",
+            "subtitle": "Specialized technology capabilities covering the complete infrastructure lifecycle."
+        },
+        "process": {
+            "badge": "Our Process",
+            "title": "How We Operate",
+            "subtitle": "End-to-end project execution from initial consultation to ongoing managed support"
+        },
+        "caseStudies": {
+            "badge": "Case Studies",
+            "title": "Success Stories",
+            "subtitle": "Real-world projects that transformed enterprise infrastructure"
+        },
+        "testimonials": {
+            "badge": "Testimonials",
+            "title": "What Our Clients Say",
+            "subtitle": "Trusted by leading enterprises across industries"
+        },
+        "industries": {
+            "badge": "Industries",
+            "title": "Industries We Serve"
+        },
+        "partners": {
+            "label": "Trusted Technology Partners"
+        },
+        "cta": {
+            "title": "Ready to Transform Your Infrastructure?",
+            "subtitle": "Our experienced engineering team will design, deploy, and manage the perfect IT and security solution for your organization.",
+            "primaryButton": "Book a Site Survey",
+            "secondaryButton": "Talk to an Engineer"
+        }
+    }
+}
