@@ -1,0 +1,319 @@
+[
+  {
+    "slug": "gccs-tech-parks",
+    "name": "GCCs & Tech Parks",
+    "tagline": "Scalable Enterprise Campus Infrastructure & Smart Workspaces",
+    "description": "Global Capability Centers (GCCs) and multi-tenant IT parks require resilient, ultra-high density digital connectivity, contactless security, and intelligent building automation to support thousands of concurrent knowledge workers.",
+    "icon": "Building2",
+    "stats": [
+      { "label": "Uptime SLA", "value": "99.999%" },
+      { "label": "Connected Seats", "value": "10,000+" },
+      { "label": "Campus Latency", "value": "< 1 ms" },
+      { "label": "Redundancy", "value": "Tier-3" }
+    ],
+    "challenges": [
+      "High-density wireless congestion across open office collaboration zones",
+      "Cross-tenant network segmentation and strict zero-trust data isolation",
+      "Massive employee footfall governance and turnstile queuing bottlenecks",
+      "Meeting room acoustic bleed and hybrid video conferencing technical friction"
+    ],
+    "solutions": [
+      "Multi-gigabit Wi-Fi 7 campus wireless mesh with automated channel optimization",
+      "Cat6A 10GBASE-T copper and OM4 multi-mode fiber structured backbones",
+      "Speed-gate optical turnstiles with facial recognition and mobile BLE credentials",
+      "Teams/Zoom native boardroom integration with ceiling beamforming microphone arrays"
+    ],
+    "deliverables": [
+      "Campus-wide LAN core switching (spine-leaf) and dual-ISP SD-WAN routing",
+      "Speed-gate optical turnstiles and elevator floor-access integration",
+      "Cat6A structured horizontal cabling and server rack containment layout",
+      "Automated boardroom AV, digital signage networks, and touchpanel controls",
+      "Centralized BMS building management and smart energy metering",
+      "24×7 on-site resident engineer and SLA-driven NOC monitoring"
+    ],
+    "theme": {
+      "bgGradient": "from-[#02120b] via-[#052115] to-[#010a06]",
+      "accentColor": "#34d399",
+      "accentGradient": "from-emerald-400 via-teal-300 to-green-200",
+      "glowOrb1": "bg-emerald-600/12",
+      "glowOrb2": "bg-teal-600/10",
+      "cardBg": "bg-[#052116]/70",
+      "cardBorder": "border-emerald-500/20",
+      "cardBorderHover": "hover:border-emerald-400/60",
+      "cardShadowHover": "hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]",
+      "badgeBg": "bg-emerald-500/15",
+      "badgeBorder": "border-emerald-500/30",
+      "badgeText": "text-emerald-300",
+      "buttonGradient": "bg-gradient-to-r from-emerald-500 to-teal-400",
+      "buttonText": "text-[#02110c]",
+      "buttonShadow": "shadow-[0_0_20px_rgba(52,211,153,0.4)]",
+      "textHighlight": "text-emerald-400",
+      "subtextColor": "text-emerald-100/75",
+      "laserStreak": "via-emerald-400/50"
+    }
+  },
+  {
+    "slug": "manufacturing-warehouses",
+    "name": "Manufacturing & Warehouses",
+    "tagline": "Ruggedized Industrial Wi-Fi, Thermal Surveillance & Automation",
+    "description": "Heavy industrial environments, factory floors, and automated distribution centers demand ruggedized networking, thermal heat protection, and 24/7 continuous CCTV monitoring designed to withstand high dust, vibration, and EMI.",
+    "icon": "Factory",
+    "stats": [
+      { "label": "Ruggedized Rating", "value": "IP67" },
+      { "label": "Warehouse RF Coverage", "value": "100%" },
+      { "label": "Hazard Monitoring", "value": "24×7" },
+      { "label": "Packet Loss", "value": "0%" }
+    ],
+    "challenges": [
+      "Severe metal racking signal reflection and RF interference",
+      "Harsh temperatures, dust, grease, and mechanical vibration",
+      "Perimeter intrusion risks across expansive industrial perimeters",
+      "AGV and barcode scanner roaming disconnects causing logistics stoppage"
+    ],
+    "solutions": [
+      "Directional antenna industrial Wi-Fi designed for high-bay narrow aisles",
+      "Thermal bi-spectrum CCTV cameras for early fire hazard and equipment overheating detection",
+      "Armored multi-strand single-mode fiber optic backbone in heavy-duty GI conduit",
+      "Explosion-proof and weather-resistant IP66/IP67 surveillance enclosures"
+    ],
+    "deliverables": [
+      "Full warehouse RF predictive heatmap and continuous handoff wireless APs",
+      "AI perimeter tripwire CCTV with audio warning strobe lights",
+      "Industrial Ethernet DIN-rail switches with wide operating temperatures",
+      "High-bay LED lighting with motion sensor zone automation",
+      "Public address and mass notification speakers for floor emergencies",
+      "Fluke certified fiber termination and preventative maintenance AMC"
+    ],
+    "theme": {
+      "bgGradient": "from-[#160c02] via-[#261505] to-[#0c0601]",
+      "accentColor": "#f59e0b",
+      "accentGradient": "from-amber-400 via-yellow-300 to-orange-300",
+      "glowOrb1": "bg-amber-600/12",
+      "glowOrb2": "bg-orange-600/10",
+      "cardBg": "bg-[#201104]/70",
+      "cardBorder": "border-amber-500/20",
+      "cardBorderHover": "hover:border-amber-400/60",
+      "cardShadowHover": "hover:shadow-[0_0_30px_rgba(245,158,11,0.2)]",
+      "badgeBg": "bg-amber-500/15",
+      "badgeBorder": "border-amber-500/30",
+      "badgeText": "text-amber-300",
+      "buttonGradient": "bg-gradient-to-r from-amber-500 to-yellow-500",
+      "buttonText": "text-[#150a02]",
+      "buttonShadow": "shadow-[0_0_20px_rgba(245,158,11,0.4)]",
+      "textHighlight": "text-amber-400",
+      "subtextColor": "text-amber-100/75",
+      "laserStreak": "via-amber-500/50"
+    }
+  },
+  {
+    "slug": "data-centers",
+    "name": "Data Centers",
+    "tagline": "High-Density Fiber Backbones, Containment & Mission-Critical Security",
+    "description": "Tier-3 and Tier-4 data centers demand absolute physical containment, zero-downtime structured fiber fabrics, multi-factor biometric mantraps, and automated environmental telemetry.",
+    "icon": "Server",
+    "stats": [
+      { "label": "Reliability SLA", "value": "99.999%" },
+      { "label": "Optical Fabric", "value": "100G/400G" },
+      { "label": "Hardware Response", "value": "< 15 min" },
+      { "label": "Design Standard", "value": "Tier 3/4" }
+    ],
+    "challenges": [
+      "Thermal hot-spots and inefficient airflow leading to excessive PUE",
+      "Dense optical fiber congestion and improper bend-radius losses",
+      "Strict regulatory compliance for physical server access and audit logging",
+      "Catastrophic risk from smoke or minor electrical fire outbreaks"
+    ],
+    "solutions": [
+      "Cold aisle and hot aisle containment systems with sliding security doors",
+      "MPO/MTP ultra-low loss pre-terminated fiber trunk assemblies",
+      "Biometric palm-vein and facial recognition dual-auth mantraps",
+      "Aspirating smoke detection (VESDA) and clean-agent Novec 1230 fire suppression"
+    ],
+    "deliverables": [
+      "Server rack enclosures (42U/48U) with integrated intelligent vertical PDUs",
+      "High-density overhead fiber raceway and wire mesh cable containment",
+      "VESDA early-warning air sampling smoke detection and gas suppression",
+      "Server cage partitioning with biometric access logs and dual-custody controls",
+      "Environmental monitoring for temperature, humidity, water leak, and airflow",
+      "OTDR fiber characterization with Tier-2 certification test reports"
+    ],
+    "theme": {
+      "bgGradient": "from-[#030d1a] via-[#061833] to-[#02070f]",
+      "accentColor": "#00f0ff",
+      "accentGradient": "from-cyan-400 via-sky-300 to-blue-200",
+      "glowOrb1": "bg-cyan-500/12",
+      "glowOrb2": "bg-blue-600/10",
+      "cardBg": "bg-[#071d3d]/70",
+      "cardBorder": "border-cyan-500/20",
+      "cardBorderHover": "hover:border-cyan-400/60",
+      "cardShadowHover": "hover:shadow-[0_0_30px_rgba(0,240,255,0.2)]",
+      "badgeBg": "bg-cyan-500/15",
+      "badgeBorder": "border-cyan-500/30",
+      "badgeText": "text-cyan-300",
+      "buttonGradient": "bg-gradient-to-r from-cyan-500 to-sky-400",
+      "buttonText": "text-[#030d1a]",
+      "buttonShadow": "shadow-[0_0_20px_rgba(0,240,255,0.4)]",
+      "textHighlight": "text-cyan-400",
+      "subtextColor": "text-sky-100/75",
+      "laserStreak": "via-cyan-400/50"
+    }
+  },
+  {
+    "slug": "hospitality-retail",
+    "name": "Hospitality & Retail",
+    "tagline": "Centralized Multi-Store Tech, Guest Wi-Fi & Digital Signage",
+    "description": "Luxury hotels, lifestyle resorts, and retail store chains require seamless guest connectivity, cloud-managed POS networks, high-impact digital displays, and integrated security monitoring.",
+    "icon": "Hotel",
+    "stats": [
+      { "label": "Guest Coverage", "value": "100%" },
+      { "label": "Portal Connect", "value": "< 2 sec" },
+      { "label": "Signage Clarity", "value": "4K UHD" },
+      { "label": "Fleet Management", "value": "Central Cloud" }
+    ],
+    "challenges": [
+      "High peak customer Wi-Fi concurrency during check-in or major events",
+      "Multi-store decentralized IT management and frequent POS downtimes",
+      "Customer engagement drop-off without dynamic interactive signage",
+      "Stock loss prevention and cashier zone dispute resolution"
+    ],
+    "solutions": [
+      "Hospitality in-room wall-plate Wi-Fi APs with integrated wired Gigabit ports",
+      "Cloud-managed SD-WAN connecting regional retail stores to central HQ",
+      "Ultra-bright commercial digital signage displays with cloud CMS scheduling",
+      "High-resolution cashier surveillance with POS transaction text overlay"
+    ],
+    "deliverables": [
+      "Zero-deadspot guest Wi-Fi with branded captive portal and analytics",
+      "Centralized cloud IP-PBX telephony with guest billing integration",
+      "Interactive digital menu boards and video wall brand displays",
+      "Loss-prevention 4K dome CCTV cameras with wide dynamic range (WDR)",
+      "Background music (BGM) multi-zone audio streaming speakers",
+      "Annual maintenance contract covering nationwide retail chain locations"
+    ],
+    "theme": {
+      "bgGradient": "from-[#0b0416] via-[#1a0933] to-[#07020e]",
+      "accentColor": "#c084fc",
+      "accentGradient": "from-purple-400 via-fuchsia-300 to-indigo-200",
+      "glowOrb1": "bg-purple-600/12",
+      "glowOrb2": "bg-fuchsia-600/10",
+      "cardBg": "bg-[#170a2c]/70",
+      "cardBorder": "border-purple-500/20",
+      "cardBorderHover": "hover:border-purple-400/60",
+      "cardShadowHover": "hover:shadow-[0_0_30px_rgba(192,132,252,0.2)]",
+      "badgeBg": "bg-purple-500/15",
+      "badgeBorder": "border-purple-500/30",
+      "badgeText": "text-purple-300",
+      "buttonGradient": "bg-gradient-to-r from-purple-500 to-violet-500",
+      "buttonShadow": "shadow-[0_0_20px_rgba(192,132,252,0.4)]",
+      "textHighlight": "text-purple-400",
+      "subtextColor": "text-purple-100/75",
+      "laserStreak": "via-purple-500/50"
+    }
+  },
+  {
+    "slug": "healthcare-hospitals",
+    "name": "Healthcare & Hospitals",
+    "tagline": "Zero-Downtime Medical LAN, Nurse Call & Cleanroom Tech",
+    "description": "Multi-specialty hospitals and medical diagnostic centers require mission-critical network reliability, sterile nurse call systems, patient privacy compliance, and cleanroom surveillance.",
+    "icon": "HeartPulse",
+    "stats": [
+      { "label": "Medical Core Uptime", "value": "99.999%" },
+      { "label": "Nurse Call Response", "value": "Sub-second" },
+      { "label": "Compliance Ready", "value": "HIPAA/NABH" },
+      { "label": "Diagnostic Shielding", "value": "Zero EMI" }
+    ],
+    "challenges": [
+      "Heavy medical equipment interference (MRI, CT, X-Ray) corrupting network cables",
+      "Life-safety reliance on 24/7 network availability for PACS and ICU monitoring",
+      "Stringent patient privacy regulations and sensitive drug store security",
+      "Immediate emergency broadcasting across wards and operation theatres"
+    ],
+    "solutions": [
+      "Shielded Cat6A SSTP copper and dielectrically isolated optical fiber",
+      "Dual-redundant medical core network switches with sub-millisecond ring recovery",
+      "IP-based nurse call buttons with two-way voice and mobile nursing alert dispatch",
+      "Contactless biometric access for pharmaceutical stores and sterile ICU zones"
+    ],
+    "deliverables": [
+      "Medical-grade LAN switching supporting high-throughput PACS image archiving",
+      "IP nurse call system with dome lights, call cords, and central nurse station consoles",
+      "Pharma vault biometrics and high-definition CCTV audit surveillance",
+      "Code Blue emergency voice alarm paging and mass notification",
+      "Low-smoke zero-halogen (LSZH) cabling compliant with hospital fire safety",
+      "24×7 rapid-dispatch hospital engineering support contract"
+    ],
+    "theme": {
+      "bgGradient": "from-[#021318] via-[#05242e] to-[#010b0e]",
+      "accentColor": "#2dd4bf",
+      "accentGradient": "from-teal-300 via-cyan-300 to-emerald-200",
+      "glowOrb1": "bg-teal-500/12",
+      "glowOrb2": "bg-cyan-600/10",
+      "cardBg": "bg-[#06242c]/70",
+      "cardBorder": "border-teal-500/20",
+      "cardBorderHover": "hover:border-teal-400/60",
+      "cardShadowHover": "hover:shadow-[0_0_30px_rgba(45,212,191,0.2)]",
+      "badgeBg": "bg-teal-500/15",
+      "badgeBorder": "border-teal-500/30",
+      "badgeText": "text-teal-300",
+      "buttonGradient": "bg-gradient-to-r from-teal-400 to-cyan-500",
+      "buttonText": "text-[#021318]",
+      "buttonShadow": "shadow-[0_0_20px_rgba(45,212,191,0.4)]",
+      "textHighlight": "text-teal-400",
+      "subtextColor": "text-teal-100/75",
+      "laserStreak": "via-teal-400/50"
+    }
+  },
+  {
+    "slug": "education-campuses",
+    "name": "Education Campuses",
+    "tagline": "Smart Classrooms, Campus-Wide Wi-Fi & Large-Venue Auditorium AV",
+    "description": "Universities, engineering colleges, and K-12 schools need robust high-density student Wi-Fi, interactive hybrid classrooms, campus safety surveillance, and broadcast-quality auditorium acoustics.",
+    "icon": "GraduationCap",
+    "stats": [
+      { "label": "Concurrent Devices", "value": "15,000+" },
+      { "label": "Video Surveillance", "value": "100%" },
+      { "label": "Interactive Panels", "value": "4K UHD" },
+      { "label": "Inter-Building Fiber", "value": "10 Gbps" }
+    ],
+    "challenges": [
+      "Massive bandwidth surges between classes and during campus exams",
+      "Vast multi-acre geographic layout requiring inter-building fiber connectivity",
+      "Complex auditorium acoustics causing unintelligible speech and microphone feedback",
+      "Campus perimeter safety, student dorm security, and visitor entry tracking"
+    ],
+    "solutions": [
+      "High-capacity outdoor and indoor Wi-Fi 6 APs with automated bandwidth throttling",
+      "Underground armored single-mode 24-core fiber backbone connecting all departments",
+      "Interactive smart flat panels (IFP) with wireless screen casting and digital whiteboards",
+      "Line-array auditorium sound reinforcement with wireless digital microphones"
+    ],
+    "deliverables": [
+      "Multi-building optical fiber backbone and departmental distribution racks",
+      "High-density campus wireless network with student authentication captive portal",
+      "Auditorium pro sound, stage LED displays, and digital audio mixing consoles",
+      "Smart classroom AV integration with interactive 75\"/86\" 4K touch displays",
+      "Campus boundary CCTV surveillance with license plate recognition gates",
+      "Institutional AMC and semester preventative maintenance support"
+    ],
+    "theme": {
+      "bgGradient": "from-[#040a1c] via-[#0a1738] to-[#020510]",
+      "accentColor": "#38bdf8",
+      "accentGradient": "from-sky-400 via-blue-300 to-indigo-200",
+      "glowOrb1": "bg-blue-600/12",
+      "glowOrb2": "bg-indigo-600/10",
+      "cardBg": "bg-[#091b40]/70",
+      "cardBorder": "border-blue-500/20",
+      "cardBorderHover": "hover:border-blue-400/60",
+      "cardShadowHover": "hover:shadow-[0_0_30px_rgba(56,189,248,0.2)]",
+      "badgeBg": "bg-blue-500/15",
+      "badgeBorder": "border-blue-500/30",
+      "badgeText": "text-blue-300",
+      "buttonGradient": "bg-gradient-to-r from-blue-500 to-sky-400",
+      "buttonText": "text-[#020b1c]",
+      "buttonShadow": "shadow-[0_0_20px_rgba(56,189,248,0.4)]",
+      "textHighlight": "text-blue-400",
+      "subtextColor": "text-blue-100/75",
+      "laserStreak": "via-blue-400/50"
+    }
+  }
+]

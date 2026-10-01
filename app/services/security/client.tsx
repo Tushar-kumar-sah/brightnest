@@ -1,223 +1,80 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { CheckCircle, ArrowRight } from "lucide-react"
-
-function useRevealOnScroll() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0")
-            entry.target.classList.remove("opacity-0", "translate-y-8")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-}
-
-const ServiceDetailTemplate = ({
-  title,
-  summary,
-  overview,
-  deliverables,
-  subServices,
-  useCases,
-  engagementModel,
-}: {
-  title: string
-  summary: string
-  overview: string
-  deliverables: string[]
-  subServices: { name: string; description: string }[]
-  useCases: string[]
-  engagementModel: { phase: string; description: string }[]
-}) => (
-  <main >
-    {/* Hero Banner */}
-    <section className="section-padding" style={{ backgroundColor: "var(--primary)", color: "white" }}>
-      <div className="section-container">
-        <div className="reveal opacity-0 transition-opacity duration-700">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{title}</h1>
-          <p className="text-xl text-brand-on-dark mb-8 max-w-2xl">{summary}</p>
-          <Link href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
-            Talk to an Expert
-          </Link>
-        </div>
-      </div>
-    </section>
-
-    {/* Overview */}
-    <section className="section-padding bg-background">
-      <div className="section-container max-w-4xl">
-        <div className="reveal opacity-0 transition-opacity duration-700">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: "var(--primary)" }}>
-            Overview
-          </h2>
-          <p className="text-lg text-muted leading-relaxed">{overview}</p>
-        </div>
-      </div>
-    </section>
-
-    {/* What We Deliver */}
-    <section className="section-padding bg-white">
-      <div className="section-container max-w-4xl">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-          What We Deliver
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          {deliverables.map((item, idx) => (
-            <div
-              key={idx}
-              className="reveal opacity-0 transition-opacity duration-700 flex gap-3"
-              style={{ transitionDelay: `${idx * 50}ms` }}
-            >
-              <CheckCircle size={24} style={{ color: "var(--accent)", flexShrink: 0 }} />
-              <span className="text-muted">{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Sub-services Grid */}
-    <section className="section-padding bg-background">
-      <div className="section-container">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: "var(--primary)" }}>
-          Service Components
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {subServices.map((service, idx) => (
-            <div
-              key={idx}
-              className="reveal opacity-0 transition-opacity duration-700 service-card"
-              style={{ transitionDelay: `${idx * 50}ms` }}
-            >
-              <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                {service.name}
-              </h3>
-              <p className="text-muted text-sm">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Typical Use Cases */}
-    <section className="section-padding bg-white">
-      <div className="section-container max-w-4xl">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-          Typical Use Cases
-        </h2>
-        <ul className="space-y-3">
-          {useCases.map((useCase, idx) => (
-            <li key={idx} className="reveal opacity-0 transition-opacity duration-700 flex gap-3">
-              <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "var(--accent)" }} />
-              <span className="text-muted">{useCase}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-
-    {/* Engagement Model */}
-    <section className="section-padding bg-background">
-      <div className="section-container max-w-4xl">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-          Our Engagement Model
-        </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {engagementModel.map((model, idx) => (
-            <div
-              key={idx}
-              className="reveal opacity-0 transition-opacity duration-700 p-6 rounded-lg bg-white border border-border"
-              style={{ transitionDelay: `${idx * 100}ms` }}
-            >
-              <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                {model.phase}
-              </h3>
-              <p className="text-muted text-sm">{model.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* CTA */}
-    <section className="section-padding rounded-3xl m-2 sm:m-4 md:m-8 lg:m-12 bg-navy-dark">
-      <div className="section-container text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
-        <p className="text-xl text-brand-on-dark mb-8 max-w-2xl mx-auto">
-          Let our experts understand your requirements and propose the perfect solution.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-transparent bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors gap-2 whitespace-nowrap"
-          >
-            Schedule Consultation
-          </Link>
-          <Link
-            href="/services"
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors gap-2 whitespace-nowrap"
-          >
-            View Other Services <ArrowRight size={18} />
-          </Link>
-        </div>
-      </div>
-    </section>
-  </main>
-)
+import ServiceDetailTemplate from "@/components/services/ServiceDetailTemplate"
 
 export default function SecurityClient() {
-  useRevealOnScroll()
-
   return (
     <ServiceDetailTemplate
       title="Security & Low Voltage Systems"
-      summary="Comprehensive security infrastructure solutions including CCTV, access control, biometric systems, and BMS."
-      overview="Our Security & Low Voltage Systems service delivers complete infrastructure for enterprise security. From video surveillance and access control to fire alarm systems and building management, we provide turnkey solutions that protect your assets and optimize operations. Our certified engineers design systems that integrate seamlessly with your existing infrastructure."
+      summary="Comprehensive security infrastructure solutions including CCTV, access control, biometric verification, and BMS integration."
+      overview="Our Security & Low Voltage Systems service delivers complete infrastructure for enterprise security. From video surveillance and access control to fire alarm systems and building management, we provide turnkey solutions that protect your physical and digital assets. Our certified engineers design systems that integrate seamlessly with your existing IT infrastructure."
       deliverables={[
-        "CCTV surveillance system design and installation",
-        "Video analytics and intelligent monitoring",
-        "Access control and credential management",
-        "Biometric attendance and verification systems",
-        "Fire alarm and detection systems",
-        "Public address and emergency communication",
-        "Building Management System (BMS) integration",
-        "Intrusion and perimeter protection systems",
+        "CCTV surveillance system design, deployment, and high-definition NVR/VMS setup",
+        "AI video analytics, perimeter intrusion detection, and automatic license plate recognition",
+        "Enterprise access control, turnstiles, and smart credential management",
+        "Biometric attendance, facial recognition, and temperature scanning integration",
+        "Addressable fire alarm, smoke detection, and suppression systems (NFPA-compliant)",
+        "Public address and voice alarm (PA/VA) emergency notification systems",
+        "Building Management System (BMS) integration and smart sensor networks",
+        "Intrusion alarm, perimeter beam protection, and central monitoring station linkage",
       ]}
       subServices={[
-        { name: "CCTV Surveillance", description: "High-definition monitoring and recording solutions" },
-        {
-          name: "Access Control",
-          description: "Electronic locks and credential management systems",
-        },
-        { name: "Biometric Systems", description: "Face recognition and fingerprint authentication" },
-        { name: "Fire Alarm", description: "Integrated fire detection and suppression systems" },
-        { name: "Public Address", description: "Emergency notification and announcement systems" },
-        { name: "Building Management", description: "Automated building control and monitoring" },
+        { name: "CCTV Surveillance", description: "High-definition IP cameras, thermal imaging, and cloud-assisted NVR storage architectures." },
+        { name: "Access Control", description: "Electronic smart locks, RFID badges, turnstiles, and role-based credential security." },
+        { name: "Biometric Systems", description: "Contactless 3D facial recognition and multi-spectral biometric attendance devices." },
+        { name: "Fire Alarm Systems", description: "Addressable fire detection, early-warning aspirating smoke systems, and gas suppression." },
+        { name: "Public Address (PA/VA)", description: "Zoned emergency evacuation paging and intelligible acoustic notification systems." },
+        { name: "Building Management (BMS)", description: "Automated HVAC, lighting, energy metering, and unified facility management dashboards." },
       ]}
       useCases={[
-        "Corporate campuses requiring integrated security",
-        "Data centers needing multi-layer protection",
-        "Manufacturing facilities with safety compliance needs",
-        "Retail environments with inventory protection",
-        "Healthcare facilities with access control requirements",
-        "Government and public institutions",
+        "Corporate headquarters and multi-floor IT parks requiring unified access governance",
+        "Data centers and server rooms demanding multi-factor biometrics and mantraps",
+        "Manufacturing plants and warehouses needing thermal perimeter intrusion protection",
+        "Hospitals and healthcare campuses requiring contact-free patient and staff zone access",
+        "Educational institutions seeking comprehensive student safety and emergency broadcasting",
+        "Public transit hubs, airports, and smart commercial retail spaces",
       ]}
       engagementModel={[
-        { phase: "Design", description: "Site survey and custom solution architecture" },
-        { phase: "Supply", description: "Sourcing certified components and equipment" },
-        { phase: "Implement", description: "Professional installation and commissioning" },
-        { phase: "Support", description: "AMC and SLA-backed maintenance" },
+        { phase: "Audit & Site Survey", description: "Physical risk assessment, blind spot mapping, and sensor coverage calculations." },
+        { phase: "Engineering Architecture", description: "BOM generation, network bandwidth sizing, and regulatory NFPA/ISO compliance design." },
+        { phase: "Turnkey Installation", description: "Certified low-voltage cabling, equipment mounting, IP configuration, and commissioning." },
+        { phase: "Managed AMC & SLA", description: "24×7 preventive maintenance, camera recalibration, and guaranteed uptime response." },
+      ]}
+      theme={{
+        bgGradient: "from-[#140409] via-[#220712] to-[#0a0205]",
+        accentColor: "#f43f5e",
+        accentGradient: "from-rose-400 via-pink-400 to-red-300",
+        glowOrb1: "bg-rose-600/12",
+        glowOrb2: "bg-red-600/10",
+        cardBg: "bg-[#1d0710]/70",
+        cardBorder: "border-rose-500/20",
+        cardBorderHover: "hover:border-rose-400/60",
+        cardShadowHover: "hover:shadow-[0_0_30px_rgba(244,63,94,0.2)]",
+        badgeBg: "bg-rose-500/15",
+        badgeBorder: "border-rose-500/30",
+        badgeText: "text-rose-300",
+        buttonGradient: "bg-gradient-to-r from-rose-500 to-pink-500",
+        buttonShadow: "shadow-[0_0_20px_rgba(244,63,94,0.4)]",
+        textHighlight: "text-rose-400",
+        subtextColor: "text-rose-100/75",
+        laserStreak: "via-rose-500/50",
+      }}
+      slides={[
+        {
+          image: "/security-infrastructure.jpg",
+          title: "AI Video Surveillance & VMS",
+          caption: "High-definition IP cameras, thermal imaging, and intelligent perimeter protection."
+        },
+        {
+          image: "/datacenter-infrastructure-engineer.jpg",
+          title: "Enterprise Access Control",
+          caption: "Biometric authentication, optical speed gates, and smart credential systems."
+        },
+        {
+          image: "/modern-tech-infrastructure-network.jpg",
+          title: "Unified BMS & Fire Alarms",
+          caption: "NFPA addressable fire detection, gas suppression, and integrated facility monitoring."
+        }
       ]}
     />
   )

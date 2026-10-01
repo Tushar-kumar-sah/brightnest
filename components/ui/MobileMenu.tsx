@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react"
+import { Menu, X, ChevronDown, Phone, Mail, Building2, Factory, Server, Hotel, HeartPulse, GraduationCap } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { getNavigationData } from "@/lib/data"
+import { getNavigationData, getIndustriesData } from "@/lib/data"
 import { getIcon } from "@/lib/icons"
 
 interface MobileMenuProps {
@@ -12,10 +12,21 @@ interface MobileMenuProps {
     buttonClassName?: string
 }
 
+const iconMap: Record<string, React.ElementType> = {
+    Building2,
+    Factory,
+    Server,
+    Hotel,
+    HeartPulse,
+    GraduationCap,
+}
+
 export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuProps) {
     const { navLinks, serviceItems, contactInfo } = getNavigationData()
+    const industries = getIndustriesData()
     const [isOpen, setIsOpen] = useState(false)
     const [servicesOpen, setServicesOpen] = useState(false)
+    const [industriesOpen, setIndustriesOpen] = useState(false)
 
     // Prevent body scroll when menu is open
     useEffect(() => {
@@ -70,7 +81,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#070c1e]/90 backdrop-blur-2xl text-white border-l border-white/15 z-50 shadow-2xl overflow-y-auto"
+                            className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#070c1e]/95 backdrop-blur-2xl text-white border-l border-white/15 z-50 shadow-2xl overflow-y-auto"
                         >
                             {/* Header */}
                             <div className="flex items-center justify-between p-4 border-b border-white/10">
@@ -87,18 +98,16 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                             {/* Navigation Links */}
                             <nav className="p-4">
                                 <ul className="space-y-1">
-                                    {/* First two nav links (before Services) */}
-                                    {navLinks.slice(0, 2).map((link) => (
-                                        <li key={link.href}>
-                                            <Link
-                                                href={link.href}
-                                                onClick={() => setIsOpen(false)}
-                                                className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
-                                            >
-                                                {link.label}
-                                            </Link>
-                                        </li>
-                                    ))}
+                                    {/* Home Link */}
+                                    <li>
+                                        <Link
+                                            href="/"
+                                            onClick={() => setIsOpen(false)}
+                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                        >
+                                            Home
+                                        </Link>
+                                    </li>
 
                                     {/* Services Dropdown */}
                                     <li>
@@ -106,7 +115,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                             onClick={() => setServicesOpen(!servicesOpen)}
                                             className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
                                         >
-                                            <span>Services</span>
+                                            <span>Services (What We Do)</span>
                                             <ChevronDown
                                                 size={18}
                                                 className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
@@ -155,18 +164,102 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                         </AnimatePresence>
                                     </li>
 
-                                    {/* Remaining nav links (after Services) */}
-                                    {navLinks.slice(2).map((link) => (
-                                        <li key={link.href}>
-                                            <Link
-                                                href={link.href}
-                                                onClick={() => setIsOpen(false)}
-                                                className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
-                                            >
-                                                {link.label}
-                                            </Link>
-                                        </li>
-                                    ))}
+                                    {/* Industries Dropdown */}
+                                    <li>
+                                        <button
+                                            onClick={() => setIndustriesOpen(!industriesOpen)}
+                                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                        >
+                                            <span>Industries</span>
+                                            <ChevronDown
+                                                size={18}
+                                                className={`transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`}
+                                            />
+                                        </button>
+
+                                        <AnimatePresence>
+                                            {industriesOpen && (
+                                                <motion.ul
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.2 }}
+                                                    className="overflow-hidden bg-white/[0.06] border border-white/10 backdrop-blur-md rounded-xl ml-2 mt-1"
+                                                >
+                                                    {industries.map((industry) => {
+                                                        const Icon = iconMap[industry.icon] || Building2
+                                                        return (
+                                                            <li key={industry.slug}>
+                                                                <Link
+                                                                    href={`/industries/${industry.slug}`}
+                                                                    onClick={() => setIsOpen(false)}
+                                                                    className="block px-4 py-3 text-sm text-slate-300 hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                                                >
+                                                                    <div className="flex items-center gap-3">
+                                                                        <Icon size={18} className="text-[#0db16a]" />
+                                                                        <span>{industry.name}</span>
+                                                                    </div>
+                                                                </Link>
+                                                            </li>
+                                                        )
+                                                    })}
+                                                    <li>
+                                                        <Link
+                                                            href="/industries"
+                                                            onClick={() => setIsOpen(false)}
+                                                            className="block px-4 py-3 text-sm font-semibold text-[#1ec9f2] hover:bg-white/10 transition-colors border-t border-white/10"
+                                                        >
+                                                            View All Industries →
+                                                        </Link>
+                                                    </li>
+                                                </motion.ul>
+                                            )}
+                                        </AnimatePresence>
+                                    </li>
+
+                                    {/* About Link */}
+                                    <li>
+                                        <Link
+                                            href="/about"
+                                            onClick={() => setIsOpen(false)}
+                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                        >
+                                            Who We Are
+                                        </Link>
+                                    </li>
+
+                                    {/* Careers Link */}
+                                    <li>
+                                        <Link
+                                            href="/careers"
+                                            onClick={() => setIsOpen(false)}
+                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                        >
+                                            Careers
+                                        </Link>
+                                    </li>
+
+                                    {/* Case Studies Link */}
+                                    <li>
+                                        <Link
+                                            href="/case-studies"
+                                            onClick={() => setIsOpen(false)}
+                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                        >
+                                            Case Studies
+                                        </Link>
+                                    </li>
+
+                                    {/* Contact Link */}
+                                    <li>
+                                        <Link
+                                            href="/contact"
+                                            onClick={() => setIsOpen(false)}
+                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                        >
+                                            Contact Us
+                                        </Link>
+                                    </li>
                                 </ul>
 
                                 {/* CTA Button */}

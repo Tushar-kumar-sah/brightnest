@@ -1,155 +1,81 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { CheckCircle } from "lucide-react"
-
-function useRevealOnScroll() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0")
-            entry.target.classList.remove("opacity-0", "translate-y-8")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-}
+import ServiceDetailTemplate from "@/components/services/ServiceDetailTemplate"
 
 export default function TelecomClient() {
-  useRevealOnScroll()
-
   return (
-    <main >
-      <section style={{ backgroundColor: "var(--primary)", color: "white" }} className="section-padding">
-        <div className="section-container">
-          <div className="reveal opacity-0 transition-opacity duration-700">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Telecom & Unified Communication</h1>
-            <p className="text-xl text-brand-on-dark mb-8 max-w-2xl">
-              IPPBX systems, SIP trunking, call centers, and comprehensive unified communication solutions.
-            </p>
-            <Link href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Talk to an Expert
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: "var(--primary)" }}>
-            Overview
-          </h2>
-          <p className="text-lg text-muted leading-relaxed">
-            Transform your communication infrastructure with our unified telecom solutions. We design and deploy IPPBX
-            systems, SIP trunking, call center solutions, and voice gateways that integrate seamlessly with your
-            existing network. Our solutions enable efficient collaboration while reducing telecom costs.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            What We Deliver
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "IPPBX system design and deployment",
-              "SIP trunking and PRI integration",
-              "Intercom and intercommunication systems",
-              "Contact center solutions",
-              "Voice gateway implementation",
-              "IVR and auto-attendant configuration",
-              "Call recording and compliance",
-              "Unified messaging and voicemail",
-            ].map((item, idx) => (
-              <div key={idx} className="reveal opacity-0 transition-opacity duration-700 flex gap-3">
-                <CheckCircle size={24} style={{ color: "var(--accent)", flexShrink: 0 }} />
-                <span className="text-muted">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: "var(--primary)" }}>
-            Service Components
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "IPPBX Systems", description: "IP-based private branch exchange solutions" },
-              { name: "SIP Trunking", description: "Cost-effective voice connectivity" },
-              { name: "Call Centers", description: "Contact center and queue management" },
-              { name: "Voice Gateways", description: "Analog to digital voice conversion" },
-              { name: "Intercom Systems", description: "In-building communication solutions" },
-              { name: "IVR Solutions", description: "Interactive voice response systems" },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 service-card"
-                style={{ transitionDelay: `${idx * 50}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {service.name}
-                </h3>
-                <p className="text-muted text-sm">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            Our Engagement Model
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { phase: "Assess", description: "Current PBX/voice audit and design" },
-              { phase: "Deploy", description: "Implementation, number porting, and integration" },
-              { phase: "Optimize", description: "Call flows, IVR, and reporting tuning" },
-              { phase: "Support", description: "SLA-backed monitoring and maintenance" },
-            ].map((model, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 p-6 rounded-lg bg-white border border-border"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {model.phase}
-                </h3>
-                <p className="text-muted text-sm">{model.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding rounded-3xl m-2 sm:m-4 md:m-8 lg:m-12" style={{ backgroundColor: "var(--primary)" }}>
-        <div className="section-container text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">Modernize Your Communications</h2>
-          <p className="text-xl text-brand-on-dark mb-8 max-w-2xl mx-auto">
-            Consult with our UC specialists to refresh your telephony and contact center stack.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Schedule a Voice Assessment
-          </Link>
-        </div>
-      </section>
-    </main>
+    <ServiceDetailTemplate
+      title="Telecom & Unified Communication"
+      summary="Enterprise IP-PBX telephony, SIP trunking, omni-channel contact center platforms, and secure unified communications (UCaaS)."
+      overview="Transform your enterprise voice and collaborative communications with our unified telecom solutions. We engineer and deploy on-premise and cloud IP-PBX systems, SIP trunks, call center ACD queues, and analog/digital voice gateways. Our solutions bridge mobile workforces, office deskphones, and CRM systems while drastically lowering telecom toll costs."
+      deliverables={[
+        "Enterprise IP-PBX system design, sizing, and multi-tenant deployment",
+        "Carrier-grade SIP trunking, PRI integration, and least-cost routing (LCR)",
+        "Omni-channel contact center setup with intelligent skill-based routing",
+        "Multi-level interactive voice response (IVR) and automated attendant trees",
+        "Full-duplex conference phone stations and executive deskphone deployment",
+        "Call recording, quality monitoring, and PCI-DSS compliance storage",
+        "Analog-to-IP voice gateways (FXS/FXO) for legacy elevator and PA connectivity",
+        "Unified mobile softphones with presence, instant messaging, and directory sync",
+      ]}
+      subServices={[
+        { name: "IP-PBX Platforms", description: "Resilient voice platforms supporting hundreds of concurrent calls and distributed extensions." },
+        { name: "SIP Trunking", description: "High-capacity virtual voice trunks with dynamic failover and global DID numbers." },
+        { name: "Call Center Solutions", description: "Agent dashboards, supervisor whisper/barge-in tools, and real-time SLA queues." },
+        { name: "Voice Gateways", description: "Robust FXS/FXO/E1 media gateways for seamless legacy integration." },
+        { name: "Smart Intercom", description: "Door station video intercoms linked directly to phone systems and mobile apps." },
+        { name: "Call Analytics", description: "Detailed call records (CDR), hold-time heatmaps, and outbound traffic analytics." },
+      ]}
+      useCases={[
+        "Multi-branch corporations requiring zero-cost inter-office voice dialing",
+        "Customer support operations requiring automated ticket logging and call recording",
+        "Hotels and hospitality resorts managing hundreds of guest rooms and billing PBX integration",
+        "Hospitals requiring emergency priority override and paging integration",
+        "Financial institutions requiring strict audit-logged phone conversations",
+      ]}
+      engagementModel={[
+        { phase: "Traffic & Trunk Audit", description: "Concurrent call load analysis, PSTN billing assessment, and bandwidth calculations." },
+        { phase: "Dial-Plan Engineering", description: "Extension mapping, IVR logic diagrams, and failover routing rule specification." },
+        { phase: "Deployment & Number Porting", description: "Hardware deployment, SIP provisioning, and seamless zero-interruption number porting." },
+        { phase: "Managed Voice SLA", description: "VoIP QoS monitoring, MOS score tracking, and 24×7 telecom helpdesk support." },
+      ]}
+      theme={{
+        bgGradient: "from-[#040c1e] via-[#091b40] to-[#020612]",
+        accentColor: "#38bdf8",
+        accentGradient: "from-sky-400 via-blue-300 to-indigo-200",
+        glowOrb1: "bg-sky-500/12",
+        glowOrb2: "bg-blue-600/10",
+        cardBg: "bg-[#091c44]/70",
+        cardBorder: "border-sky-500/20",
+        cardBorderHover: "hover:border-sky-400/60",
+        cardShadowHover: "hover:shadow-[0_0_30px_rgba(56,189,248,0.2)]",
+        badgeBg: "bg-sky-500/15",
+        badgeBorder: "border-sky-500/30",
+        badgeText: "text-sky-300",
+        buttonGradient: "bg-gradient-to-r from-sky-500 to-blue-500",
+        buttonText: "text-[#020b1c]",
+        buttonShadow: "shadow-[0_0_20px_rgba(56,189,248,0.4)]",
+        textHighlight: "text-sky-400",
+        subtextColor: "text-sky-100/75",
+        laserStreak: "via-sky-400/50",
+      }}
+      slides={[
+        {
+          image: "/ai-technology-professional-with-digital-background.jpg",
+          title: "Cloud IP-PBX & SIP Trunking",
+          caption: "Scalable cloud telephony, unified messaging, and multi-tenant softphone integration."
+        },
+        {
+          image: "/modern-conference-room.jpg",
+          title: "Unified Collaboration Hubs",
+          caption: "Integrated voice, video, and presence routing across distributed campus locations."
+        },
+        {
+          image: "/hospitality-operations-manager.jpg",
+          title: "Contact Center Solutions",
+          caption: "Omnichannel routing, CRM integration, call recording, and real-time supervisor analytics."
+        }
+      ]}
+    />
   )
 }

@@ -1,161 +1,81 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { CheckCircle } from "lucide-react"
-
-function useRevealOnScroll() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0")
-            entry.target.classList.remove("opacity-0", "translate-y-8")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-}
+import ServiceDetailTemplate from "@/components/services/ServiceDetailTemplate"
 
 export default function PrintingClient() {
-  useRevealOnScroll()
-
   return (
-    <main >
-      <section style={{ backgroundColor: "var(--primary)", color: "white" }} className="section-padding">
-        <div className="section-container">
-          <div className="reveal opacity-0 transition-opacity duration-700">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Printing & Large Format Solutions</h1>
-            <p className="text-xl text-brand-on-dark mb-8 max-w-2xl">
-              Comprehensive printer solutions including sales, service, consumables, and annual maintenance contracts.
-            </p>
-            <Link href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Talk to an Expert
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: "var(--primary)" }}>
-            Overview
-          </h2>
-          <p className="text-lg text-muted leading-relaxed">
-            We provide end-to-end printing solutions tailored to your organization's needs. From enterprise-class
-            multifunction devices to specialized large-format printers, we supply, deploy, and maintain systems that
-            optimize productivity and reduce total cost of ownership.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            What We Deliver
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "Enterprise multifunction device deployment",
-              "Large-format and specialty printer solutions",
-              "Consumables and supply chain management",
-              "Printer maintenance and repair services",
-              "Toner and ink cartridge supply",
-              "Device calibration and optimization",
-              "Annual maintenance contracts (AMC)",
-              "Print fleet management consulting",
-            ].map((item, idx) => (
-              <div key={idx} className="reveal opacity-0 transition-opacity duration-700 flex gap-3">
-                <CheckCircle size={24} style={{ color: "var(--accent)", flexShrink: 0 }} />
-                <span className="text-muted">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: "var(--primary)" }}>
-            Service Components
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Multifunction Devices",
-                description: "Print, copy, scan, and fax in one device",
-              },
-              {
-                name: "Large-Format Printing",
-                description: "Wide-format and specialty printing solutions",
-              },
-              { name: "Consumables", description: "Toner, ink, and paper supply" },
-              { name: "Maintenance", description: "Preventive and corrective services" },
-              { name: "Calibration", description: "Color and performance tuning" },
-              { name: "AMC", description: "Annual maintenance contracts with SLA" },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 service-card"
-                style={{ transitionDelay: `${idx * 50}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {service.name}
-                </h3>
-                <p className="text-muted text-sm">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            Our Engagement Model
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { phase: "Assess", description: "Print fleet audit and sizing" },
-              { phase: "Deploy", description: "Installation, calibration, and user onboarding" },
-              { phase: "Optimize", description: "Consumable planning and cost controls" },
-              { phase: "Support", description: "SLA-backed AMC and break-fix" },
-            ].map((model, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 p-6 rounded-lg bg-white border border-border"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {model.phase}
-                </h3>
-                <p className="text-muted text-sm">{model.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding rounded-3xl m-2 sm:m-4 md:m-8 lg:m-12" style={{ backgroundColor: "var(--primary)" }}>
-        <div className="section-container text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">Optimize Your Print Environment</h2>
-          <p className="text-xl text-brand-on-dark mb-8 max-w-2xl mx-auto">
-            Talk to our team about managed print services, large-format needs, and AMC coverage.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Request a Print Audit
-          </Link>
-        </div>
-      </section>
-    </main>
+    <ServiceDetailTemplate
+      title="Enterprise Printing & Managed Document Solutions"
+      summary="Heavy-duty enterprise A3/A4 multifunction devices (MFDs), high-precision CAD plotters, managed print services (MPS), and certified consumables."
+      overview="Brightnest provides end-to-end printing and document reproduction solutions tailored for high-volume enterprise and architectural workflows. From enterprise-class multifunction copiers to specialized wide-format CAD plotters, we supply, deploy, network, and maintain hardware fleets with secure follow-me badge printing, automated toner replenishment, and cost-per-page (CPP) AMC contracts."
+      deliverables={[
+        "Enterprise A3/A4 multifunction devices (print, scan, copy, secure OCR) deployment",
+        "High-precision wide-format CAD/GIS plotters and graphics production printers",
+        "Managed Print Services (MPS) with automated remote consumables replenishment",
+        "Secure badge-authenticated follow-me release printing and user quota governance",
+        "Genuine OEM toner, drum unit, printhead, and specialty media supply chain",
+        "Color calibration, ICC profile generation, and print engine performance tuning",
+        "Comprehensive Annual Maintenance Contracts (AMC) with guaranteed on-site SLA",
+        "Print fleet audit, lifecycle consolidation, and total cost of ownership (TCO) reduction",
+      ]}
+      subServices={[
+        { name: "Multifunction Copiers (MFD)", description: "High-speed network printers with duplex single-pass document feeders and booklet finishers." },
+        { name: "Wide-Format CAD Plotters", description: "Precision 24-inch to 44-inch line drawing plotters for architecture and engineering drawings." },
+        { name: "Follow-Me Pull Printing", description: "Zero-trust encrypted print queues released only after employee RFID badge or PIN tap." },
+        { name: "Consumables Logistics", description: "Automated low-toner proactive dispatch with zero workplace downtime." },
+        { name: "Fleet Management Software", description: "Centralized web console tracking page volumes, department chargebacks, and error alerts." },
+        { name: "Hardware AMC & Spares", description: "Rapid-response technician dispatch, roller replacements, and preventive maintenance." },
+      ]}
+      useCases={[
+        "Corporate offices wanting to curb unmonitored printing costs and confidential document leakage",
+        "Architecture, engineering, and construction (AEC) firms needing rapid high-precision blueprints",
+        "Legal and financial institutions requiring watermarking, audit logs, and secure Bates stamping",
+        "Universities and examination centers handling massive volume printing under strict timelines",
+        "Hospitality and healthcare records archiving with heavy-duty network scanning",
+      ]}
+      engagementModel={[
+        { phase: "Print Fleet Audit", description: "Current printer count analysis, page-volume metering, and cost-per-copy baseline evaluation." },
+        { phase: "Fleet Right-Sizing", description: "Strategic placement plan to eliminate desktop bottlenecks and optimize walking distances." },
+        { phase: "Deployment & Driver Packaging", description: "Network IP setup, print server queue deployment, and user card reader configuration." },
+        { phase: "MPS Lifecycle & Supplies", description: "Automated cloud billing, proactive toner shipments, and regular maintenance visits." },
+      ]}
+      theme={{
+        bgGradient: "from-[#0a0c10] via-[#151922] to-[#07080b]",
+        accentColor: "#94a3b8",
+        accentGradient: "from-slate-200 via-slate-400 to-zinc-300",
+        glowOrb1: "bg-slate-500/12",
+        glowOrb2: "bg-zinc-600/10",
+        cardBg: "bg-[#131720]/70",
+        cardBorder: "border-slate-600/30",
+        cardBorderHover: "hover:border-slate-400/60",
+        cardShadowHover: "hover:shadow-[0_0_30px_rgba(148,163,184,0.2)]",
+        badgeBg: "bg-slate-500/15",
+        badgeBorder: "border-slate-500/30",
+        badgeText: "text-slate-300",
+        buttonGradient: "bg-gradient-to-r from-slate-200 to-white",
+        buttonText: "text-[#0a0c10]",
+        buttonShadow: "shadow-[0_0_20px_rgba(255,255,255,0.25)]",
+        textHighlight: "text-slate-300",
+        subtextColor: "text-slate-300/75",
+        laserStreak: "via-slate-400/50",
+      }}
+      slides={[
+        {
+          image: "/male-finance-professional-in-office.jpg",
+          title: "Managed Print Services (MPS)",
+          caption: "Cost-optimized enterprise printer fleet leasing and automated toner replenishment."
+        },
+        {
+          image: "/female-business-consultant-smiling.jpg",
+          title: "Secure Pull-Printing & Badges",
+          caption: "Follow-me printing with RFID badges, encrypted spooling, and zero-waste auditing."
+        },
+        {
+          image: "/modern-tech-infrastructure-network.jpg",
+          title: "Fleet Monitoring & Governance",
+          caption: "Centralized printer diagnostics, rule-based quota controls, and compliance tracking."
+        }
+      ]}
+    />
   )
 }

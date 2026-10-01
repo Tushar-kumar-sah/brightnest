@@ -1,156 +1,81 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { CheckCircle } from "lucide-react"
-
-function useRevealOnScroll() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0")
-            entry.target.classList.remove("opacity-0", "translate-y-8")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-}
+import ServiceDetailTemplate from "@/components/services/ServiceDetailTemplate"
 
 export default function NetworkingClient() {
-  useRevealOnScroll()
-
   return (
-    <main >
-      <section style={{ backgroundColor: "var(--primary)", color: "white" }} className="section-padding">
-        <div className="section-container">
-          <div className="reveal opacity-0 transition-opacity duration-700">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Data Networking & IT Infrastructure</h1>
-            <p className="text-xl text-brand-on-dark mb-8 max-w-2xl">
-              Enterprise-grade networking solutions including LAN/WAN, switching, routing, and advanced security.
-            </p>
-            <Link href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Talk to an Expert
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: "var(--primary)" }}>
-            Overview
-          </h2>
-          <p className="text-lg text-muted leading-relaxed">
-            Our networking solutions provide the backbone for modern enterprise infrastructure. We design and deploy
-            scalable LAN/WAN architectures with enterprise-class switching, routing, and advanced security. From
-            wireless networks to firewall management, we ensure your network is secure, performant, and ready for
-            growth.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            What We Deliver
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "LAN and WAN design and deployment",
-              "Enterprise switching infrastructure",
-              "Routing and traffic management",
-              "Wireless network deployment (Wi-Fi 6 ready)",
-              "Firewall and security appliances",
-              "Network segmentation and VLAN management",
-              "Load balancing and failover",
-              "Network monitoring and analytics",
-            ].map((item, idx) => (
-              <div key={idx} className="reveal opacity-0 transition-opacity duration-700 flex gap-3">
-                <CheckCircle size={24} style={{ color: "var(--accent)", flexShrink: 0 }} />
-                <span className="text-muted">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: "var(--primary)" }}>
-            Service Components
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "LAN Design", description: "Local area network architecture and deployment" },
-              { name: "WAN Solutions", description: "Wide area network connectivity and management" },
-              { name: "Switching", description: "Layer 2 and 3 enterprise switching" },
-              { name: "Routing", description: "Dynamic routing and traffic optimization" },
-              { name: "Wireless Networks", description: "High-performance Wi-Fi infrastructure" },
-              { name: "Network Security", description: "Firewall and intrusion prevention systems" },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 service-card"
-                style={{ transitionDelay: `${idx * 50}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {service.name}
-                </h3>
-                <p className="text-muted text-sm">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            Our Engagement Model
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { phase: "Assess", description: "Network audit, capacity planning, and design" },
-              { phase: "Deploy", description: "Implementation, cutover, and validation" },
-              { phase: "Secure", description: "Policy enforcement, segmentation, and monitoring" },
-              { phase: "Support", description: "SLA-backed operations and optimization" },
-            ].map((model, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 p-6 rounded-lg bg-white border border-border"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {model.phase}
-                </h3>
-                <p className="text-muted text-sm">{model.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding rounded-3xl m-2 sm:m-4 md:m-8 lg:m-12" style={{ backgroundColor: "var(--primary)" }}>
-        <div className="section-container text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">Engineer a Faster, Safer Network</h2>
-          <p className="text-lg sm:text-xl text-brand-on-dark mb-8 max-w-2xl mx-auto">
-            Discuss your LAN/WAN, wireless, and security requirements with our networking specialists.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Request a Design Workshop
-          </Link>
-        </div>
-      </section>
-    </main>
+    <ServiceDetailTemplate
+      title="Data Networking & IT Infrastructure"
+      summary="Enterprise-grade networking solutions including high-density campus LAN/WAN, core L3 switching, SD-WAN routing, and Wi-Fi 6E/7 architectures."
+      overview="Our networking solutions provide the high-availability backbone for modern digital enterprises. We architect and deploy resilient, multi-gigabit LAN/WAN fabrics with Layer 2/3 core switching, zero-trust network segmentation, and next-generation firewall protection. From dense wireless mesh deployments to redundant multi-ISP load balancing, we ensure deterministic performance, low latency, and continuous uptime."
+      deliverables={[
+        "Enterprise campus LAN and software-defined WAN (SD-WAN) architecture",
+        "Layer 2/Layer 3 core, distribution, and access switching infrastructure",
+        "Dynamic BGP/OSPF routing, traffic shaping, and QoS policy enforcement",
+        "High-density Wi-Fi 6E / Wi-Fi 7 wireless network deployment and RF surveys",
+        "Next-generation firewall (NGFW) appliances and intrusion prevention (IPS)",
+        "Zero-trust network access (ZTNA), micro-segmentation, and dynamic VLANs",
+        "Dual-WAN active-active link aggregation, load balancing, and failover",
+        "Centralized SNMP network performance telemetry, flow monitoring, and alerting",
+      ]}
+      subServices={[
+        { name: "LAN Architecture", description: "Multi-gigabit access and core backbones engineered for enterprise bandwidth demands." },
+        { name: "SD-WAN & Routing", description: "Intelligent application-aware routing and resilient multi-branch cloud connectivity." },
+        { name: "Enterprise Switching", description: "L2/L3 modular switches with wire-speed packet processing and stackable resiliency." },
+        { name: "Wireless Mesh (Wi-Fi 6E/7)", description: "Predictive heatmap-driven Wi-Fi coverage with seamless 802.11r client roaming." },
+        { name: "Next-Gen Firewall (NGFW)", description: "Deep packet inspection, gateway antivirus, and SSL/TLS decryption defense." },
+        { name: "NOC & Telemetry", description: "Real-time network observability, interface utilization tracking, and latency auditing." },
+      ]}
+      useCases={[
+        "Corporate headquarters requiring 10Gbps+ spine-leaf core switching",
+        "Multi-branch retail and bank chains requiring secure, centralized SD-WAN orchestration",
+        "High-density university campuses and lecture auditoriums with thousands of concurrent Wi-Fi devices",
+        "Manufacturing and logistics hubs operating mission-critical automated guided vehicles (AGVs)",
+        "Financial institutions requiring strict regulatory compliance and network micro-segmentation",
+      ]}
+      engagementModel={[
+        { phase: "Traffic Assessment & RF Survey", description: "Bandwidth profiling, spectrum analysis, and physical network topology audit." },
+        { phase: "Architecture & Low-Level Design", description: "IP addressing scheme, VLAN segregation matrix, and hardware redundancy design." },
+        { phase: "Zero-Downtime Migration", description: "Staged cutover, config hardening, port verification, and failover stress testing." },
+        { phase: "Proactive NOC Management", description: "24×7 link monitoring, firmware lifecycle patching, and SLA incident response." },
+      ]}
+      theme={{
+        bgGradient: "from-[#040d1a] via-[#081b36] to-[#030914]",
+        accentColor: "#00f0ff",
+        accentGradient: "from-cyan-400 via-sky-300 to-blue-200",
+        glowOrb1: "bg-cyan-500/12",
+        glowOrb2: "bg-blue-600/10",
+        cardBg: "bg-[#071d3d]/70",
+        cardBorder: "border-cyan-500/20",
+        cardBorderHover: "hover:border-cyan-400/60",
+        cardShadowHover: "hover:shadow-[0_0_30px_rgba(0,240,255,0.2)]",
+        badgeBg: "bg-cyan-500/15",
+        badgeBorder: "border-cyan-500/30",
+        badgeText: "text-cyan-300",
+        buttonGradient: "bg-gradient-to-r from-cyan-500 to-sky-400",
+        buttonText: "text-[#030d1a]",
+        buttonShadow: "shadow-[0_0_20px_rgba(0,240,255,0.4)]",
+        textHighlight: "text-cyan-400",
+        subtextColor: "text-sky-100/75",
+        laserStreak: "via-cyan-400/50",
+      }}
+      slides={[
+        {
+          image: "/modern-tech-infrastructure-network.jpg",
+          title: "Enterprise Core Switching",
+          caption: "Multi-gigabit spine-leaf switching architectures and resilient routing fabrics."
+        },
+        {
+          image: "/data-center-infrastructure.jpg",
+          title: "Cloud SD-WAN & Zero-Trust",
+          caption: "Dual-ISP automated failover, IPSec mesh, and granular micro-segmentation."
+        },
+        {
+          image: "/gcc-enterprise-engineer.jpg",
+          title: "Wi-Fi 7 Campus Wireless",
+          caption: "High-density predictive RF design and automated dynamic channel optimization."
+        }
+      ]}
+    />
   )
 }

@@ -1,195 +1,80 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { CheckCircle, ArrowRight } from "lucide-react"
-
-function useRevealOnScroll() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0")
-            entry.target.classList.remove("opacity-0", "translate-y-8")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-}
-
-const ServiceDetailTemplate = ({
-  title,
-  summary,
-  overview,
-  deliverables,
-  subServices,
-  engagementModel,
-}: {
-  title: string
-  summary: string
-  overview: string
-  deliverables: string[]
-  subServices: { name: string; description: string }[]
-  engagementModel: { phase: string; description: string }[]
-}) => (
-  <main className="pt-24 px-4 md:px-6 lg:px-8">
-    {/* Hero Section */}
-    <section style={{ backgroundColor: "var(--primary)", color: "white" }} className="section-padding rounded-2xl md:rounded-3xl mb-6">
-      <div className="section-container">
-        <div className="reveal opacity-0 transition-opacity duration-700">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{title}</h1>
-          <p className="text-lg md:text-xl text-brand-on-dark mb-8 max-w-2xl">{summary}</p>
-          <Link href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
-            Talk to an Expert
-          </Link>
-        </div>
-      </div>
-    </section>
-
-    {/* Overview Section */}
-    <section className="section-padding bg-background rounded-2xl md:rounded-3xl mb-6">
-      <div className="section-container max-w-4xl">
-        <div className="reveal opacity-0 transition-opacity duration-700">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "var(--primary)" }}>
-            Overview
-          </h2>
-          <p className="text-base md:text-lg text-muted leading-relaxed">{overview}</p>
-        </div>
-      </div>
-    </section>
-
-    {/* Deliverables Section */}
-    <section className="section-padding bg-white rounded-2xl md:rounded-3xl mb-6 border border-border">
-      <div className="section-container max-w-4xl">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-          What We Deliver
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          {deliverables.map((item, idx) => (
-            <div key={idx} className="reveal opacity-0 transition-opacity duration-700 flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-              <CheckCircle size={24} style={{ color: "var(--accent)", flexShrink: 0 }} />
-              <span className="text-muted">{item}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Service Components Section */}
-    <section className="section-padding bg-background rounded-2xl md:rounded-3xl mb-6">
-      <div className="section-container">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center" style={{ color: "var(--primary)" }}>
-          Service Components
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {subServices.map((service, idx) => (
-            <div
-              key={idx}
-              className="reveal opacity-0 transition-opacity duration-700 service-card"
-              style={{ transitionDelay: `${idx * 50}ms` }}
-            >
-              <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                {service.name}
-              </h3>
-              <p className="text-muted text-sm">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Engagement Model Section */}
-    <section className="section-padding bg-white rounded-2xl md:rounded-3xl mb-6 border border-border">
-      <div className="section-container max-w-4xl">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-          Our Engagement Model
-        </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {engagementModel.map((model, idx) => (
-            <div
-              key={idx}
-              className="reveal opacity-0 transition-opacity duration-700 p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-border hover:shadow-md transition-shadow"
-              style={{ transitionDelay: `${idx * 100}ms` }}
-            >
-              <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                {model.phase}
-              </h3>
-              <p className="text-muted text-sm">{model.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* CTA Section */}
-    <section className="section-padding rounded-3xl m-2 sm:m-4 md:m-8 lg:m-12" style={{ backgroundColor: "var(--primary)" }}>
-      <div className="section-container text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Build a Future-Ready Backbone</h2>
-        <p className="text-lg md:text-xl text-brand-on-dark mb-8 max-w-2xl mx-auto">
-          Let us design, certify, and optimize your structured cabling and fiber network for growth.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-transparent bg-white text-primary font-semibold rounded-xl hover:bg-gray-100 transition-all hover:shadow-lg gap-2 whitespace-nowrap"
-          >
-            Schedule Site Survey
-          </Link>
-          <Link
-            href="/services"
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-primary transition-all gap-2 whitespace-nowrap"
-          >
-            View Other Services <ArrowRight size={18} />
-          </Link>
-        </div>
-      </div>
-    </section>
-  </main>
-)
+import ServiceDetailTemplate from "@/components/services/ServiceDetailTemplate"
 
 export default function CablingClient() {
-  useRevealOnScroll()
-
   return (
     <ServiceDetailTemplate
-      title="Structured Cabling & Fiber"
-      summary="High-performance cabling infrastructure with Cat6/6A and fiber optic solutions designed for future growth."
-      overview="Our structured cabling solutions provide the foundation for reliable, scalable network infrastructure. We design and implement Cat6/Cat6A twisted pair and single-mode/multi-mode fiber solutions that support current and future bandwidth requirements. Every installation includes comprehensive testing and certification to ensure performance standards."
+      title="Structured Cabling & Fiber Solutions"
+      summary="High-performance passive cabling infrastructure with certified Cat6/6A copper and multi-kilometer single-mode/multi-mode fiber optics."
+      overview="Our structured cabling solutions provide the robust physical layer foundation for high-throughput enterprise networks. We engineer and implement Cat6/Cat6A twisted pair alongside OM3/OM4 and OS2 fiber optic backbones that withstand decades of operational expansion. Every single termination undergoes Fluke DTX/DSX certification to verify attenuation, NEXT, and return loss."
       deliverables={[
-        "Cat6 and Cat6A twisted pair cabling",
-        "Single-mode and multi-mode fiber installation",
-        "Rack and patch panel infrastructure",
-        "Cable testing and certification",
-        "Campus-wide cabling solutions",
-        "Documentation and labeling",
-        "Future expansion planning",
-        "Performance optimization",
+        "Cat6 and Cat6A 10GBASE-T twisted pair structured cabling",
+        "Single-mode (OS2) and multi-mode (OM3/OM4) fiber backbone installation",
+        "Data center server rack layout, horizontal cable managers, and high-density patch panels",
+        "Fluke OTDR & channel certification testing with comprehensive warranty reports",
+        "Campus-wide underground conduit, aerial fiber, and armored inter-building links",
+        "Color-coded schematic labeling, patch schedule indexing, and CAD as-built drawings",
+        "Power over Ethernet (PoE/PoE+/PoE++) thermal load and length planning",
+        "Structured cable containment, wire mesh basket trays, and ladder rack pathways",
       ]}
       subServices={[
-        { name: "Cat6 Cabling", description: "Gigabit ethernet with 100m range capacity" },
-        { name: "Cat6A Cabling", description: "Enhanced performance up to 500 MHz" },
-        { name: "Single-Mode Fiber", description: "Long-distance transmission up to 100km" },
-        {
-          name: "Multi-Mode Fiber",
-          description: "Short-range high-capacity solutions",
-        },
-        {
-          name: "Rack & Patch Panels",
-          description: "Structured rack, patching, and labeling",
-        },
-        { name: "Testing & Certification", description: "Fluke testing and documentation" },
+        { name: "Cat6 & Cat6A UTP/STP", description: "Certified twisted pair copper infrastructure supporting up to 10 Gbps transmission." },
+        { name: "Single-Mode Fiber (OS2)", description: "Low-loss optical backbone for campus distributions and long-haul interconnects." },
+        { name: "Multi-Mode Fiber (OM3/OM4)", description: "High-bandwidth modal dispersion optical links optimized for server room fabrics." },
+        { name: "Server Racks & Containment", description: "Modular 42U/48U enclosures, vertical wire organizers, and cold/hot aisle containment." },
+        { name: "Fluke Certification", description: "Tier-1 and Tier-2 optical and copper validation with full warranty documentation." },
+        { name: "Moves, Adds & Changes (MAC)", description: "Orderly patching reconfiguration, rack consolidation, and legacy cable abatement." },
+      ]}
+      useCases={[
+        "Corporate offices and high-density multi-tenant commercial towers",
+        "Enterprise data centers and colocation server halls",
+        "Industrial manufacturing plants requiring armored, noise-shielded cabling",
+        "Educational universities and multi-building campus backbones",
+        "Hospitals and diagnostic facilities requiring zero EMI interference",
       ]}
       engagementModel={[
-        { phase: "Design", description: "Site survey, pathway planning, and bill of materials" },
-        { phase: "Deploy", description: "Installation, termination, and certification" },
-        { phase: "Document", description: "Labeling, as-built drawings, and test reports" },
-        { phase: "Support", description: "Moves/adds/changes and SLA-backed support" },
+        { phase: "Pathway Survey & Sizing", description: "Physical site survey, conduit pathway validation, and trunk cable length calculations." },
+        { phase: "Certified Deployment", description: "Low-friction cable pulling, precision fusion splicing, and structured termination." },
+        { phase: "Fluke Testing & Sign-off", description: "Individual port-level OTDR and copper testing with OEM 25-year component warranty." },
+        { phase: "Lifecycle MAC Support", description: "Scheduled patching audits, port tagging, and expansion SLA support." },
+      ]}
+      theme={{
+        bgGradient: "from-[#160c02] via-[#261505] to-[#0c0601]",
+        accentColor: "#f59e0b",
+        accentGradient: "from-amber-400 via-yellow-300 to-orange-300",
+        glowOrb1: "bg-amber-600/12",
+        glowOrb2: "bg-orange-600/10",
+        cardBg: "bg-[#201104]/70",
+        cardBorder: "border-amber-500/20",
+        cardBorderHover: "hover:border-amber-400/60",
+        cardShadowHover: "hover:shadow-[0_0_30px_rgba(245,158,11,0.2)]",
+        badgeBg: "bg-amber-500/15",
+        badgeBorder: "border-amber-500/30",
+        badgeText: "text-amber-300",
+        buttonGradient: "bg-gradient-to-r from-amber-500 to-yellow-500",
+        buttonText: "text-[#150a02]",
+        buttonShadow: "shadow-[0_0_20px_rgba(245,158,11,0.4)]",
+        textHighlight: "text-amber-400",
+        subtextColor: "text-amber-100/75",
+        laserStreak: "via-amber-500/50",
+      }}
+      slides={[
+        {
+          image: "/data-center-infrastructure.jpg",
+          title: "Structured Cabling & Containment",
+          caption: "Cat6A copper, OM4/OS2 fiber backbones, and server rack cable pathways."
+        },
+        {
+          image: "/datacenter-infrastructure-engineer.jpg",
+          title: "Certified Fiber Termination",
+          caption: "Fluke DSX-8000 calibrated testing with 25-year manufacturer system warranty."
+        },
+        {
+          image: "/modern-tech-infrastructure-network.jpg",
+          title: "High-Density Patching Systems",
+          caption: "Color-coded modular patch fields and overhead raceway routing."
+        }
       ]}
     />
   )

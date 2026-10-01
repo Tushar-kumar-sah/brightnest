@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronDown, Star, ArrowRight, Shield, Cable, Wifi, Phone, Video, Printer, Wrench, Building2, Factory, Server, Hotel, HeartPulse, GraduationCap } from "lucide-react";
 import { Logo, MobileMenu } from "@/components/ui";
-import { getNavigationData } from "@/lib/data";
 
 const servicesList = [
   { name: "Security & Low Voltage", href: "/services/security", icon: Shield, description: "AI CCTV, Access Control, Biometrics" },
@@ -16,12 +15,12 @@ const servicesList = [
 ];
 
 const industriesList = [
-  { name: "GCCs & Tech Parks", href: "/#industries", icon: Building2, description: "Enterprise campus infrastructure" },
-  { name: "Manufacturing & Warehouses", href: "/#industries", icon: Factory, description: "Ruggedized industrial Wi-Fi & CCTV" },
-  { name: "Data Centers", href: "/#industries", icon: Server, description: "High-density fiber & rack containment" },
-  { name: "Hospitality & Retail", href: "/#industries", icon: Hotel, description: "Multi-store centralized tech" },
-  { name: "Healthcare & Hospitals", href: "/#industries", icon: HeartPulse, description: "Zero-downtime medical LAN networks" },
-  { name: "Education Campuses", href: "/#industries", icon: GraduationCap, description: "Smart classrooms & auditorium AV" },
+  { name: "GCCs & Tech Parks", href: "/industries/gccs-tech-parks", icon: Building2, description: "Enterprise campus infrastructure" },
+  { name: "Manufacturing & Warehouses", href: "/industries/manufacturing-warehouses", icon: Factory, description: "Ruggedized industrial Wi-Fi & CCTV" },
+  { name: "Data Centers", href: "/industries/data-centers", icon: Server, description: "High-density fiber & rack containment" },
+  { name: "Hospitality & Retail", href: "/industries/hospitality-retail", icon: Hotel, description: "Multi-store centralized tech" },
+  { name: "Healthcare & Hospitals", href: "/industries/healthcare-hospitals", icon: HeartPulse, description: "Zero-downtime medical LAN networks" },
+  { name: "Education Campuses", href: "/industries/education-campuses", icon: GraduationCap, description: "Smart classrooms & auditorium AV" },
 ];
 
 export default function Header() {
@@ -66,7 +65,7 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1.5 py-2 text-white hover:text-[#1ec9f2] transition-colors focus:outline-none"
+                className="flex items-center gap-1.5 py-2 text-white hover:text-[#1ec9f2] transition-colors focus:outline-none cursor-pointer"
               >
                 <span>What We Do</span>
                 <ChevronDown
@@ -88,6 +87,7 @@ export default function Header() {
                       <Link
                         key={item.name}
                         href={item.href}
+                        onClick={() => setWhatWeDoOpen(false)}
                         className="flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-white/15 hover:bg-white/10 transition-all duration-200 group"
                       >
                         <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-[#1ec9f2] flex-shrink-0 group-hover:scale-105 group-hover:bg-[#1ec9f2]/20 group-hover:border-[#1ec9f2]/40 transition-all mt-0.5">
@@ -107,6 +107,7 @@ export default function Header() {
                   <div className="col-span-2 pt-2.5 mt-1 border-t border-white/15 text-center">
                     <Link
                       href="/services"
+                      onClick={() => setWhatWeDoOpen(false)}
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1ec9f2] hover:text-[#38d7f8] hover:underline"
                     >
                       <span>View All Services</span>
@@ -125,7 +126,7 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1.5 py-2 text-white hover:text-[#1ec9f2] transition-colors focus:outline-none"
+                className="flex items-center gap-1.5 py-2 text-white hover:text-[#1ec9f2] transition-colors focus:outline-none cursor-pointer"
               >
                 <span>Industries</span>
                 <ChevronDown
@@ -147,6 +148,7 @@ export default function Header() {
                       <Link
                         key={item.name}
                         href={item.href}
+                        onClick={() => setIndustriesOpen(false)}
                         className="flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-white/15 hover:bg-white/10 transition-all duration-200 group"
                       >
                         <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-[#0db16a] flex-shrink-0 group-hover:scale-105 group-hover:bg-[#0db16a]/20 group-hover:border-[#0db16a]/40 transition-all mt-0.5">
@@ -163,6 +165,16 @@ export default function Header() {
                       </Link>
                     );
                   })}
+                  <div className="col-span-2 pt-2.5 mt-1 border-t border-white/15 text-center">
+                    <Link
+                      href="/industries"
+                      onClick={() => setIndustriesOpen(false)}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1ec9f2] hover:text-[#38d7f8] hover:underline"
+                    >
+                      <span>View All Industries</span>
+                      <ArrowRight size={12} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,164 +1,81 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { CheckCircle } from "lucide-react"
-
-function useRevealOnScroll() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0")
-            entry.target.classList.remove("opacity-0", "translate-y-8")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-}
+import ServiceDetailTemplate from "@/components/services/ServiceDetailTemplate"
 
 export default function LightingClient() {
-  useRevealOnScroll()
-
   return (
-    <main >
-      <section style={{ backgroundColor: "var(--primary)", color: "white" }} className="section-padding">
-        <div className="section-container">
-          <div className="reveal opacity-0 transition-opacity duration-700">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">LED Lighting & Electrical Solutions</h1>
-            <p className="text-xl text-brand-on-dark mb-8 max-w-2xl">
-              Commercial and industrial LED lighting with integrated power infrastructure and smart controls.
-            </p>
-            <Link href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Talk to an Expert
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: "var(--primary)" }}>
-            Overview
-          </h2>
-          <p className="text-lg text-muted leading-relaxed">
-            Modernize your facility with energy-efficient LED lighting solutions. We design and deploy commercial and
-            industrial LED systems with integrated power infrastructure, smart controls, and automation that reduce
-            energy consumption while improving visibility and safety.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            What We Deliver
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "Commercial LED lighting design and installation",
-              "Industrial area and flood lighting",
-              "Road and perimeter lighting solutions",
-              "Power infrastructure and distribution",
-              "Smart lighting controls and automation",
-              "Energy efficiency optimization",
-              "Emergency and backup lighting systems",
-              "Maintenance and upgrade services",
-            ].map((item, idx) => (
-              <div key={idx} className="reveal opacity-0 transition-opacity duration-700 flex gap-3">
-                <CheckCircle size={24} style={{ color: "var(--accent)", flexShrink: 0 }} />
-                <span className="text-muted">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: "var(--primary)" }}>
-            Service Components
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Commercial Lighting",
-                description: "Office, retail, and facility LED solutions",
-              },
-              {
-                name: "Industrial Lighting",
-                description: "High-bay and manufacturing area lighting",
-              },
-              {
-                name: "Outdoor Lighting",
-                description: "Road, perimeter, and landscape lighting",
-              },
-              { name: "Power Distribution", description: "Panels, cabling, and safety systems" },
-              { name: "Smart Controls", description: "Sensors, timers, and building automation" },
-              { name: "Energy Audits", description: "Efficiency studies and retrofit planning" },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 service-card"
-                style={{ transitionDelay: `${idx * 50}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {service.name}
-                </h3>
-                <p className="text-muted text-sm">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            Our Engagement Model
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { phase: "Audit", description: "Lighting and power assessment with ROI modeling" },
-              { phase: "Design", description: "Lux-level planning and control strategy" },
-              { phase: "Deploy", description: "Installation, commissioning, and training" },
-              { phase: "Support", description: "Maintenance, upgrades, and AMC" },
-            ].map((model, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 p-6 rounded-lg bg-white border border-border"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {model.phase}
-                </h3>
-                <p className="text-muted text-sm">{model.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding rounded-3xl m-2 sm:m-4 md:m-8 lg:m-12" style={{ backgroundColor: "var(--primary)" }}>
-        <div className="section-container text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">Illuminate Smarter</h2>
-          <p className="text-xl text-brand-on-dark mb-8 max-w-2xl mx-auto">
-            Partner with us to design efficient, safe, and intelligent lighting and electrical systems.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Request a Lighting Audit
-          </Link>
-        </div>
-      </section>
-    </main>
+    <ServiceDetailTemplate
+      title="Commercial LED Lighting & Power Infrastructure"
+      summary="High-efficiency architectural LED lighting, industrial high-bays, automated daylight harvesting, and certified electrical distribution."
+      overview="Modernize your corporate, campus, or industrial facility with energy-efficient LED lighting systems and intelligent electrical infrastructure. We engineer and deploy turnkey commercial LED fixtures, smart DALI / 0-10V dimming controls, occupancy sensors, perimeter security floodlights, and integrated power distribution panels that dramatically reduce operational kWh consumption."
+      deliverables={[
+        "Commercial office architectural LED fixtures and tunable white ambient lighting",
+        "Heavy-duty industrial high-bay lighting for manufacturing and logistics warehouses",
+        "Intelligent DALI-2, Zigbee, and 0-10V networked lighting control automation",
+        "Occupancy, vacancy, and ambient daylight harvesting photoelectric sensors",
+        "Perimeter security illumination, high-mast floodlights, and roadway solar fixtures",
+        "Emergency egress lighting, self-testing battery units, and illuminated exit signage",
+        "Electrical distribution boards, MCB/MCCB power protection, and surge suppression",
+        "Energy savings auditing, photometric lux mapping, and power factor correction",
+      ]}
+      subServices={[
+        { name: "Commercial Office LED", description: "Glare-free UGR<19 architectural linear troffers and acoustic suspended LED fixtures." },
+        { name: "Industrial High-Bay", description: "High-lumen IP66-rated fixtures with thermal heat dissipation for high ceilings." },
+        { name: "Perimeter & Facade", description: "Architectural facade dynamic accent washes and heavy-duty perimeter security lights." },
+        { name: "Smart Sensor Automation", description: "Automated PIR/microwave motion triggers and daylight-dependent dimming logic." },
+        { name: "Power Distribution", description: "Sub-panels, cable trays, industrial busducts, and balanced phase distribution." },
+        { name: "Emergency Egress", description: "Central battery systems and 3-hour backup emergency pathways compliant with NBC." },
+      ]}
+      useCases={[
+        "Corporate offices and campuses targeting LEED green building certifications",
+        "High-rack logistics distribution centers needing motion-triggered aisle lighting",
+        "Manufacturing plants requiring rugged, vibration-resistant, and high-CRI lighting",
+        "Commercial retail showrooms requiring color-rendering index (CRI > 90) display illumination",
+        "Educational institutions, sports facilities, and parking structure networks",
+      ]}
+      engagementModel={[
+        { phase: "Photometric Lux Audit", description: "Dialux 3D lighting simulation, lux level mapping, and energy baseline calculation." },
+        { phase: "Electrical Engineering", description: "Load schedule balancing, cable gauge calculations, and control circuit design." },
+        { phase: "Turnkey Installation", description: "Conduit layout, fixture suspension, electrical panel termination, and testing." },
+        { phase: "Maintenance & AMC", description: "Driver replacement warranty, sensor recalibration, and periodic illumination audits." },
+      ]}
+      theme={{
+        bgGradient: "from-[#140e02] via-[#241704] to-[#0a0701]",
+        accentColor: "#fbbf24",
+        accentGradient: "from-amber-300 via-yellow-200 to-amber-400",
+        glowOrb1: "bg-amber-500/12",
+        glowOrb2: "bg-yellow-600/10",
+        cardBg: "bg-[#1e1305]/70",
+        cardBorder: "border-amber-500/20",
+        cardBorderHover: "hover:border-amber-400/60",
+        cardShadowHover: "hover:shadow-[0_0_30px_rgba(251,191,36,0.2)]",
+        badgeBg: "bg-amber-500/15",
+        badgeBorder: "border-amber-500/30",
+        badgeText: "text-amber-300",
+        buttonGradient: "bg-gradient-to-r from-amber-400 to-yellow-400",
+        buttonText: "text-[#140e02]",
+        buttonShadow: "shadow-[0_0_20px_rgba(251,191,36,0.4)]",
+        textHighlight: "text-amber-400",
+        subtextColor: "text-amber-100/75",
+        laserStreak: "via-amber-400/50",
+      }}
+      slides={[
+        {
+          image: "/modern-tech-infrastructure-network.jpg",
+          title: "DALI & Smart PoE Lighting",
+          caption: "Network-powered, low-voltage LED luminaires with automated daylight harvesting."
+        },
+        {
+          image: "/manufacturing-industrial-engineer.jpg",
+          title: "Industrial High-Bay Automation",
+          caption: "Ruggedized motion-sensing lighting fixtures for factory floors and logistics hubs."
+        },
+        {
+          image: "/data-center-infrastructure.jpg",
+          title: "Central BMS Lighting Dashboards",
+          caption: "Unified schedule controls, occupancy analytics, and green building efficiency."
+        }
+      ]}
+    />
   )
 }

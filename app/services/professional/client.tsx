@@ -1,160 +1,81 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { CheckCircle } from "lucide-react"
-
-function useRevealOnScroll() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0")
-            entry.target.classList.remove("opacity-0", "translate-y-8")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-}
+import ServiceDetailTemplate from "@/components/services/ServiceDetailTemplate"
 
 export default function ProfessionalClient() {
-  useRevealOnScroll()
-
   return (
-    <main >
-      <section style={{ backgroundColor: "var(--primary)", color: "white" }} className="section-padding">
-        <div className="section-container">
-          <div className="reveal opacity-0 transition-opacity duration-700">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Professional Services</h1>
-            <p className="text-xl text-brand-on-dark mb-8 max-w-2xl">
-              End-to-end consulting, engineering, project management, commissioning, AMC, and SLA-driven managed services.
-            </p>
-            <Link href="/contact" className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Talk to an Expert
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6" style={{ color: "var(--primary)" }}>
-            Overview
-          </h2>
-          <p className="text-lg text-muted leading-relaxed">
-            Brightnest supports the complete project lifecycle, from requirement analysis and solution engineering to
-            deployment, testing, commissioning, documentation, annual maintenance, and 24×7 infrastructure support.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            What We Deliver
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "IT infrastructure consulting and strategy",
-              "Solution architecture and design",
-              "Project management and governance",
-              "Implementation and deployment services",
-              "Testing, commissioning, and handover",
-              "Documentation and runbooks",
-              "Business continuity planning",
-              "SLA-driven managed services and optimization",
-            ].map((item, idx) => (
-              <div key={idx} className="reveal opacity-0 transition-opacity duration-700 flex gap-3">
-                <CheckCircle size={24} style={{ color: "var(--accent)", flexShrink: 0 }} />
-                <span className="text-muted">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-background">
-        <div className="section-container">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center" style={{ color: "var(--primary)" }}>
-            Service Components
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "Consulting", description: "Strategic IT infrastructure advisory" },
-              {
-                name: "Solution Design",
-                description: "Custom architecture tailored to requirements",
-              },
-              {
-                name: "Project Management",
-                description: "End-to-end project delivery oversight",
-              },
-              { name: "Training", description: "Team skills development and certification" },
-              { name: "Documentation", description: "Runbooks, SOPs, and knowledge base" },
-              { name: "Support", description: "AMC and SLA-backed maintenance" },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 service-card"
-                style={{ transitionDelay: `${idx * 50}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {service.name}
-                </h3>
-                <p className="text-muted text-sm">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="section-container max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--primary)" }}>
-            Our Engagement Model
-          </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { phase: "Discover", description: "Workshops, stakeholder interviews, and current-state assessment" },
-              { phase: "Design", description: "Solution architecture, BOM, and implementation plan" },
-              { phase: "Implement", description: "Project governance, delivery, and cutover" },
-              { phase: "Optimize", description: "Training, documentation, and ongoing advisory" },
-            ].map((model, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 transition-opacity duration-700 p-6 rounded-lg bg-white border border-border"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <h3 className="font-bold text-lg mb-2" style={{ color: "var(--primary)" }}>
-                  {model.phase}
-                </h3>
-                <p className="text-muted text-sm">{model.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding rounded-3xl m-2 sm:m-4 md:m-8 lg:m-12" style={{ backgroundColor: "var(--primary)" }}>
-        <div className="section-container text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">Partner with Our Experts</h2>
-          <p className="text-xl text-brand-on-dark mb-8 max-w-2xl mx-auto">
-            Engage our consultants for architecture reviews, project delivery, or training programs tailored to you.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Speak with Consulting
-          </Link>
-        </div>
-      </section>
-    </main>
+    <ServiceDetailTemplate
+      title="Professional & Managed IT Services"
+      summary="Turnkey consulting, system integration, solution architecture, certified project management, AMC lifecycle support, and 24×7 NOC operations."
+      overview="Brightnest supports the complete technology lifecycle for enterprise infrastructure. From requirement analysis, compliance discovery, and multi-vendor engineering to physical deployment, commissioning, documentation, annual maintenance contracts (AMC), and SLA-driven managed support, our dedicated team takes end-to-end accountability."
+      deliverables={[
+        "IT infrastructure consulting, technology roadmapping, and TCO optimization",
+        "Multi-vendor solution architecture and standards-compliant engineering",
+        "PMP-certified project management, site governance, and risk mitigation",
+        "Commissioning verification, punch-list clearance, and client handover",
+        "As-built documentation, network topology runbooks, and operational SOPs",
+        "Disaster recovery (DR), failover testing, and business continuity architecture",
+        "24×7 proactive NOC infrastructure monitoring and incident ticketing",
+        "Comprehensive Annual Maintenance Contracts (AMC) with guaranteed response times",
+      ]}
+      subServices={[
+        { name: "Strategic Consulting", description: "Audit of current architecture, technology gap analysis, and forward migration planning." },
+        { name: "Solution Architecture", description: "High-level (HLD) and low-level (LLD) designs aligned with ISO, TIA, and NFPA standards." },
+        { name: "Project Governance", description: "Disciplined milestone tracking, vendor coordination, and HSE compliance on-site." },
+        { name: "System Commissioning", description: "Stringent acceptance testing, burn-in verification, and technical handover ceremonies." },
+        { name: "Comprehensive AMC", description: "Preventative hardware servicing, firmware patches, and rapid spares replacement." },
+        { name: "24×7 NOC Managed Support", description: "Round-the-clock telemetry, threshold monitoring, and SLA-backed problem resolution." },
+      ]}
+      useCases={[
+        "Enterprises undergoing multi-site infrastructure consolidation or headquarter migrations",
+        "Public sector and smart city projects requiring rigorous government-grade documentation",
+        "Corporations requiring 24×7 outsourced NOC monitoring with strict 15-minute response SLAs",
+        "Manufacturing and supply chain facilities needing zero unplanned IT downtime",
+        "Healthcare and banking institutions demanding audited regulatory compliance",
+      ]}
+      engagementModel={[
+        { phase: "Discover & Assess", description: "Comprehensive audit of existing infrastructure assets, risks, and stakeholder goals." },
+        { phase: "Architect & Roadmap", description: "Detailed low-level engineering blueprints, BOM specification, and project schedules." },
+        { phase: "Execute & Commission", description: "Disciplined physical rollout, quality assurance testing, and administrative handover." },
+        { phase: "Manage & Optimize", description: "SLA-driven ongoing support, continuous capacity planning, and quarterly review cadences." },
+      ]}
+      theme={{
+        bgGradient: "from-[#02120b] via-[#052115] to-[#010a06]",
+        accentColor: "#34d399",
+        accentGradient: "from-emerald-400 via-teal-300 to-green-200",
+        glowOrb1: "bg-emerald-600/12",
+        glowOrb2: "bg-teal-600/10",
+        cardBg: "bg-[#052116]/70",
+        cardBorder: "border-emerald-500/20",
+        cardBorderHover: "hover:border-emerald-400/60",
+        cardShadowHover: "hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]",
+        badgeBg: "bg-emerald-500/15",
+        badgeBorder: "border-emerald-500/30",
+        badgeText: "text-emerald-300",
+        buttonGradient: "bg-gradient-to-r from-emerald-500 to-teal-400",
+        buttonText: "text-[#02110c]",
+        buttonShadow: "shadow-[0_0_20px_rgba(52,211,153,0.4)]",
+        textHighlight: "text-emerald-400",
+        subtextColor: "text-emerald-100/75",
+        laserStreak: "via-emerald-400/50",
+      }}
+      slides={[
+        {
+          image: "/gcc-enterprise-engineer.jpg",
+          title: "Infrastructure Audits & Consulting",
+          caption: "Comprehensive site surveys, active/passive RF analysis, and capacity planning."
+        },
+        {
+          image: "/female-business-consultant-smiling.jpg",
+          title: "Turnkey Project Management",
+          caption: "Dedicated project managers, milestone-driven execution, and zero-defect handover."
+        },
+        {
+          image: "/professional-man-with-glasses-analyzing-code-on-sc.jpg",
+          title: "Managed IT Services & 24/7 AMC",
+          caption: "Guaranteed SLA response times, proactive network monitoring, and resident engineers."
+        }
+      ]}
+    />
   )
 }
