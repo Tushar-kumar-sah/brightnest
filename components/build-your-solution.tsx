@@ -82,18 +82,18 @@ const services = [
 ];
 
 const ambientParticles = [
-  { left: 6, top: 78, size: "w-1.5 h-1.5", color: "bg-[#fb7185]", duration: 7, delay: 0 },
-  { left: 18, top: 88, size: "w-1 h-1", color: "bg-[#f43f5e]", duration: 9, delay: 1.5 },
-  { left: 32, top: 65, size: "w-2 h-2", color: "bg-[#e11d48]/80", duration: 8, delay: 3 },
-  { left: 46, top: 82, size: "w-1.5 h-1.5", color: "bg-[#fda4af]", duration: 11, delay: 2 },
-  { left: 60, top: 72, size: "w-1 h-1", color: "bg-[#fb7185]", duration: 7.5, delay: 0.5 },
-  { left: 74, top: 86, size: "w-2 h-2", color: "bg-[#f43f5e]", duration: 9.5, delay: 4 },
-  { left: 88, top: 68, size: "w-1 h-1", color: "bg-[#fda4af]", duration: 8.5, delay: 2.5 },
-  { left: 12, top: 40, size: "w-1 h-1", color: "bg-[#fb7185]", duration: 10, delay: 1 },
-  { left: 68, top: 35, size: "w-1.5 h-1.5", color: "bg-[#e11d48]", duration: 9, delay: 3.5 },
-  { left: 38, top: 30, size: "w-1 h-1", color: "bg-[#fda4af]", duration: 8, delay: 5 },
-  { left: 82, top: 22, size: "w-1.5 h-1.5", color: "bg-[#fb7185]", duration: 10.5, delay: 1.8 },
-  { left: 24, top: 26, size: "w-1 h-1", color: "bg-[#f43f5e]", duration: 9.2, delay: 4.2 },
+  { left: 6, top: 78, size: "w-1.5 h-1.5", color: "bg-[#38bdf8]", duration: 7, delay: 0 },
+  { left: 18, top: 88, size: "w-1 h-1", color: "bg-[#c084fc]", duration: 9, delay: 1.5 },
+  { left: 32, top: 65, size: "w-2 h-2", color: "bg-[#6366f1]/80", duration: 8, delay: 3 },
+  { left: 46, top: 82, size: "w-1.5 h-1.5", color: "bg-[#818cf8]", duration: 11, delay: 2 },
+  { left: 60, top: 72, size: "w-1 h-1", color: "bg-[#a855f7]", duration: 7.5, delay: 0.5 },
+  { left: 74, top: 86, size: "w-2 h-2", color: "bg-[#60a5fa]", duration: 9.5, delay: 4 },
+  { left: 88, top: 68, size: "w-1 h-1", color: "bg-[#c084fc]", duration: 8.5, delay: 2.5 },
+  { left: 12, top: 40, size: "w-1 h-1", color: "bg-[#38bdf8]", duration: 10, delay: 1 },
+  { left: 68, top: 35, size: "w-1.5 h-1.5", color: "bg-[#8b5cf6]", duration: 9, delay: 3.5 },
+  { left: 38, top: 30, size: "w-1 h-1", color: "bg-[#818cf8]", duration: 8, delay: 5 },
+  { left: 82, top: 22, size: "w-1.5 h-1.5", color: "bg-[#a855f7]", duration: 10.5, delay: 1.8 },
+  { left: 24, top: 26, size: "w-1 h-1", color: "bg-[#3b82f6]", duration: 9.2, delay: 4.2 },
 ];
 
 const containerVariants = {
@@ -123,15 +123,15 @@ export default function BuildYourSolution() {
   };
 
   return (
-    <section className="relative py-20 lg:py-28 bg-gradient-to-b from-[#140408] via-[#240811] to-[#0d0205] text-white border-b border-white/10 overflow-hidden select-none">
-      {/* Animated Top Border Specular Laser Beam in Ruby Maroon */}
+    <section className="relative py-20 lg:py-28 bg-gradient-to-b from-[#06071b] via-[#0e0c2b] to-[#040514] text-white border-b border-white/10 overflow-hidden select-none">
+      {/* Animated Top Border Specular Laser Beam in Electric Blue & Purple */}
       <motion.div
         animate={{ x: ["-100%", "250%"] }}
         transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-0 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#f43f5e] to-transparent pointer-events-none z-20"
+        className="absolute top-0 left-0 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#818cf8] to-transparent pointer-events-none z-20"
       />
 
-      {/* Deep Maroon & Ruby Ambient Glow Orbs */}
+      {/* Deep Blue & Vivid Purple Ambient Glow Orbs */}
       <motion.div
         animate={{
           x: [0, 60, -40, 0],
@@ -139,7 +139,7 @@ export default function BuildYourSolution() {
           scale: [1, 1.2, 0.95, 1],
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-24 -left-20 w-[550px] h-[550px] bg-gradient-to-br from-[#9f1239]/40 via-[#881337]/25 to-transparent rounded-full blur-[140px] pointer-events-none -z-0"
+        className="absolute -top-24 -left-20 w-[550px] h-[550px] bg-gradient-to-br from-[#3b82f6]/35 via-[#6366f1]/25 to-transparent rounded-full blur-[140px] pointer-events-none -z-0"
       />
 
       <motion.div
@@ -149,7 +149,7 @@ export default function BuildYourSolution() {
           scale: [1, 0.95, 1.2, 1],
         }}
         transition={{ duration: 24, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute -bottom-24 -right-20 w-[600px] h-[600px] bg-gradient-to-tl from-[#e11d48]/30 via-[#9f1239]/20 to-transparent rounded-full blur-[150px] pointer-events-none -z-0"
+        className="absolute -bottom-24 -right-20 w-[600px] h-[600px] bg-gradient-to-tl from-[#a855f7]/35 via-[#8b5cf6]/20 to-transparent rounded-full blur-[150px] pointer-events-none -z-0"
       />
 
       <motion.div
@@ -158,14 +158,14 @@ export default function BuildYourSolution() {
           opacity: [0.15, 0.35, 0.15],
         }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-[#4c0519]/35 via-[#881337]/30 to-[#e11d48]/20 rounded-full blur-[160px] pointer-events-none -z-0"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-[#1e1b4b]/35 via-[#4338ca]/30 to-[#7e22ce]/20 rounded-full blur-[160px] pointer-events-none -z-0"
       />
 
       {/* Cyber Grid Texture with Elliptical Radial Mask */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_60%,transparent_100%)] pointer-events-none -z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(225,29,72,0.22),transparent)] pointer-events-none -z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(129,140,248,0.22),transparent)] pointer-events-none -z-0" />
 
-      {/* Floating Crimson Sparks / Bokeh Particles */}
+      {/* Floating Blue & Purple Sparks / Bokeh Particles */}
       {ambientParticles.map((pt, i) => (
         <motion.div
           key={`p-${i}`}
@@ -181,7 +181,7 @@ export default function BuildYourSolution() {
             delay: pt.delay,
             ease: "easeInOut",
           }}
-          className={`absolute rounded-full pointer-events-none ${pt.size} ${pt.color} blur-[0.5px] shadow-[0_0_8px_#f43f5e]`}
+          className={`absolute rounded-full pointer-events-none ${pt.size} ${pt.color} blur-[0.5px] shadow-[0_0_8px_#818cf8]`}
         />
       ))}
 
@@ -194,8 +194,8 @@ export default function BuildYourSolution() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-[#f43f5e]/40 text-[#fecdd3] text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(244,63,94,0.25)] backdrop-blur-xl">
-              <span className="w-2 h-2 rounded-full bg-[#f43f5e] animate-pulse shadow-[0_0_8px_#f43f5e]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-[#818cf8]/40 text-[#c7d2fe] text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(129,140,248,0.25)] backdrop-blur-xl">
+              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#38bdf8] to-[#c084fc] animate-pulse shadow-[0_0_8px_#a855f7]" />
               <span>Custom Stack</span>
             </div>
             <h2
@@ -203,7 +203,7 @@ export default function BuildYourSolution() {
               className="text-3xl md:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight mb-4"
             >
               Build Your{" "}
-              <span className="bg-gradient-to-r from-[#fda4af] via-[#fb7185] to-[#e11d48] bg-clip-text text-transparent font-medium">
+              <span className="bg-gradient-to-r from-[#60a5fa] via-[#a855f7] to-[#c084fc] bg-clip-text text-transparent font-medium">
                 Solution
               </span>
             </h2>
@@ -234,8 +234,8 @@ export default function BuildYourSolution() {
                 className={`
                   relative cursor-pointer rounded-2xl p-4 md:p-5 transition-all duration-300 group
                   ${isSelected
-                    ? 'bg-gradient-to-br from-[#e11d48]/25 via-[#9f1239]/20 to-white/[0.06] border-2 border-[#f43f5e] backdrop-blur-2xl shadow-[0_0_25px_rgba(244,63,94,0.4),inset_0_1px_2px_rgba(255,255,255,0.3)] scale-[1.02]'
-                    : 'bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.12)] hover:bg-white/[0.08] hover:border-[#fb7185]/50 hover:shadow-[0_15px_35px_rgba(225,29,72,0.25)] hover:-translate-y-1'
+                    ? 'bg-gradient-to-br from-[#3b82f6]/20 via-[#8b5cf6]/20 to-white/[0.06] border-2 border-[#818cf8] backdrop-blur-2xl shadow-[0_0_25px_rgba(129,140,248,0.4),inset_0_1px_2px_rgba(255,255,255,0.3)] scale-[1.02]'
+                    : 'bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.12)] hover:bg-white/[0.08] hover:border-[#818cf8]/50 hover:shadow-[0_15px_35px_rgba(99,102,241,0.25)] hover:-translate-y-1'
                   }
                 `}
                 whileHover={!isSelected ? { scale: 1.03 } : {}}
@@ -246,7 +246,7 @@ export default function BuildYourSolution() {
                   <motion.div
                     animate={{ scale: [1, 1.05, 1], opacity: [0.35, 0.7, 0.35] }}
                     transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#f43f5e] via-[#e11d48] to-[#9f1239] blur-md -z-10 pointer-events-none"
+                    className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#a855f7] blur-md -z-10 pointer-events-none"
                   />
                 )}
 
@@ -258,9 +258,9 @@ export default function BuildYourSolution() {
                       animate={{ scale: 1, opacity: 1, rotate: 0 }}
                       exit={{ scale: 0, opacity: 0, rotate: 45 }}
                       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                      className="absolute top-3 right-3 text-[#fb7185]"
+                      className="absolute top-3 right-3 text-[#818cf8]"
                     >
-                      <CheckCircle2 className="w-5 h-5 fill-[#9f1239] text-[#fecdd3] drop-shadow-[0_0_8px_rgba(244,63,94,0.8)]" />
+                      <CheckCircle2 className="w-5 h-5 fill-[#4338ca] text-[#c7d2fe] drop-shadow-[0_0_8px_rgba(129,140,248,0.8)]" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -268,8 +268,8 @@ export default function BuildYourSolution() {
                 <div className={`
                   w-10 h-10 md:w-11 md:h-11 rounded-xl flex items-center justify-center mb-3 transition-all duration-300
                   ${isSelected
-                    ? 'bg-gradient-to-br from-[#f43f5e] to-[#be123c] text-white shadow-[0_0_15px_rgba(244,63,94,0.6)] scale-110'
-                    : 'bg-white/10 text-[#fda4af] border border-white/10 group-hover:bg-[#e11d48]/20 group-hover:text-white group-hover:scale-110'
+                    ? 'bg-gradient-to-br from-[#3b82f6] via-[#6366f1] to-[#a855f7] text-white shadow-[0_0_15px_rgba(99,102,241,0.6)] scale-110'
+                    : 'bg-white/10 text-[#a5b4fc] border border-white/10 group-hover:bg-[#6366f1]/20 group-hover:text-white group-hover:scale-110'
                   }
                 `}>
                   <Icon className="w-5 h-5" />
@@ -287,7 +287,7 @@ export default function BuildYourSolution() {
         </motion.div>
       </div>
 
-      {/* Floating Summary Bar in Deep Maroon Frosted Glass */}
+      {/* Floating Summary Bar in Deep Indigo-Violet Frosted Glass */}
       <AnimatePresence>
         {selectedServices.length > 0 && (
           <motion.div
@@ -297,15 +297,15 @@ export default function BuildYourSolution() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl"
           >
-            <div className="bg-[#18050c]/90 text-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(225,29,72,0.3)] px-5 py-4 flex items-center justify-between gap-4 border border-[#fb7185]/30 backdrop-blur-2xl">
+            <div className="bg-[#08091f]/90 text-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(99,102,241,0.3)] px-5 py-4 flex items-center justify-between gap-4 border border-[#818cf8]/35 backdrop-blur-2xl">
               <div className="flex items-center gap-3">
-                <div className="bg-[#e11d48]/20 p-2.5 rounded-full flex-shrink-0 border border-[#f43f5e]/40 shadow-[0_0_12px_rgba(244,63,94,0.4)]">
-                  <CheckCircle2 className="w-5 h-5 text-[#fb7185]" />
+                <div className="bg-[#6366f1]/20 p-2.5 rounded-full flex-shrink-0 border border-[#818cf8]/40 shadow-[0_0_12px_rgba(99,102,241,0.4)]">
+                  <CheckCircle2 className="w-5 h-5 text-[#a5b4fc]" />
                 </div>
                 <div className="min-w-0">
                   <h4 className="text-base font-bold leading-tight text-white flex items-center gap-2">
                     <span>{selectedServices.length} {selectedServices.length === 1 ? 'Service' : 'Services'} Selected</span>
-                    <span className="w-2 h-2 rounded-full bg-[#f43f5e] animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-[#818cf8] animate-ping" />
                   </h4>
                   <p className="text-xs text-slate-300 font-light hidden sm:block">
                     Ready to build your custom turnkey enterprise infrastructure
@@ -323,7 +323,7 @@ export default function BuildYourSolution() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-gradient-to-r from-[#e11d48] via-[#f43f5e] to-[#be123c] hover:opacity-95 text-white font-semibold py-2.5 px-5 md:py-3 md:px-6 rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(244,63,94,0.5)] transition-all text-sm md:text-base whitespace-nowrap"
+                      className="bg-gradient-to-r from-[#2563eb] via-[#6366f1] to-[#9333ea] hover:opacity-95 text-white font-semibold py-2.5 px-5 md:py-3 md:px-6 rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all text-sm md:text-base whitespace-nowrap"
                     >
                       Book a Site Survey
                       <ArrowRight className="w-4 h-4" />

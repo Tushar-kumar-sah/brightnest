@@ -219,14 +219,14 @@ export default function HowWeOperate() {
               />
             </div>
 
-            <div className="grid grid-cols-7 gap-3">
+            <div className="grid grid-cols-7 gap-3 items-stretch">
               {steps.map((step, index) => {
                 const Icon = step.icon;
                 return (
                   <motion.div
                     key={step.title}
                     variants={itemVariants}
-                    className="relative flex flex-col items-center text-center group"
+                    className="relative flex flex-col items-center text-center group h-full w-full"
                   >
                     {/* Undulating floating bob animation for the icon */}
                     <motion.div
@@ -239,7 +239,7 @@ export default function HowWeOperate() {
                         ease: "easeInOut",
                         delay: index * 0.35,
                       }}
-                      className="relative z-10 mb-4"
+                      className="relative z-10 mb-4 flex-shrink-0"
                     >
                       {/* Rotating Dashed Accent Ring */}
                       <motion.div
@@ -262,8 +262,8 @@ export default function HowWeOperate() {
                       </span>
                     </motion.div>
 
-                    {/* Content Glass Card Pod */}
-                    <div className="w-full p-4 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.15)] group-hover:border-[#c084fc]/50 group-hover:bg-white/[0.08] group-hover:shadow-[0_15px_35px_rgba(168,85,247,0.25)] group-hover:-translate-y-1 transition-all duration-300 flex flex-col justify-start min-h-[155px]">
+                    {/* Content Glass Card Pod (uniform equal shape and height) */}
+                    <div className="w-full flex-1 flex flex-col justify-start p-4 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.15)] group-hover:border-[#c084fc]/50 group-hover:bg-white/[0.08] group-hover:shadow-[0_15px_35px_rgba(168,85,247,0.25)] group-hover:-translate-y-1 transition-all duration-300">
                       <h3 className="text-xs sm:text-sm font-semibold text-white mb-2 leading-tight group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
                         {step.title}
                       </h3>
@@ -279,16 +279,16 @@ export default function HowWeOperate() {
 
           {/* Tablet: 4-column first row, 3-column second row */}
           <div className="hidden md:block lg:hidden">
-            <div className="grid grid-cols-4 gap-4 mb-4">
+            <div className="grid grid-cols-4 gap-4 mb-4 items-stretch">
               {steps.slice(0, 4).map((step, index) => {
                 const Icon = step.icon;
                 return (
                   <motion.div
                     key={step.title}
                     variants={itemVariants}
-                    className="relative flex flex-col items-center text-center bg-white/[0.05] rounded-2xl p-5 border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(168,85,247,0.3)] hover:border-[#c084fc]/60 hover:-translate-y-1 transition-all duration-300 group"
+                    className="relative flex flex-col items-center text-center bg-white/[0.05] rounded-2xl p-5 border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(168,85,247,0.3)] hover:border-[#c084fc]/60 hover:-translate-y-1 transition-all duration-300 group h-full justify-start"
                   >
-                    <div className="relative mb-4">
+                    <div className="relative mb-4 flex-shrink-0">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c084fc] via-[#9266fd] to-[#6d28d9] flex items-center justify-center text-white shadow-[0_8px_20px_rgba(146,102,253,0.4)]">
                         <Icon className="w-6 h-6" />
                       </div>
@@ -296,7 +296,7 @@ export default function HowWeOperate() {
                         {index + 1}
                       </span>
                     </div>
-                    <h3 className="text-sm font-semibold text-white mb-1 group-hover:text-[#f0abfc] transition-colors">
+                    <h3 className="text-sm font-semibold text-white mb-2 group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
                       {step.title}
                     </h3>
                     <p className="text-xs text-slate-300 font-light leading-relaxed">
@@ -306,16 +306,16 @@ export default function HowWeOperate() {
                 );
               })}
             </div>
-            <div className="grid grid-cols-3 gap-4 max-w-[75%] mx-auto">
+            <div className="grid grid-cols-3 gap-4 max-w-[75%] mx-auto items-stretch">
               {steps.slice(4).map((step, index) => {
                 const Icon = step.icon;
                 return (
                   <motion.div
                     key={step.title}
                     variants={itemVariants}
-                    className="relative flex flex-col items-center text-center bg-white/[0.05] rounded-2xl p-5 border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(168,85,247,0.3)] hover:border-[#c084fc]/60 hover:-translate-y-1 transition-all duration-300 group"
+                    className="relative flex flex-col items-center text-center bg-white/[0.05] rounded-2xl p-5 border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(168,85,247,0.3)] hover:border-[#c084fc]/60 hover:-translate-y-1 transition-all duration-300 group h-full justify-start"
                   >
-                    <div className="relative mb-4">
+                    <div className="relative mb-4 flex-shrink-0">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c084fc] via-[#9266fd] to-[#6d28d9] flex items-center justify-center text-white shadow-[0_8px_20px_rgba(146,102,253,0.4)]">
                         <Icon className="w-6 h-6" />
                       </div>
@@ -323,7 +323,7 @@ export default function HowWeOperate() {
                         {index + 5}
                       </span>
                     </div>
-                    <h3 className="text-sm font-semibold text-white mb-1 group-hover:text-[#f0abfc] transition-colors">
+                    <h3 className="text-sm font-semibold text-white mb-2 group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
                       {step.title}
                     </h3>
                     <p className="text-xs text-slate-300 font-light leading-relaxed">

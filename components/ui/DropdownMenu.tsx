@@ -54,7 +54,7 @@ export function DropdownMenu({
           ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}
         `}
             >
-                <div className="bg-[#070c1e]/40 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25),inset_0_0_20px_rgba(255,255,255,0.02)] border border-white/20 backdrop-blur-2xl backdrop-saturate-150 p-4 min-w-[440px] grid grid-cols-2 gap-2">
+                <div className="bg-[#070c1e]/95 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.25),inset_0_0_20px_rgba(255,255,255,0.02)] border border-white/20 backdrop-blur-2xl backdrop-saturate-150 p-4 min-w-[440px] grid grid-cols-2 gap-2">
                     {items.map((item) => {
                         const Icon = item.icon
                         return (

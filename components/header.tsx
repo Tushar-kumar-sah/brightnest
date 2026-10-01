@@ -81,7 +81,7 @@ export default function Header() {
                   whatWeDoOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2 pointer-events-none"
                 }`}
               >
-                <div className="w-[520px] rounded-2xl bg-[#070c1e]/40 border border-white/20 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25),inset_0_0_20px_rgba(255,255,255,0.02)] backdrop-blur-2xl backdrop-saturate-150 grid grid-cols-2 gap-2 text-left">
+                <div className="w-[520px] rounded-2xl bg-[#070c1e]/95 border border-white/20 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.25),inset_0_0_20px_rgba(255,255,255,0.02)] backdrop-blur-2xl backdrop-saturate-150 grid grid-cols-2 gap-2 text-left">
                   {servicesList.map((item) => {
                     const Icon = item.icon;
                     return (
@@ -140,7 +140,7 @@ export default function Header() {
                   industriesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2 pointer-events-none"
                 }`}
               >
-                <div className="w-[500px] rounded-2xl bg-[#070c1e]/40 border border-white/20 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25),inset_0_0_20px_rgba(255,255,255,0.02)] backdrop-blur-2xl backdrop-saturate-150 grid grid-cols-2 gap-2 text-left">
+                <div className="w-[500px] rounded-2xl bg-[#070c1e]/95 border border-white/20 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.25),inset_0_0_20px_rgba(255,255,255,0.02)] backdrop-blur-2xl backdrop-saturate-150 grid grid-cols-2 gap-2 text-left">
                   {industriesList.map((item) => {
                     const Icon = item.icon;
                     return (

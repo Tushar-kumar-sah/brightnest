@@ -297,9 +297,12 @@ export default function AboutTeaser() {
           </div>
         </div>
 
-        {/* 4 Stats Cards Bar: Frosted Glass with Violet Accent */}
-        <div className="mt-16 pt-12 border-t border-white/10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {/* 4 Stats Metrics Bar: Open-Air Executive Telemetry Strip (No Boxed Cards) */}
+        <div className="mt-20 pt-12 border-t border-white/10 relative">
+          {/* Subtle horizontal laser track glow */}
+          <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-[#9266fd]/60 to-transparent pointer-events-none" />
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-4 sm:gap-x-8 relative">
             {stats.map((stat, idx) => {
               const Icon = stat.icon;
               return (
@@ -309,28 +312,44 @@ export default function AboutTeaser() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.4 }}
-                  className="flex items-start gap-3 sm:gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/15 hover:border-[#9266fd]/50 hover:bg-white/[0.08] backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(146,102,253,0.25),inset_0_1px_1px_rgba(255,255,255,0.25)] hover:-translate-y-1 transition-all duration-300 group"
+                  className="relative px-3 sm:px-6 lg:px-8 py-3 group flex flex-col transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#9266fd]/25 to-[#1ec9f2]/20 border border-[#9266fd]/40 text-[#9da8fb] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:text-white group-hover:border-[#1ec9f2]/50 transition-all duration-300 shadow-[0_0_15px_rgba(146,102,253,0.3)]">
-                    <Icon className="w-5 h-5" />
+                  {/* Ambient hover bloom (soft radial spotlight, NO box borders) */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(146,102,253,0.14),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
+
+                  {/* Top Row: Micro Icon Badge & Status Beacon */}
+                  <div className="flex items-center gap-2.5 mb-3.5">
+                    <div className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/10 text-[#c084fc] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#9266fd]/20 group-hover:border-[#9266fd]/40 group-hover:text-[#f0abfc] transition-all duration-300 shadow-[0_0_10px_rgba(146,102,253,0.2)]">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#9266fd] group-hover:bg-[#1ec9f2] animate-pulse transition-colors" />
                   </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-white via-white to-slate-200 bg-clip-text text-transparent tracking-tight">
-                      <CountUp
-                        to={stat.target}
-                        decimals={stat.decimals}
-                        suffix={stat.suffix}
-                        delay={idx * 0.15}
-                        duration={2.2}
-                      />
-                    </div>
-                    <div className="text-xs sm:text-sm font-semibold text-white/90 mt-0.5 group-hover:text-[#9da8fb] transition-colors">
-                      {stat.label}
-                    </div>
-                    <div className="text-[11px] text-slate-400 font-normal mt-0.5">
-                      {stat.subtext}
-                    </div>
+
+                  {/* Hero Metric Number with Animated Counter */}
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-[#f5d0fe] to-[#c084fc] group-hover:from-white group-hover:via-[#e0e7ff] group-hover:to-[#38d7f8] bg-clip-text text-transparent transition-all duration-300 leading-none">
+                    <CountUp
+                      to={stat.target}
+                      decimals={stat.decimals}
+                      suffix={stat.suffix}
+                      delay={idx * 0.15}
+                      duration={2.2}
+                    />
                   </div>
+
+                  {/* Metric Label */}
+                  <div className="text-sm sm:text-base font-semibold text-white/95 mt-3 group-hover:text-[#f0abfc] transition-colors leading-snug">
+                    {stat.label}
+                  </div>
+
+                  {/* Subtext */}
+                  <div className="text-xs text-slate-400 font-light mt-1 leading-relaxed">
+                    {stat.subtext}
+                  </div>
+
+                  {/* Vertical Hairline Divider for Desktop */}
+                  {idx < stats.length - 1 && (
+                    <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-[1px] bg-gradient-to-b from-transparent via-white/15 to-transparent pointer-events-none" />
+                  )}
                 </motion.div>
               );
             })}

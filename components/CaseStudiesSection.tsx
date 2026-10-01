@@ -122,7 +122,7 @@ export default function CaseStudiesSection() {
           {caseStudies.map((study) => (
             <div
               key={study.title}
-              className="group rounded-3xl overflow-hidden bg-white/[0.05] border border-white/15 backdrop-blur-2xl shadow-[0_20px_45px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#1ec9f2]/60 hover:shadow-[0_25px_60px_rgba(30,201,242,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between"
+              className="group rounded-md overflow-hidden bg-white/[0.05] border border-white/15 backdrop-blur-2xl shadow-[0_20px_45px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#1ec9f2]/60 hover:shadow-[0_25px_60px_rgba(30,201,242,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between"
             >
               {/* Image & Category Pill */}
               <div className="relative h-56 w-full overflow-hidden bg-[#070c1e]">
@@ -134,10 +134,10 @@ export default function CaseStudiesSection() {
                   sizes="(max-width: 768px) 100vw, 400px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/40 to-transparent" />
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#070c1e]/85 backdrop-blur-xl text-xs font-semibold text-[#38d7f8] border border-[#1ec9f2]/40 shadow-sm">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded bg-[#070c1e]/85 backdrop-blur-xl text-xs font-semibold text-[#38d7f8] border border-[#1ec9f2]/40 shadow-sm">
                   {study.category}
                 </div>
-                <div className="absolute bottom-3 left-4 text-xs font-medium text-slate-300 flex items-center gap-1.5 bg-[#070c1e]/70 px-2.5 py-1 rounded-md backdrop-blur-md border border-white/10">
+                <div className="absolute bottom-3 left-4 text-xs font-medium text-slate-300 flex items-center gap-1.5 bg-[#070c1e]/70 px-2.5 py-1 rounded bg-black/60 backdrop-blur-md border border-white/10">
                   Client: {study.client}
                 </div>
               </div>

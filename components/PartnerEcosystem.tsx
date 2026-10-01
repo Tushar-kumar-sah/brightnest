@@ -109,7 +109,7 @@ export default function PartnerEcosystem() {
           <div className="pointer-events-none absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#070c1e] via-[#070c1e]/85 to-transparent z-10" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#070c1e] via-[#070c1e]/85 to-transparent z-10" />
 
-          <div className="flex items-center gap-6 min-w-max animate-[scrollHorizontal_28s_linear_infinite] hover:[animation-play-state:paused]">
+          <div className="flex items-center gap-6 min-w-max animate-[scrollHorizontal_70s_linear_infinite] hover:[animation-play-state:paused]">
             {row1.map((p, idx) => (
               <div
                 key={`r1-${idx}`}
@@ -143,7 +143,7 @@ export default function PartnerEcosystem() {
           <div className="pointer-events-none absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#070c1e] via-[#070c1e]/85 to-transparent z-10" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#070c1e] via-[#070c1e]/85 to-transparent z-10" />
 
-          <div className="flex items-center gap-6 min-w-max animate-[scrollHorizontal_32s_linear_infinite_reverse] hover:[animation-play-state:paused]">
+          <div className="flex items-center gap-6 min-w-max animate-[scrollHorizontal_78s_linear_infinite_reverse] hover:[animation-play-state:paused]">
             {row2.map((p, idx) => (
               <div
                 key={`r2-${idx}`}
