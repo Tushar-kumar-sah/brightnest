@@ -1,84 +1,214 @@
-"use client"
+"use client";
 
-import {
-  Logo,
-  NavLink,
-  NavButton,
-  DropdownMenu,
-  MobileMenu,
-} from "@/components/ui"
-import { getNavigationData } from "@/lib/data"
-import { getIcon } from "@/lib/icons"
-import { Star } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { ChevronDown, Star, ArrowRight, Shield, Cable, Wifi, Phone, Video, Printer, Wrench, Building2, Factory, Server, Hotel, HeartPulse, GraduationCap } from "lucide-react";
+import { Logo, MobileMenu } from "@/components/ui";
+import { getNavigationData } from "@/lib/data";
 
-/**
- * Header Component - Refactored with SOLID Principles
- * 
- * Single Responsibility: Composes UI components, doesn't handle individual logic
- * Open/Closed: Easy to extend with new nav items via config
- * Dependency Inversion: Depends on abstractions (components & config)
- */
+const servicesList = [
+  { name: "Security & Low Voltage", href: "/services/security", icon: Shield, description: "AI CCTV, Access Control, Biometrics" },
+  { name: "Structured Cabling", href: "/services/cabling", icon: Cable, description: "Cat6A/7, Fiber Optic Backbones, Fluke Certified" },
+  { name: "Data Networking", href: "/services/networking", icon: Wifi, description: "Enterprise LAN/WAN, SD-WAN, Wi-Fi 6/7" },
+  { name: "Audio-Visual & Boardrooms", href: "/services/av", icon: Video, description: "Teams/Zoom Rooms, Video Walls, 4K Displays" },
+  { name: "Managed IT Services", href: "/services/professional", icon: Wrench, description: "24/7 SLA Support, AMC, Resident Engineers" },
+  { name: "Telecom & Unified Comm", href: "/services/telecom", icon: Phone, description: "IP-PBX, SIP Trunking, Contact Center Tech" },
+];
+
+const industriesList = [
+  { name: "GCCs & Tech Parks", href: "/#industries", icon: Building2, description: "Enterprise campus infrastructure" },
+  { name: "Manufacturing & Warehouses", href: "/#industries", icon: Factory, description: "Ruggedized industrial Wi-Fi & CCTV" },
+  { name: "Data Centers", href: "/#industries", icon: Server, description: "High-density fiber & rack containment" },
+  { name: "Hospitality & Retail", href: "/#industries", icon: Hotel, description: "Multi-store centralized tech" },
+  { name: "Healthcare & Hospitals", href: "/#industries", icon: HeartPulse, description: "Zero-downtime medical LAN networks" },
+  { name: "Education Campuses", href: "/#industries", icon: GraduationCap, description: "Smart classrooms & auditorium AV" },
+];
+
 export default function Header() {
-  const {
-    navLinks,
-    serviceItems,
-    branding,
-  } = getNavigationData()
-  // Map string icons to components for DropdownMenu
-  const mappedServiceItems = serviceItems.map(item => ({
-    ...item,
-    icon: getIcon(item.icon) || Star
-  }))
+  const [scrolled, setScrolled] = useState(false);
+  const [whatWeDoOpen, setWhatWeDoOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-blue-100/80 bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:py-0">
-        {/* LEFT: Logo */}
-        <div className="flex items-center lg:px-0 lg:py-4">
-          <Logo
-            primaryText={branding.primaryName}
-            secondaryText={branding.secondaryName}
-          />
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#070c1e]/95 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-3 sm:py-3.5"
+          : "bg-transparent border-b border-white/10 py-4 sm:py-5"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
+        {/* LEFT: Logo (White Inverted like Team Computers) */}
+        <div className="flex items-center">
+          <Logo href="/" inverted={true} className="hover:opacity-90 transition-opacity" />
         </div>
 
         {/* Mobile Menu Button - visible on mobile only */}
-        <MobileMenu className="lg:hidden" />
+        <MobileMenu className="lg:hidden" buttonClassName="text-white" />
 
-        {/* RIGHT: Desktop Content - hidden on mobile */}
-        <div className="hidden lg:flex lg:items-center">
-            {/* Navigation */}
-            <nav className="flex items-center lg:py-4">
-              <div className="flex items-center gap-7">
-                {/* Regular Nav Links (before Services) */}
-                {navLinks.slice(0, 2).map((link) => (
-                  <NavLink key={link.href} href={link.href}>
-                    {link.label}
-                  </NavLink>
-                ))}
-
-                {/* Services Dropdown */}
-                <DropdownMenu
-                  label="Services"
-                  items={mappedServiceItems}
-                  viewAllHref="/services"
-                  viewAllLabel="View All Services"
+        {/* RIGHT: Desktop Navigation Links (Team Computers Styling) */}
+        <div className="hidden lg:flex items-center gap-7 xl:gap-8">
+          <nav className="flex items-center gap-6 xl:gap-7 text-sm font-medium text-white">
+            {/* 1. What We Do Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setWhatWeDoOpen(true)}
+              onMouseLeave={() => setWhatWeDoOpen(false)}
+            >
+              <button
+                type="button"
+                className="flex items-center gap-1.5 py-2 text-white hover:text-[#1ec9f2] transition-colors focus:outline-none"
+              >
+                <span>What We Do</span>
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${whatWeDoOpen ? "rotate-180" : ""}`}
                 />
+              </button>
 
-                {/* Regular Nav Links (after Services) */}
-                {navLinks.slice(2).map((link) => (
-                  <NavLink key={link.href} href={link.href}>
-                    {link.label}
-                  </NavLink>
-                ))}
-
-                {/* CTA Button */}
-                <NavButton href="/contact" className="ml-5 rounded-lg border border-brand-blue bg-white px-4 py-2 text-brand-blue shadow-none hover:bg-brand-blue hover:text-white">
-                  Book a Site Survey
-                </NavButton>
+              {/* What We Do Dropdown Menu */}
+              <div
+                className={`absolute top-full -left-20 pt-3 transition-all duration-200 ${
+                  whatWeDoOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2 pointer-events-none"
+                }`}
+              >
+                <div className="w-[520px] rounded-2xl bg-[#0b132b]/95 border border-white/15 p-4 shadow-2xl backdrop-blur-xl grid grid-cols-2 gap-2 text-left">
+                  {servicesList.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/10 transition-colors group"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#1ec9f2]/15 border border-[#1ec9f2]/30 flex items-center justify-center text-[#1ec9f2] flex-shrink-0 group-hover:scale-105 transition-transform mt-0.5">
+                          <Icon size={16} />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-white group-hover:text-[#1ec9f2] transition-colors">
+                            {item.name}
+                          </div>
+                          <div className="text-[11px] text-slate-400 leading-snug mt-0.5">
+                            {item.description}
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                  <div className="col-span-2 pt-2 border-t border-white/10 text-center">
+                    <Link
+                      href="/services"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1ec9f2] hover:underline"
+                    >
+                      <span>View All Services</span>
+                      <ArrowRight size={12} />
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </nav>
+            </div>
+
+            {/* 2. Industries Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIndustriesOpen(true)}
+              onMouseLeave={() => setIndustriesOpen(false)}
+            >
+              <button
+                type="button"
+                className="flex items-center gap-1.5 py-2 text-white hover:text-[#1ec9f2] transition-colors focus:outline-none"
+              >
+                <span>Industries</span>
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {/* Industries Dropdown Menu */}
+              <div
+                className={`absolute top-full -left-20 pt-3 transition-all duration-200 ${
+                  industriesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2 pointer-events-none"
+                }`}
+              >
+                <div className="w-[500px] rounded-2xl bg-[#0b132b]/95 border border-white/15 p-4 shadow-2xl backdrop-blur-xl grid grid-cols-2 gap-2 text-left">
+                  {industriesList.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/10 transition-colors group"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-[#0db16a]/15 border border-[#0db16a]/30 flex items-center justify-center text-[#0db16a] flex-shrink-0 group-hover:scale-105 transition-transform mt-0.5">
+                          <Icon size={16} />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-white group-hover:text-[#1ec9f2] transition-colors">
+                            {item.name}
+                          </div>
+                          <div className="text-[11px] text-slate-400 leading-snug mt-0.5">
+                            {item.description}
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* 3. Who We Are */}
+            <Link
+              href="/about"
+              className="py-2 text-white hover:text-[#1ec9f2] transition-colors"
+            >
+              Who We Are
+            </Link>
+
+            {/* 4. Careers */}
+            <Link
+              href="/careers"
+              className="py-2 text-white hover:text-[#1ec9f2] transition-colors"
+            >
+              Careers
+            </Link>
+
+            {/* 5. Case Studies */}
+            <Link
+              href="/case-studies"
+              className="py-2 text-white hover:text-[#1ec9f2] transition-colors"
+            >
+              Case Studies
+            </Link>
+
+            {/* 6. Contact Us */}
+            <Link
+              href="/contact"
+              className="py-2 text-white hover:text-[#1ec9f2] transition-colors"
+            >
+              Contact Us
+            </Link>
+          </nav>
+
+          {/* CTA Button: Team Computers Cyan Button */}
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-bold text-[#070c1e] bg-[#1ec9f2] hover:bg-[#38d7f8] shadow-[0_0_15px_rgba(30,201,242,0.4)] hover:shadow-[0_0_25px_rgba(30,201,242,0.6)] hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Book a Site Survey
+          </Link>
         </div>
       </div>
     </header>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Montserrat, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Header from "@/components/header"
@@ -8,7 +8,11 @@ import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scroll-to-top"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 
-const geist = Geist({ subsets: ["latin"] })
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-montserrat",
+})
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -109,7 +113,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${geist.className} antialiased`} suppressHydrationWarning>
+      <body className={`${montserrat.className} ${montserrat.variable} antialiased`} suppressHydrationWarning>
         <GoogleAnalytics />
         <StructuredData data={organizationSchema} id="org-schema" />
         <StructuredData data={localBusinessSchema} id="local-schema" />

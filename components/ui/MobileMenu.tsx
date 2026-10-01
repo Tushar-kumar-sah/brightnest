@@ -9,9 +9,10 @@ import { getIcon } from "@/lib/icons"
 
 interface MobileMenuProps {
     className?: string
+    buttonClassName?: string
 }
 
-export function MobileMenu({ className = "" }: MobileMenuProps) {
+export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuProps) {
     const { navLinks, serviceItems, contactInfo } = getNavigationData()
     const [isOpen, setIsOpen] = useState(false)
     const [servicesOpen, setServicesOpen] = useState(false)
@@ -42,11 +43,11 @@ export function MobileMenu({ className = "" }: MobileMenuProps) {
             {/* Hamburger Button */}
             <button
                 onClick={() => setIsOpen(true)}
-                className="p-2.5 rounded-lg hover:bg-gray-100 transition-colors"
+                className={`p-2.5 rounded-xl hover:bg-white/10 transition-colors ${buttonClassName}`}
                 aria-label="Open mobile menu"
                 aria-expanded={isOpen}
             >
-                <Menu size={24} className="text-gray-800" />
+                <Menu size={24} className="text-white" />
             </button>
 
             {/* Overlay + Drawer */}

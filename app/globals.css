@@ -4,41 +4,46 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --navy-dark: #071b3d;
-  --brand-blue: #176fe5;
-  --brand-cyan: #08b8c8;
-  --brand-violet: #8c9ee8;
-  --brand-soft: #eef8ff;
-  --brand-tint: #dff7fa;
-  --brand-border: #cce9f5;
-  --brand-on-dark: #d9f4ff;
-  --brand-muted: #a9d5eb;
-  --brand-gradient: linear-gradient(135deg, #8c9ee8 0%, #08b8c8 48%, #176fe5 100%);
-  --brand-gradient-dark: linear-gradient(135deg, #050b18 0%, #071b3d 42%, #0b3f8f 100%);
-  --background: #f8fcff;
+  --navy-dark: #0b132b;
+  --navy-deep: #070c1e;
+  --navy-card: #111a33;
+  --brand-blue: #0067b8;
+  --brand-cyan: #1ec9f2;
+  --brand-emerald: #0db16a;
+  --brand-violet: #9266fd;
+  --brand-lavender: #9da8fb;
+  --brand-soft: #f0f9ff;
+  --brand-tint: #e0f7fe;
+  --brand-border: #bae6fd;
+  --brand-on-dark: #e0f7fe;
+  --brand-muted: #7dd3fc;
+  --brand-gradient: linear-gradient(135deg, #1ec9f2 0%, #0067b8 50%, #9266fd 100%);
+  --brand-gradient-cyan-green: linear-gradient(135deg, #1ec9f2 0%, #0db16a 100%);
+  --brand-gradient-dark: linear-gradient(135deg, #070c1e 0%, #0b132b 50%, #111a33 100%);
+  --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #0b3f8f;
+  --primary: #0067b8;
   --primary-foreground: #ffffff;
-  --secondary: #2e2e2e;
+  --secondary: #0b132b;
   --secondary-foreground: #ffffff;
   --muted: var(--brand-soft);
-  --muted-foreground: #52657a;
+  --muted-foreground: #64748b;
   --accent: var(--brand-cyan);
-  --accent-foreground: #071b3d;
+  --accent-foreground: #0b132b;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: var(--brand-border);
-  --input: #f3faff;
+  --border: #e2e8f0;
+  --input: #f8fafc;
   --ring: oklch(0.708 0 0);
-  --chart-1: #08b8c8;
-  --chart-2: #176fe5;
-  --chart-3: #0b3f8f;
-  --chart-4: #7568c9;
-  --chart-5: #38d7e2;
+  --chart-1: #1ec9f2;
+  --chart-2: #0067b8;
+  --chart-3: #0db16a;
+  --chart-4: #9266fd;
+  --chart-5: #38bdf8;
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --accent-foreground: var(--navy-dark);
@@ -89,7 +94,7 @@
 
 @theme inline {
   /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
-  --font-sans: "Inter", sans-serif;
+  --font-sans: var(--font-montserrat), "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Geist Mono", monospace;
   --color-background: var(--background);
   --color-navy-dark: var(--navy-dark);
@@ -119,12 +124,16 @@
   --color-chart-5: var(--chart-5);
   --color-brand-blue: var(--brand-blue);
   --color-brand-cyan: var(--brand-cyan);
+  --color-brand-emerald: var(--brand-emerald);
   --color-brand-violet: var(--brand-violet);
+  --color-brand-lavender: var(--brand-lavender);
   --color-brand-soft: var(--brand-soft);
   --color-brand-tint: var(--brand-tint);
   --color-brand-border: var(--brand-border);
   --color-brand-on-dark: var(--brand-on-dark);
   --color-brand-muted: var(--brand-muted);
+  --color-navy-card: var(--navy-card);
+  --color-navy-deep: var(--navy-deep);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -165,7 +174,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply font-bold text-balance;
+    @apply text-balance font-sans;
   }
 }
 

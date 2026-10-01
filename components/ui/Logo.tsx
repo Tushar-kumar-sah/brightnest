@@ -5,6 +5,7 @@ interface LogoProps {
     secondaryColor?: string
     href?: string
     className?: string
+    inverted?: boolean
 }
 
 /**
@@ -14,6 +15,7 @@ interface LogoProps {
 export function Logo({
     href = "/",
     className = "",
+    inverted = false,
 }: LogoProps) {
     return (
         <a href={href} className={`flex items-center ${className}`}>
@@ -24,7 +26,9 @@ export function Logo({
                 alt="Brightnest Edutainment Logo"
                 width={1024}
                 height={256}
-                className="h-auto w-[154px] object-contain sm:w-[230px] lg:w-[306px]"
+                className={`h-auto w-[140px] sm:w-[170px] lg:w-[200px] object-contain transition-all ${
+                    inverted ? "brightness-0 invert" : ""
+                }`}
                 fetchPriority="high"
             />
         </a>

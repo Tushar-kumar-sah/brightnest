@@ -47,10 +47,10 @@ export default function Footer() {
             </div>
             <Link
               href={footerCTA.buttonHref}
-              className="inline-flex items-center gap-1.5 px-4 sm:px-6 py-2 sm:py-3 bg-white text-primary text-xs sm:text-sm font-semibold rounded-lg sm:rounded-xl hover:bg-gray-100 transition-all hover:shadow-lg group"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1ec9f2] text-[#070c1e] text-xs sm:text-sm font-bold rounded-xl hover:bg-[#38d7f8] shadow-[0_0_15px_rgba(30,201,242,0.3)] hover:-translate-y-0.5 transition-all group"
             >
-              {footerCTA.buttonText}
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform sm:size-[18px]" />
+              <span>{footerCTA.buttonText}</span>
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform sm:size-[16px]" />
             </Link>
           </div>
 
