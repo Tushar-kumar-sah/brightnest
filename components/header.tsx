@@ -81,33 +81,33 @@ export default function Header() {
                   whatWeDoOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2 pointer-events-none"
                 }`}
               >
-                <div className="w-[520px] rounded-2xl bg-[#0b132b]/95 border border-white/15 p-4 shadow-2xl backdrop-blur-xl grid grid-cols-2 gap-2 text-left">
+                <div className="w-[520px] rounded-2xl bg-[#070c1e]/40 border border-white/20 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25),inset_0_0_20px_rgba(255,255,255,0.02)] backdrop-blur-2xl backdrop-saturate-150 grid grid-cols-2 gap-2 text-left">
                   {servicesList.map((item) => {
                     const Icon = item.icon;
                     return (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/10 transition-colors group"
+                        className="flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-white/15 hover:bg-white/10 transition-all duration-200 group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-[#1ec9f2]/15 border border-[#1ec9f2]/30 flex items-center justify-center text-[#1ec9f2] flex-shrink-0 group-hover:scale-105 transition-transform mt-0.5">
+                        <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-[#1ec9f2] flex-shrink-0 group-hover:scale-105 group-hover:bg-[#1ec9f2]/20 group-hover:border-[#1ec9f2]/40 transition-all mt-0.5">
                           <Icon size={16} />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-white group-hover:text-[#1ec9f2] transition-colors">
+                          <div className="text-xs font-semibold text-white group-hover:text-[#1ec9f2] transition-colors">
                             {item.name}
                           </div>
-                          <div className="text-[11px] text-slate-400 leading-snug mt-0.5">
+                          <div className="text-[11px] text-slate-300/80 leading-snug mt-0.5">
                             {item.description}
                           </div>
                         </div>
                       </Link>
                     );
                   })}
-                  <div className="col-span-2 pt-2 border-t border-white/10 text-center">
+                  <div className="col-span-2 pt-2.5 mt-1 border-t border-white/15 text-center">
                     <Link
                       href="/services"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1ec9f2] hover:underline"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1ec9f2] hover:text-[#38d7f8] hover:underline"
                     >
                       <span>View All Services</span>
                       <ArrowRight size={12} />
@@ -140,23 +140,23 @@ export default function Header() {
                   industriesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2 pointer-events-none"
                 }`}
               >
-                <div className="w-[500px] rounded-2xl bg-[#0b132b]/95 border border-white/15 p-4 shadow-2xl backdrop-blur-xl grid grid-cols-2 gap-2 text-left">
+                <div className="w-[500px] rounded-2xl bg-[#070c1e]/40 border border-white/20 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25),inset_0_0_20px_rgba(255,255,255,0.02)] backdrop-blur-2xl backdrop-saturate-150 grid grid-cols-2 gap-2 text-left">
                   {industriesList.map((item) => {
                     const Icon = item.icon;
                     return (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/10 transition-colors group"
+                        className="flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-white/15 hover:bg-white/10 transition-all duration-200 group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-[#0db16a]/15 border border-[#0db16a]/30 flex items-center justify-center text-[#0db16a] flex-shrink-0 group-hover:scale-105 transition-transform mt-0.5">
+                        <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-[#0db16a] flex-shrink-0 group-hover:scale-105 group-hover:bg-[#0db16a]/20 group-hover:border-[#0db16a]/40 transition-all mt-0.5">
                           <Icon size={16} />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-white group-hover:text-[#1ec9f2] transition-colors">
+                          <div className="text-xs font-semibold text-white group-hover:text-[#1ec9f2] transition-colors">
                             {item.name}
                           </div>
-                          <div className="text-[11px] text-slate-400 leading-snug mt-0.5">
+                          <div className="text-[11px] text-slate-300/80 leading-snug mt-0.5">
                             {item.description}
                           </div>
                         </div>

@@ -70,17 +70,17 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-50 shadow-2xl overflow-y-auto"
+                            className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#070c1e]/90 backdrop-blur-2xl text-white border-l border-white/15 z-50 shadow-2xl overflow-y-auto"
                         >
                             {/* Header */}
-                            <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                                <span className="text-xl font-bold text-navy-dark">Menu</span>
+                            <div className="flex items-center justify-between p-4 border-b border-white/10">
+                                <span className="text-xl font-bold text-white">Menu</span>
                                 <button
                                     onClick={() => setIsOpen(false)}
-                                    className="p-2.5 rounded-lg hover:bg-gray-100 transition-colors"
+                                    className="p-2.5 rounded-lg hover:bg-white/10 transition-colors text-white"
                                     aria-label="Close mobile menu"
                                 >
-                                    <X size={24} className="text-gray-800" />
+                                    <X size={24} />
                                 </button>
                             </div>
 
@@ -93,7 +93,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                             <Link
                                                 href={link.href}
                                                 onClick={() => setIsOpen(false)}
-                                                className="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-gray-100 transition-colors"
+                                                className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
                                             >
                                                 {link.label}
                                             </Link>
@@ -104,7 +104,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                     <li>
                                         <button
                                             onClick={() => setServicesOpen(!servicesOpen)}
-                                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-gray-100 transition-colors"
+                                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
                                         >
                                             <span>Services</span>
                                             <ChevronDown
@@ -120,7 +120,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                     animate={{ height: "auto", opacity: 1 }}
                                                     exit={{ height: 0, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}
-                                                    className="overflow-hidden bg-gray-50 rounded-lg ml-2 mt-1"
+                                                    className="overflow-hidden bg-white/[0.06] border border-white/10 backdrop-blur-md rounded-xl ml-2 mt-1"
                                                 >
                                                     {serviceItems.map((service) => {
                                                         const Icon = getIcon(service.icon as unknown as string)
@@ -129,11 +129,11 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                                 <Link
                                                                     href={service.href}
                                                                     onClick={() => setIsOpen(false)}
-                                                                    className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors"
+                                                                    className="block px-4 py-3 text-sm text-slate-300 hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
                                                                 >
                                                                     <div className="flex items-center gap-3">
                                                                         {Icon && (
-                                                                            <Icon size={18} className="text-gray-500" />
+                                                                            <Icon size={18} className="text-[#1ec9f2]" />
                                                                         )}
                                                                         <span>{service.name}</span>
                                                                     </div>
@@ -145,7 +145,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                         <Link
                                                             href="/services"
                                                             onClick={() => setIsOpen(false)}
-                                                            className="block px-4 py-3 text-sm font-medium text-primary hover:bg-gray-100 transition-colors border-t border-gray-200"
+                                                            className="block px-4 py-3 text-sm font-semibold text-[#1ec9f2] hover:bg-white/10 transition-colors border-t border-white/10"
                                                         >
                                                             View All Services →
                                                         </Link>
@@ -161,7 +161,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                             <Link
                                                 href={link.href}
                                                 onClick={() => setIsOpen(false)}
-                                                className="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-gray-100 transition-colors"
+                                                className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
                                             >
                                                 {link.label}
                                             </Link>
@@ -174,24 +174,24 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                     <Link
                                         href="/contact"
                                         onClick={() => setIsOpen(false)}
-                                        className="block w-full text-center px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:opacity-90 transition-colors"
+                                        className="block w-full text-center px-6 py-3 bg-[#1ec9f2] text-[#070c1e] font-bold rounded-xl hover:bg-[#38d7f8] shadow-[0_0_15px_rgba(30,201,242,0.4)] transition-all"
                                     >
                                         Book a Site Survey
                                     </Link>
                                 </div>
 
                                 {/* Contact Info */}
-                                <div className="mt-8 pt-6 border-t border-gray-200 space-y-4">
+                                <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
                                     <a
                                         href={`tel:${contactInfo.phone}`}
-                                        className="flex items-center gap-3 text-gray-600 hover:text-primary transition-colors"
+                                        className="flex items-center gap-3 text-slate-300 hover:text-[#1ec9f2] transition-colors"
                                     >
                                         <Phone size={18} />
                                         <span className="font-medium">{contactInfo.phone}</span>
                                     </a>
                                     <a
                                         href={`mailto:${contactInfo.email}`}
-                                        className="flex items-center gap-3 text-gray-600 hover:text-primary transition-colors"
+                                        className="flex items-center gap-3 text-slate-300 hover:text-[#1ec9f2] transition-colors"
                                     >
                                         <Mail size={18} />
                                         <span className="font-medium">{contactInfo.email}</span>
