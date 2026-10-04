@@ -44,15 +44,15 @@ export default function Footer() {
           {/* Top section with CTA - hidden on mobile view */}
           <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6 pb-4 sm:pb-8 md:pb-12 border-b border-white/10 text-center sm:text-left">
             <div>
-              <h3 className="text-lg sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">{footerCTA.title}</h3>
-              <p className="text-brand-muted text-xs sm:text-base">{footerCTA.subtitle}</p>
+              <h3 className="text-lg sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-white">{footerCTA.title}</h3>
+              <p className="text-white text-xs sm:text-base font-light">{footerCTA.subtitle}</p>
             </div>
             <Link
               href={footerCTA.buttonHref}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1ec9f2] text-[#070c1e] text-xs sm:text-sm font-bold rounded-lg hover:bg-[#38d7f8] shadow-[0_0_15px_rgba(30,201,242,0.3)] hover:-translate-y-0.5 transition-all group"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white text-xs sm:text-sm font-bold rounded-lg shadow-[0_0_15px_rgba(30,201,242,0.3)] hover:-translate-y-0.5 transition-all group"
             >
-              <span>{footerCTA.buttonText}</span>
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform sm:size-[16px]" />
+              <span className="text-white">{footerCTA.buttonText}</span>
+              <ArrowRight size={14} className="text-white group-hover:translate-x-1 transition-transform sm:size-[16px]" />
             </Link>
           </div>
 
@@ -71,7 +71,7 @@ export default function Footer() {
                   loading="eager"
                 />
               </div>
-              <p className="text-brand-muted text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6">
+              <p className="text-white text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6 font-light">
                 {companyInfo.tagline}
               </p>
               {/* Social Links */}
@@ -166,8 +166,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10">
           <div className="section-container py-3 sm:py-4 md:py-6 pb-20 md:pb-6">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-[11px] sm:text-sm text-brand-muted text-center sm:text-left">
-              <p>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-[11px] sm:text-sm text-white text-center sm:text-left">
+              <p className="text-white">
                 © {new Date().getFullYear()} {companyInfo.legalName}. All rights reserved.
               </p>
               <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-6">
@@ -175,18 +175,18 @@ export default function Footer() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="hover:text-white transition-colors"
+                    className="text-white hover:underline transition-colors"
                   >
                     {link.label}
                   </Link>
                 ))}
-                <span className="text-brand-on-dark">
+                <span className="text-white">
                   {creditInfo.text}{" "}
                   <a
                     href={creditInfo.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors font-medium"
+                    className="text-white underline hover:opacity-80 transition-opacity font-medium"
                   >
                     {creditInfo.name}
                   </a>

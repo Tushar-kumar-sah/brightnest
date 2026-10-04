@@ -74,10 +74,7 @@ export default function About() {
                 {hero.badge}
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
-                {hero.title}{" "}
-                <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-200 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(52,211,153,0.35)]">
-                  {hero.titleHighlight}
-                </span>
+                {hero.title} {hero.titleHighlight}
               </h1>
               <p className="text-base sm:text-lg text-emerald-100/75 leading-relaxed mb-8">
                 {hero.description}

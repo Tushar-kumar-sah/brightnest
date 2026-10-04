@@ -85,20 +85,17 @@ export default function TestimonialsSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-[#22d3ee]/40 text-[#67e8f9] text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 shadow-[0_0_20px_rgba(34,211,238,0.25)] backdrop-blur-xl">
-            <span className="w-2 h-2 rounded-full bg-[#22d3ee] animate-pulse shadow-[0_0_8px_#22d3ee]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/20 text-white text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 shadow-[0_0_20px_rgba(255,255,255,0.1)] backdrop-blur-xl">
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_8px_white]" />
             <span>Customer Endorsements</span>
           </div>
           <h2
             style={{ fontWeight: 300 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight"
           >
-            Trusted by{" "}
-            <span className="bg-gradient-to-r from-[#67e8f9] via-[#22d3ee] to-[#38bdf8] bg-clip-text text-transparent font-medium">
-              Technology Leaders
-            </span>
+            Trusted by Technology Leaders
           </h2>
-          <p className="mt-2.5 sm:mt-3 text-slate-300 text-xs sm:text-sm md:text-base font-light leading-relaxed">
+          <p className="mt-2.5 sm:mt-3 text-white text-xs sm:text-sm md:text-base font-light leading-relaxed">
             What IT leaders and infrastructure heads say about our turnkey deployment and proactive SLA support.
           </p>
         </div>
@@ -107,10 +104,10 @@ export default function TestimonialsSection() {
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="p-5 sm:p-7 lg:p-8 rounded-xl bg-white/[0.04] border border-white/15 backdrop-blur-2xl shadow-[0_20px_45px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#22d3ee]/60 hover:bg-white/[0.08] hover:shadow-[0_25px_60px_rgba(34,211,238,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+              className="p-5 sm:p-7 lg:p-8 rounded-xl bg-white/[0.04] border border-white/15 backdrop-blur-2xl shadow-[0_20px_45px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-white/30 hover:bg-white/[0.08] hover:shadow-[0_25px_60px_rgba(255,255,255,0.06),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
             >
               {/* Corner Ambient Flare */}
-              <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gradient-to-br from-[#22d3ee]/15 to-transparent blur-xl pointer-events-none group-hover:scale-150 transition-transform duration-700" />
+              <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-white/5 blur-xl pointer-events-none group-hover:scale-150 transition-transform duration-700" />
 
               <div>
                 {/* 5 Golden Amber Stars */}
@@ -120,15 +117,15 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
 
-                <Quote className="w-8 h-8 text-[#22d3ee]/40 group-hover:text-[#22d3ee]/80 transition-colors mb-3" />
+                <Quote className="w-8 h-8 text-white/30 group-hover:text-white/60 transition-colors mb-3" />
 
-                <p className="text-slate-200 text-sm sm:text-base leading-relaxed italic font-light group-hover:text-white transition-colors">
+                <p className="text-white text-sm sm:text-base leading-relaxed italic font-light">
                   &ldquo;{t.content}&rdquo;
                 </p>
               </div>
 
               <div className="flex items-center gap-3.5 pt-5 mt-6 border-t border-white/10">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#22d3ee]/60 flex-shrink-0 bg-slate-800 shadow-[0_0_12px_rgba(34,211,238,0.35)] group-hover:border-[#22d3ee] transition-colors">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20 flex-shrink-0 bg-slate-800 shadow-[0_0_12px_rgba(255,255,255,0.1)] group-hover:border-white/50 transition-colors">
                   <Image
                     src={t.image}
                     alt={t.name}
@@ -138,9 +135,9 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-white group-hover:text-[#67e8f9] transition-colors">{t.name}</div>
-                  <div className="text-xs text-slate-400 font-light">{t.title}</div>
-                  <div className="text-[11px] font-semibold text-[#22d3ee] tracking-wide mt-0.5">{t.company}</div>
+                  <div className="text-sm font-semibold text-white group-hover:text-white transition-colors">{t.name}</div>
+                  <div className="text-xs text-white/80 font-light">{t.title}</div>
+                  <div className="text-[11px] font-semibold text-white/90 tracking-wide mt-0.5">{t.company}</div>
                 </div>
               </div>
             </div>

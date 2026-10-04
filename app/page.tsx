@@ -57,10 +57,10 @@ export default function Home() {
             href="mailto:info@brightnestedu.com"
             className="flex flex-col items-center justify-center gap-1 px-3 py-0.5 transition-transform active:scale-95"
           >
-            <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/[0.08] text-[#38d7f8] border border-white/15 hover:border-[#1ec9f2] transition-colors">
-              <Mail size={17} strokeWidth={2} />
+            <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/[0.08] text-white border border-white/15 hover:border-white/30 transition-colors">
+              <Mail size={17} strokeWidth={2} className="text-white" />
             </div>
-            <span className="text-[10px] font-medium text-slate-300">Email</span>
+            <span className="text-[10px] font-medium text-white">Email</span>
           </a>
 
           {/* Appointment CTA (Center Highlight) */}
@@ -69,9 +69,9 @@ export default function Home() {
             className="flex flex-col items-center justify-center gap-1 px-3 transition-transform active:scale-95 -mt-4"
           >
             <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#1ec9f2] via-[#0067b8] to-[#9266fd] text-white shadow-[0_0_20px_rgba(30,201,242,0.6)] border-2 border-white/30">
-              <Calendar size={20} strokeWidth={2.2} />
+              <Calendar size={20} strokeWidth={2.2} className="text-white" />
             </div>
-            <span className="text-[10px] font-bold text-[#38d7f8]">Site Survey</span>
+            <span className="text-[10px] font-bold text-white">Site Survey</span>
           </a>
 
           {/* WhatsApp */}
@@ -81,10 +81,10 @@ export default function Home() {
             rel="noopener noreferrer"
             className="flex flex-col items-center justify-center gap-1 px-3 py-0.5 transition-transform active:scale-95"
           >
-            <div className="w-9 h-9 flex items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366] border border-[#25D366]/30 transition-colors shadow-[0_0_10px_rgba(37,211,102,0.2)]">
-              <MessageCircle size={17} strokeWidth={2} />
+            <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/[0.08] text-white border border-white/15 transition-colors">
+              <MessageCircle size={17} strokeWidth={2} className="text-white" />
             </div>
-            <span className="text-[10px] font-medium text-slate-300">WhatsApp</span>
+            <span className="text-[10px] font-medium text-white">WhatsApp</span>
           </a>
         </div>
       </nav>

@@ -109,9 +109,7 @@ export default function ServiceDetailTemplate({
                 Enterprise Service Discipline
               </div>
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">
-                <span className={`bg-gradient-to-r ${theme.accentGradient} bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,255,255,0.25)]`}>
-                  {title}
-                </span>
+                {title}
               </h1>
               <p className={`text-sm sm:text-base lg:text-lg ${theme.subtextColor} leading-relaxed mb-6 sm:mb-8 font-light`}>
                 {summary}

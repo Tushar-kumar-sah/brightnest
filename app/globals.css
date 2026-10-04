@@ -15,8 +15,8 @@
   --brand-soft: #f0f9ff;
   --brand-tint: #e0f7fe;
   --brand-border: #bae6fd;
-  --brand-on-dark: #e0f7fe;
-  --brand-muted: #7dd3fc;
+  --brand-on-dark: #ffffff;
+  --brand-muted: #ffffff;
   --brand-gradient: linear-gradient(135deg, #1ec9f2 0%, #0067b8 50%, #9266fd 100%);
   --brand-gradient-cyan-green: linear-gradient(135deg, #1ec9f2 0%, #0db16a 100%);
   --brand-gradient-dark: linear-gradient(135deg, #070c1e 0%, #0b132b 50%, #111a33 100%);
@@ -595,6 +595,55 @@ svg {
 
 .bg-navy-dark {
   background-color: var(--navy-dark);
+}
+
+/* ==========================================================================
+   Hero Slider Responsive Object Positioning
+   Prevents people and focal elements from being cut off on mobile & tablet
+   ========================================================================== */
+.hero-img-networking {
+  object-position: 50% center;
+}
+@media (min-width: 1024px) {
+  .hero-img-networking {
+    object-position: center center;
+  }
+}
+
+.hero-img-security {
+  object-position: 70% center;
+}
+@media (min-width: 1024px) {
+  .hero-img-security {
+    object-position: right center;
+  }
+}
+
+.hero-img-av {
+  object-position: 72% center;
+}
+@media (min-width: 1024px) {
+  .hero-img-av {
+    object-position: right center;
+  }
+}
+
+.hero-img-cabling {
+  object-position: 50% center;
+}
+@media (min-width: 1024px) {
+  .hero-img-cabling {
+    object-position: center center;
+  }
+}
+
+.hero-img-managed {
+  object-position: 78% center;
+}
+@media (min-width: 1024px) {
+  .hero-img-managed {
+    object-position: right center;
+  }
 }
 
 /* Reduced motion support */

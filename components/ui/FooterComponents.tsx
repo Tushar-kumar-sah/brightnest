@@ -27,10 +27,10 @@ export function FooterLink({
     return (
         <Link
             href={href}
-            className={`text-brand-muted hover:text-white transition-colors text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 ${className}`}
+            className={`text-white hover:text-white/80 transition-colors text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 ${className}`}
             {...linkProps}
         >
-            {Icon && <Icon size={14} className="text-accent flex-shrink-0" />}
+            {Icon && <Icon size={14} className="text-white flex-shrink-0" />}
             <span className="truncate">{children}</span>
         </Link>
     )
@@ -53,7 +53,7 @@ export function FooterSection({
 }: FooterSectionProps) {
     return (
         <div className={className}>
-            <h4 className="font-bold text-base sm:text-lg mb-2 sm:mb-6">{title}</h4>
+            <h4 className="font-bold text-base sm:text-lg mb-2 sm:mb-6 text-white">{title}</h4>
             {children}
         </div>
     )
@@ -81,10 +81,10 @@ export function SocialLink({
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-11 h-11 sm:w-10 sm:h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-accent transition-colors ${className}`}
+            className={`w-11 h-11 sm:w-10 sm:h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors ${className}`}
             aria-label={label}
         >
-            <Icon size={18} />
+            <Icon size={18} className="text-white" />
         </a>
     )
 }
@@ -108,8 +108,8 @@ export function ContactInfoItem({
 }: ContactInfoItemProps) {
     const content = (
         <>
-            <Icon size={16} className="mt-0.5 flex-shrink-0 text-accent sm:size-[18px]" />
-            <span className="text-xs sm:text-sm">{children}</span>
+            <Icon size={16} className="mt-0.5 flex-shrink-0 text-white sm:size-[18px]" />
+            <span className="text-xs sm:text-sm text-white">{children}</span>
         </>
     )
 
@@ -117,7 +117,7 @@ export function ContactInfoItem({
         return (
             <a
                 href={href}
-                className={`flex items-start gap-2 sm:gap-3 text-brand-muted hover:text-white transition-colors ${className}`}
+                className={`flex items-start gap-2 sm:gap-3 text-white hover:text-white/80 transition-colors ${className}`}
             >
                 {content}
             </a>
@@ -125,7 +125,7 @@ export function ContactInfoItem({
     }
 
     return (
-        <div className={`flex items-start gap-3 text-brand-muted ${className}`}>
+        <div className={`flex items-start gap-3 text-white ${className}`}>
             {content}
         </div>
     )

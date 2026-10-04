@@ -163,23 +163,20 @@ function ContactContent() {
         <div className="section-container">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-7 text-left reveal opacity-0 translate-y-8 transition-all duration-700">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md text-xs font-semibold tracking-wider uppercase bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.2)] mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md text-xs font-semibold tracking-wider uppercase bg-white/10 border border-white/20 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 Direct Enterprise Advisory
               </div>
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">
-                Let's Build Something{" "}
-                <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-200 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(6,182,212,0.35)]">
-                  Amazing
-                </span>
+                Let&apos;s Build Something Amazing
               </h1>
-              <p className="text-sm sm:text-base lg:text-lg text-sky-100/75 leading-relaxed mb-6 font-light">
+              <p className="text-sm sm:text-base lg:text-lg text-white leading-relaxed mb-6 font-light">
                 Ready to discuss your enterprise IT infrastructure needs? Our team of certified engineers is here to help you architect, deploy, and manage turnkey solutions with zero operational downtime.
               </p>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-sky-200/80">
-                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ 24h Response SLA</span>
-                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ Free Site Survey</span>
-                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ Direct Principal Engineers</span>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-white">
+                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/10 border border-white/20 text-white">✓ 24h Response SLA</span>
+                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/10 border border-white/20 text-white">✓ Free Site Survey</span>
+                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/10 border border-white/20 text-white">✓ Direct Principal Engineers</span>
               </div>
             </div>
 
@@ -222,19 +219,19 @@ function ContactContent() {
                 <a
                   key={idx}
                   href={contact.href}
-                  className="reveal opacity-0 translate-y-8 transition-all duration-700 group p-4 sm:p-6 rounded-md bg-[#071d3d]/50 border border-cyan-500/20 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] backdrop-blur-xl transition-all duration-300"
+                  className="reveal opacity-0 translate-y-8 transition-all duration-700 group p-4 sm:p-6 rounded-md bg-[#071d3d]/50 border border-white/15 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.08)] backdrop-blur-xl transition-all duration-300"
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
                   <div className="flex items-start gap-3.5 sm:gap-4">
-                    <div className="p-2.5 sm:p-3 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 group-hover:scale-105 group-hover:bg-cyan-500/25 transition-all flex-shrink-0">
-                      <Icon size={22} />
+                    <div className="p-2.5 sm:p-3 rounded-md bg-white/[0.06] border border-white/10 text-white group-hover:scale-105 group-hover:bg-white/10 transition-all flex-shrink-0">
+                      <Icon size={22} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-base sm:text-lg text-white mb-0.5 sm:mb-1 group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-bold text-base sm:text-lg text-white mb-0.5 sm:mb-1 group-hover:text-white transition-colors">
                         {contact.title}
                       </h3>
-                      <p className="text-cyan-200 font-medium text-xs sm:text-sm leading-snug">{contact.value}</p>
-                      <p className="text-[11px] sm:text-xs text-sky-200/60 mt-1">{contact.description}</p>
+                      <p className="text-white/90 font-medium text-xs sm:text-sm leading-snug">{contact.value}</p>
+                      <p className="text-[11px] sm:text-xs text-white/80 mt-1">{contact.description}</p>
                     </div>
                   </div>
                 </a>
@@ -250,43 +247,43 @@ function ContactContent() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Left: Info */}
             <div className="lg:col-span-5 reveal opacity-0 translate-y-8 transition-all duration-700">
-              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-400 mb-3">
-                <Clock size={16} />
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/90 mb-3">
+                <Clock size={16} className="text-white" />
                 Rapid SLA Response
               </span>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
                 How Can We Help You?
               </h2>
-              <p className="text-sm sm:text-base text-sky-100/75 mb-6 sm:mb-8 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-white mb-6 sm:mb-8 leading-relaxed font-light">
                 Whether you need a complete security system, turnkey network infrastructure upgrade, optical fiber cabling, or AV boardroom integration, our team is ready to deliver. Fill out the brief and we'll reply within 24 hours.
               </p>
 
               <div className="space-y-3 sm:space-y-4">
-                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
-                  <div className="p-2 sm:p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
-                    <Clock size={18} />
+                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-white/[0.04] border border-white/10">
+                  <div className="p-2 sm:p-2.5 rounded-md bg-white/[0.06] border border-white/10 text-white flex-shrink-0">
+                    <Clock size={18} className="text-white" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-xs sm:text-sm">Quick Response</h4>
-                    <p className="text-[11px] sm:text-xs text-sky-200/70 mt-0.5">Dedicated engineering dispatch within 24 business hours</p>
+                    <p className="text-[11px] sm:text-xs text-white/80 mt-0.5">Dedicated engineering dispatch within 24 business hours</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
-                  <div className="p-2 sm:p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
-                    <MessageCircle size={18} />
+                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-white/[0.04] border border-white/10">
+                  <div className="p-2 sm:p-2.5 rounded-md bg-white/[0.06] border border-white/10 text-white flex-shrink-0">
+                    <MessageCircle size={18} className="text-white" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-xs sm:text-sm">Free Site Survey & Consultation</h4>
-                    <p className="text-[11px] sm:text-xs text-sky-200/70 mt-0.5">Comprehensive audit and architectural sizing with no upfront costs</p>
+                    <p className="text-[11px] sm:text-xs text-white/80 mt-0.5">Comprehensive audit and architectural sizing with no upfront costs</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
-                  <div className="p-2 sm:p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
-                    <CheckCircle size={18} />
+                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-white/[0.04] border border-white/10">
+                  <div className="p-2 sm:p-2.5 rounded-md bg-white/[0.06] border border-white/10 text-white flex-shrink-0">
+                    <CheckCircle size={18} className="text-white" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-xs sm:text-sm">Zero Obligation</h4>
-                    <p className="text-[11px] sm:text-xs text-sky-200/70 mt-0.5">Detailed BOM, design schematics, and timeline projections</p>
+                    <p className="text-[11px] sm:text-xs text-white/80 mt-0.5">Detailed BOM, design schematics, and timeline projections</p>
                   </div>
                 </div>
               </div>
@@ -296,14 +293,14 @@ function ContactContent() {
             <div className="lg:col-span-7 reveal opacity-0 translate-y-8 transition-all duration-700 delay-200">
               <form onSubmit={handleSubmit} className="bg-[#061c3b]/80 p-4 sm:p-8 rounded-md border border-cyan-500/30 shadow-[0_0_40px_rgba(6,182,212,0.15)] backdrop-blur-xl">
                 {selectedStack.length > 0 && (
-                  <div className="mb-5 sm:mb-6 p-3 sm:p-4 rounded-md bg-cyan-950/60 border border-cyan-500/35 text-cyan-200">
-                    <div className="flex items-center gap-2 font-bold text-xs uppercase tracking-wider text-cyan-400 mb-2">
-                      <Sparkles size={14} />
+                  <div className="mb-5 sm:mb-6 p-3 sm:p-4 rounded-md bg-white/[0.06] border border-white/20 text-white">
+                    <div className="flex items-center gap-2 font-bold text-xs uppercase tracking-wider text-white mb-2">
+                      <Sparkles size={14} className="text-white" />
                       Selected Solution Stack ({selectedStack.length})
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {selectedStack.map(item => (
-                        <span key={item} className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#031326] border border-cyan-500/40 text-cyan-200 shadow-xs">
+                        <span key={item} className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#031326] border border-white/20 text-white shadow-xs">
                           ✓ {item}
                         </span>
                       ))}
@@ -313,7 +310,7 @@ function ContactContent() {
 
                 <div className="grid md:grid-cols-2 gap-3.5 sm:gap-5 mb-3.5 sm:mb-5">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white mb-1.5 sm:mb-2">
                       Full Name *
                     </label>
                     <input
@@ -322,12 +319,12 @@ function ContactContent() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-base sm:text-sm"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-white/20 bg-[#030f21]/80 text-white placeholder-white/60 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all text-base sm:text-sm"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white mb-1.5 sm:mb-2">
                       Email Address *
                     </label>
                     <input
@@ -336,7 +333,7 @@ function ContactContent() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-base sm:text-sm"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-white/20 bg-[#030f21]/80 text-white placeholder-white/60 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all text-base sm:text-sm"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -344,7 +341,7 @@ function ContactContent() {
 
                 <div className="grid md:grid-cols-2 gap-3.5 sm:gap-5 mb-3.5 sm:mb-5">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white mb-1.5 sm:mb-2">
                       Phone Number *
                     </label>
                     <input
@@ -353,12 +350,12 @@ function ContactContent() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-base sm:text-sm"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-white/20 bg-[#030f21]/80 text-white placeholder-white/60 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all text-base sm:text-sm"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-white mb-1.5 sm:mb-2">
                       Company Name
                     </label>
                     <input
@@ -366,23 +363,23 @@ function ContactContent() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-base sm:text-sm"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-white/20 bg-[#030f21]/80 text-white placeholder-white/60 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all text-base sm:text-sm"
                       placeholder="Your Company Name"
                     />
                   </div>
                 </div>
 
                 <div className="mb-3.5 sm:mb-5">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-white mb-1.5 sm:mb-2">
                     Service of Interest
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21] text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all cursor-pointer text-base sm:text-sm"
+                    className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-white/20 bg-[#030f21] text-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all cursor-pointer text-base sm:text-sm"
                   >
-                    <option value="" className="bg-[#030f21] text-slate-300">Select a primary service discipline</option>
+                    <option value="" className="bg-[#030f21] text-white">Select a primary service discipline</option>
                     {services.map((service) => (
                       <option key={service} value={service} className="bg-[#030f21] text-white">
                         {service}
@@ -392,7 +389,7 @@ function ContactContent() {
                 </div>
 
                 <div className="mb-5 sm:mb-6">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-white mb-1.5 sm:mb-2">
                     Project Message *
                   </label>
                   <textarea
@@ -401,7 +398,7 @@ function ContactContent() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all resize-none text-base sm:text-sm"
+                    className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-white/20 bg-[#030f21]/80 text-white placeholder-white/60 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all resize-none text-base sm:text-sm"
                     placeholder="Tell us about your project requirements, location, estimated timelines, or current challenges..."
                   />
                 </div>
@@ -409,26 +406,26 @@ function ContactContent() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 px-6 rounded-md font-bold text-sm bg-gradient-to-r from-cyan-500 to-sky-400 text-[#020b18] shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-full py-3.5 px-6 rounded-md font-bold text-sm bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] hover:scale-[1.01] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-[#020b18] border-t-transparent rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                       Dispatching Request...
                     </>
                   ) : (
                     <>
-                      <Send size={16} />
+                      <Send size={16} className="text-white" />
                       Send Project Inquiry
                     </>
                   )}
                 </button>
 
                 {submitted && (
-                  <div className="mt-4 p-4 rounded-md bg-cyan-950/70 border border-cyan-400 text-center animate-fadeIn">
-                    <CheckCircle size={22} className="text-cyan-400 mx-auto mb-1.5" />
+                  <div className="mt-4 p-4 rounded-md bg-white/10 border border-white/20 text-center animate-fadeIn">
+                    <CheckCircle size={22} className="text-white mx-auto mb-1.5" />
                     <p className="font-bold text-white text-sm">Inquiry Successfully Transmitted</p>
-                    <p className="text-xs text-cyan-200/80 mt-0.5">Our solutions architect will contact you within 24 hours.</p>
+                    <p className="text-xs text-white/80 mt-0.5">Our solutions architect will contact you within 24 hours.</p>
                   </div>
                 )}
               </form>
@@ -441,14 +438,14 @@ function ContactContent() {
       <section id="map" className="section-padding relative z-10 py-16 border-t border-cyan-500/15">
         <div className="section-container">
           <div className="text-center mb-10 reveal opacity-0 translate-y-8 transition-all duration-700">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 mb-3">
-              <MapPin size={14} />
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase bg-white/10 border border-white/20 text-white mb-3">
+              <MapPin size={14} className="text-white" />
               Corporate Headquarters
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2">
               Visit Our Office
             </h2>
-            <p className="text-sky-200/70 text-sm max-w-xl mx-auto">
+            <p className="text-white text-sm max-w-xl mx-auto font-light">
               7/1 Lord Sinha Road, Lords Building, Kolkata, West Bengal 700071, India
             </p>
           </div>
@@ -477,15 +474,15 @@ function ContactContent() {
               <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-2">
                 Prefer to Speak Directly with an Architect?
               </h3>
-              <p className="text-sm sm:text-base text-sky-200/80">
+              <p className="text-sm sm:text-base text-white font-light">
                 Call our direct engineering line for immediate assistance with active projects.
               </p>
             </div>
             <a
               href="tel:+919366355026"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-sky-400 text-[#020b18] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(6,182,212,0.35)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:scale-[1.02] transition-all flex-shrink-0"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(6,182,212,0.35)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:scale-[1.02] transition-all flex-shrink-0"
             >
-              <Phone size={18} />
+              <Phone size={18} className="text-white" />
               (+91) 93663 55026
             </a>
           </div>
@@ -497,7 +494,7 @@ function ContactContent() {
 
 export default function Contact() {
   return (
-    <Suspense fallback={<div className="py-20 text-center text-cyan-400">Loading Contact Form...</div>}>
+    <Suspense fallback={<div className="py-20 text-center text-white">Loading Contact Form...</div>}>
       <ContactContent />
     </Suspense>
   )

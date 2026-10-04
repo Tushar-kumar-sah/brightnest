@@ -199,27 +199,59 @@ export default function AboutTeaser() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* Left Column: Narrative & Highlights */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-7">
-            {/* Badge: Frosted Glass with Purple Accent */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-[#9266fd]/40 text-[#9da8fb] text-xs font-semibold uppercase tracking-wider backdrop-blur-xl shadow-[0_0_20px_rgba(146,102,253,0.25)]">
-              <span className="w-2 h-2 rounded-full bg-[#9266fd] animate-pulse shadow-[0_0_8px_#9266fd]" />
+          {/* Left Column: Visual with Ambient Purple Glow & Floating Glass Card */}
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0 order-2 lg:order-1">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              {/* Decorative Purple/Cyan Glow Backdrop */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-[#9266fd]/35 via-[#6366f1]/25 to-[#1ec9f2]/30 rounded-xl blur-2xl -z-10 animate-pulse" />
+
+              {/* Main Image Glass Frame */}
+              <div className="relative rounded-xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-white/20 bg-white/[0.03] backdrop-blur-xl p-1.5">
+                <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-lg overflow-hidden">
+                  <Image
+                    src="/gcc-enterprise-engineer.jpg"
+                    alt="BrightNest enterprise infrastructure engineer"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 450px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/40 to-transparent opacity-85" />
+
+                  {/* Floating Glass Philosophy Card */}
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3.5 sm:p-5 rounded-lg bg-[#070c1e]/75 backdrop-blur-2xl backdrop-saturate-150 border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_0_20px_rgba(146,102,253,0.1)]">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/70 shadow-[0_0_6px_rgba(255,255,255,0.5)]" />
+                      <p className="text-[10px] sm:text-[11px] font-bold text-white/80 uppercase tracking-wider">
+                        Our Core Philosophy
+                      </p>
+                    </div>
+                    <p className="text-xs sm:text-sm font-light text-white/95 leading-relaxed">
+                      &ldquo;Actions beyond the hardware — engineering technology that works effortlessly every single day.&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Narrative & Highlights */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-7 order-1 lg:order-2">
+            {/* Badge: Frosted Glass */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/15 text-white text-xs font-semibold uppercase tracking-wider backdrop-blur-xl">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               <span>Who We Are</span>
             </div>
 
-            {/* Headline: Slim Montserrat Typography with Purple/Cyan Gradient */}
+            {/* Headline: Slim Montserrat Typography */}
             <h2
               style={{ fontWeight: 300 }}
               className="text-2xl sm:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-[1.2]"
             >
-              The Experts Behind Your{" "}
-              <span className="bg-gradient-to-r from-[#9266fd] via-[#1ec9f2] to-[#0db16a] bg-clip-text text-transparent font-medium">
-                Digital & Physical Infrastructure
-              </span>
+              The Experts Behind Your Digital & Physical Infrastructure
             </h2>
 
             {/* Narrative text with high-contrast, relaxed reading */}
-            <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed font-light">
+            <p className="text-white text-sm sm:text-base lg:text-lg leading-relaxed font-light">
               We help growing businesses and large enterprises thrive through the power of engineered technology. Whether scaling an office network, deploying AI-driven CCTV surveillance, or integrating hybrid boardrooms, our certified team handles every detail from technical design to ongoing 24/7 managed support.
             </p>
 
@@ -228,12 +260,12 @@ export default function AboutTeaser() {
               {highlights.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-3 p-3.5 rounded-lg bg-white/[0.03] border border-white/10 hover:border-[#9266fd]/50 hover:bg-white/[0.07] backdrop-blur-md transition-all duration-300 group shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+                  className="flex items-start gap-3 p-3.5 rounded-lg bg-white/[0.03] border border-white/10 hover:border-white/20 hover:bg-white/[0.07] backdrop-blur-md transition-all duration-300 group shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
                 >
-                  <div className="p-1 rounded-md bg-[#9266fd]/20 text-[#9da8fb] border border-[#9266fd]/30 flex-shrink-0 mt-0.5 group-hover:scale-110 group-hover:bg-[#1ec9f2]/20 group-hover:text-[#1ec9f2] transition-all">
-                    <CheckCircle2 className="w-4 h-4" />
+                  <div className="p-1 rounded-md bg-white/[0.06] text-white border border-white/15 flex-shrink-0 mt-0.5 transition-all">
+                    <CheckCircle2 className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-xs sm:text-sm font-normal text-slate-200 leading-snug group-hover:text-white transition-colors">
+                  <span className="text-xs sm:text-sm font-normal text-white leading-snug">
                     {item}
                   </span>
                 </div>
@@ -257,41 +289,6 @@ export default function AboutTeaser() {
               </Link>
             </div>
           </div>
-
-          {/* Right Column: Visual with Ambient Purple Glow & Floating Glass Card */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Decorative Purple/Cyan Glow Backdrop */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-[#9266fd]/35 via-[#6366f1]/25 to-[#1ec9f2]/30 rounded-xl blur-2xl -z-10 animate-pulse" />
-
-              {/* Main Image Glass Frame */}
-              <div className="relative rounded-xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-white/20 bg-white/[0.03] backdrop-blur-xl p-1.5">
-                <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-lg overflow-hidden">
-                  <Image
-                    src="/gcc-enterprise-engineer.jpg"
-                    alt="BrightNest enterprise infrastructure engineer"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 450px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/40 to-transparent opacity-85" />
-
-                  {/* Floating Glass Philosophy Card */}
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3.5 sm:p-5 rounded-lg bg-[#070c1e]/75 backdrop-blur-2xl backdrop-saturate-150 border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_0_20px_rgba(146,102,253,0.1)]">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#9266fd] shadow-[0_0_6px_#9266fd]" />
-                      <p className="text-[10px] sm:text-[11px] font-bold text-[#9da8fb] uppercase tracking-wider">
-                        Our Core Philosophy
-                      </p>
-                    </div>
-                    <p className="text-xs sm:text-sm font-light text-white/95 leading-relaxed">
-                      &ldquo;Actions beyond the hardware — engineering technology that works effortlessly every single day.&rdquo;
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* 4 Stats Metrics Bar: Open-Air Executive Telemetry Strip (No Boxed Cards) */}
@@ -312,18 +309,18 @@ export default function AboutTeaser() {
                   className="relative px-3 sm:px-6 lg:px-8 py-3 group flex flex-col transition-all duration-300"
                 >
                   {/* Ambient hover bloom (soft radial spotlight, NO box borders) */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(146,102,253,0.14),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
 
                   {/* Top Row: Micro Icon Badge & Status Beacon */}
                   <div className="flex items-center gap-2.5 mb-3.5">
-                    <div className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/10 text-[#c084fc] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#9266fd]/20 group-hover:border-[#9266fd]/40 group-hover:text-[#f0abfc] transition-all duration-300 shadow-[0_0_10px_rgba(146,102,253,0.2)]">
-                      <Icon className="w-4 h-4" />
+                    <div className="w-8 h-8 rounded-lg bg-white/[0.06] border border-white/10 text-white flex items-center justify-center flex-shrink-0 group-hover:scale-105 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+                      <Icon className="w-4 h-4 text-white" />
                     </div>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#9266fd] group-hover:bg-[#1ec9f2] animate-pulse transition-colors" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/70 group-hover:bg-white animate-pulse transition-colors" />
                   </div>
 
                   {/* Hero Metric Number with Animated Counter */}
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-[#f5d0fe] to-[#c084fc] group-hover:from-white group-hover:via-[#e0e7ff] group-hover:to-[#38d7f8] bg-clip-text text-transparent transition-all duration-300 leading-none">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-none">
                     <CountUp
                       to={stat.target}
                       decimals={stat.decimals}
@@ -334,12 +331,12 @@ export default function AboutTeaser() {
                   </div>
 
                   {/* Metric Label */}
-                  <div className="text-sm sm:text-base font-semibold text-white/95 mt-3 group-hover:text-[#f0abfc] transition-colors leading-snug">
+                  <div className="text-sm sm:text-base font-semibold text-white mt-3 group-hover:text-white transition-colors leading-snug">
                     {stat.label}
                   </div>
 
                   {/* Subtext */}
-                  <div className="text-xs text-slate-400 font-light mt-1 leading-relaxed">
+                  <div className="text-xs text-white/80 font-light mt-1 leading-relaxed">
                     {stat.subtext}
                   </div>
 

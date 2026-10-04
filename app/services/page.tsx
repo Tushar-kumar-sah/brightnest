@@ -66,30 +66,27 @@ export default function Services() {
         <div className="section-container">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-7 text-left reveal opacity-0 translate-y-8 transition-all duration-700">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md text-xs font-semibold tracking-wider uppercase bg-slate-500/15 border border-slate-400/30 text-slate-200 shadow-[0_0_15px_rgba(148,163,184,0.15)] mb-6">
-                <Layers size={14} className="text-slate-300" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md text-xs font-semibold tracking-wider uppercase bg-slate-500/15 border border-slate-400/30 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)] mb-6">
+                <Layers size={14} className="text-white" />
                 Turnkey Technology Disciplines
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
-                Comprehensive IT{" "}
-                <span className="bg-gradient-to-r from-slate-100 via-slate-300 to-zinc-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(203,213,225,0.3)]">
-                  Solutions Portfolio
-                </span>
+                Comprehensive IT Solutions Portfolio
               </h1>
-              <p className="text-base sm:text-lg text-slate-300/75 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-white leading-relaxed mb-8 font-light">
                 From enterprise physical security systems to multi-gigabit networking, structured fiber, and smart AV boardroom architectures, we deliver end-to-end integration across all digital layers.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-slate-100 to-white text-[#0a0c10] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group"
+                  className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group"
                 >
                   Book Site Survey
                   <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
                   href="tel:+919366355026"
-                  className="inline-flex items-center justify-center px-7 py-3.5 border border-slate-500/50 text-slate-200 font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2"
+                  className="inline-flex items-center justify-center px-7 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2"
                 >
                   <Phone size={16} />
                   Speak to Architect
@@ -149,26 +146,26 @@ export default function Services() {
 
                     {/* Content */}
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-slate-200 transition-colors">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-white transition-colors">
                         {service.name}
                       </h3>
-                      <p className="text-slate-300/70 mb-4 text-sm leading-relaxed">{service.description}</p>
+                      <p className="text-white/80 mb-4 text-sm leading-relaxed font-light">{service.description}</p>
 
                       {/* Features */}
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {service.features.map((feature, i) => (
                           <span
                             key={i}
-                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#181c25] border border-slate-700/60 text-xs text-slate-200"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#181c25] border border-slate-700/60 text-xs text-white"
                           >
-                            <CheckCircle size={12} className="text-slate-400" />
+                            <CheckCircle size={12} className="text-white" />
                             {feature}
                           </span>
                         ))}
                       </div>
 
                       {/* CTA */}
-                      <div className="flex items-center text-slate-300 font-semibold text-xs tracking-wider uppercase group-hover:text-white transition-colors">
+                      <div className="flex items-center text-white font-semibold text-xs tracking-wider uppercase group-hover:underline transition-colors">
                         Explore Architecture Details <ArrowRight size={14} className="ml-1.5 group-hover:translate-x-1.5 transition-transform" />
                       </div>
                     </div>
@@ -187,13 +184,13 @@ export default function Services() {
       <section className="section-padding relative z-10 py-20 border-t border-slate-700/40 bg-[#0a0c10]/60 backdrop-blur-sm">
         <div className="section-container">
           <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase bg-slate-500/15 border border-slate-400/30 text-slate-200 mb-3">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase bg-slate-500/15 border border-slate-400/30 text-white mb-3">
               Delivery Framework
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
               Our Engagement Process
             </h2>
-            <p className="text-slate-300/70 text-base max-w-2xl mx-auto">
+            <p className="text-white text-base max-w-2xl mx-auto font-light">
               A structured lifecycle methodology ensuring rigorous compliance, zero operational downtime, and on-time commissioning.
             </p>
           </div>
@@ -210,11 +207,11 @@ export default function Services() {
                 className="reveal opacity-0 translate-y-8 transition-all duration-700 p-6 rounded-md bg-[#11141b]/60 border border-slate-700/50 text-center hover:border-slate-500/70 hover:shadow-[0_0_25px_rgba(148,163,184,0.15)] backdrop-blur-xl transition-all"
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-md bg-slate-500/15 border border-slate-500/30 text-slate-200 font-mono font-bold text-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-md bg-slate-500/15 border border-slate-500/30 text-white font-mono font-bold text-lg flex items-center justify-center mx-auto mb-4">
                   {item.step}
                 </div>
                 <h3 className="font-bold text-base text-white mb-2">{item.title}</h3>
-                <p className="text-slate-300/70 text-xs leading-relaxed">{item.description}</p>
+                <p className="text-white/80 text-xs leading-relaxed font-light">{item.description}</p>
               </div>
             ))}
           </div>
@@ -232,20 +229,20 @@ export default function Services() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
                 Need a Custom Infrastructure Sizing?
               </h2>
-              <p className="text-base sm:text-lg text-slate-300/80 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-white mb-8 leading-relaxed font-light">
                 Every enterprise ecosystem has distinct constraints. Schedule a consultation with our solutions architects to craft a tailored BOM and deployment roadmap.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-slate-100 to-white text-[#0a0c10] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group"
+                  className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group"
                 >
                   Get a Free Consultation
                   <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
                   href="tel:+919366355026"
-                  className="inline-flex items-center justify-center px-8 py-3.5 border border-slate-500/50 text-slate-200 font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2"
+                  className="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2"
                 >
                   <Phone size={16} />
                   Call Our Engineers

@@ -13,6 +13,7 @@ interface HeroSlide {
   subhead2: string;
   image: string;
   href: string;
+  imageClass: string;
 }
 
 const slides: HeroSlide[] = [
@@ -23,6 +24,7 @@ const slides: HeroSlide[] = [
     subhead2: "PAN-India",
     image: "/indian-network-noc-engineer.jpg",
     href: "/services/networking",
+    imageClass: "hero-img-networking",
   },
   {
     id: "security",
@@ -31,6 +33,7 @@ const slides: HeroSlide[] = [
     subhead2: "Zero-Trust Security",
     image: "/indian-security-specialist.jpg",
     href: "/services/security",
+    imageClass: "hero-img-security",
   },
   {
     id: "av",
@@ -39,6 +42,7 @@ const slides: HeroSlide[] = [
     subhead2: "Teams & Zoom Rooms",
     image: "/indian-smart-boardroom.jpg",
     href: "/services/av",
+    imageClass: "hero-img-av",
   },
   {
     id: "cabling",
@@ -47,6 +51,7 @@ const slides: HeroSlide[] = [
     subhead2: "Tier III/IV Standards",
     image: "/datacenter-infrastructure-engineer.jpg",
     href: "/services/cabling",
+    imageClass: "hero-img-cabling",
   },
   {
     id: "managed",
@@ -55,6 +60,7 @@ const slides: HeroSlide[] = [
     subhead2: "Smarter Outcomes",
     image: "/gcc-enterprise-engineer.jpg",
     href: "/services/professional",
+    imageClass: "hero-img-managed",
   },
 ];
 
@@ -146,13 +152,13 @@ export default function HeroSlider() {
           exit="exit"
           className="absolute inset-0 w-full h-full"
         >
-          {/* Full-Bleed Background Image */}
-          <div className="absolute inset-0 w-full h-full">
+          {/* Full-Bleed Background Image - shifted down on desktop view as requested with top pure dark */}
+          <div className="absolute inset-0 w-full h-full lg:translate-y-24">
             <Image
               src={activeSlide.image}
               alt={activeSlide.headline.replace(/\n/g, " ")}
               fill
-              className="object-cover object-center lg:object-right"
+              className={`object-cover ${activeSlide.imageClass}`}
               priority
               sizes="100vw"
             />
@@ -161,7 +167,7 @@ export default function HeroSlider() {
           {/* Seamless Gradients blending with unified #070c1e theme */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#070c1e] via-[#070c1e]/85 to-transparent w-full lg:w-[65%] z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-transparent to-[#070c1e]/60 z-10" />
-          <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#070c1e]/80 to-transparent z-10" />
+          <div className="absolute top-0 inset-x-0 h-36 lg:h-56 bg-gradient-to-b from-[#070c1e] via-[#070c1e]/90 to-transparent z-10 pointer-events-none" />
           {/* Bottom Seamless Dissolve into next section */}
           <div className="absolute bottom-0 inset-x-0 h-40 sm:h-56 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/75 to-transparent z-10 pointer-events-none" />
 

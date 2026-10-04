@@ -40,17 +40,14 @@ export default function UnifiedContactSection() {
           {/* Left Column: Direct Info & Value Proposition */}
           <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#1ec9f2]/40 text-[#1ec9f2] text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4 shadow-[0_0_15px_rgba(30,201,242,0.2)]">
-                <span className="w-2 h-2 rounded-full bg-[#1ec9f2] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/15 text-white text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 backdrop-blur-xl">
+                <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                 <span>Let&apos;s Connect</span>
               </div>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-                Ready to Upgrade Your{" "}
-                <span className="bg-gradient-to-r from-[#1ec9f2] to-[#0db16a] bg-clip-text text-transparent">
-                  Enterprise Infrastructure?
-                </span>
+                Ready to Upgrade Your Enterprise Infrastructure?
               </h2>
-              <p className="mt-3 sm:mt-4 text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
+              <p className="mt-3 sm:mt-4 text-white text-sm sm:text-base lg:text-lg leading-relaxed font-light">
                 Connect directly with our senior system architects. We provide comprehensive site audits, detailed BOQ proposals, and turnkey execution with guaranteed SLAs.
               </p>
             </div>
@@ -59,14 +56,14 @@ export default function UnifiedContactSection() {
             <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
               <a
                 href="tel:+919366355026"
-                className="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[#1ec9f2]/40 hover:bg-white/10 transition-all duration-200 group"
+                className="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/[0.08] transition-all duration-200 group"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#1ec9f2]/20 border border-[#1ec9f2]/40 flex items-center justify-center text-[#1ec9f2] group-hover:scale-105 transition-transform flex-shrink-0">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-white/[0.06] border border-white/10 flex items-center justify-center text-white group-hover:scale-105 group-hover:bg-white/10 transition-all flex-shrink-0">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
-                  <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Direct Telephone & WhatsApp</div>
-                  <div className="text-sm sm:text-base font-bold text-white group-hover:text-[#1ec9f2] transition-colors">
+                  <div className="text-[11px] sm:text-xs text-white/80 font-medium">Direct Telephone & WhatsApp</div>
+                  <div className="text-sm sm:text-base font-bold text-white transition-colors">
                     +91 93663 55026
                   </div>
                 </div>
@@ -74,25 +71,25 @@ export default function UnifiedContactSection() {
 
               <a
                 href="mailto:info@brightnestedu.com"
-                className="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[#1ec9f2]/40 hover:bg-white/10 transition-all duration-200 group"
+                className="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-lg bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/[0.08] transition-all duration-200 group"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0db16a]/20 border border-[#0db16a]/40 flex items-center justify-center text-[#0db16a] group-hover:scale-105 transition-transform flex-shrink-0">
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-white/[0.06] border border-white/10 flex items-center justify-center text-white group-hover:scale-105 group-hover:bg-white/10 transition-all flex-shrink-0">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
-                  <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Official Email Inquiries</div>
-                  <div className="text-sm sm:text-base font-bold text-white group-hover:text-[#1ec9f2] transition-colors">
+                  <div className="text-[11px] sm:text-xs text-white/80 font-medium">Official Email Inquiries</div>
+                  <div className="text-sm sm:text-base font-bold text-white transition-colors">
                     info@brightnestedu.com
                   </div>
                 </div>
               </a>
 
               <div className="flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-lg bg-white/5 border border-white/10">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#9266fd]/20 border border-[#9266fd]/40 flex items-center justify-center text-[#9266fd] flex-shrink-0">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-white/[0.06] border border-white/10 flex items-center justify-center text-white flex-shrink-0">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
-                  <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Response SLA Guarantee</div>
+                  <div className="text-[11px] sm:text-xs text-white/80 font-medium">Response SLA Guarantee</div>
                   <div className="text-xs sm:text-base font-bold text-white">
                     24/7 Operations • Under 4-Hour Support SLA
                   </div>
@@ -101,9 +98,9 @@ export default function UnifiedContactSection() {
             </div>
 
             {/* Trust badge */}
-            <div className="p-3.5 sm:p-4 rounded-lg bg-gradient-to-r from-white/5 to-white/[0.02] border border-white/10 flex items-center gap-3">
-              <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#0db16a] flex-shrink-0" />
-              <div className="text-[11px] sm:text-xs text-slate-300 leading-snug">
+            <div className="p-3.5 sm:p-4 rounded-lg bg-white/[0.04] border border-white/10 flex items-center gap-3">
+              <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white/90 flex-shrink-0" />
+              <div className="text-[11px] sm:text-xs text-white leading-snug">
                 <strong>Zero Obligation Survey:</strong> Receive a comprehensive technical assessment and itemized BOQ before any commitment.
               </div>
             </div>
@@ -114,13 +111,13 @@ export default function UnifiedContactSection() {
             <div className="p-4 sm:p-7 lg:p-10 rounded-xl bg-[#0b132b]/95 border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl">
               {submitted ? (
                 <div className="py-10 sm:py-12 text-center space-y-3 sm:space-y-4">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#0db16a]/20 border border-[#0db16a] text-[#0db16a] flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white">
                     Site Survey Request Received!
                   </h3>
-                  <p className="text-slate-300 max-w-md mx-auto text-xs sm:text-sm leading-relaxed">
+                  <p className="text-white max-w-md mx-auto text-xs sm:text-sm leading-relaxed font-light">
                     Thank you. A senior systems engineer will review your project details and reach out within 2 hours to confirm your site audit.
                   </p>
                   <button
@@ -136,14 +133,14 @@ export default function UnifiedContactSection() {
                     <h3 className="text-lg sm:text-2xl font-bold text-white">
                       Request an Engineering Site Survey
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-400 mt-1">
+                    <p className="text-xs sm:text-sm text-white/80 mt-1">
                       Fill out the form below to connect with an infrastructure architect.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-white mb-1.5">
                         Your Full Name *
                       </label>
                       <input
@@ -152,12 +149,12 @@ export default function UnifiedContactSection() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Rahul Sharma"
-                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-500 text-base sm:text-sm focus:outline-none focus:border-[#1ec9f2] focus:ring-1 focus:ring-[#1ec9f2] transition-all"
+                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-400 text-base sm:text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-white mb-1.5">
                         Business Email *
                       </label>
                       <input
@@ -166,14 +163,14 @@ export default function UnifiedContactSection() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="name@company.com"
-                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-500 text-base sm:text-sm focus:outline-none focus:border-[#1ec9f2] focus:ring-1 focus:ring-[#1ec9f2] transition-all"
+                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-400 text-base sm:text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-white mb-1.5">
                         Phone / WhatsApp *
                       </label>
                       <input
@@ -182,12 +179,12 @@ export default function UnifiedContactSection() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98765 43210"
-                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-500 text-base sm:text-sm focus:outline-none focus:border-[#1ec9f2] focus:ring-1 focus:ring-[#1ec9f2] transition-all"
+                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-400 text-base sm:text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-white mb-1.5">
                         Company / Organization
                       </label>
                       <input
@@ -195,19 +192,19 @@ export default function UnifiedContactSection() {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="Company Name"
-                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-500 text-base sm:text-sm focus:outline-none focus:border-[#1ec9f2] focus:ring-1 focus:ring-[#1ec9f2] transition-all"
+                        className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-400 text-base sm:text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-white mb-1.5">
                       Primary Solution Needed *
                     </label>
                     <select
                       value={formData.solution}
                       onChange={(e) => setFormData({ ...formData, solution: e.target.value })}
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-[#0b132b] border border-white/15 text-white text-base sm:text-sm focus:outline-none focus:border-[#1ec9f2] focus:ring-1 focus:ring-[#1ec9f2] transition-all"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-[#0b132b] border border-white/15 text-white text-base sm:text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all"
                     >
                       <option value="networking">Enterprise Networking & Wi-Fi</option>
                       <option value="security">CCTV Surveillance & AI Security</option>
@@ -219,7 +216,7 @@ export default function UnifiedContactSection() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-white mb-1.5">
                       Project Requirements & Location
                     </label>
                     <textarea
@@ -227,20 +224,20 @@ export default function UnifiedContactSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your campus size, number of locations, or expected timeline..."
-                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-500 text-base sm:text-sm focus:outline-none focus:border-[#1ec9f2] focus:ring-1 focus:ring-[#1ec9f2] transition-all resize-none"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-white/5 border border-white/15 text-white placeholder-slate-400 text-base sm:text-sm focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 sm:py-4 rounded-lg font-bold text-sm sm:text-base text-[#070c1e] bg-[#1ec9f2] hover:bg-[#38d7f8] shadow-[0_0_25px_rgba(30,201,242,0.4)] hover:shadow-[0_0_35px_rgba(30,201,242,0.6)] transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70"
+                    className="w-full py-3.5 sm:py-4 rounded-lg font-bold text-sm sm:text-base text-white bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right shadow-[0_0_25px_rgba(30,201,242,0.4)] hover:shadow-[0_0_35px_rgba(30,201,242,0.6)] transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70"
                   >
-                    <span>{isSubmitting ? "Transmitting Request..." : "Submit Site Survey Request"}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <span className="text-white">{isSubmitting ? "Transmitting Request..." : "Submit Site Survey Request"}</span>
+                    <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                   </button>
 
-                  <p className="text-center text-[10px] sm:text-[11px] text-slate-400">
+                  <p className="text-center text-[10px] sm:text-[11px] text-white/80">
                     We respect your privacy. No spam. You will be connected with a certified technical engineer.
                   </p>
                 </form>

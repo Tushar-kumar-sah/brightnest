@@ -221,9 +221,7 @@ export default function IndustryDetailTemplate({
                 Specialized Industry Vertical
               </div>
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-3 sm:mb-4">
-                <span className={`bg-gradient-to-r ${theme.accentGradient} bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,255,255,0.25)]`}>
-                  {name}
-                </span>
+                {name}
               </h1>
               <p className={`text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-4 sm:mb-6 tracking-tight`}>
                 {tagline}
@@ -309,7 +307,7 @@ export default function IndustryDetailTemplate({
                 {challenges.map((challenge, idx) => (
                   <div key={idx} className="flex items-start gap-3 p-3.5 rounded-md bg-white/[0.03] border border-white/5">
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0" />
-                    <span className="text-sm text-slate-200 leading-relaxed">{challenge}</span>
+                    <span className="text-sm text-white font-light leading-relaxed">{challenge}</span>
                   </div>
                 ))}
               </div>

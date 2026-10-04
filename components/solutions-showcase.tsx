@@ -186,20 +186,17 @@ export default function SolutionsShowcase({
 
       <div className="section-container relative z-10">
         <div ref={headingRef} className="mb-10 lg:mb-14 text-center shrink-0">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-[#1ec9f2]/40 text-[#38d7f8] text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(30,201,242,0.25)] backdrop-blur-xl">
-            <span className="w-2 h-2 rounded-full bg-[#1ec9f2] animate-pulse shadow-[0_0_8px_#1ec9f2]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/20 text-white text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(255,255,255,0.1)] backdrop-blur-xl">
+            <span className="w-2 h-2 rounded-full bg-white/80 animate-pulse shadow-[0_0_8px_white]" />
             <span>{heading.eyebrow}</span>
           </div>
           <h2
             style={{ fontWeight: 300 }}
             className="text-2xl sm:text-3xl lg:text-4xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight"
           >
-            Our{" "}
-            <span className="bg-gradient-to-r from-[#38bdf8] via-[#1ec9f2] to-[#9da8fb] bg-clip-text text-transparent font-medium">
-              Solutions
-            </span>
+            Our Solutions
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-300 font-light">
+          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-white font-light">
             {heading.subtitle}
           </p>
         </div>
@@ -224,7 +221,7 @@ export default function SolutionsShowcase({
                   className={`group relative flex min-w-[200px] sm:min-w-[240px] items-center gap-2.5 sm:gap-3 rounded-lg border p-2.5 sm:p-3 text-left transition-all duration-300 lg:min-w-0 ${
                     isActive
                       ? "border-[#1ec9f2]/70 bg-gradient-to-r from-[#1ec9f2]/20 via-[#0067b8]/20 to-white/[0.08] backdrop-blur-2xl shadow-[0_12px_30px_rgba(30,201,242,0.22),inset_0_1px_1px_rgba(255,255,255,0.3)]"
-                      : "border-white/10 bg-white/[0.04] backdrop-blur-xl hover:border-[#1ec9f2]/40 hover:bg-white/[0.08] text-slate-300"
+                      : "border-white/10 bg-white/[0.04] backdrop-blur-xl hover:border-[#1ec9f2]/40 hover:bg-white/[0.08] text-white"
                   }`}
                 >
                   {/* Active Right Neon Indicator Bar */}
@@ -235,16 +232,14 @@ export default function SolutionsShowcase({
                     className={`flex h-9 w-9 sm:h-10 sm:w-10 flex-none items-center justify-center rounded-md text-xs font-bold transition-all duration-300 ${
                       isActive
                         ? `bg-gradient-to-br ${solution.accent} text-white shadow-[0_0_15px_rgba(30,201,242,0.5)]`
-                        : "bg-white/10 text-slate-300 border border-white/10 group-hover:bg-white/15 group-hover:text-white"
+                        : "bg-white/10 text-white border border-white/10 group-hover:bg-white/15 group-hover:text-white"
                     }`}
                   >
                     {solution.number}
                   </span>
                   <span className="min-w-0 flex-1">
                     <span
-                      className={`block text-xs lg:text-sm font-medium leading-tight transition-colors duration-200 ${
-                        isActive ? "text-white" : "text-slate-300 group-hover:text-white"
-                      }`}
+                      className="block text-xs lg:text-sm font-medium leading-tight text-white"
                     >
                       {solution.title}
                     </span>
@@ -253,8 +248,8 @@ export default function SolutionsShowcase({
                     size={16}
                     className={`flex-none transition-all duration-300 ${
                       isActive
-                        ? "translate-x-0.5 text-[#38d7f8]"
-                        : "text-slate-500 group-hover:translate-x-0.5 group-hover:text-slate-300"
+                        ? "translate-x-0.5 text-white"
+                        : "text-white/60 group-hover:translate-x-0.5 group-hover:text-white"
                     }`}
                   />
                 </button>
@@ -288,7 +283,7 @@ export default function SolutionsShowcase({
               <div className="flex flex-col justify-center p-4 sm:p-6 lg:p-8 pb-12 sm:pb-14 overflow-y-auto" data-lenis-prevent>
                 <p
                   data-solution-content
-                  className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#38d7f8]"
+                  className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-white/80"
                 >
                   Solution {activeSolution.number} of {String(solutions.length).padStart(2, "0")}
                 </p>
@@ -301,16 +296,16 @@ export default function SolutionsShowcase({
                 </h3>
                 <p
                   data-solution-content
-                  className="mt-2.5 sm:mt-3 max-w-2xl text-xs sm:text-sm lg:text-base leading-relaxed text-slate-300 font-light"
+                  className="mt-2.5 sm:mt-3 max-w-2xl text-xs sm:text-sm lg:text-base leading-relaxed text-white font-light"
                 >
                   {activeSolution.description}
                 </p>
 
                 <ul data-solution-content className="mt-4 sm:mt-5 grid gap-2 sm:grid-cols-2">
                   {activeSolution.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm leading-relaxed text-slate-200 font-light">
-                      <span className="mt-0.5 flex h-4 w-4 sm:h-4.5 sm:w-4.5 flex-none items-center justify-center rounded-md bg-[#1ec9f2]/15 border border-[#1ec9f2]/30 text-[#38d7f8]">
-                        <Check size={11} strokeWidth={3} />
+                    <li key={feature} className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm leading-relaxed text-white font-light">
+                      <span className="mt-0.5 flex h-4 w-4 sm:h-4.5 sm:w-4.5 flex-none items-center justify-center rounded-md bg-white/10 border border-white/20 text-white">
+                        <Check size={11} strokeWidth={3} className="text-white" />
                       </span>
                       <span>{feature}</span>
                     </li>
@@ -331,7 +326,7 @@ export default function SolutionsShowcase({
                       type="button"
                       onClick={selectPrevious}
                       aria-label="Previous solution"
-                      className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-white/20 bg-white/[0.06] text-slate-200 transition-colors hover:border-[#1ec9f2]/60 hover:bg-white/15 hover:text-white"
+                      className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-white/20 bg-white/[0.06] text-white transition-colors hover:border-white/40 hover:bg-white/15"
                     >
                       <ArrowLeft size={16} />
                     </button>

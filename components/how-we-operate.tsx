@@ -180,17 +180,14 @@ export default function HowWeOperate() {
             style={{ fontWeight: 300 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight mb-3 sm:mb-4"
           >
-            How We{" "}
-            <span className="bg-gradient-to-r from-[#f0abfc] via-[#c084fc] to-[#a855f7] bg-clip-text text-transparent font-medium">
-              Operate
-            </span>
+            How We Operate
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed"
+            className="text-xs sm:text-sm md:text-base text-white max-w-2xl mx-auto font-light leading-relaxed"
           >
             End-to-end project execution from initial consultation to ongoing managed support.
           </motion.p>
@@ -261,10 +258,10 @@ export default function HowWeOperate() {
 
                     {/* Content Glass Card Pod (uniform equal shape and height) */}
                     <div className="w-full flex-1 flex flex-col justify-start p-3.5 sm:p-4 rounded-lg bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.15)] group-hover:border-[#c084fc]/50 group-hover:bg-white/[0.08] group-hover:shadow-[0_15px_35px_rgba(168,85,247,0.25)] group-hover:-translate-y-1 transition-all duration-300">
-                      <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 leading-tight group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
+                      <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 leading-tight group-hover:text-white transition-colors min-h-[2.5rem] flex items-center justify-center">
                         {step.title}
                       </h3>
-                      <p className="text-[11px] sm:text-xs text-slate-300 font-light leading-relaxed">
+                      <p className="text-[11px] sm:text-xs text-white font-light leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -293,10 +290,10 @@ export default function HowWeOperate() {
                         {index + 1}
                       </span>
                     </div>
-                    <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
+                    <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 group-hover:text-white transition-colors min-h-[2.5rem] flex items-center justify-center">
                       {step.title}
                     </h3>
-                    <p className="text-[11px] sm:text-xs text-slate-300 font-light leading-relaxed">
+                    <p className="text-[11px] sm:text-xs text-white font-light leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>
@@ -320,10 +317,10 @@ export default function HowWeOperate() {
                         {index + 5}
                       </span>
                     </div>
-                    <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
+                    <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 group-hover:text-white transition-colors min-h-[2.5rem] flex items-center justify-center">
                       {step.title}
                     </h3>
-                    <p className="text-[11px] sm:text-xs text-slate-300 font-light leading-relaxed">
+                    <p className="text-[11px] sm:text-xs text-white font-light leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>
@@ -361,7 +358,7 @@ export default function HowWeOperate() {
                       <h3 className="text-sm sm:text-base font-semibold text-white mb-1">
                         {step.title}
                       </h3>
-                      <p className="text-xs text-slate-300 font-light leading-relaxed">
+                      <p className="text-xs text-white font-light leading-relaxed">
                         {step.description}
                       </p>
                     </div>

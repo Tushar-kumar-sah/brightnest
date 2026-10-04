@@ -63,14 +63,14 @@ export function DropdownMenu({
                                 href={item.href}
                                 className="flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-white/15 hover:bg-white/10 transition-all duration-200 group"
                             >
-                                <div className="p-2 rounded-lg bg-white/10 border border-white/15 text-[#1ec9f2] group-hover:scale-105 group-hover:bg-[#1ec9f2]/20 group-hover:border-[#1ec9f2]/40 transition-all">
+                                <div className="p-2 rounded-lg bg-white/10 border border-white/15 text-white group-hover:scale-105 group-hover:bg-white/20 group-hover:border-white/40 transition-all">
                                     <Icon size={18} />
                                 </div>
                                 <div>
-                                    <div className="font-semibold text-white text-sm group-hover:text-[#1ec9f2] transition-colors">
+                                    <div className="font-semibold text-white text-sm group-hover:text-white transition-colors">
                                         {item.name}
                                     </div>
-                                    <div className="text-xs text-slate-300/80 mt-0.5">
+                                    <div className="text-xs text-white/80 mt-0.5">
                                         {item.description}
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@ export function DropdownMenu({
                         <div className="col-span-2 border-t border-white/15 mt-2 pt-3">
                             <a
                                 href={viewAllHref}
-                                className="flex items-center justify-center gap-2 text-sm font-semibold text-[#1ec9f2] hover:text-[#38d7f8] transition-colors"
+                                className="flex items-center justify-center gap-2 text-sm font-semibold text-white hover:underline transition-colors"
                             >
                                 {viewAllLabel}
                                 <ChevronDown size={14} className="rotate-[-90deg]" />

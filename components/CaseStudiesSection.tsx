@@ -88,29 +88,26 @@ export default function CaseStudiesSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-[#1ec9f2]/40 text-[#38d7f8] text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(30,201,242,0.25)] backdrop-blur-xl">
-              <span className="w-2 h-2 rounded-full bg-[#1ec9f2] animate-pulse shadow-[0_0_8px_#1ec9f2]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/20 text-white text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(255,255,255,0.1)] backdrop-blur-xl">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_8px_white]" />
               <span>Customer Success Stories</span>
             </div>
             <h2
               style={{ fontWeight: 300 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight"
             >
-              Proven Deployments &{" "}
-              <span className="bg-gradient-to-r from-[#38bdf8] via-[#1ec9f2] to-[#60a5fa] bg-clip-text text-transparent font-medium">
-                Real Results
-              </span>
+              Proven Deployments & Real Results
             </h2>
-            <p className="mt-3 text-slate-300 text-sm sm:text-base max-w-xl font-light leading-relaxed">
+            <p className="mt-3 text-white text-sm sm:text-base max-w-xl font-light leading-relaxed">
               See how our engineered networking, security, and AV solutions enable enterprises to operate with speed, safety, and confidence.
             </p>
           </div>
           <Link
             href="/case-studies"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white bg-white/[0.06] border border-[#1ec9f2]/40 hover:bg-white/[0.12] hover:border-[#1ec9f2] shadow-[0_0_20px_rgba(30,201,242,0.2)] transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white bg-white/[0.06] border border-white/20 hover:bg-white/[0.12] hover:border-white/40 shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
           >
             <span>View All Case Studies</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#38d7f8]" />
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-white" />
           </Link>
         </div>
 
@@ -131,10 +128,10 @@ export default function CaseStudiesSection() {
                   sizes="(max-width: 768px) 100vw, 400px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/40 to-transparent" />
-                <div className="absolute top-4 left-4 px-3 py-1 rounded bg-[#070c1e]/85 backdrop-blur-xl text-xs font-semibold text-[#38d7f8] border border-[#1ec9f2]/40 shadow-sm">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded bg-[#070c1e]/85 backdrop-blur-xl text-xs font-semibold text-white border border-white/20 shadow-sm">
                   {study.category}
                 </div>
-                <div className="absolute bottom-3 left-4 text-xs font-medium text-slate-300 flex items-center gap-1.5 bg-[#070c1e]/70 px-2.5 py-1 rounded bg-black/60 backdrop-blur-md border border-white/10">
+                <div className="absolute bottom-3 left-4 text-xs font-medium text-white flex items-center gap-1.5 bg-[#070c1e]/70 px-2.5 py-1 rounded bg-black/60 backdrop-blur-md border border-white/10">
                   Client: {study.client}
                 </div>
               </div>
@@ -142,23 +139,23 @@ export default function CaseStudiesSection() {
               {/* Card Body */}
               <div className="p-6 flex flex-col justify-between flex-grow space-y-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-white group-hover:text-[#38d7f8] transition-colors leading-snug">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-white transition-colors leading-snug">
                     {study.title}
                   </h3>
-                  <p className="mt-2 text-xs sm:text-sm text-slate-300 font-light leading-relaxed line-clamp-3">
+                  <p className="mt-2 text-xs sm:text-sm text-white font-light leading-relaxed line-clamp-3">
                     {study.description}
                   </p>
                 </div>
 
                 {/* Key Outcome Highlights */}
                 <div className="space-y-2 pt-3 border-t border-white/10">
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-[#38d7f8] flex items-center gap-1.5">
-                    <TrendingUp className="w-3.5 h-3.5 text-[#38d7f8]" />
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-white/90 flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-white" />
                     <span>Delivered Outcomes</span>
                   </div>
                   {study.results.slice(0, 2).map((res) => (
-                    <div key={res} className="flex items-start gap-2 text-xs text-slate-200 font-light">
-                      <CheckCircle2 className="w-4 h-4 text-[#1ec9f2] flex-shrink-0 mt-0.5" />
+                    <div key={res} className="flex items-start gap-2 text-xs text-white font-light">
+                      <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
                       <span>{res}</span>
                     </div>
                   ))}
@@ -168,7 +165,7 @@ export default function CaseStudiesSection() {
                 <div className="pt-2">
                   <Link
                     href="/case-studies"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#38d7f8] hover:text-white transition-colors group-hover:translate-x-1"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-white/80 transition-colors group-hover:translate-x-1"
                   >
                     <span>Read Full Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -80,20 +80,17 @@ export default function PartnerEcosystem() {
 
       {/* Content Header */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-8 sm:mb-12 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-[#1ec9f2]/40 text-[#38d7f8] text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 shadow-[0_0_20px_rgba(30,201,242,0.25)] backdrop-blur-xl">
-          <span className="w-2 h-2 rounded-full bg-[#1ec9f2] animate-pulse shadow-[0_0_8px_#1ec9f2]" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/20 text-white text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 shadow-[0_0_20px_rgba(255,255,255,0.1)] backdrop-blur-xl">
+          <span className="w-2 h-2 rounded-full bg-white animate-pulse shadow-[0_0_8px_white]" />
           <span>Our Partner Ecosystem</span>
         </div>
         <h2
           style={{ fontWeight: 300 }}
           className="text-2xl sm:text-3xl lg:text-4xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight"
         >
-          Powered by{" "}
-          <span className="bg-gradient-to-r from-[#38bdf8] via-[#1ec9f2] to-[#60a5fa] bg-clip-text text-transparent font-medium">
-            Global Technology Leaders
-          </span>
+          Powered by Global Technology Leaders
         </h2>
-        <p className="mt-2.5 sm:mt-3 text-slate-300 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="mt-2.5 sm:mt-3 text-white text-xs sm:text-sm lg:text-base max-w-2xl mx-auto font-light leading-relaxed">
           Delivering genuine enterprise-grade hardware, tier-1 vendor warranties, and factory-trained certified deployment.
         </p>
       </div>
@@ -122,10 +119,10 @@ export default function PartnerEcosystem() {
                   />
                 </div>
                 <div className="border-l border-white/15 pl-2.5 sm:pl-3">
-                  <div className="text-xs font-semibold text-white group-hover:text-[#38d7f8] transition-colors">
+                  <div className="text-xs font-semibold text-white group-hover:text-white transition-colors">
                     {p.name}
                   </div>
-                  <div className="text-[10px] text-slate-300/80 font-normal mt-0.5">
+                  <div className="text-[10px] text-white/80 font-normal mt-0.5">
                     {p.category}
                   </div>
                 </div>
@@ -156,10 +153,10 @@ export default function PartnerEcosystem() {
                   />
                 </div>
                 <div className="border-l border-white/15 pl-2.5 sm:pl-3">
-                  <div className="text-xs font-semibold text-white group-hover:text-[#38d7f8] transition-colors">
+                  <div className="text-xs font-semibold text-white group-hover:text-white transition-colors">
                     {p.name}
                   </div>
-                  <div className="text-[10px] text-slate-300/80 font-normal mt-0.5">
+                  <div className="text-[10px] text-white/80 font-normal mt-0.5">
                     {p.category}
                   </div>
                 </div>

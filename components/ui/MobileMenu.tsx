@@ -103,7 +103,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                         <Link
                                             href="/"
                                             onClick={() => setIsOpen(false)}
-                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-white transition-colors"
                                         >
                                             Home
                                         </Link>
@@ -113,7 +113,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                     <li>
                                         <button
                                             onClick={() => setServicesOpen(!servicesOpen)}
-                                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-white transition-colors"
                                         >
                                             <span>Services (What We Do)</span>
                                             <ChevronDown
@@ -138,11 +138,11 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                                 <Link
                                                                     href={service.href}
                                                                     onClick={() => setIsOpen(false)}
-                                                                    className="block px-4 py-3 text-sm text-slate-300 hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                                                    className="block px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors"
                                                                 >
                                                                     <div className="flex items-center gap-3">
                                                                         {Icon && (
-                                                                            <Icon size={18} className="text-[#1ec9f2]" />
+                                                                            <Icon size={18} className="text-white" />
                                                                         )}
                                                                         <span>{service.name}</span>
                                                                     </div>
@@ -154,7 +154,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                         <Link
                                                             href="/services"
                                                             onClick={() => setIsOpen(false)}
-                                                            className="block px-4 py-3 text-sm font-semibold text-[#1ec9f2] hover:bg-white/10 transition-colors border-t border-white/10"
+                                                            className="block px-4 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors border-t border-white/10"
                                                         >
                                                             View All Services →
                                                         </Link>
@@ -168,7 +168,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                     <li>
                                         <button
                                             onClick={() => setIndustriesOpen(!industriesOpen)}
-                                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-white transition-colors"
                                         >
                                             <span>Industries</span>
                                             <ChevronDown
@@ -193,10 +193,10 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                                  <Link
                                                                      href={`/industries/${industry.slug}`}
                                                                      onClick={() => setIsOpen(false)}
-                                                                     className="block px-4 py-3 text-sm text-slate-300 hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                                                     className="block px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors"
                                                                  >
                                                                      <div className="flex items-center gap-3">
-                                                                         <Icon size={18} className="text-[#0db16a]" />
+                                                                         <Icon size={18} className="text-white" />
                                                                          <span>{industry.name}</span>
                                                                      </div>
                                                                  </Link>
@@ -207,7 +207,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                         <Link
                                                              href="/industries"
                                                              onClick={() => setIsOpen(false)}
-                                                             className="block px-4 py-3 text-sm font-semibold text-[#1ec9f2] hover:bg-white/10 transition-colors border-t border-white/10"
+                                                             className="block px-4 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors border-t border-white/10"
                                                          >
                                                              View All Industries →
                                                          </Link>
@@ -222,7 +222,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                          <Link
                                              href="/about"
                                              onClick={() => setIsOpen(false)}
-                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-white transition-colors"
                                          >
                                              Who We Are
                                          </Link>
@@ -233,7 +233,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                          <Link
                                              href="/careers"
                                              onClick={() => setIsOpen(false)}
-                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-white transition-colors"
                                          >
                                              Careers
                                          </Link>
@@ -244,7 +244,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                          <Link
                                              href="/case-studies"
                                              onClick={() => setIsOpen(false)}
-                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-white transition-colors"
                                          >
                                              Case Studies
                                          </Link>
@@ -255,7 +255,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                          <Link
                                              href="/contact"
                                              onClick={() => setIsOpen(false)}
-                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-white transition-colors"
                                          >
                                              Contact Us
                                          </Link>
@@ -267,7 +267,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                      <Link
                                          href="/contact"
                                          onClick={() => setIsOpen(false)}
-                                         className="block w-full text-center px-6 py-3 bg-[#1ec9f2] text-[#070c1e] font-bold rounded-lg hover:bg-[#38d7f8] shadow-[0_0_15px_rgba(30,201,242,0.4)] transition-all"
+                                         className="block w-full text-center px-6 py-3 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold rounded-lg shadow-[0_0_15px_rgba(30,201,242,0.4)] transition-all"
                                      >
                                          Book a Site Survey
                                      </Link>
@@ -277,14 +277,14 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                 <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
                                     <a
                                         href={`tel:${contactInfo.phone}`}
-                                        className="flex items-center gap-3 text-slate-300 hover:text-[#1ec9f2] transition-colors"
+                                        className="flex items-center gap-3 text-white hover:text-white/80 transition-colors"
                                     >
                                         <Phone size={18} />
                                         <span className="font-medium">{contactInfo.phone}</span>
                                     </a>
                                     <a
                                         href={`mailto:${contactInfo.email}`}
-                                        className="flex items-center gap-3 text-slate-300 hover:text-[#1ec9f2] transition-colors"
+                                        className="flex items-center gap-3 text-white hover:text-white/80 transition-colors"
                                     >
                                         <Mail size={18} />
                                         <span className="font-medium">{contactInfo.email}</span>
@@ -300,3 +300,4 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
 }
 
 export default MobileMenu
+

@@ -81,10 +81,7 @@ export default function CaseStudies() {
                 Proven Enterprise Track Record
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
-                Real-World Impact.{" "}
-                <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-200 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(37,99,235,0.35)]">
-                  Delivered.
-                </span>
+                Real-World Impact. Delivered.
               </h1>
               <p className="text-base sm:text-lg text-blue-100/75 leading-relaxed mb-8">
                 Explore how Brightnest architects resilient, standards-compliant, and high-performance infrastructure for leading enterprises, campuses, and mission-critical facilities across India.

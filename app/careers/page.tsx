@@ -74,10 +74,7 @@ export default function Careers() {
                                 Join Our Engineering Team
                             </div>
                             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">
-                                Build the Future of{" "}
-                                <span className="bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-200 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(168,85,247,0.35)]">
-                                    IT Infrastructure
-                                </span>
+                                Build the Future of IT Infrastructure
                             </h1>
                             <p className="text-sm sm:text-base lg:text-lg text-purple-100/75 mb-6 sm:mb-8 leading-relaxed font-light">
                                 Join a mission-driven team of network architects, security specialists, and systems engineers shaping enterprise technology ecosystems across India.

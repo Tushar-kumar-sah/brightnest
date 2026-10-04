@@ -199,12 +199,9 @@ export default function BuildYourSolution() {
               style={{ fontWeight: 300 }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight mb-3 sm:mb-4"
             >
-              Build Your{" "}
-              <span className="bg-gradient-to-r from-[#60a5fa] via-[#a855f7] to-[#c084fc] bg-clip-text text-transparent font-medium">
-                Solution
-              </span>
+              Build Your Solution
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-white text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
               Select the services you need and we&apos;ll tailor a comprehensive infrastructure solution for your organization.
             </p>
           </motion.div>
@@ -255,9 +252,9 @@ export default function BuildYourSolution() {
                       animate={{ scale: 1, opacity: 1, rotate: 0 }}
                       exit={{ scale: 0, opacity: 0, rotate: 45 }}
                       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                      className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-[#818cf8]"
+                      className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-white"
                     >
-                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 fill-[#4338ca] text-[#c7d2fe] drop-shadow-[0_0_8px_rgba(129,140,248,0.8)]" />
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-[#070c1e] drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -265,17 +262,17 @@ export default function BuildYourSolution() {
                 <div className={`
                   w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-md flex items-center justify-center mb-2.5 sm:mb-3 transition-all duration-300
                   ${isSelected
-                    ? 'bg-gradient-to-br from-[#3b82f6] via-[#6366f1] to-[#a855f7] text-white shadow-[0_0_15px_rgba(99,102,241,0.6)] scale-110'
-                    : 'bg-white/10 text-[#a5b4fc] border border-white/10 group-hover:bg-[#6366f1]/20 group-hover:text-white group-hover:scale-110'
+                    ? 'bg-white/20 text-white border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.2)] scale-105'
+                    : 'bg-white/[0.06] text-white/80 border border-white/10 group-hover:bg-white/10 group-hover:text-white group-hover:scale-105'
                   }
                 `}>
                   <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 
-                <h3 className={`text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight transition-colors ${isSelected ? 'text-white' : 'text-slate-200 group-hover:text-white'}`}>
+                <h3 className="text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight text-white transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-[11px] sm:text-xs text-slate-400 font-light leading-relaxed hidden sm:block">
+                <p className="text-[11px] sm:text-xs text-white/80 font-light leading-relaxed hidden sm:block">
                   {service.description}
                 </p>
               </motion.div>
@@ -296,15 +293,15 @@ export default function BuildYourSolution() {
           >
             <div className="bg-[#08091f]/95 text-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(99,102,241,0.3)] p-3 sm:px-5 sm:py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border border-[#818cf8]/35 backdrop-blur-2xl">
               <div className="flex items-center gap-3">
-                <div className="bg-[#6366f1]/20 p-2 sm:p-2.5 rounded-md flex-shrink-0 border border-[#818cf8]/40 shadow-[0_0_12px_rgba(99,102,241,0.4)]">
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#a5b4fc]" />
+                <div className="bg-white/10 p-2 sm:p-2.5 rounded-md flex-shrink-0 border border-white/20">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div className="min-w-0">
                   <h4 className="text-sm sm:text-base font-bold leading-tight text-white flex items-center gap-2">
                     <span>{selectedServices.length} {selectedServices.length === 1 ? 'Service' : 'Services'} Selected</span>
-                    <span className="w-2 h-2 rounded-full bg-[#818cf8] animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-white/70 animate-ping" />
                   </h4>
-                  <p className="text-[11px] sm:text-xs text-slate-300 font-light hidden sm:block">
+                  <p className="text-[11px] sm:text-xs text-white/80 font-light hidden sm:block">
                     Ready to build your custom turnkey enterprise infrastructure
                   </p>
                 </div>

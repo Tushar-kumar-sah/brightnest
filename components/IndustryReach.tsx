@@ -93,16 +93,13 @@ export default function IndustryReach() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         {/* Section Header (Team Computers Style) */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#1ec9f2]/30 text-[#1ec9f2] text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4">
             <span>Industry Reach</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-            Engineered for High-Stakes{" "}
-            <span className="bg-gradient-to-r from-[#1ec9f2] to-[#0db16a] bg-clip-text text-transparent">
-              Industry Environments
-            </span>
+            Engineered for High-Stakes Industry Environments
           </h2>
-          <p className="mt-3 text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+          <p className="mt-3 text-white text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
             From hyper-growth tech parks to automated manufacturing plants, our solutions are purpose-built for the unique compliance and reliability standards of each sector.
           </p>
         </div>
@@ -114,7 +111,7 @@ export default function IndustryReach() {
             return (
               <div
                 key={ind.id}
-                className="group relative rounded-lg overflow-hidden bg-[#111a33] border border-white/10 hover:border-[#1ec9f2]/50 shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"
+                className="group relative rounded-lg overflow-hidden bg-[#111a33] border border-white/10 hover:border-white/30 shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"
               >
                 {/* Image Top Half with Gradient Overlay */}
                 <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-900">
@@ -128,12 +125,12 @@ export default function IndustryReach() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111a33] via-[#111a33]/40 to-transparent" />
 
                   {/* Icon badge */}
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-md bg-[#0b132b]/80 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#1ec9f2] shadow-md">
-                    <Icon className="w-5 h-5" />
+                  <div className="absolute top-4 left-4 w-10 h-10 rounded-md bg-[#0b132b]/80 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-md">
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
 
                   {/* Industry Category Pill */}
-                  <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-[#0b132b]/80 backdrop-blur-md border border-white/10 text-[11px] font-semibold text-slate-300">
+                  <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-[#0b132b]/80 backdrop-blur-md border border-white/10 text-[11px] font-semibold text-white">
                     {ind.badge}
                   </div>
                 </div>
@@ -141,10 +138,10 @@ export default function IndustryReach() {
                 {/* Content Area */}
                 <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-[#1ec9f2] transition-colors">
+                    <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors">
                       {ind.title}
                     </h3>
-                    <p className="mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    <p className="mt-2 text-white text-xs sm:text-sm leading-relaxed font-light">
                       {ind.description}
                     </p>
                   </div>
@@ -154,7 +151,7 @@ export default function IndustryReach() {
                     {ind.solutions.map((sol) => (
                       <span
                         key={sol}
-                        className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-medium text-slate-300"
+                        className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-medium text-white"
                       >
                         {sol}
                       </span>
@@ -165,10 +162,10 @@ export default function IndustryReach() {
                   <div className="pt-2 border-t border-white/10">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#1ec9f2] hover:text-white transition-colors group-hover:translate-x-1 duration-200"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-white/80 transition-colors group-hover:translate-x-1 duration-200"
                     >
                       <span>Consult with Sector Specialist</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 text-white" />
                     </Link>
                   </div>
                 </div>
@@ -183,13 +180,13 @@ export default function IndustryReach() {
             <h4 className="text-lg sm:text-xl font-bold text-white">
               Don&apos;t see your specific industry listed?
             </h4>
-            <p className="text-sm text-slate-400 mt-1">
+            <p className="text-sm text-white font-light mt-1">
               We design custom enterprise solutions tailored to any complex operational requirement.
             </p>
           </div>
           <Link
             href="/contact"
-            className="flex-shrink-0 px-6 py-3 rounded-md font-bold text-sm text-[#070c1e] bg-[#1ec9f2] hover:bg-[#38d7f8] shadow-[0_0_20px_rgba(30,201,242,0.4)] transition-all"
+            className="flex-shrink-0 px-6 py-3 rounded-md font-bold text-sm text-white bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right shadow-[0_0_20px_rgba(30,201,242,0.4)] transition-all"
           >
             Request Custom Architecture
           </Link>

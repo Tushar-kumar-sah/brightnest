@@ -111,7 +111,7 @@ export default function HeroImageSlider({
 
         {/* Optional Badge top-left */}
         {badgeText && (
-          <div className="absolute top-2.5 sm:top-3.5 left-2.5 sm:left-3.5 z-20 px-2.5 py-1 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/75 border border-white/20 text-slate-200 backdrop-blur-md flex items-center gap-1.5">
+          <div className="absolute top-2.5 sm:top-3.5 left-2.5 sm:left-3.5 z-20 px-2.5 py-1 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/75 border border-white/20 text-white backdrop-blur-md flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: accentColor }} />
             {badgeText}
           </div>
@@ -131,7 +131,7 @@ export default function HeroImageSlider({
               </h4>
             )}
             {currentSlide.caption && (
-              <p className="text-slate-300 text-[11px] sm:text-sm line-clamp-2 leading-relaxed drop-shadow-sm font-light">
+              <p className="text-white text-[11px] sm:text-sm line-clamp-2 leading-relaxed drop-shadow-sm font-light">
                 {currentSlide.caption}
               </p>
             )}
