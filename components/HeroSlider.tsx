@@ -21,7 +21,7 @@ const slides: HeroSlide[] = [
     headline: "Empowering\nCompanies To Scale\nEnterprise Networks\nAcross India",
     subhead1: "Network Deployment,",
     subhead2: "PAN-India",
-    image: "/modern-tech-infrastructure-network.jpg",
+    image: "/indian-network-noc-engineer.jpg",
     href: "/services/networking",
   },
   {
@@ -29,7 +29,7 @@ const slides: HeroSlide[] = [
     headline: "Build A Business\nThat Security Threats\nCan't Stop Or\nCompromise",
     subhead1: "AI CCTV & Biometrics,",
     subhead2: "Zero-Trust Security",
-    image: "/security-infrastructure.jpg",
+    image: "/indian-security-specialist.jpg",
     href: "/services/security",
   },
   {
@@ -37,7 +37,7 @@ const slides: HeroSlide[] = [
     headline: "Transform Boardrooms\nInto Intelligent\nCollaboration Hubs\nAcross India",
     subhead1: "Smart AV Integration,",
     subhead2: "Teams & Zoom Rooms",
-    image: "/modern-conference-room.jpg",
+    image: "/indian-smart-boardroom.jpg",
     href: "/services/av",
   },
   {
@@ -45,7 +45,7 @@ const slides: HeroSlide[] = [
     headline: "Future-Proofing\nData Centers With\nHigh-Density Fiber\nArchitecture",
     subhead1: "Structured Cabling,",
     subhead2: "Tier III/IV Standards",
-    image: "/data-center-infrastructure.jpg",
+    image: "/datacenter-infrastructure-engineer.jpg",
     href: "/services/cabling",
   },
   {
@@ -128,7 +128,7 @@ export default function HeroSlider() {
 
   return (
     <section
-      className="relative w-full h-screen min-h-[640px] max-h-[960px] overflow-hidden bg-black select-none"
+      className="relative w-full h-[100dvh] min-h-[560px] max-h-[960px] overflow-hidden bg-[#070c1e] select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -158,13 +158,15 @@ export default function HeroSlider() {
             />
           </div>
 
-          {/* Gradients matching Team Computers Reference (Solid black on left fading to reveal image on right) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent w-full lg:w-[65%] z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/60 z-10" />
-          <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-black/80 to-transparent z-10" />
+          {/* Seamless Gradients blending with unified #070c1e theme */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070c1e] via-[#070c1e]/85 to-transparent w-full lg:w-[65%] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-transparent to-[#070c1e]/60 z-10" />
+          <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#070c1e]/80 to-transparent z-10" />
+          {/* Bottom Seamless Dissolve into next section */}
+          <div className="absolute bottom-0 inset-x-0 h-40 sm:h-56 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/75 to-transparent z-10 pointer-events-none" />
 
           {/* Slide Text Content Container */}
-          <div className="relative z-20 h-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex flex-col justify-center pt-24 sm:pt-28 pb-28 sm:pb-32">
+          <div className="relative z-20 h-full max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 flex flex-col justify-center pt-20 sm:pt-28 pb-24 sm:pb-32">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
               {/* Left Column: Headline (slim, balanced, elegant size) */}
               <div className="lg:col-span-7">
@@ -218,8 +220,8 @@ export default function HeroSlider() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Bottom Left Circular Arrows aligned directly with content container */}
-      <div className="absolute bottom-8 sm:bottom-10 inset-x-0 z-30 pointer-events-none">
+      {/* Bottom Left Circular Arrows aligned directly with content container, safely positioned above mobile bar */}
+      <div className="absolute bottom-20 sm:bottom-10 inset-x-0 z-30 pointer-events-none">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between">
           <div className="flex items-center gap-3 pointer-events-auto">
             <button

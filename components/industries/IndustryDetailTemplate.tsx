@@ -35,7 +35,7 @@ const sectorSlidesMap: Record<string, SlideItem[]> = {
       caption: "Multi-gigabit Wi-Fi 7 and Cat6A 10G backbones for high-density tech parks."
     },
     {
-      image: "/modern-conference-room.jpg",
+      image: "/indian-smart-boardroom.jpg",
       title: "Executive Hybrid Boardrooms",
       caption: "Acoustically treated conference rooms with beamforming mic arrays and 4K displays."
     },
@@ -52,29 +52,29 @@ const sectorSlidesMap: Record<string, SlideItem[]> = {
       caption: "Directional APs designed to cut through dense metal racking and high-bay aisles."
     },
     {
-      image: "/security-infrastructure.jpg",
+      image: "/indian-security-specialist.jpg",
       title: "Thermal CCTV & Hazard Defense",
       caption: "Bi-spectrum heat sensors for early fire and machinery overheating warning."
     },
     {
-      image: "/data-center-infrastructure.jpg",
+      image: "/datacenter-infrastructure-engineer.jpg",
       title: "Armored Fiber Optic Backbone",
       caption: "Crush-resistant single-mode fiber in heavy-duty GI conduit for zero interference."
     }
   ],
   "data-centers": [
     {
-      image: "/data-center-infrastructure.jpg",
+      image: "/datacenter-infrastructure-engineer.jpg",
       title: "Aisle Containment & Optical Fabric",
       caption: "Hot/cold aisle containment systems and MPO/MTP ultra-low loss trunking."
     },
     {
-      image: "/datacenter-infrastructure-engineer.jpg",
+      image: "/indian-network-noc-engineer.jpg",
       title: "Biometric Multi-Factor Mantraps",
       caption: "Dual-custody access cages with palm-vein readers and continuous audit logs."
     },
     {
-      image: "/modern-tech-infrastructure-network.jpg",
+      image: "/gcc-enterprise-engineer.jpg",
       title: "VESDA Smoke & Clean-Agent Gas",
       caption: "Aspirating air sampling smoke detection and automated clean-agent fire safety."
     }
@@ -86,12 +86,12 @@ const sectorSlidesMap: Record<string, SlideItem[]> = {
       caption: "Zero-deadspot in-room wall-plate APs and high-priority POS transactions."
     },
     {
-      image: "/modern-conference-room.jpg",
+      image: "/indian-smart-boardroom.jpg",
       title: "Interactive Digital Signage",
       caption: "High-impact video walls and cloud CMS-driven menu boards."
     },
     {
-      image: "/security-infrastructure.jpg",
+      image: "/indian-security-specialist.jpg",
       title: "Loss-Prevention 4K Surveillance",
       caption: "WDR dome cameras and cashier register overlay protection."
     }
@@ -120,12 +120,12 @@ const sectorSlidesMap: Record<string, SlideItem[]> = {
       caption: "Interactive 4K flat panels, wireless screen casting, and lecture capture."
     },
     {
-      image: "/modern-tech-infrastructure-network.jpg",
+      image: "/indian-smart-boardroom.jpg",
       title: "Inter-Building Campus Fiber",
       caption: "Armored single-mode 24-core backbone connecting all university departments."
     },
     {
-      image: "/modern-conference-room.jpg",
+      image: "/professional-man-with-glasses-analyzing-code-on-sc.jpg",
       title: "Auditorium Acoustics & Pro Sound",
       caption: "Line-array sound systems and digital mixing consoles for large-venue lectures."
     }
@@ -189,7 +189,7 @@ export default function IndustryDetailTemplate({
           caption: "Bespoke digital and physical connectivity designed to regulatory standards."
         },
         {
-          image: "/data-center-infrastructure.jpg",
+          image: "/datacenter-infrastructure-engineer.jpg",
           title: "Mission-Critical Resiliency",
           caption: "Tier-grade high-availability backbone and redundant power systems."
         },
@@ -220,27 +220,27 @@ export default function IndustryDetailTemplate({
                 <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                 Specialized Industry Vertical
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-3 sm:mb-4">
                 <span className={`bg-gradient-to-r ${theme.accentGradient} bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,255,255,0.25)]`}>
                   {name}
                 </span>
               </h1>
-              <p className={`text-xl sm:text-2xl font-bold text-white mb-6 tracking-tight`}>
+              <p className={`text-lg sm:text-xl lg:text-2xl font-semibold text-white mb-4 sm:mb-6 tracking-tight`}>
                 {tagline}
               </p>
-              <p className={`text-base sm:text-lg ${theme.subtextColor} leading-relaxed mb-8`}>
+              <p className={`text-sm sm:text-base lg:text-lg ${theme.subtextColor} leading-relaxed mb-6 sm:mb-8 font-light`}>
                 {description}
               </p>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className={`inline-flex items-center justify-center px-8 py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all gap-2`}
+                  className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all gap-2 text-center w-full sm:w-auto`}
                 >
                   Schedule Site Audit <ArrowRight size={16} />
                 </Link>
                 <Link
                   href="/industries"
-                  className="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all text-center w-full sm:w-auto"
                 >
                   All Industries
                 </Link>
@@ -371,27 +371,27 @@ export default function IndustryDetailTemplate({
       {/* Bottom CTA Banner */}
       <section className="section-padding relative z-10 py-16 pb-24">
         <div className="section-container">
-          <div className={`rounded-md p-8 sm:p-12 md:p-14 text-center bg-black/40 border ${theme.cardBorder} ${theme.cardShadowHover} relative overflow-hidden backdrop-blur-xl`}>
+          <div className={`rounded-md p-6 sm:p-10 md:p-14 text-center bg-black/40 border ${theme.cardBorder} ${theme.cardShadowHover} relative overflow-hidden backdrop-blur-xl`}>
             <div className={`absolute -top-24 -right-24 w-72 h-72 rounded-full ${theme.glowOrb1} blur-[80px] pointer-events-none`} />
             <div className={`absolute -bottom-24 -left-24 w-72 h-72 rounded-full ${theme.glowOrb2} blur-[80px] pointer-events-none`} />
 
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight">
                 Modernize Your {name} Infrastructure
               </h2>
-              <p className={`text-base sm:text-lg ${theme.subtextColor} mb-8 leading-relaxed`}>
+              <p className={`text-sm sm:text-base lg:text-lg ${theme.subtextColor} mb-6 sm:mb-8 leading-relaxed font-light`}>
                 Connect with our certified enterprise engineers to arrange a comprehensive on-site survey and tailored technical proposal.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                 <Link
                   href="/contact"
-                  className={`inline-flex items-center justify-center px-8 py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all`}
+                  className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all text-center w-full sm:w-auto`}
                 >
                   Book a Site Survey
                 </Link>
                 <a
                   href="tel:+919366355026"
-                  className="inline-flex items-center justify-center px-8 py-3.5 border border-white/25 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all gap-2"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 border border-white/25 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all gap-2 text-center w-full sm:w-auto"
                 >
                   <Phone size={16} />
                   (+91) 93663 55026

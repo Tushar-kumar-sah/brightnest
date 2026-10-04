@@ -96,7 +96,7 @@ const stats = [
 ];
 
 const highlights = [
-  "OEM-certified engineers across Cisco, Hikvision, Aruba, Poly & Dell",
+  "OEM-certified engineers across Cisco, Fortinet, HPE, Poly & Bosch",
   "Transparent Bill of Quantities (BOQ) with zero hidden costs",
   "Fluke-certified testing with comprehensive warranty coverage",
   "Single-point-of-contact SLA support for peace of mind",
@@ -119,13 +119,10 @@ const ambientParticles = [
 
 export default function AboutTeaser() {
   return (
-    <section className="relative py-24 lg:py-32 bg-[#070c1e] text-white overflow-hidden border-b border-white/10 select-none">
-      {/* Animated Top Border Specular Beam */}
-      <motion.div
-        animate={{ x: ["-100%", "250%"] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-0 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#9266fd] to-transparent pointer-events-none z-20"
-      />
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-[#070c1e] text-white overflow-hidden select-none">
+      {/* Seamless Top & Bottom Transition Fades */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
 
       {/* Digital Tech Grid Overlay with Soft Radial Fade */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_60%,transparent_100%)] pointer-events-none -z-0" />
@@ -175,8 +172,8 @@ export default function AboutTeaser() {
         className="absolute bottom-10 left-1/4 w-[460px] h-[460px] bg-gradient-to-tr from-[#a855f7]/25 via-[#9266fd]/20 to-transparent rounded-full blur-[150px] pointer-events-none -z-0"
       />
 
-      {/* Ambient Top Elliptical Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(146,102,253,0.22),rgba(7,12,30,0))] pointer-events-none -z-0" />
+      {/* Ambient Soft Elliptical Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_30%,rgba(146,102,253,0.12),transparent)] pointer-events-none -z-0" />
 
       {/* Drifting Light Particles / Bokeh Sparkles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-0">
@@ -201,11 +198,11 @@ export default function AboutTeaser() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Column: Narrative & Highlights */}
-          <div className="lg:col-span-7 space-y-7">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-7">
             {/* Badge: Frosted Glass with Purple Accent */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-[#9266fd]/40 text-[#9da8fb] text-xs font-semibold uppercase tracking-wider backdrop-blur-xl shadow-[0_0_20px_rgba(146,102,253,0.25)]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-[#9266fd]/40 text-[#9da8fb] text-xs font-semibold uppercase tracking-wider backdrop-blur-xl shadow-[0_0_20px_rgba(146,102,253,0.25)]">
               <span className="w-2 h-2 rounded-full bg-[#9266fd] animate-pulse shadow-[0_0_8px_#9266fd]" />
               <span>Who We Are</span>
             </div>
@@ -213,7 +210,7 @@ export default function AboutTeaser() {
             {/* Headline: Slim Montserrat Typography with Purple/Cyan Gradient */}
             <h2
               style={{ fontWeight: 300 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-[1.18]"
+              className="text-2xl sm:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-[1.2]"
             >
               The Experts Behind Your{" "}
               <span className="bg-gradient-to-r from-[#9266fd] via-[#1ec9f2] to-[#0db16a] bg-clip-text text-transparent font-medium">
@@ -222,21 +219,21 @@ export default function AboutTeaser() {
             </h2>
 
             {/* Narrative text with high-contrast, relaxed reading */}
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
+            <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed font-light">
               We help growing businesses and large enterprises thrive through the power of engineered technology. Whether scaling an office network, deploying AI-driven CCTV surveillance, or integrating hybrid boardrooms, our certified team handles every detail from technical design to ongoing 24/7 managed support.
             </p>
 
             {/* Bullet Highlights: Frosted Glass Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
               {highlights.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#9266fd]/50 hover:bg-white/[0.07] backdrop-blur-md transition-all duration-300 group shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+                  className="flex items-start gap-3 p-3.5 rounded-lg bg-white/[0.03] border border-white/10 hover:border-[#9266fd]/50 hover:bg-white/[0.07] backdrop-blur-md transition-all duration-300 group shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
                 >
-                  <div className="p-1 rounded-lg bg-[#9266fd]/20 text-[#9da8fb] border border-[#9266fd]/30 flex-shrink-0 mt-0.5 group-hover:scale-110 group-hover:bg-[#1ec9f2]/20 group-hover:text-[#1ec9f2] transition-all">
+                  <div className="p-1 rounded-md bg-[#9266fd]/20 text-[#9da8fb] border border-[#9266fd]/30 flex-shrink-0 mt-0.5 group-hover:scale-110 group-hover:bg-[#1ec9f2]/20 group-hover:text-[#1ec9f2] transition-all">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
-                  <span className="text-sm font-normal text-slate-200 leading-snug group-hover:text-white transition-colors">
+                  <span className="text-xs sm:text-sm font-normal text-slate-200 leading-snug group-hover:text-white transition-colors">
                     {item}
                   </span>
                 </div>
@@ -244,17 +241,17 @@ export default function AboutTeaser() {
             </div>
 
             {/* Action Buttons: Purple-to-Cyan Pill + Glass Button */}
-            <div className="pt-3 flex flex-wrap items-center gap-4">
+            <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-bold text-sm sm:text-base text-white bg-gradient-to-r from-[#9266fd] via-[#6366f1] to-[#1ec9f2] hover:from-[#a78bfa] hover:to-[#38d7f8] shadow-[0_4px_25px_rgba(146,102,253,0.45)] hover:shadow-[0_4px_35px_rgba(146,102,253,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 group whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg font-bold text-sm sm:text-base text-white bg-gradient-to-r from-[#9266fd] via-[#6366f1] to-[#1ec9f2] hover:from-[#a78bfa] hover:to-[#38d7f8] shadow-[0_4px_25px_rgba(146,102,253,0.45)] hover:shadow-[0_4px_35px_rgba(146,102,253,0.7)] hover:scale-[1.02] active:scale-95 transition-all duration-300 group text-center"
               >
                 <span>Discover Our Story</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm sm:text-base text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/20 hover:border-[#9266fd]/50 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg font-semibold text-sm sm:text-base text-white bg-white/[0.06] hover:bg-white/[0.12] border border-white/20 hover:border-[#9266fd]/50 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-95 transition-all duration-300 text-center"
               >
                 <span>Schedule a Consultation</span>
               </Link>
@@ -262,14 +259,14 @@ export default function AboutTeaser() {
           </div>
 
           {/* Right Column: Visual with Ambient Purple Glow & Floating Glass Card */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Decorative Purple/Cyan Glow Backdrop */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-[#9266fd]/35 via-[#6366f1]/25 to-[#1ec9f2]/30 rounded-3xl blur-2xl -z-10 animate-pulse" />
+              <div className="absolute -inset-4 bg-gradient-to-tr from-[#9266fd]/35 via-[#6366f1]/25 to-[#1ec9f2]/30 rounded-xl blur-2xl -z-10 animate-pulse" />
 
               {/* Main Image Glass Frame */}
-              <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-white/20 bg-white/[0.03] backdrop-blur-xl p-1.5">
-                <div className="relative h-80 sm:h-96 w-full rounded-[22px] overflow-hidden">
+              <div className="relative rounded-xl overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.7)] border border-white/20 bg-white/[0.03] backdrop-blur-xl p-1.5">
+                <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-lg overflow-hidden">
                   <Image
                     src="/gcc-enterprise-engineer.jpg"
                     alt="BrightNest enterprise infrastructure engineer"
@@ -280,10 +277,10 @@ export default function AboutTeaser() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/40 to-transparent opacity-85" />
 
                   {/* Floating Glass Philosophy Card */}
-                  <div className="absolute bottom-4 left-4 right-4 p-4 sm:p-5 rounded-2xl bg-[#070c1e]/60 backdrop-blur-2xl backdrop-saturate-150 border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_0_20px_rgba(146,102,253,0.1)]">
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3.5 sm:p-5 rounded-lg bg-[#070c1e]/75 backdrop-blur-2xl backdrop-saturate-150 border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.7),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_0_20px_rgba(146,102,253,0.1)]">
                     <div className="flex items-center gap-2 mb-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#9266fd] shadow-[0_0_6px_#9266fd]" />
-                      <p className="text-[11px] font-bold text-[#9da8fb] uppercase tracking-wider">
+                      <p className="text-[10px] sm:text-[11px] font-bold text-[#9da8fb] uppercase tracking-wider">
                         Our Core Philosophy
                       </p>
                     </div>

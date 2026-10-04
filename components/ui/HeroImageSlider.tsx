@@ -83,7 +83,7 @@ export default function HeroImageSlider({
       onTouchEnd={handleTouchEnd}
     >
       {/* 16:10 or responsive height container */}
-      <div className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] overflow-hidden">
+      <div className="relative w-full h-[210px] sm:h-[300px] md:h-[380px] lg:h-[420px] overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={current}
@@ -111,27 +111,27 @@ export default function HeroImageSlider({
 
         {/* Optional Badge top-left */}
         {badgeText && (
-          <div className="absolute top-3.5 left-3.5 z-20 px-2.5 py-1 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/75 border border-white/20 text-slate-200 backdrop-blur-md flex items-center gap-1.5">
+          <div className="absolute top-2.5 sm:top-3.5 left-2.5 sm:left-3.5 z-20 px-2.5 py-1 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/75 border border-white/20 text-slate-200 backdrop-blur-md flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: accentColor }} />
             {badgeText}
           </div>
         )}
 
         {/* Counter Badge top-right */}
-        <div className="absolute top-3.5 right-3.5 z-20 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold tracking-wider bg-black/70 border border-white/20 text-white backdrop-blur-md">
+        <div className="absolute top-2.5 sm:top-3.5 right-2.5 sm:right-3.5 z-20 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-mono font-bold tracking-wider bg-black/70 border border-white/20 text-white backdrop-blur-md">
           <span style={{ color: accentColor }}>0{current + 1}</span> / 0{slides.length}
         </div>
 
-        {/* Caption Overlay at bottom */}
+        {/* Caption Overlay at bottom (prevent overlap with bottom-right dots) */}
         {(currentSlide.title || currentSlide.caption) && (
-          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 z-20">
+          <div className="absolute bottom-0 left-0 right-16 sm:right-24 p-3 sm:p-5 z-20">
             {currentSlide.title && (
-              <h4 className="text-white font-bold text-sm sm:text-base leading-snug drop-shadow-md mb-1">
+              <h4 className="text-white font-bold text-xs sm:text-base leading-snug drop-shadow-md mb-0.5 sm:mb-1 line-clamp-1">
                 {currentSlide.title}
               </h4>
             )}
             {currentSlide.caption && (
-              <p className="text-slate-300 text-xs sm:text-sm line-clamp-2 leading-relaxed drop-shadow-sm">
+              <p className="text-slate-300 text-[11px] sm:text-sm line-clamp-2 leading-relaxed drop-shadow-sm font-light">
                 {currentSlide.caption}
               </p>
             )}
@@ -143,21 +143,21 @@ export default function HeroImageSlider({
           type="button"
           onClick={prevSlide}
           aria-label="Previous slide"
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-black/60 border border-white/20 text-white flex items-center justify-center opacity-80 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-black/90 hover:scale-105 transition-all cursor-pointer"
+          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-9 sm:h-9 rounded-md bg-black/60 border border-white/20 text-white flex items-center justify-center opacity-85 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-black/90 hover:scale-105 transition-all cursor-pointer"
         >
-          <ChevronLeft size={18} />
+          <ChevronLeft size={16} />
         </button>
         <button
           type="button"
           onClick={nextSlide}
           aria-label="Next slide"
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-black/60 border border-white/20 text-white flex items-center justify-center opacity-80 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-black/90 hover:scale-105 transition-all cursor-pointer"
+          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-9 sm:h-9 rounded-md bg-black/60 border border-white/20 text-white flex items-center justify-center opacity-85 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-black/90 hover:scale-105 transition-all cursor-pointer"
         >
-          <ChevronRight size={18} />
+          <ChevronRight size={16} />
         </button>
 
         {/* Dots Indicator */}
-        <div className="absolute bottom-3 right-4 z-20 flex items-center gap-1.5">
+        <div className="absolute bottom-2.5 sm:bottom-3 right-3 sm:right-4 z-20 flex items-center gap-1.5">
           {slides.map((_, idx) => (
             <button
               key={idx}

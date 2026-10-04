@@ -101,17 +101,17 @@ export default function Services() {
               <HeroImageSlider
                 slides={[
                   {
-                    image: "/modern-tech-infrastructure-network.jpg",
+                    image: "/indian-network-noc-engineer.jpg",
                     title: "Multi-Gigabit Campus Networking",
                     caption: "High-performance enterprise switching, dynamic routing, and Wi-Fi 6E/7."
                   },
                   {
-                    image: "/security-infrastructure.jpg",
+                    image: "/indian-security-specialist.jpg",
                     title: "Physical Security & Low Voltage",
                     caption: "AI surveillance, access control, biometric verification, and BMS."
                   },
                   {
-                    image: "/modern-conference-room.jpg",
+                    image: "/indian-smart-boardroom.jpg",
                     title: "Intelligent Boardroom AV",
                     caption: "Microsoft Teams and Zoom Rooms with 4K video walls and pro acoustics."
                   }

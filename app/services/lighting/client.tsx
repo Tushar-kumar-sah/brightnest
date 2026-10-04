@@ -61,7 +61,7 @@ export default function LightingClient() {
       }}
       slides={[
         {
-          image: "/modern-tech-infrastructure-network.jpg",
+          image: "/woman-engineer-reviewing-technical-drawings.jpg",
           title: "DALI & Smart PoE Lighting",
           caption: "Network-powered, low-voltage LED luminaires with automated daylight harvesting."
         },
@@ -71,7 +71,7 @@ export default function LightingClient() {
           caption: "Ruggedized motion-sensing lighting fixtures for factory floors and logistics hubs."
         },
         {
-          image: "/data-center-infrastructure.jpg",
+          image: "/datacenter-infrastructure-engineer.jpg",
           title: "Central BMS Lighting Dashboards",
           caption: "Unified schedule controls, occupancy analytics, and green building efficiency."
         }

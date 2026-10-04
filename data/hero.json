@@ -407,39 +407,39 @@
     ],
     "partners": [
         {
-            "name": "Partner 1",
+            "name": "Cisco",
             "logo": "/company/1.png"
         },
         {
-            "name": "Partner 2",
+            "name": "Hikvision",
             "logo": "/company/2.png"
         },
         {
-            "name": "Partner 3",
+            "name": "Honeywell",
             "logo": "/company/3.png"
         },
         {
-            "name": "Partner 4",
+            "name": "Fortinet",
             "logo": "/company/4.png"
         },
         {
-            "name": "Partner 5",
+            "name": "Hewlett Packard Enterprise",
             "logo": "/company/5.png"
         },
         {
-            "name": "Partner 6",
+            "name": "Poly",
             "logo": "/company/6.png"
         },
         {
-            "name": "Partner 7",
+            "name": "Bosch",
             "logo": "/company/7.png"
         },
         {
-            "name": "Partner 8",
+            "name": "CommScope",
             "logo": "/company/8.png"
         },
         {
-            "name": "Partner 9",
+            "name": "CP Plus",
             "logo": "/company/9.png"
         }
     ],

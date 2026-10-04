@@ -31,7 +31,7 @@ const heroSlides = [
     caption: "Ruggedized wireless networks, thermal sensors, and automation for factories."
   },
   {
-    image: "/data-center-infrastructure.jpg",
+    image: "/datacenter-infrastructure-engineer.jpg",
     title: "Data Centers & Mission Critical",
     caption: "Zero-downtime optical fabrics, hot-aisle containment, and biometric mantraps."
   }

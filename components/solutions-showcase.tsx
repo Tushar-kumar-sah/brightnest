@@ -144,14 +144,11 @@ export default function SolutionsShowcase({
     <section
       id="solutions"
       ref={sectionRef}
-      className="relative bg-gradient-to-b from-[#070c1e] via-[#09132e] to-[#070c1e] py-20 lg:py-28 text-white border-b border-white/10 overflow-hidden select-none"
+      className="relative bg-gradient-to-b from-[#070c1e] via-[#09132e] to-[#070c1e] py-20 lg:py-28 text-white overflow-hidden select-none"
     >
-      {/* Animated Top Border Specular Streak */}
-      <motion.div
-        animate={{ x: ["-100%", "250%"] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-0 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#1ec9f2] to-transparent pointer-events-none z-20"
-      />
+      {/* Seamless Top & Bottom Transition Fades */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
 
       {/* Ambient Glow Orbs in Royal Blue, Electric Cyan & Violet */}
       <motion.div
@@ -224,7 +221,7 @@ export default function SolutionsShowcase({
                   data-solution-tab
                   aria-pressed={isActive}
                   onClick={() => setActiveIndex(index)}
-                  className={`group relative flex min-w-[240px] items-center gap-3 rounded-2xl border p-2.5 lg:p-3 text-left transition-all duration-300 lg:min-w-0 ${
+                  className={`group relative flex min-w-[200px] sm:min-w-[240px] items-center gap-2.5 sm:gap-3 rounded-lg border p-2.5 sm:p-3 text-left transition-all duration-300 lg:min-w-0 ${
                     isActive
                       ? "border-[#1ec9f2]/70 bg-gradient-to-r from-[#1ec9f2]/20 via-[#0067b8]/20 to-white/[0.08] backdrop-blur-2xl shadow-[0_12px_30px_rgba(30,201,242,0.22),inset_0_1px_1px_rgba(255,255,255,0.3)]"
                       : "border-white/10 bg-white/[0.04] backdrop-blur-xl hover:border-[#1ec9f2]/40 hover:bg-white/[0.08] text-slate-300"
@@ -232,10 +229,10 @@ export default function SolutionsShowcase({
                 >
                   {/* Active Right Neon Indicator Bar */}
                   {isActive && (
-                    <span className="absolute right-0 top-2 bottom-2 w-1 rounded-l-full bg-gradient-to-b from-[#1ec9f2] to-[#0067b8] shadow-[0_0_12px_#1ec9f2]" />
+                    <span className="absolute right-0 top-2 bottom-2 w-1 rounded-l-md bg-gradient-to-b from-[#1ec9f2] to-[#0067b8] shadow-[0_0_12px_#1ec9f2]" />
                   )}
                   <span
-                    className={`flex h-10 w-10 flex-none items-center justify-center rounded-full text-xs font-bold transition-all duration-300 ${
+                    className={`flex h-9 w-9 sm:h-10 sm:w-10 flex-none items-center justify-center rounded-md text-xs font-bold transition-all duration-300 ${
                       isActive
                         ? `bg-gradient-to-br ${solution.accent} text-white shadow-[0_0_15px_rgba(30,201,242,0.5)]`
                         : "bg-white/10 text-slate-300 border border-white/10 group-hover:bg-white/15 group-hover:text-white"
@@ -267,52 +264,52 @@ export default function SolutionsShowcase({
 
           <div
             ref={panelRef}
-            className="relative min-h-[440px] sm:min-h-[500px] lg:min-h-0 lg:h-[500px] overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.04] backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] flex flex-col"
+            className="relative min-h-[420px] sm:min-h-[480px] lg:min-h-0 lg:h-[500px] overflow-hidden rounded-xl border border-white/15 bg-white/[0.04] backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] flex flex-col"
           >
             {/* Top Active Solution Accent Bar */}
-            <div className={`absolute inset-x-0 top-0 h-1.5 rounded-t-[2rem] bg-gradient-to-r ${activeSolution.accent}`} />
+            <div className={`absolute inset-x-0 top-0 h-1.5 rounded-t-xl bg-gradient-to-r ${activeSolution.accent}`} />
             
             {/* Ambient card background glow */}
             <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border-[44px] border-[#1ec9f2]/10 blur-[2px]" />
             <div className="pointer-events-none absolute -bottom-28 -left-28 h-72 w-72 rounded-full border-[44px] border-[#9266fd]/10 blur-[2px]" />
 
-            <div className="relative grid min-h-[440px] sm:min-h-[500px] lg:min-h-0 lg:h-full md:grid-cols-[220px_minmax(0,1fr)] flex-1 min-h-0">
-              <div className="flex items-center justify-center bg-white/[0.02] border-b md:border-b-0 md:border-r border-white/10 p-6 md:p-8 shrink-0 md:h-full relative overflow-hidden">
+            <div className="relative grid md:grid-cols-[200px_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1fr)] flex-1 min-h-0">
+              <div className="flex items-center justify-center bg-white/[0.02] border-b md:border-b-0 md:border-r border-white/10 p-4 sm:p-6 md:p-8 shrink-0 md:h-full relative overflow-hidden">
                 {/* Ambient pulsing aura behind number */}
-                <div className="absolute w-44 h-44 rounded-full bg-gradient-to-r from-[#1ec9f2]/30 via-[#0067b8]/20 to-[#9266fd]/25 blur-2xl pointer-events-none" />
+                <div className="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-gradient-to-r from-[#1ec9f2]/30 via-[#0067b8]/20 to-[#9266fd]/25 blur-2xl pointer-events-none" />
                 <div
                   data-solution-content
-                  className={`relative z-10 flex h-24 w-24 sm:h-32 sm:w-32 md:h-36 md:w-36 items-center justify-center rounded-full bg-gradient-to-br ${activeSolution.accent} text-4xl sm:text-5xl font-light text-white shadow-[0_20px_50px_rgba(30,201,242,0.4),0_0_30px_rgba(146,102,253,0.3)] ring-8 ring-white/10 ring-offset-4 ring-offset-[#070c1e]/60`}
+                  className={`relative z-10 flex h-16 w-16 sm:h-24 sm:w-24 md:h-32 md:w-32 items-center justify-center rounded-xl bg-gradient-to-br ${activeSolution.accent} text-2xl sm:text-4xl md:text-5xl font-light text-white shadow-[0_20px_50px_rgba(30,201,242,0.4),0_0_30px_rgba(146,102,253,0.3)] ring-4 sm:ring-8 ring-white/10 ring-offset-2 sm:ring-offset-4 ring-offset-[#070c1e]/60`}
                 >
                   {activeSolution.number}
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 pb-14 overflow-y-auto" data-lenis-prevent>
+              <div className="flex flex-col justify-center p-4 sm:p-6 lg:p-8 pb-12 sm:pb-14 overflow-y-auto" data-lenis-prevent>
                 <p
                   data-solution-content
-                  className="text-xs font-bold uppercase tracking-[0.2em] text-[#38d7f8]"
+                  className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#38d7f8]"
                 >
                   Solution {activeSolution.number} of {String(solutions.length).padStart(2, "0")}
                 </p>
                 <h3
                   data-solution-content
                   style={{ fontWeight: 300 }}
-                  className="mt-2 max-w-2xl text-xl font-light font-[300] !font-[300] uppercase leading-tight text-white sm:text-2xl lg:text-[1.75rem] tracking-tight"
+                  className="mt-1.5 sm:mt-2 max-w-2xl text-lg sm:text-xl lg:text-2xl font-light font-[300] !font-[300] uppercase leading-tight text-white tracking-tight"
                 >
                   {activeSolution.title}
                 </h3>
                 <p
                   data-solution-content
-                  className="mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-300 font-light"
+                  className="mt-2.5 sm:mt-3 max-w-2xl text-xs sm:text-sm lg:text-base leading-relaxed text-slate-300 font-light"
                 >
                   {activeSolution.description}
                 </p>
 
-                <ul data-solution-content className="mt-5 grid gap-2.5 sm:grid-cols-2">
+                <ul data-solution-content className="mt-4 sm:mt-5 grid gap-2 sm:grid-cols-2">
                   {activeSolution.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed text-slate-200 font-light">
-                      <span className="mt-0.5 flex h-4.5 w-4.5 flex-none items-center justify-center rounded-full bg-[#1ec9f2]/15 border border-[#1ec9f2]/30 text-[#38d7f8]">
+                    <li key={feature} className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm leading-relaxed text-slate-200 font-light">
+                      <span className="mt-0.5 flex h-4 w-4 sm:h-4.5 sm:w-4.5 flex-none items-center justify-center rounded-md bg-[#1ec9f2]/15 border border-[#1ec9f2]/30 text-[#38d7f8]">
                         <Check size={11} strokeWidth={3} />
                       </span>
                       <span>{feature}</span>
@@ -320,21 +317,21 @@ export default function SolutionsShowcase({
                   ))}
                 </ul>
 
-                <div data-solution-content className="mt-6 flex flex-wrap items-center justify-between gap-4">
+                <div data-solution-content className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
                   <Link
                     href={activeSolution.href}
-                    className="group inline-flex items-center rounded-full bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_10px_25px_rgba(30,201,242,0.35)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(30,201,242,0.5)] hover:-translate-y-0.5"
+                    className="group inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_10px_25px_rgba(30,201,242,0.35)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(30,201,242,0.5)] hover:-translate-y-0.5 text-center"
                   >
                     Explore this solution
                     <ArrowRight size={15} className="ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center justify-end gap-2">
                     <button
                       type="button"
                       onClick={selectPrevious}
                       aria-label="Previous solution"
-                      className="flex h-11 w-11 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-white/20 bg-white/[0.06] text-slate-200 transition-colors hover:border-[#1ec9f2]/60 hover:bg-white/15 hover:text-white"
+                      className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-white/20 bg-white/[0.06] text-slate-200 transition-colors hover:border-[#1ec9f2]/60 hover:bg-white/15 hover:text-white"
                     >
                       <ArrowLeft size={16} />
                     </button>
@@ -342,7 +339,7 @@ export default function SolutionsShowcase({
                       type="button"
                       onClick={selectNext}
                       aria-label="Next solution"
-                      className="flex h-11 w-11 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-gradient-to-r from-[#0067b8] to-[#1ec9f2] text-white shadow-[0_10px_25px_rgba(30,201,242,0.35)] transition-transform hover:scale-105"
+                      className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg bg-gradient-to-r from-[#0067b8] to-[#1ec9f2] text-white shadow-[0_10px_25px_rgba(30,201,242,0.35)] transition-transform hover:scale-105"
                     >
                       <ArrowRight size={16} />
                     </button>
@@ -351,15 +348,15 @@ export default function SolutionsShowcase({
               </div>
             </div>
 
-            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
               {solutions.map((solution, index) => (
                 <button
                   key={solution.number}
                   onClick={() => setActiveIndex(index)}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
                     index === activeIndex
-                      ? "w-8 bg-[#1ec9f2] shadow-[0_0_12px_#1ec9f2]"
-                      : "w-2 bg-white/20 hover:bg-white/40"
+                      ? "w-6 sm:w-8 bg-[#1ec9f2] shadow-[0_0_12px_#1ec9f2]"
+                      : "w-1.5 sm:w-2 bg-white/20 hover:bg-white/40"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

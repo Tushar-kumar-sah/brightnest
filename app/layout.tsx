@@ -113,13 +113,13 @@ export default function RootLayout({
 
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${montserrat.className} ${montserrat.variable} antialiased`} suppressHydrationWarning>
+      <body className={`${montserrat.className} ${montserrat.variable} antialiased overflow-x-hidden w-full`} suppressHydrationWarning>
         <GoogleAnalytics />
         <StructuredData data={organizationSchema} id="org-schema" />
         <StructuredData data={localBusinessSchema} id="local-schema" />
         <JsonLdBreadcrumb />
         <Header />
-        <main className="min-h-screen scroll-snap-container">{children}</main>
+        <main className="min-h-screen overflow-x-hidden w-full scroll-snap-container">{children}</main>
         <Footer />
         <ScrollToTop />
         <Analytics />

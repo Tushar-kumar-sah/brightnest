@@ -71,7 +71,7 @@ export default function PrintingClient() {
           caption: "Follow-me printing with RFID badges, encrypted spooling, and zero-waste auditing."
         },
         {
-          image: "/modern-tech-infrastructure-network.jpg",
+          image: "/professional-man-with-glasses-analyzing-code-on-sc.jpg",
           title: "Fleet Monitoring & Governance",
           caption: "Centralized printer diagnostics, rule-based quota controls, and compliance tracking."
         }

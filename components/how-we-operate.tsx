@@ -101,13 +101,10 @@ export default function HowWeOperate() {
   const displayedStepsMobile = showAllSteps ? steps : steps.slice(0, 2);
 
   return (
-    <section className="relative py-20 lg:py-28 bg-gradient-to-b from-[#090514] via-[#150a2a] to-[#070c1e] text-white border-b border-white/10 overflow-hidden select-none">
-      {/* Animated Top Border Specular Laser Beam */}
-      <motion.div
-        animate={{ x: ["-100%", "250%"] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-0 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#c084fc] to-transparent pointer-events-none z-20"
-      />
+    <section className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-[#070c1e] via-[#0d0f28] to-[#070c1e] text-white overflow-hidden select-none">
+      {/* Seamless Top & Bottom Transition Fades */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
 
       {/* Deep Violet & Magenta Ambient Glow Orbs */}
       <motion.div
@@ -141,7 +138,7 @@ export default function HowWeOperate() {
 
       {/* Cyber Grid Texture with Elliptical Radial Mask */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_60%,transparent_100%)] pointer-events-none -z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(192,132,252,0.22),transparent)] pointer-events-none -z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_30%,rgba(192,132,252,0.10),transparent)] pointer-events-none -z-0" />
 
       {/* Floating Bokeh Particles */}
       {ambientParticles.map((pt, i) => (
@@ -165,12 +162,12 @@ export default function HowWeOperate() {
 
       <div className="section-container relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-18">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-[#c084fc]/40 text-[#e9d5ff] text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(192,132,252,0.25)] backdrop-blur-xl"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-[#c084fc]/40 text-[#e9d5ff] text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 shadow-[0_0_20px_rgba(192,132,252,0.25)] backdrop-blur-xl"
           >
             <span className="w-2 h-2 rounded-full bg-[#c084fc] animate-pulse shadow-[0_0_8px_#c084fc]" />
             <span>Our Process</span>
@@ -181,7 +178,7 @@ export default function HowWeOperate() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             style={{ fontWeight: 300 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight mb-3 sm:mb-4"
           >
             How We{" "}
             <span className="bg-gradient-to-r from-[#f0abfc] via-[#c084fc] to-[#a855f7] bg-clip-text text-transparent font-medium">
@@ -193,7 +190,7 @@ export default function HowWeOperate() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-sm md:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed"
+            className="text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed"
           >
             End-to-end project execution from initial consultation to ongoing managed support.
           </motion.p>
@@ -263,8 +260,8 @@ export default function HowWeOperate() {
                     </motion.div>
 
                     {/* Content Glass Card Pod (uniform equal shape and height) */}
-                    <div className="w-full flex-1 flex flex-col justify-start p-4 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.15)] group-hover:border-[#c084fc]/50 group-hover:bg-white/[0.08] group-hover:shadow-[0_15px_35px_rgba(168,85,247,0.25)] group-hover:-translate-y-1 transition-all duration-300">
-                      <h3 className="text-xs sm:text-sm font-semibold text-white mb-2 leading-tight group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
+                    <div className="w-full flex-1 flex flex-col justify-start p-3.5 sm:p-4 rounded-lg bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.15)] group-hover:border-[#c084fc]/50 group-hover:bg-white/[0.08] group-hover:shadow-[0_15px_35px_rgba(168,85,247,0.25)] group-hover:-translate-y-1 transition-all duration-300">
+                      <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 leading-tight group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
                         {step.title}
                       </h3>
                       <p className="text-[11px] sm:text-xs text-slate-300 font-light leading-relaxed">
@@ -286,20 +283,20 @@ export default function HowWeOperate() {
                   <motion.div
                     key={step.title}
                     variants={itemVariants}
-                    className="relative flex flex-col items-center text-center bg-white/[0.05] rounded-2xl p-5 border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(168,85,247,0.3)] hover:border-[#c084fc]/60 hover:-translate-y-1 transition-all duration-300 group h-full justify-start"
+                    className="relative flex flex-col items-center text-center bg-white/[0.05] rounded-lg p-4 border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(168,85,247,0.3)] hover:border-[#c084fc]/60 hover:-translate-y-1 transition-all duration-300 group h-full justify-start"
                   >
-                    <div className="relative mb-4 flex-shrink-0">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c084fc] via-[#9266fd] to-[#6d28d9] flex items-center justify-center text-white shadow-[0_8px_20px_rgba(146,102,253,0.4)]">
-                        <Icon className="w-6 h-6" />
+                    <div className="relative mb-3 flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#c084fc] via-[#9266fd] to-[#6d28d9] flex items-center justify-center text-white shadow-[0_8px_20px_rgba(146,102,253,0.4)]">
+                        <Icon className="w-5 h-5" />
                       </div>
-                      <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#090514] text-[#f5d0fe] text-[10px] font-bold flex items-center justify-center border-2 border-[#a855f7] shadow-[0_0_8px_#a855f7]">
+                      <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#090514] text-[#f5d0fe] text-[10px] font-bold flex items-center justify-center border-2 border-[#a855f7] shadow-[0_0_8px_#a855f7]">
                         {index + 1}
                       </span>
                     </div>
-                    <h3 className="text-sm font-semibold text-white mb-2 group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
+                    <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-slate-300 font-light leading-relaxed">
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-light leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>
@@ -313,20 +310,20 @@ export default function HowWeOperate() {
                   <motion.div
                     key={step.title}
                     variants={itemVariants}
-                    className="relative flex flex-col items-center text-center bg-white/[0.05] rounded-2xl p-5 border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(168,85,247,0.3)] hover:border-[#c084fc]/60 hover:-translate-y-1 transition-all duration-300 group h-full justify-start"
+                    className="relative flex flex-col items-center text-center bg-white/[0.05] rounded-lg p-4 border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:shadow-[0_20px_45px_rgba(168,85,247,0.3)] hover:border-[#c084fc]/60 hover:-translate-y-1 transition-all duration-300 group h-full justify-start"
                   >
-                    <div className="relative mb-4 flex-shrink-0">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c084fc] via-[#9266fd] to-[#6d28d9] flex items-center justify-center text-white shadow-[0_8px_20px_rgba(146,102,253,0.4)]">
-                        <Icon className="w-6 h-6" />
+                    <div className="relative mb-3 flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#c084fc] via-[#9266fd] to-[#6d28d9] flex items-center justify-center text-white shadow-[0_8px_20px_rgba(146,102,253,0.4)]">
+                        <Icon className="w-5 h-5" />
                       </div>
-                      <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#090514] text-[#f5d0fe] text-[10px] font-bold flex items-center justify-center border-2 border-[#a855f7] shadow-[0_0_8px_#a855f7]">
+                      <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#090514] text-[#f5d0fe] text-[10px] font-bold flex items-center justify-center border-2 border-[#a855f7] shadow-[0_0_8px_#a855f7]">
                         {index + 5}
                       </span>
                     </div>
-                    <h3 className="text-sm font-semibold text-white mb-2 group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
+                    <h3 className="text-xs sm:text-sm font-semibold text-white mb-1.5 group-hover:text-[#f0abfc] transition-colors min-h-[2.5rem] flex items-center justify-center">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-slate-300 font-light leading-relaxed">
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-light leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>
@@ -338,21 +335,21 @@ export default function HowWeOperate() {
           {/* Mobile: Vertical timeline */}
           <div className="md:hidden relative">
             {/* Timeline line with purple gradient */}
-            <div className="absolute left-7 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#c084fc] via-[#9266fd] to-[#6d28d9] rounded-full shadow-[0_0_8px_#c084fc]" />
+            <div className="absolute left-6 sm:left-7 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#c084fc] via-[#9266fd] to-[#6d28d9] rounded-full shadow-[0_0_8px_#c084fc]" />
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {displayedStepsMobile.map((step, index) => {
                 const Icon = step.icon;
                 return (
                   <motion.div
                     key={step.title}
                     variants={itemVariants}
-                    className="relative flex items-start gap-4 pl-0"
+                    className="relative flex items-start gap-3 sm:gap-4 pl-0"
                   >
                     {/* Icon */}
                     <div className="relative z-10 flex-shrink-0">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c084fc] via-[#9266fd] to-[#6d28d9] flex items-center justify-center text-white shadow-md shadow-[#9266fd]/30">
-                        <Icon className="w-6 h-6" />
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-[#c084fc] via-[#9266fd] to-[#6d28d9] flex items-center justify-center text-white shadow-md shadow-[#9266fd]/30">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
                       <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#090514] text-[#f5d0fe] text-[10px] font-bold flex items-center justify-center border-2 border-[#a855f7] shadow-[0_0_8px_#a855f7]">
                         {index + 1}
@@ -360,8 +357,8 @@ export default function HowWeOperate() {
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 bg-white/[0.05] rounded-2xl p-4 border border-white/15 backdrop-blur-2xl shadow-[0_10px_25px_rgba(0,0,0,0.3)]">
-                      <h3 className="text-base font-semibold text-white mb-1">
+                    <div className="flex-1 bg-white/[0.05] rounded-lg p-3.5 sm:p-4 border border-white/15 backdrop-blur-2xl shadow-[0_10px_25px_rgba(0,0,0,0.3)]">
+                      <h3 className="text-sm sm:text-base font-semibold text-white mb-1">
                         {step.title}
                       </h3>
                       <p className="text-xs text-slate-300 font-light leading-relaxed">
@@ -374,11 +371,11 @@ export default function HowWeOperate() {
             </div>
 
             {steps.length > 2 && (
-              <div className="mt-6 text-center relative z-10">
+              <div className="mt-5 sm:mt-6 text-center relative z-10">
                 <button
                   type="button"
                   onClick={() => setShowAllSteps(!showAllSteps)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/[0.06] text-white text-sm font-semibold backdrop-blur-xl hover:border-[#c084fc]/60 hover:bg-white/15 shadow-[0_0_15px_rgba(168,85,247,0.25)] transition-all active:scale-95"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/20 bg-white/[0.06] text-white text-xs sm:text-sm font-semibold backdrop-blur-xl hover:border-[#c084fc]/60 hover:bg-white/15 shadow-[0_0_15px_rgba(168,85,247,0.25)] transition-all active:scale-95"
                 >
                   {showAllSteps ? "Show Less" : `View More Steps (+${steps.length - 2})`}
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllSteps ? "rotate-180" : ""}`} />

@@ -61,7 +61,7 @@ export default function SecurityClient() {
       }}
       slides={[
         {
-          image: "/security-infrastructure.jpg",
+          image: "/indian-security-specialist.jpg",
           title: "AI Video Surveillance & VMS",
           caption: "High-definition IP cameras, thermal imaging, and intelligent perimeter protection."
         },
@@ -71,7 +71,7 @@ export default function SecurityClient() {
           caption: "Biometric authentication, optical speed gates, and smart credential systems."
         },
         {
-          image: "/modern-tech-infrastructure-network.jpg",
+          image: "/woman-engineer-reviewing-technical-drawings.jpg",
           title: "Unified BMS & Fire Alarms",
           caption: "NFPA addressable fire detection, gas suppression, and integrated facility monitoring."
         }

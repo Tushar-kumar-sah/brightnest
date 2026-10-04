@@ -66,7 +66,7 @@ export default function TelecomClient() {
           caption: "Scalable cloud telephony, unified messaging, and multi-tenant softphone integration."
         },
         {
-          image: "/modern-conference-room.jpg",
+          image: "/indian-smart-boardroom.jpg",
           title: "Unified Collaboration Hubs",
           caption: "Integrated voice, video, and presence routing across distributed campus locations."
         },

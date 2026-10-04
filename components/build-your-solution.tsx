@@ -123,13 +123,10 @@ export default function BuildYourSolution() {
   };
 
   return (
-    <section className="relative py-20 lg:py-28 bg-gradient-to-b from-[#06071b] via-[#0e0c2b] to-[#040514] text-white border-b border-white/10 overflow-hidden select-none">
-      {/* Animated Top Border Specular Laser Beam in Electric Blue & Purple */}
-      <motion.div
-        animate={{ x: ["-100%", "250%"] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-0 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#818cf8] to-transparent pointer-events-none z-20"
-      />
+    <section className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-[#070c1e] via-[#0b1230] to-[#070c1e] text-white overflow-hidden select-none">
+      {/* Seamless Top & Bottom Transition Fades */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
 
       {/* Deep Blue & Vivid Purple Ambient Glow Orbs */}
       <motion.div
@@ -163,7 +160,7 @@ export default function BuildYourSolution() {
 
       {/* Cyber Grid Texture with Elliptical Radial Mask */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_60%,transparent_100%)] pointer-events-none -z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(129,140,248,0.22),transparent)] pointer-events-none -z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_30%,rgba(129,140,248,0.10),transparent)] pointer-events-none -z-0" />
 
       {/* Floating Blue & Purple Sparks / Bokeh Particles */}
       {ambientParticles.map((pt, i) => (
@@ -187,27 +184,27 @@ export default function BuildYourSolution() {
 
       <div className="section-container relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-18">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-[#818cf8]/40 text-[#c7d2fe] text-xs font-semibold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(129,140,248,0.25)] backdrop-blur-xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-[#818cf8]/40 text-[#c7d2fe] text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 shadow-[0_0_20px_rgba(129,140,248,0.25)] backdrop-blur-xl">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#38bdf8] to-[#c084fc] animate-pulse shadow-[0_0_8px_#a855f7]" />
               <span>Custom Stack</span>
             </div>
             <h2
               style={{ fontWeight: 300 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-tight mb-3 sm:mb-4"
             >
               Build Your{" "}
               <span className="bg-gradient-to-r from-[#60a5fa] via-[#a855f7] to-[#c084fc] bg-clip-text text-transparent font-medium">
                 Solution
               </span>
             </h2>
-            <p className="text-slate-300 text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-slate-300 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
               Select the services you need and we&apos;ll tailor a comprehensive infrastructure solution for your organization.
             </p>
           </motion.div>
@@ -215,12 +212,12 @@ export default function BuildYourSolution() {
 
         {/* Grid - 2 cols mobile, 3 tablet, 5 desktop for even rows of 10 */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3 md:gap-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          style={{ paddingBottom: selectedServices.length > 0 ? '6rem' : '0' }}
+          style={{ paddingBottom: selectedServices.length > 0 ? '7.5rem' : '0' }}
         >
           {services.map((service) => {
             const isSelected = selectedServices.includes(service.id);
@@ -232,7 +229,7 @@ export default function BuildYourSolution() {
                 variants={itemVariants}
                 onClick={() => toggleService(service.id)}
                 className={`
-                  relative cursor-pointer rounded-2xl p-4 md:p-5 transition-all duration-300 group
+                  relative cursor-pointer rounded-lg p-3 sm:p-4 md:p-5 transition-all duration-300 group
                   ${isSelected
                     ? 'bg-gradient-to-br from-[#3b82f6]/20 via-[#8b5cf6]/20 to-white/[0.06] border-2 border-[#818cf8] backdrop-blur-2xl shadow-[0_0_25px_rgba(129,140,248,0.4),inset_0_1px_2px_rgba(255,255,255,0.3)] scale-[1.02]'
                     : 'bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.12)] hover:bg-white/[0.08] hover:border-[#818cf8]/50 hover:shadow-[0_15px_35px_rgba(99,102,241,0.25)] hover:-translate-y-1'
@@ -246,7 +243,7 @@ export default function BuildYourSolution() {
                   <motion.div
                     animate={{ scale: [1, 1.05, 1], opacity: [0.35, 0.7, 0.35] }}
                     transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#a855f7] blur-md -z-10 pointer-events-none"
+                    className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#a855f7] blur-md -z-10 pointer-events-none"
                   />
                 )}
 
@@ -258,27 +255,27 @@ export default function BuildYourSolution() {
                       animate={{ scale: 1, opacity: 1, rotate: 0 }}
                       exit={{ scale: 0, opacity: 0, rotate: 45 }}
                       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                      className="absolute top-3 right-3 text-[#818cf8]"
+                      className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-[#818cf8]"
                     >
-                      <CheckCircle2 className="w-5 h-5 fill-[#4338ca] text-[#c7d2fe] drop-shadow-[0_0_8px_rgba(129,140,248,0.8)]" />
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 fill-[#4338ca] text-[#c7d2fe] drop-shadow-[0_0_8px_rgba(129,140,248,0.8)]" />
                     </motion.div>
                   )}
                 </AnimatePresence>
 
                 <div className={`
-                  w-10 h-10 md:w-11 md:h-11 rounded-xl flex items-center justify-center mb-3 transition-all duration-300
+                  w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-md flex items-center justify-center mb-2.5 sm:mb-3 transition-all duration-300
                   ${isSelected
                     ? 'bg-gradient-to-br from-[#3b82f6] via-[#6366f1] to-[#a855f7] text-white shadow-[0_0_15px_rgba(99,102,241,0.6)] scale-110'
                     : 'bg-white/10 text-[#a5b4fc] border border-white/10 group-hover:bg-[#6366f1]/20 group-hover:text-white group-hover:scale-110'
                   }
                 `}>
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 
-                <h3 className={`text-sm md:text-base font-semibold mb-1 leading-tight transition-colors ${isSelected ? 'text-white' : 'text-slate-200 group-hover:text-white'}`}>
+                <h3 className={`text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight transition-colors ${isSelected ? 'text-white' : 'text-slate-200 group-hover:text-white'}`}>
                   {service.title}
                 </h3>
-                <p className="text-xs text-slate-400 font-light leading-relaxed hidden sm:block">
+                <p className="text-[11px] sm:text-xs text-slate-400 font-light leading-relaxed hidden sm:block">
                   {service.description}
                 </p>
               </motion.div>
@@ -295,19 +292,19 @@ export default function BuildYourSolution() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl"
+            className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-3xl"
           >
-            <div className="bg-[#08091f]/90 text-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(99,102,241,0.3)] px-5 py-4 flex items-center justify-between gap-4 border border-[#818cf8]/35 backdrop-blur-2xl">
+            <div className="bg-[#08091f]/95 text-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(99,102,241,0.3)] p-3 sm:px-5 sm:py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border border-[#818cf8]/35 backdrop-blur-2xl">
               <div className="flex items-center gap-3">
-                <div className="bg-[#6366f1]/20 p-2.5 rounded-full flex-shrink-0 border border-[#818cf8]/40 shadow-[0_0_12px_rgba(99,102,241,0.4)]">
-                  <CheckCircle2 className="w-5 h-5 text-[#a5b4fc]" />
+                <div className="bg-[#6366f1]/20 p-2 sm:p-2.5 rounded-md flex-shrink-0 border border-[#818cf8]/40 shadow-[0_0_12px_rgba(99,102,241,0.4)]">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#a5b4fc]" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-base font-bold leading-tight text-white flex items-center gap-2">
+                  <h4 className="text-sm sm:text-base font-bold leading-tight text-white flex items-center gap-2">
                     <span>{selectedServices.length} {selectedServices.length === 1 ? 'Service' : 'Services'} Selected</span>
                     <span className="w-2 h-2 rounded-full bg-[#818cf8] animate-ping" />
                   </h4>
-                  <p className="text-xs text-slate-300 font-light hidden sm:block">
+                  <p className="text-[11px] sm:text-xs text-slate-300 font-light hidden sm:block">
                     Ready to build your custom turnkey enterprise infrastructure
                   </p>
                 </div>
@@ -319,13 +316,13 @@ export default function BuildYourSolution() {
                   .filter(Boolean);
                 const queryParam = encodeURIComponent(selectedTitles.join(','));
                 return (
-                  <Link href={`/contact?services=${queryParam}`} className="flex-shrink-0">
+                  <Link href={`/contact?services=${queryParam}`} className="w-full sm:w-auto flex-shrink-0">
                     <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-gradient-to-r from-[#2563eb] via-[#6366f1] to-[#9333ea] hover:opacity-95 text-white font-semibold py-2.5 px-5 md:py-3 md:px-6 rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all text-sm md:text-base whitespace-nowrap"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      className="w-full sm:w-auto justify-center bg-gradient-to-r from-[#2563eb] via-[#6366f1] to-[#9333ea] hover:opacity-95 text-white font-semibold py-2.5 px-4 sm:px-6 rounded-lg flex items-center gap-2 shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all text-xs sm:text-sm md:text-base"
                     >
-                      Book a Site Survey
+                      <span>Book a Site Survey</span>
                       <ArrowRight className="w-4 h-4" />
                     </motion.button>
                   </Link>

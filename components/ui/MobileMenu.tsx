@@ -81,7 +81,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#070c1e]/95 backdrop-blur-2xl text-white border-l border-white/15 z-50 shadow-2xl overflow-y-auto"
+                            className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#070c1e]/98 backdrop-blur-2xl text-white border-l border-white/15 z-50 shadow-2xl overflow-y-auto pb-16"
                         >
                             {/* Header */}
                             <div className="flex items-center justify-between p-4 border-b border-white/10">
@@ -129,7 +129,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                     animate={{ height: "auto", opacity: 1 }}
                                                     exit={{ height: 0, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}
-                                                    className="overflow-hidden bg-white/[0.06] border border-white/10 backdrop-blur-md rounded-xl ml-2 mt-1"
+                                                    className="overflow-hidden bg-white/[0.06] border border-white/10 backdrop-blur-md rounded-lg ml-2 mt-1"
                                                 >
                                                     {serviceItems.map((service) => {
                                                         const Icon = getIcon(service.icon as unknown as string)
@@ -184,94 +184,94 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                                                     animate={{ height: "auto", opacity: 1 }}
                                                     exit={{ height: 0, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}
-                                                    className="overflow-hidden bg-white/[0.06] border border-white/10 backdrop-blur-md rounded-xl ml-2 mt-1"
+                                                    className="overflow-hidden bg-white/[0.06] border border-white/10 backdrop-blur-md rounded-lg ml-2 mt-1"
                                                 >
                                                     {industries.map((industry) => {
                                                         const Icon = iconMap[industry.icon] || Building2
                                                         return (
-                                                            <li key={industry.slug}>
-                                                                <Link
-                                                                    href={`/industries/${industry.slug}`}
-                                                                    onClick={() => setIsOpen(false)}
-                                                                    className="block px-4 py-3 text-sm text-slate-300 hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
-                                                                >
-                                                                    <div className="flex items-center gap-3">
-                                                                        <Icon size={18} className="text-[#0db16a]" />
-                                                                        <span>{industry.name}</span>
-                                                                    </div>
-                                                                </Link>
-                                                            </li>
+                                                             <li key={industry.slug}>
+                                                                 <Link
+                                                                     href={`/industries/${industry.slug}`}
+                                                                     onClick={() => setIsOpen(false)}
+                                                                     className="block px-4 py-3 text-sm text-slate-300 hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                                                 >
+                                                                     <div className="flex items-center gap-3">
+                                                                         <Icon size={18} className="text-[#0db16a]" />
+                                                                         <span>{industry.name}</span>
+                                                                     </div>
+                                                                 </Link>
+                                                             </li>
                                                         )
                                                     })}
                                                     <li>
                                                         <Link
-                                                            href="/industries"
-                                                            onClick={() => setIsOpen(false)}
-                                                            className="block px-4 py-3 text-sm font-semibold text-[#1ec9f2] hover:bg-white/10 transition-colors border-t border-white/10"
-                                                        >
-                                                            View All Industries →
-                                                        </Link>
-                                                    </li>
-                                                </motion.ul>
-                                            )}
-                                        </AnimatePresence>
-                                    </li>
+                                                             href="/industries"
+                                                             onClick={() => setIsOpen(false)}
+                                                             className="block px-4 py-3 text-sm font-semibold text-[#1ec9f2] hover:bg-white/10 transition-colors border-t border-white/10"
+                                                         >
+                                                             View All Industries →
+                                                         </Link>
+                                                     </li>
+                                                 </motion.ul>
+                                             )}
+                                         </AnimatePresence>
+                                     </li>
 
-                                    {/* About Link */}
-                                    <li>
-                                        <Link
-                                            href="/about"
-                                            onClick={() => setIsOpen(false)}
-                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
-                                        >
-                                            Who We Are
-                                        </Link>
-                                    </li>
+                                     {/* About Link */}
+                                     <li>
+                                         <Link
+                                             href="/about"
+                                             onClick={() => setIsOpen(false)}
+                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                         >
+                                             Who We Are
+                                         </Link>
+                                     </li>
 
-                                    {/* Careers Link */}
-                                    <li>
-                                        <Link
-                                            href="/careers"
-                                            onClick={() => setIsOpen(false)}
-                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
-                                        >
-                                            Careers
-                                        </Link>
-                                    </li>
+                                     {/* Careers Link */}
+                                     <li>
+                                         <Link
+                                             href="/careers"
+                                             onClick={() => setIsOpen(false)}
+                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                         >
+                                             Careers
+                                         </Link>
+                                     </li>
 
-                                    {/* Case Studies Link */}
-                                    <li>
-                                        <Link
-                                            href="/case-studies"
-                                            onClick={() => setIsOpen(false)}
-                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
-                                        >
-                                            Case Studies
-                                        </Link>
-                                    </li>
+                                     {/* Case Studies Link */}
+                                     <li>
+                                         <Link
+                                             href="/case-studies"
+                                             onClick={() => setIsOpen(false)}
+                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                         >
+                                             Case Studies
+                                         </Link>
+                                     </li>
 
-                                    {/* Contact Link */}
-                                    <li>
-                                        <Link
-                                            href="/contact"
-                                            onClick={() => setIsOpen(false)}
-                                            className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
-                                        >
-                                            Contact Us
-                                        </Link>
-                                    </li>
-                                </ul>
+                                     {/* Contact Link */}
+                                     <li>
+                                         <Link
+                                             href="/contact"
+                                             onClick={() => setIsOpen(false)}
+                                             className="block px-4 py-3 rounded-lg text-white/90 font-medium hover:bg-white/10 hover:text-[#1ec9f2] transition-colors"
+                                         >
+                                             Contact Us
+                                         </Link>
+                                     </li>
+                                 </ul>
 
-                                {/* CTA Button */}
-                                <div className="mt-6">
-                                    <Link
-                                        href="/contact"
-                                        onClick={() => setIsOpen(false)}
-                                        className="block w-full text-center px-6 py-3 bg-[#1ec9f2] text-[#070c1e] font-bold rounded-xl hover:bg-[#38d7f8] shadow-[0_0_15px_rgba(30,201,242,0.4)] transition-all"
-                                    >
-                                        Book a Site Survey
-                                    </Link>
-                                </div>
+                                 {/* CTA Button */}
+                                 <div className="mt-6">
+                                     <Link
+                                         href="/contact"
+                                         onClick={() => setIsOpen(false)}
+                                         className="block w-full text-center px-6 py-3 bg-[#1ec9f2] text-[#070c1e] font-bold rounded-lg hover:bg-[#38d7f8] shadow-[0_0_15px_rgba(30,201,242,0.4)] transition-all"
+                                     >
+                                         Book a Site Survey
+                                     </Link>
+                                 </div>
 
                                 {/* Contact Info */}
                                 <div className="mt-8 pt-6 border-t border-white/10 space-y-4">

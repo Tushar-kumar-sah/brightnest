@@ -167,19 +167,19 @@ function ContactContent() {
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                 Direct Enterprise Advisory
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">
                 Let's Build Something{" "}
                 <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-200 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(6,182,212,0.35)]">
                   Amazing
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-sky-100/75 leading-relaxed mb-6">
+              <p className="text-sm sm:text-base lg:text-lg text-sky-100/75 leading-relaxed mb-6 font-light">
                 Ready to discuss your enterprise IT infrastructure needs? Our team of certified engineers is here to help you architect, deploy, and manage turnkey solutions with zero operational downtime.
               </p>
-              <div className="flex flex-wrap items-center gap-3 text-xs text-sky-200/80">
-                <span className="px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ 24h Response SLA</span>
-                <span className="px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ Free Site Survey</span>
-                <span className="px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ Direct Principal Engineers</span>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-sky-200/80">
+                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ 24h Response SLA</span>
+                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ Free Site Survey</span>
+                <span className="px-2.5 sm:px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30">✓ Direct Principal Engineers</span>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ function ContactContent() {
               <HeroImageSlider
                 slides={[
                   {
-                    image: "/modern-conference-room.jpg",
+                    image: "/indian-smart-boardroom.jpg",
                     title: "Direct Engineering Consultation",
                     caption: "Meet with certified systems architects to scope your requirements and plan your project."
                   },
@@ -215,26 +215,26 @@ function ContactContent() {
       {/* Contact Cards */}
       <section className="py-8 relative z-10">
         <div className="section-container">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
             {contactInfo.map((contact, idx) => {
               const Icon = contact.icon
               return (
                 <a
                   key={idx}
                   href={contact.href}
-                  className="reveal opacity-0 translate-y-8 transition-all duration-700 group p-6 rounded-md bg-[#071d3d]/50 border border-cyan-500/20 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] backdrop-blur-xl transition-all duration-300"
+                  className="reveal opacity-0 translate-y-8 transition-all duration-700 group p-4 sm:p-6 rounded-md bg-[#071d3d]/50 border border-cyan-500/20 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] backdrop-blur-xl transition-all duration-300"
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 group-hover:scale-105 group-hover:bg-cyan-500/25 transition-all flex-shrink-0">
-                      <Icon size={24} />
+                  <div className="flex items-start gap-3.5 sm:gap-4">
+                    <div className="p-2.5 sm:p-3 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 group-hover:scale-105 group-hover:bg-cyan-500/25 transition-all flex-shrink-0">
+                      <Icon size={22} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-bold text-base sm:text-lg text-white mb-0.5 sm:mb-1 group-hover:text-cyan-300 transition-colors">
                         {contact.title}
                       </h3>
-                      <p className="text-cyan-200 font-medium text-sm leading-snug">{contact.value}</p>
-                      <p className="text-xs text-sky-200/60 mt-1.5">{contact.description}</p>
+                      <p className="text-cyan-200 font-medium text-xs sm:text-sm leading-snug">{contact.value}</p>
+                      <p className="text-[11px] sm:text-xs text-sky-200/60 mt-1">{contact.description}</p>
                     </div>
                   </div>
                 </a>
@@ -245,7 +245,7 @@ function ContactContent() {
       </section>
 
       {/* Form Section */}
-      <section className="section-padding relative z-10 py-16">
+      <section className="section-padding relative z-10 py-12 sm:py-16">
         <div className="section-container">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Left: Info */}
@@ -254,39 +254,39 @@ function ContactContent() {
                 <Clock size={16} />
                 Rapid SLA Response
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
                 How Can We Help You?
               </h2>
-              <p className="text-base text-sky-100/75 mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base text-sky-100/75 mb-6 sm:mb-8 leading-relaxed font-light">
                 Whether you need a complete security system, turnkey network infrastructure upgrade, optical fiber cabling, or AV boardroom integration, our team is ready to deliver. Fill out the brief and we'll reply within 24 hours.
               </p>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
-                  <div className="p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
+                  <div className="p-2 sm:p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
                     <Clock size={18} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-sm">Quick Response</h4>
-                    <p className="text-xs text-sky-200/70 mt-0.5">Dedicated engineering dispatch within 24 business hours</p>
+                    <h4 className="font-bold text-white text-xs sm:text-sm">Quick Response</h4>
+                    <p className="text-[11px] sm:text-xs text-sky-200/70 mt-0.5">Dedicated engineering dispatch within 24 business hours</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
-                  <div className="p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
+                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
+                  <div className="p-2 sm:p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
                     <MessageCircle size={18} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-sm">Free Site Survey & Consultation</h4>
-                    <p className="text-xs text-sky-200/70 mt-0.5">Comprehensive audit and architectural sizing with no upfront costs</p>
+                    <h4 className="font-bold text-white text-xs sm:text-sm">Free Site Survey & Consultation</h4>
+                    <p className="text-[11px] sm:text-xs text-sky-200/70 mt-0.5">Comprehensive audit and architectural sizing with no upfront costs</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
-                  <div className="p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
+                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-md bg-[#061a36]/50 border border-cyan-500/15">
+                  <div className="p-2 sm:p-2.5 rounded-md bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex-shrink-0">
                     <CheckCircle size={18} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-sm">Zero Obligation</h4>
-                    <p className="text-xs text-sky-200/70 mt-0.5">Detailed BOM, design schematics, and timeline projections</p>
+                    <h4 className="font-bold text-white text-xs sm:text-sm">Zero Obligation</h4>
+                    <p className="text-[11px] sm:text-xs text-sky-200/70 mt-0.5">Detailed BOM, design schematics, and timeline projections</p>
                   </div>
                 </div>
               </div>
@@ -294,9 +294,9 @@ function ContactContent() {
 
             {/* Right: Form */}
             <div className="lg:col-span-7 reveal opacity-0 translate-y-8 transition-all duration-700 delay-200">
-              <form onSubmit={handleSubmit} className="bg-[#061c3b]/80 p-6 sm:p-8 rounded-md border border-cyan-500/30 shadow-[0_0_40px_rgba(6,182,212,0.15)] backdrop-blur-xl">
+              <form onSubmit={handleSubmit} className="bg-[#061c3b]/80 p-4 sm:p-8 rounded-md border border-cyan-500/30 shadow-[0_0_40px_rgba(6,182,212,0.15)] backdrop-blur-xl">
                 {selectedStack.length > 0 && (
-                  <div className="mb-6 p-4 rounded-md bg-cyan-950/60 border border-cyan-500/35 text-cyan-200">
+                  <div className="mb-5 sm:mb-6 p-3 sm:p-4 rounded-md bg-cyan-950/60 border border-cyan-500/35 text-cyan-200">
                     <div className="flex items-center gap-2 font-bold text-xs uppercase tracking-wider text-cyan-400 mb-2">
                       <Sparkles size={14} />
                       Selected Solution Stack ({selectedStack.length})
@@ -311,9 +311,9 @@ function ContactContent() {
                   </div>
                 )}
 
-                <div className="grid md:grid-cols-2 gap-5 mb-5">
+                <div className="grid md:grid-cols-2 gap-3.5 sm:gap-5 mb-3.5 sm:mb-5">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
                       Full Name *
                     </label>
                     <input
@@ -322,12 +322,12 @@ function ContactContent() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-sm"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-base sm:text-sm"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
                       Email Address *
                     </label>
                     <input
@@ -336,15 +336,15 @@ function ContactContent() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-sm"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-base sm:text-sm"
                       placeholder="john@company.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-5 mb-5">
+                <div className="grid md:grid-cols-2 gap-3.5 sm:gap-5 mb-3.5 sm:mb-5">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
                       Phone Number *
                     </label>
                     <input
@@ -353,12 +353,12 @@ function ContactContent() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-sm"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-base sm:text-sm"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
                       Company Name
                     </label>
                     <input
@@ -366,21 +366,21 @@ function ContactContent() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-sm"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all text-base sm:text-sm"
                       placeholder="Your Company Name"
                     />
                   </div>
                 </div>
 
-                <div className="mb-5">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-2">
+                <div className="mb-3.5 sm:mb-5">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
                     Service of Interest
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-cyan-500/25 bg-[#030f21] text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all cursor-pointer text-sm"
+                    className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21] text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all cursor-pointer text-base sm:text-sm"
                   >
                     <option value="" className="bg-[#030f21] text-slate-300">Select a primary service discipline</option>
                     {services.map((service) => (
@@ -391,8 +391,8 @@ function ContactContent() {
                   </select>
                 </div>
 
-                <div className="mb-6">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-2">
+                <div className="mb-5 sm:mb-6">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-cyan-200/80 mb-1.5 sm:mb-2">
                     Project Message *
                   </label>
                   <textarea
@@ -401,7 +401,7 @@ function ContactContent() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all resize-none text-sm"
+                    className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-md border border-cyan-500/25 bg-[#030f21]/80 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all resize-none text-base sm:text-sm"
                     placeholder="Tell us about your project requirements, location, estimated timelines, or current challenges..."
                   />
                 </div>

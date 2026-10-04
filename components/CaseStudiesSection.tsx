@@ -25,13 +25,10 @@ export default function CaseStudiesSection() {
   const caseStudies = getCaseStudiesData().slice(0, 3);
 
   return (
-    <section className="relative py-20 lg:py-28 bg-gradient-to-b from-[#070c1e] via-[#0a1636] to-[#070c1e] text-white border-b border-white/10 overflow-hidden select-none">
-      {/* Animated Top Border Specular Streak */}
-      <motion.div
-        animate={{ x: ["-100%", "250%"] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-        className="absolute top-0 left-0 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#1ec9f2] to-transparent pointer-events-none z-20"
-      />
+    <section className="relative py-20 lg:py-28 bg-gradient-to-b from-[#070c1e] via-[#0a1636] to-[#070c1e] text-white overflow-hidden select-none">
+      {/* Seamless Top & Bottom Transition Fades */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
 
       {/* Deep Blue & Cyan Ambient Glow Orbs */}
       <motion.div
@@ -65,7 +62,7 @@ export default function CaseStudiesSection() {
 
       {/* Cyber Grid Texture with Elliptical Radial Mask */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_60%,transparent_100%)] pointer-events-none -z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(30,201,242,0.18),transparent)] pointer-events-none -z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_30%,rgba(30,201,242,0.10),transparent)] pointer-events-none -z-0" />
 
       {/* Floating Bokeh Particles */}
       {ambientParticles.map((pt, i) => (

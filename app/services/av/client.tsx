@@ -60,7 +60,7 @@ export default function AVClient() {
       }}
       slides={[
         {
-          image: "/modern-conference-room.jpg",
+          image: "/indian-smart-boardroom.jpg",
           title: "Smart Boardrooms & Hybrid AV",
           caption: "4K displays, ceiling beamforming microphone arrays, and one-touch join systems."
         },

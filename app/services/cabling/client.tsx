@@ -61,17 +61,17 @@ export default function CablingClient() {
       }}
       slides={[
         {
-          image: "/data-center-infrastructure.jpg",
+          image: "/datacenter-infrastructure-engineer.jpg",
           title: "Structured Cabling & Containment",
           caption: "Cat6A copper, OM4/OS2 fiber backbones, and server rack cable pathways."
         },
         {
-          image: "/datacenter-infrastructure-engineer.jpg",
+          image: "/woman-engineer-reviewing-technical-drawings.jpg",
           title: "Certified Fiber Termination",
           caption: "Fluke DSX-8000 calibrated testing with 25-year manufacturer system warranty."
         },
         {
-          image: "/modern-tech-infrastructure-network.jpg",
+          image: "/indian-network-noc-engineer.jpg",
           title: "High-Density Patching Systems",
           caption: "Color-coded modular patch fields and overhead raceway routing."
         }

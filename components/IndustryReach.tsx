@@ -79,7 +79,11 @@ const industries: IndustryItem[] = [
 
 export default function IndustryReach() {
   return (
-    <section className="py-20 lg:py-28 bg-[#0b132b] text-white overflow-hidden relative">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-[#070c1e] via-[#091535] to-[#070c1e] text-white overflow-hidden relative select-none">
+      {/* Seamless Top & Bottom Transition Fades */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
+
       {/* Background ambient lighting */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-10 left-10 w-96 h-96 rounded-full bg-[#1ec9f2]/10 blur-[120px]" />
@@ -110,7 +114,7 @@ export default function IndustryReach() {
             return (
               <div
                 key={ind.id}
-                className="group relative rounded-3xl overflow-hidden bg-[#111a33] border border-white/10 hover:border-[#1ec9f2]/50 shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"
+                className="group relative rounded-lg overflow-hidden bg-[#111a33] border border-white/10 hover:border-[#1ec9f2]/50 shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"
               >
                 {/* Image Top Half with Gradient Overlay */}
                 <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-900">
@@ -124,7 +128,7 @@ export default function IndustryReach() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111a33] via-[#111a33]/40 to-transparent" />
 
                   {/* Icon badge */}
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-[#0b132b]/80 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#1ec9f2] shadow-md">
+                  <div className="absolute top-4 left-4 w-10 h-10 rounded-md bg-[#0b132b]/80 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#1ec9f2] shadow-md">
                     <Icon className="w-5 h-5" />
                   </div>
 
@@ -174,7 +178,7 @@ export default function IndustryReach() {
         </div>
 
         {/* Bottom Banner */}
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-white/5 via-white/10 to-white/5 border border-white/10 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div className="mt-14 p-6 sm:p-8 rounded-lg bg-gradient-to-r from-white/5 via-white/10 to-white/5 border border-white/10 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
             <h4 className="text-lg sm:text-xl font-bold text-white">
               Don&apos;t see your specific industry listed?
@@ -185,7 +189,7 @@ export default function IndustryReach() {
           </div>
           <Link
             href="/contact"
-            className="flex-shrink-0 px-6 py-3 rounded-xl font-bold text-sm text-[#070c1e] bg-[#1ec9f2] hover:bg-[#38d7f8] shadow-[0_0_20px_rgba(30,201,242,0.4)] transition-all"
+            className="flex-shrink-0 px-6 py-3 rounded-md font-bold text-sm text-[#070c1e] bg-[#1ec9f2] hover:bg-[#38d7f8] shadow-[0_0_20px_rgba(30,201,242,0.4)] transition-all"
           >
             Request Custom Architecture
           </Link>

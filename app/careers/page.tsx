@@ -73,25 +73,25 @@ export default function Careers() {
                                 <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
                                 Join Our Engineering Team
                             </div>
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+                            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">
                                 Build the Future of{" "}
                                 <span className="bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-200 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(168,85,247,0.35)]">
                                     IT Infrastructure
                                 </span>
                             </h1>
-                            <p className="text-base sm:text-lg text-purple-100/75 mb-8 leading-relaxed">
+                            <p className="text-sm sm:text-base lg:text-lg text-purple-100/75 mb-6 sm:mb-8 leading-relaxed font-light">
                                 Join a mission-driven team of network architects, security specialists, and systems engineers shaping enterprise technology ecosystems across India.
                             </p>
-                            <div className="flex flex-wrap items-center gap-4">
+                            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                                 <a
                                     href="#positions"
-                                    className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-purple-500 to-violet-500 text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:scale-[1.02] transition-all gap-2"
+                                    className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 bg-gradient-to-r from-purple-500 to-violet-500 text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:scale-[1.02] transition-all gap-2 text-center w-full sm:w-auto"
                                 >
                                     View Open Positions <ArrowRight size={16} />
                                 </a>
                                 <a
                                     href="mailto:careers@brightnestedu.com"
-                                    className="inline-flex items-center justify-center px-7 py-3.5 border border-purple-400/40 text-purple-200 font-semibold text-sm rounded-md hover:bg-purple-500/10 hover:border-purple-300 transition-all gap-2"
+                                    className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 border border-purple-400/40 text-purple-200 font-semibold text-sm rounded-md hover:bg-purple-500/10 hover:border-purple-300 transition-all gap-2 text-center w-full sm:w-auto"
                                 >
                                     <Mail size={16} /> Email Talent Team
                                 </a>

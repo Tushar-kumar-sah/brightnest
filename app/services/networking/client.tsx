@@ -61,12 +61,12 @@ export default function NetworkingClient() {
       }}
       slides={[
         {
-          image: "/modern-tech-infrastructure-network.jpg",
+          image: "/indian-network-noc-engineer.jpg",
           title: "Enterprise Core Switching",
           caption: "Multi-gigabit spine-leaf switching architectures and resilient routing fabrics."
         },
         {
-          image: "/data-center-infrastructure.jpg",
+          image: "/datacenter-infrastructure-engineer.jpg",
           title: "Cloud SD-WAN & Zero-Trust",
           caption: "Dual-ISP automated failover, IPSec mesh, and granular micro-segmentation."
         },

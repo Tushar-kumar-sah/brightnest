@@ -108,8 +108,8 @@ export default function About() {
                     caption: "Pan-India turnkey solutions and mission-critical deployment standards."
                   },
                   {
-                    image: "/modern-tech-infrastructure-network.jpg",
-                    title: "Standards-Aligned Infrastructure",
+                    image: "/female-business-consultant-smiling.jpg",
+                    title: "Executive Leadership & Standards",
                     caption: "ISO, TIA, and NFPA compliant passive and active digital architectures."
                   },
                   {

@@ -72,12 +72,12 @@ export default function ServiceDetailTemplate({
 
   const heroSlides: SlideItem[] = slides && slides.length > 0 ? slides : [
     {
-      image: "/modern-tech-infrastructure-network.jpg",
+      image: "/indian-network-noc-engineer.jpg",
       title: "Standards-Aligned Engineering",
       caption: "Enterprise-grade deployment with full compliance and SLA monitoring."
     },
     {
-      image: "/data-center-infrastructure.jpg",
+      image: "/datacenter-infrastructure-engineer.jpg",
       title: "Mission-Critical Operations",
       caption: "High-density passive and active components built for maximum uptime."
     },
@@ -108,24 +108,24 @@ export default function ServiceDetailTemplate({
                 <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                 Enterprise Service Discipline
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6">
                 <span className={`bg-gradient-to-r ${theme.accentGradient} bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,255,255,0.25)]`}>
                   {title}
                 </span>
               </h1>
-              <p className={`text-base sm:text-lg ${theme.subtextColor} leading-relaxed mb-8`}>
+              <p className={`text-sm sm:text-base lg:text-lg ${theme.subtextColor} leading-relaxed mb-6 sm:mb-8 font-light`}>
                 {summary}
               </p>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className={`inline-flex items-center justify-center px-8 py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all gap-2`}
+                  className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all gap-2 text-center w-full sm:w-auto`}
                 >
                   Schedule Site Survey <ArrowRight size={16} />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all text-center w-full sm:w-auto"
                 >
                   All Services
                 </Link>
@@ -301,27 +301,27 @@ export default function ServiceDetailTemplate({
       {/* Bottom CTA Banner */}
       <section className="section-padding relative z-10 py-16 pb-24">
         <div className="section-container">
-          <div className={`rounded-md p-8 sm:p-12 md:p-14 text-center bg-black/40 border ${theme.cardBorder} ${theme.cardShadowHover} relative overflow-hidden backdrop-blur-xl`}>
+          <div className={`rounded-md p-6 sm:p-10 md:p-14 text-center bg-black/40 border ${theme.cardBorder} ${theme.cardShadowHover} relative overflow-hidden backdrop-blur-xl`}>
             <div className={`absolute -top-24 -right-24 w-72 h-72 rounded-full ${theme.glowOrb1} blur-[80px] pointer-events-none`} />
             <div className={`absolute -bottom-24 -left-24 w-72 h-72 rounded-full ${theme.glowOrb2} blur-[80px] pointer-events-none`} />
 
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight">
                 Ready to Architect Your Solution?
               </h2>
-              <p className={`text-base sm:text-lg ${theme.subtextColor} mb-8 leading-relaxed`}>
+              <p className={`text-sm sm:text-base lg:text-lg ${theme.subtextColor} mb-6 sm:mb-8 leading-relaxed font-light`}>
                 Connect with our certified systems engineers to evaluate your site, calculate capacity, and receive an itemized proposal.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                 <Link
                   href="/contact"
-                  className={`inline-flex items-center justify-center px-8 py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all`}
+                  className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all text-center w-full sm:w-auto`}
                 >
                   Schedule Site Survey
                 </Link>
                 <a
                   href="tel:+919366355026"
-                  className="inline-flex items-center justify-center px-8 py-3.5 border border-white/25 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all gap-2"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 border border-white/25 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all gap-2 text-center w-full sm:w-auto"
                 >
                   <Phone size={16} />
                   (+91) 93663 55026

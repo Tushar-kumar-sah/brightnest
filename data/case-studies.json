@@ -5,7 +5,7 @@
         "industry": "Finance",
         "category": "Networking",
         "description": "Designed and deployed a redundant fiber and Cat6A backbone with segmented VLANs, NAC, and firewall high-availability.",
-        "image": "/data-center-infrastructure.jpg",
+        "image": "/datacenter-infrastructure-engineer.jpg",
         "results": [
             "99.99% uptime with dual-core architecture",
             "50% throughput improvement",
@@ -23,7 +23,7 @@
         "industry": "Corporate",
         "category": "Security",
         "description": "Rolled out IP CCTV, biometric access control, and integrated BMS across five towers with centralized monitoring.",
-        "image": "/security-infrastructure.jpg",
+        "image": "/indian-security-specialist.jpg",
         "results": [
             "800+ cameras commissioned",
             "Biometric access at 120+ doors",
@@ -40,7 +40,7 @@
         "industry": "Technology",
         "category": "AV Integration",
         "description": "Standardized conference room kits with 4K video, acoustic treatment, and one-touch meeting join across campuses.",
-        "image": "/modern-conference-room.jpg",
+        "image": "/indian-smart-boardroom.jpg",
         "results": [
             "50 rooms standardized",
             "4K video and voice clarity",
@@ -57,7 +57,7 @@
         "industry": "Industrial",
         "category": "Lighting",
         "description": "Replaced legacy lighting with LED and smart sensors, reducing power draw and improving safety in production zones.",
-        "image": "/modern-tech-infrastructure-network.jpg",
+        "image": "/manufacturing-industrial-engineer.jpg",
         "results": [
             "38% power savings",
             "Improved lux levels on shop floor",
@@ -73,7 +73,7 @@
         "industry": "Retail",
         "category": "Telecom",
         "description": "Implemented IPPBX with SIP trunking, IVR, call recording, and analytics to support distributed store operations.",
-        "image": "/modern-tech-infrastructure-network.jpg",
+        "image": "/ai-technology-professional-with-digital-background.jpg",
         "results": [
             "40% lower call costs",
             "N+1 IPPBX redundancy",
@@ -90,7 +90,7 @@
         "industry": "Education",
         "category": "Printing",
         "description": "Deployed managed print services with centralized monitoring, secure print release, and standardized consumables.",
-        "image": "/modern-tech-infrastructure-network.jpg",
+        "image": "/male-finance-professional-in-office.jpg",
         "results": [
             "30% cost reduction",
             "Secure pull-print enabled",

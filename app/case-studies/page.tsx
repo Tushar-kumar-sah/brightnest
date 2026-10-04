@@ -109,12 +109,12 @@ export default function CaseStudies() {
               <HeroImageSlider
                 slides={[
                   {
-                    image: "/data-center-infrastructure.jpg",
+                    image: "/datacenter-infrastructure-engineer.jpg",
                     title: "High-Density Fiber Backbones",
                     caption: "Dual-core architectures delivering 99.99% operational uptime for finance."
                   },
                   {
-                    image: "/security-infrastructure.jpg",
+                    image: "/indian-security-specialist.jpg",
                     title: "Campus Security Modernization",
                     caption: "Over 800 CCTV cameras and multi-door biometric access control."
                   },
