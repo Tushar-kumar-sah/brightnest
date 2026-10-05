@@ -661,3 +661,24 @@ svg {
     scroll-behavior: auto;
   }
 }
+
+/* Mobile & Touch Viewport Optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide floating mobile action bar smoothly when mobile menu drawer is open */
+body[data-mobile-menu-open="true"] .mobile-floating-bar {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(100%) !important;
+}
+
+/* Prevent unwanted iOS Safari viewport auto-zoom on input focus */
+@media (max-width: 639px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}

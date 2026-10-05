@@ -79,17 +79,17 @@ export default function About() {
               <p className="text-base sm:text-lg text-emerald-100/75 leading-relaxed mb-8">
                 {hero.description}
               </p>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-400 text-[#02110c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(52,211,153,0.4)] hover:shadow-[0_0_30px_rgba(52,211,153,0.7)] hover:scale-[1.02] transition-all group"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-400 text-[#02110c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(52,211,153,0.4)] hover:shadow-[0_0_30px_rgba(52,211,153,0.7)] hover:scale-[1.02] transition-all group text-center"
                 >
                   Connect With Us
                   <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center px-7 py-3.5 border border-emerald-400/40 text-emerald-200 font-semibold text-sm rounded-md hover:bg-emerald-500/10 hover:border-emerald-300 transition-all"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 border border-emerald-400/40 text-emerald-200 font-semibold text-sm rounded-md hover:bg-emerald-500/10 hover:border-emerald-300 transition-all text-center"
                 >
                   Explore Capabilities
                 </Link>

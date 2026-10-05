@@ -76,17 +76,17 @@ export default function Services() {
               <p className="text-base sm:text-lg text-white leading-relaxed mb-8 font-light">
                 From enterprise physical security systems to multi-gigabit networking, structured fiber, and smart AV boardroom architectures, we deliver end-to-end integration across all digital layers.
               </p>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group text-center"
                 >
                   Book Site Survey
                   <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
                   href="tel:+919366355026"
-                  className="inline-flex items-center justify-center px-7 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2 text-center"
                 >
                   <Phone size={16} />
                   Speak to Architect
@@ -232,17 +232,17 @@ export default function Services() {
               <p className="text-base sm:text-lg text-white mb-8 leading-relaxed font-light">
                 Every enterprise ecosystem has distinct constraints. Schedule a consultation with our solutions architects to craft a tailored BOM and deployment roadmap.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group text-center"
                 >
                   Get a Free Consultation
                   <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <a
                   href="tel:+919366355026"
-                  className="inline-flex items-center justify-center px-8 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2 text-center"
                 >
                   <Phone size={16} />
                   Call Our Engineers

@@ -10,7 +10,6 @@ import {
   Wrench,
   CheckCircle,
   Headphones,
-  ChevronDown,
 } from "lucide-react";
 
 const steps = [
@@ -97,8 +96,6 @@ const itemVariants = {
 };
 
 export default function HowWeOperate() {
-  const [showAllSteps, setShowAllSteps] = useState(false);
-  const displayedStepsMobile = showAllSteps ? steps : steps.slice(0, 2);
 
   return (
     <section className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-[#070c1e] via-[#0d0f28] to-[#070c1e] text-white overflow-hidden select-none">
@@ -335,7 +332,7 @@ export default function HowWeOperate() {
             <div className="absolute left-6 sm:left-7 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#c084fc] via-[#9266fd] to-[#6d28d9] rounded-full shadow-[0_0_8px_#c084fc]" />
 
             <div className="space-y-3 sm:space-y-4">
-              {displayedStepsMobile.map((step, index) => {
+              {steps.map((step, index) => {
                 const Icon = step.icon;
                 return (
                   <motion.div
@@ -366,19 +363,6 @@ export default function HowWeOperate() {
                 );
               })}
             </div>
-
-            {steps.length > 2 && (
-              <div className="mt-5 sm:mt-6 text-center relative z-10">
-                <button
-                  type="button"
-                  onClick={() => setShowAllSteps(!showAllSteps)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/20 bg-white/[0.06] text-white text-xs sm:text-sm font-semibold backdrop-blur-xl hover:border-[#c084fc]/60 hover:bg-white/15 shadow-[0_0_15px_rgba(168,85,247,0.25)] transition-all active:scale-95"
-                >
-                  {showAllSteps ? "Show Less" : `View More Steps (+${steps.length - 2})`}
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllSteps ? "rotate-180" : ""}`} />
-                </button>
-              </div>
-            )}
           </div>
         </motion.div>
       </div>

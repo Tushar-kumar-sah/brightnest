@@ -134,7 +134,7 @@ export default function HeroSlider() {
 
   return (
     <section
-      className="relative w-full h-[100dvh] min-h-[560px] max-h-[960px] overflow-hidden bg-[#070c1e] select-none"
+      className="relative w-full h-[100dvh] min-h-[560px] max-h-[960px] overflow-hidden bg-[#070c1e] select-none touch-pan-y"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -172,8 +172,8 @@ export default function HeroSlider() {
           <div className="absolute bottom-0 inset-x-0 h-40 sm:h-56 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/75 to-transparent z-10 pointer-events-none" />
 
           {/* Slide Text Content Container */}
-          <div className="relative z-20 h-full max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 flex flex-col justify-center pt-20 sm:pt-28 pb-24 sm:pb-32">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          <div className="relative z-20 h-full max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 flex flex-col justify-center pt-24 sm:pt-28 pb-32 sm:pb-32">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-end">
               {/* Left Column: Headline (slim, balanced, elegant size) */}
               <div className="lg:col-span-7">
                 <motion.h1
@@ -181,28 +181,28 @@ export default function HeroSlider() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
                   style={{ fontWeight: 300 }}
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[2.85rem] font-light font-[300] !font-[300] text-white tracking-normal leading-[1.18] whitespace-pre-line"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[2.85rem] font-light font-[300] !font-[300] text-white tracking-normal leading-[1.2] whitespace-pre-line"
                 >
                   {activeSlide.headline}
                 </motion.h1>
               </div>
 
-              {/* Right / Center Column: Subhead with Vertical Cyan Line & Learn More Pill Button (Exact Reference Match) */}
+              {/* Right / Center Column: Subhead with Vertical Cyan Line & Learn More Pill Button */}
               <div className="lg:col-span-5 pb-1 lg:pb-2">
                 <motion.div
                   initial={{ opacity: 0, y: 25 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.25 }}
-                  className="flex items-stretch gap-4 sm:gap-5"
+                  className="flex items-stretch gap-3.5 sm:gap-5"
                 >
                   {/* Tall Vertical Cyan Line */}
                   <div className="w-[2.5px] bg-[#1ec9f2] rounded-full flex-shrink-0 shadow-[0_0_12px_#1ec9f2]" />
 
-                  <div className="space-y-4 py-1">
+                  <div className="space-y-3 sm:space-y-4 py-1">
                     {/* Subhead */}
                     <div
                       style={{ fontWeight: 300 }}
-                      className="text-base sm:text-lg md:text-xl lg:text-2xl font-light font-[300] !font-[300] text-white/95 leading-snug"
+                      className="text-sm sm:text-lg md:text-xl lg:text-2xl font-light font-[300] !font-[300] text-white/95 leading-snug"
                     >
                       {activeSlide.subhead1} <br />
                       {activeSlide.subhead2}
@@ -212,10 +212,10 @@ export default function HeroSlider() {
                     <div>
                       <Link
                         href={activeSlide.href}
-                        className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#1ec9f2] to-[#0db16a] hover:from-[#38d7f8] hover:to-[#10c477] shadow-[0_4px_20px_rgba(30,201,242,0.45)] hover:shadow-[0_4px_30px_rgba(30,201,242,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 group whitespace-nowrap"
+                        className="inline-flex items-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#1ec9f2] to-[#0db16a] hover:from-[#38d7f8] hover:to-[#10c477] shadow-[0_4px_20px_rgba(30,201,242,0.45)] hover:shadow-[0_4px_30px_rgba(30,201,242,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 group whitespace-nowrap"
                       >
                         <span>Learn More</span>
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </div>
@@ -226,24 +226,43 @@ export default function HeroSlider() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Bottom Left Circular Arrows aligned directly with content container, safely positioned above mobile bar */}
-      <div className="absolute bottom-20 sm:bottom-10 inset-x-0 z-30 pointer-events-none">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between">
-          <div className="flex items-center gap-3 pointer-events-auto">
+      {/* Bottom Circular Arrows and Slide Dots aligned directly with content container, safely positioned above mobile bar */}
+      <div className="absolute bottom-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:bottom-10 inset-x-0 z-30 pointer-events-none">
+        <div className="max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 flex items-center justify-between">
+          <div className="flex items-center gap-2.5 sm:gap-3 pointer-events-auto">
             <button
               onClick={prevSlide}
               aria-label="Previous Slide"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/60 hover:border-white text-white flex items-center justify-center transition-all duration-200 bg-black/30 hover:bg-white/20 backdrop-blur-sm active:scale-90"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/60 hover:border-white text-white flex items-center justify-center transition-all duration-200 bg-black/35 hover:bg-white/20 backdrop-blur-sm active:scale-90"
             >
-              <ArrowLeft size={19} />
+              <ArrowLeft size={18} />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next Slide"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/60 hover:border-white text-white flex items-center justify-center transition-all duration-200 bg-black/30 hover:bg-white/20 backdrop-blur-sm active:scale-90"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/60 hover:border-white text-white flex items-center justify-center transition-all duration-200 bg-black/35 hover:bg-white/20 backdrop-blur-sm active:scale-90"
             >
-              <ArrowRight size={19} />
+              <ArrowRight size={18} />
             </button>
+
+            {/* Slide Dots Indicator */}
+            <div className="flex items-center gap-1.5 ml-2 bg-black/30 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-white/10">
+              {slides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setDirection(idx > current ? 1 : -1);
+                    setCurrent(idx);
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    idx === current
+                      ? "w-5 sm:w-6 bg-[#1ec9f2] shadow-[0_0_10px_#1ec9f2]"
+                      : "w-1.5 bg-white/40 hover:bg-white/70"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

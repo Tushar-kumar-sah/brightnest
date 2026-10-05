@@ -278,7 +278,7 @@ export default function Careers() {
                             </p>
                             <a
                                 href="mailto:careers@brightnestedu.com?subject=General Application"
-                                className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-purple-500 to-violet-400 text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:scale-[1.02] transition-all"
+                                className="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-3.5 bg-gradient-to-r from-purple-500 to-violet-400 text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:scale-[1.02] transition-all text-center"
                             >
                                 <Mail size={18} />
                                 Send Your Resume

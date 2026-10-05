@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Montserrat, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
@@ -7,6 +7,14 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scroll-to-top"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
+import { MobileActionBar } from "@/components/ui"
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#070c1e",
+}
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -119,8 +127,9 @@ export default function RootLayout({
         <StructuredData data={localBusinessSchema} id="local-schema" />
         <JsonLdBreadcrumb />
         <Header />
-        <main className="min-h-screen overflow-x-hidden w-full scroll-snap-container">{children}</main>
+        <main className="min-h-screen overflow-x-hidden w-full scroll-snap-container pb-16 md:pb-0">{children}</main>
         <Footer />
+        <MobileActionBar />
         <ScrollToTop />
         <Analytics />
       </body>

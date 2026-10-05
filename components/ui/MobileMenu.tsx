@@ -28,15 +28,18 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
     const [servicesOpen, setServicesOpen] = useState(false)
     const [industriesOpen, setIndustriesOpen] = useState(false)
 
-    // Prevent body scroll when menu is open
+    // Prevent body scroll and notify floating bar when menu is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden"
+            document.body.setAttribute("data-mobile-menu-open", "true")
         } else {
             document.body.style.overflow = "unset"
+            document.body.removeAttribute("data-mobile-menu-open")
         }
         return () => {
             document.body.style.overflow = "unset"
+            document.body.removeAttribute("data-mobile-menu-open")
         }
     }, [isOpen])
 
@@ -71,7 +74,7 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="fixed inset-0 bg-black/50 z-50"
+                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
                             onClick={() => setIsOpen(false)}
                         />
 
@@ -81,14 +84,14 @@ export function MobileMenu({ className = "", buttonClassName = "" }: MobileMenuP
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#070c1e]/98 backdrop-blur-2xl text-white border-l border-white/15 z-50 shadow-2xl overflow-y-auto pb-16"
+                            className="fixed top-0 right-0 h-[100dvh] max-h-[100dvh] w-[88%] sm:w-[85%] max-w-sm bg-[#070c1e]/98 backdrop-blur-2xl text-white border-l border-white/15 z-[61] shadow-2xl overflow-y-auto overscroll-contain pb-[max(3.5rem,env(safe-area-inset-bottom,3.5rem))] pt-[max(0.5rem,env(safe-area-inset-top,0.5rem))]"
                         >
                             {/* Header */}
                             <div className="flex items-center justify-between p-4 border-b border-white/10">
-                                <span className="text-xl font-bold text-white">Menu</span>
+                                <span className="text-xl font-bold text-white tracking-tight">Menu</span>
                                 <button
                                     onClick={() => setIsOpen(false)}
-                                    className="p-2.5 rounded-lg hover:bg-white/10 transition-colors text-white"
+                                    className="p-2.5 rounded-lg hover:bg-white/10 active:scale-90 transition-all text-white flex items-center justify-center min-w-[40px] min-h-[40px]"
                                     aria-label="Close mobile menu"
                                 >
                                     <X size={24} />

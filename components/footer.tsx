@@ -41,15 +41,15 @@ export default function Footer() {
         </div>
 
         <div className="section-container py-6 sm:py-10 md:py-16 relative z-10">
-          {/* Top section with CTA - hidden on mobile view */}
-          <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6 pb-4 sm:pb-8 md:pb-12 border-b border-white/10 text-center sm:text-left">
+          {/* Top section with CTA - responsive on mobile & desktop */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 md:pb-12 border-b border-white/10 text-center sm:text-left">
             <div>
               <h3 className="text-lg sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-white">{footerCTA.title}</h3>
               <p className="text-white text-xs sm:text-base font-light">{footerCTA.subtitle}</p>
             </div>
             <Link
               href={footerCTA.buttonHref}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white text-xs sm:text-sm font-bold rounded-lg shadow-[0_0_15px_rgba(30,201,242,0.3)] hover:-translate-y-0.5 transition-all group"
+              className="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white text-xs sm:text-sm font-bold rounded-lg shadow-[0_0_15px_rgba(30,201,242,0.3)] hover:-translate-y-0.5 transition-all group flex-shrink-0"
             >
               <span className="text-white">{footerCTA.buttonText}</span>
               <ArrowRight size={14} className="text-white group-hover:translate-x-1 transition-transform sm:size-[16px]" />
@@ -165,7 +165,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10">
-          <div className="section-container py-3 sm:py-4 md:py-6 pb-20 md:pb-6">
+          <div className="section-container py-3 sm:py-4 md:py-6 pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))] md:pb-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-[11px] sm:text-sm text-white text-center sm:text-left">
               <p className="text-white">
                 © {new Date().getFullYear()} {companyInfo.legalName}. All rights reserved.

@@ -251,7 +251,7 @@ export default function IndustryDetailTemplate({
                 slides={heroSlides}
                 accentColor={theme.accentColor}
                 borderColor={theme.cardBorder}
-                glowShadow={`0_0_35px_${theme.accentColor}33`}
+                glowColor={`${theme.accentColor}33`}
               />
             </div>
           </div>

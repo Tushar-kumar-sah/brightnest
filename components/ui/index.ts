@@ -10,3 +10,4 @@ export { FooterLink, FooterSection, SocialLink, ContactInfoItem } from "./Footer
 export { Section, SectionHeader, StatCard, RatingBadge } from "./Section"
 export { ServiceCard, CaseStudyCard, TestimonialCard, IndustryBadge } from "./Cards"
 export { MobileMenu } from "./MobileMenu"
+export { MobileActionBar } from "./MobileActionBar"

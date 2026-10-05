@@ -86,16 +86,16 @@ export default function CaseStudies() {
               <p className="text-base sm:text-lg text-blue-100/75 leading-relaxed mb-8">
                 Explore how Brightnest architects resilient, standards-compliant, and high-performance infrastructure for leading enterprises, campuses, and mission-critical facilities across India.
               </p>
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-blue-500 to-sky-400 text-[#020b1c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:scale-[1.02] transition-all"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-blue-500 to-sky-400 text-[#020b1c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:scale-[1.02] transition-all text-center"
                 >
                   Discuss Your Project
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center px-7 py-3.5 border border-blue-400/40 text-blue-200 font-semibold text-sm rounded-md hover:bg-blue-500/10 hover:border-blue-300 transition-all gap-2"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 border border-blue-400/40 text-blue-200 font-semibold text-sm rounded-md hover:bg-blue-500/10 hover:border-blue-300 transition-all gap-2 text-center"
                 >
                   Explore Services <ArrowRight size={16} />
                 </Link>
@@ -252,16 +252,16 @@ export default function CaseStudies() {
               <p className="text-base sm:text-lg text-blue-100/80 mb-8 leading-relaxed">
                 Tell us about your networking, surveillance, AV, or cabling modernization goals. We will design an end-to-end blueprint tailored to your operational SLA.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-blue-500 to-sky-400 text-[#020b1c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:scale-[1.02] transition-all"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-blue-500 to-sky-400 text-[#020b1c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:scale-[1.02] transition-all text-center"
                 >
                   Book a Consultation
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center px-8 py-3.5 border border-blue-400/40 text-blue-200 font-semibold text-sm rounded-md hover:bg-blue-500/10 hover:border-blue-300 transition-all gap-2"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 border border-blue-400/40 text-blue-200 font-semibold text-sm rounded-md hover:bg-blue-500/10 hover:border-blue-300 transition-all gap-2 text-center"
                 >
                   Explore Services <ArrowRight size={16} />
                 </Link>

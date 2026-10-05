@@ -480,7 +480,7 @@ function ContactContent() {
             </div>
             <a
               href="tel:+919366355026"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(6,182,212,0.35)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:scale-[1.02] transition-all flex-shrink-0"
+              className="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(6,182,212,0.35)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:scale-[1.02] transition-all flex-shrink-0 text-center"
             >
               <Phone size={18} className="text-white" />
               (+91) 93663 55026

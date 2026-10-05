@@ -205,7 +205,7 @@ export default function SolutionsShowcase({
           <div
             ref={navigationRef}
             data-lenis-prevent
-            className="flex gap-3 overflow-x-auto pb-2 lg:grid lg:grid-cols-1 lg:overflow-y-auto lg:max-h-[500px] lg:gap-2.5 lg:pb-0 pr-1.5 [scrollbar-width:thin] [scrollbar-color:rgba(255,255,255,0.15)_transparent]"
+            className="flex gap-2.5 sm:gap-3 overflow-x-auto pb-2 lg:grid lg:grid-cols-1 lg:overflow-y-auto lg:max-h-[500px] lg:gap-2.5 lg:pb-0 pr-1.5 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
             aria-label="Solution categories"
           >
             {solutions.map((solution, index) => {
@@ -259,7 +259,7 @@ export default function SolutionsShowcase({
 
           <div
             ref={panelRef}
-            className="relative min-h-[420px] sm:min-h-[480px] lg:min-h-0 lg:h-[500px] overflow-hidden rounded-xl border border-white/15 bg-white/[0.04] backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] flex flex-col"
+            className="relative min-h-0 h-auto md:min-h-[480px] lg:h-[500px] overflow-hidden rounded-xl border border-white/15 bg-white/[0.04] backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] flex flex-col"
           >
             {/* Top Active Solution Accent Bar */}
             <div className={`absolute inset-x-0 top-0 h-1.5 rounded-t-xl bg-gradient-to-r ${activeSolution.accent}`} />
@@ -269,18 +269,18 @@ export default function SolutionsShowcase({
             <div className="pointer-events-none absolute -bottom-28 -left-28 h-72 w-72 rounded-full border-[44px] border-[#9266fd]/10 blur-[2px]" />
 
             <div className="relative grid md:grid-cols-[200px_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1fr)] flex-1 min-h-0">
-              <div className="flex items-center justify-center bg-white/[0.02] border-b md:border-b-0 md:border-r border-white/10 p-4 sm:p-6 md:p-8 shrink-0 md:h-full relative overflow-hidden">
+              <div className="flex items-center justify-center bg-white/[0.02] border-b md:border-b-0 md:border-r border-white/10 p-3 sm:p-6 md:p-8 shrink-0 md:h-full relative overflow-hidden">
                 {/* Ambient pulsing aura behind number */}
-                <div className="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-gradient-to-r from-[#1ec9f2]/30 via-[#0067b8]/20 to-[#9266fd]/25 blur-2xl pointer-events-none" />
+                <div className="absolute w-28 h-28 sm:w-44 sm:h-44 rounded-full bg-gradient-to-r from-[#1ec9f2]/30 via-[#0067b8]/20 to-[#9266fd]/25 blur-2xl pointer-events-none" />
                 <div
                   data-solution-content
-                  className={`relative z-10 flex h-16 w-16 sm:h-24 sm:w-24 md:h-32 md:w-32 items-center justify-center rounded-xl bg-gradient-to-br ${activeSolution.accent} text-2xl sm:text-4xl md:text-5xl font-light text-white shadow-[0_20px_50px_rgba(30,201,242,0.4),0_0_30px_rgba(146,102,253,0.3)] ring-4 sm:ring-8 ring-white/10 ring-offset-2 sm:ring-offset-4 ring-offset-[#070c1e]/60`}
+                  className={`relative z-10 flex h-12 w-12 sm:h-20 sm:w-20 md:h-32 md:w-32 items-center justify-center rounded-xl bg-gradient-to-br ${activeSolution.accent} text-lg sm:text-3xl md:text-5xl font-light text-white shadow-[0_15px_35px_rgba(30,201,242,0.35)] ring-2 sm:ring-4 md:ring-8 ring-white/10 ring-offset-2 sm:ring-offset-4 ring-offset-[#070c1e]/60`}
                 >
                   {activeSolution.number}
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center p-4 sm:p-6 lg:p-8 pb-12 sm:pb-14 overflow-y-auto" data-lenis-prevent>
+              <div className="flex flex-col justify-center p-4 sm:p-6 lg:p-8 pb-10 sm:pb-14 overflow-visible md:overflow-y-auto" data-lenis-prevent>
                 <p
                   data-solution-content
                   className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-white/80"
@@ -315,7 +315,7 @@ export default function SolutionsShowcase({
                 <div data-solution-content className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
                   <Link
                     href={activeSolution.href}
-                    className="group inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_10px_25px_rgba(30,201,242,0.35)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(30,201,242,0.5)] hover:-translate-y-0.5 text-center"
+                    className="group inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_10px_25px_rgba(30,201,242,0.35)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(30,201,242,0.5)] hover:-translate-y-0.5 text-center w-full sm:w-auto"
                   >
                     Explore this solution
                     <ArrowRight size={15} className="ml-2 transition-transform group-hover:translate-x-1" />

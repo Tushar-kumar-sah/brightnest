@@ -9,7 +9,6 @@ import CaseStudiesSection from "@/components/CaseStudiesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import UnifiedContactSection from "@/components/UnifiedContactSection";
 import { getHeroData } from "@/lib/data";
-import { Mail, Calendar, MessageCircle } from "lucide-react";
 
 export default function Home() {
   const { solutionHighlights, sectionHeadings } = getHeroData();
@@ -48,49 +47,6 @@ export default function Home() {
 
       {/* 10. Let's Connect: Unified Contact & Site Survey Request */}
       <UnifiedContactSection />
-
-      {/* Mobile Floating Action Bar */}
-      <nav className="fixed bottom-0 left-0 right-0 md:hidden bg-[#070c1e]/92 backdrop-blur-2xl border-t border-white/15 z-50 shadow-[0_-8px_30px_rgba(0,0,0,0.8)] py-2 px-4 select-none">
-        <div className="flex items-center justify-around max-w-sm mx-auto">
-          {/* Email */}
-          <a
-            href="mailto:info@brightnestedu.com"
-            className="flex flex-col items-center justify-center gap-1 px-3 py-0.5 transition-transform active:scale-95"
-          >
-            <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/[0.08] text-white border border-white/15 hover:border-white/30 transition-colors">
-              <Mail size={17} strokeWidth={2} className="text-white" />
-            </div>
-            <span className="text-[10px] font-medium text-white">Email</span>
-          </a>
-
-          {/* Appointment CTA (Center Highlight) */}
-          <a
-            href="#contact"
-            className="flex flex-col items-center justify-center gap-1 px-3 transition-transform active:scale-95 -mt-4"
-          >
-            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#1ec9f2] via-[#0067b8] to-[#9266fd] text-white shadow-[0_0_20px_rgba(30,201,242,0.6)] border-2 border-white/30">
-              <Calendar size={20} strokeWidth={2.2} className="text-white" />
-            </div>
-            <span className="text-[10px] font-bold text-white">Site Survey</span>
-          </a>
-
-          {/* WhatsApp */}
-          <a
-            href="https://wa.me/919366355026"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center gap-1 px-3 py-0.5 transition-transform active:scale-95"
-          >
-            <div className="w-9 h-9 flex items-center justify-center rounded-full bg-white/[0.08] text-white border border-white/15 transition-colors">
-              <MessageCircle size={17} strokeWidth={2} className="text-white" />
-            </div>
-            <span className="text-[10px] font-medium text-white">WhatsApp</span>
-          </a>
-        </div>
-      </nav>
-
-      {/* Spacer for mobile bottom bar */}
-      <div className="h-16 md:h-0" />
     </div>
   );
 }

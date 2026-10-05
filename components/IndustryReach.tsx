@@ -186,7 +186,7 @@ export default function IndustryReach() {
           </div>
           <Link
             href="/contact"
-            className="flex-shrink-0 px-6 py-3 rounded-md font-bold text-sm text-white bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right shadow-[0_0_20px_rgba(30,201,242,0.4)] transition-all"
+            className="inline-flex items-center justify-center w-full sm:w-auto flex-shrink-0 px-6 py-3 rounded-md font-bold text-sm text-white bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right shadow-[0_0_20px_rgba(30,201,242,0.4)] transition-all text-center"
           >
             Request Custom Architecture
           </Link>

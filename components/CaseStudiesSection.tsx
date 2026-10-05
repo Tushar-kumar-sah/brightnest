@@ -104,7 +104,7 @@ export default function CaseStudiesSection() {
           </div>
           <Link
             href="/case-studies"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white bg-white/[0.06] border border-white/20 hover:bg-white/[0.12] hover:border-white/40 shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
+            className="group inline-flex items-center justify-center w-full sm:w-auto gap-2 px-6 py-3 rounded-full font-medium text-sm text-white bg-white/[0.06] border border-white/20 hover:bg-white/[0.12] hover:border-white/40 shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0 text-center"
           >
             <span>View All Case Studies</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-white" />
