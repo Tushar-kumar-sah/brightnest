@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, Phone, MapPin, ArrowRight, Star } from "lucide-react"
+import { Mail, Phone, MapPin, Star } from "lucide-react"
 import {
   FooterLink,
   FooterSection,
@@ -25,7 +25,6 @@ export default function Footer() {
     socialLinks,
     companyContact,
     companyInfo,
-    footerCTA,
     creditInfo,
   } = getFooterData()
   return (
@@ -40,24 +39,9 @@ export default function Footer() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-white/5" />
         </div>
 
-        <div className="section-container py-6 sm:py-10 md:py-16 relative z-10">
-          {/* Top section with CTA - responsive on mobile & desktop */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 pb-6 sm:pb-8 md:pb-12 border-b border-white/10 text-center sm:text-left">
-            <div>
-              <h3 className="text-lg sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-white">{footerCTA.title}</h3>
-              <p className="text-white text-xs sm:text-base font-light">{footerCTA.subtitle}</p>
-            </div>
-            <Link
-              href={footerCTA.buttonHref}
-              className="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white text-xs sm:text-sm font-bold rounded-lg shadow-[0_0_15px_rgba(30,201,242,0.3)] hover:-translate-y-0.5 transition-all group flex-shrink-0"
-            >
-              <span className="text-white">{footerCTA.buttonText}</span>
-              <ArrowRight size={14} className="text-white group-hover:translate-x-1 transition-transform sm:size-[16px]" />
-            </Link>
-          </div>
-
+        <div className="section-container py-8 sm:py-12 md:py-16 relative z-10">
           {/* Main grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 md:gap-12 pt-4 sm:pt-6 md:pt-12">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 md:gap-12">
             {/* Company Info */}
             <div className="col-span-2 sm:col-span-1">
               <div className="flex items-center gap-3 mb-3 sm:mb-6">
