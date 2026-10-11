@@ -159,56 +159,67 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services — Open-Air Architectural Index Ledger */}
       <section className="section-padding relative z-10 py-16 border-t border-slate-700/40">
         <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
+          <div className="divide-y divide-white/10 border-t border-b border-white/10">
             {services.map((service, idx) => {
               const Icon = getIcon(service.icon as unknown as string) || Star
+              const num = String(idx + 1).padStart(2, "0")
               return (
                 <Link
                   key={idx}
                   href={service.href}
-                  className="reveal opacity-0 translate-y-8 transition-all duration-700 group relative overflow-hidden rounded-md bg-[#11141b]/70 border border-slate-700/50 hover:border-slate-400/70 hover:shadow-[0_0_35px_rgba(148,163,184,0.2)] backdrop-blur-xl p-6 sm:p-8"
-                  style={{ transitionDelay: `${idx * 50}ms` }}
+                  className="reveal opacity-0 translate-y-8 transition-all duration-700 group relative block py-8 sm:py-10 px-2 sm:px-6 overflow-hidden"
+                  style={{ transitionDelay: `${idx * 40}ms` }}
                 >
-                  <div className="flex flex-col sm:flex-row gap-5">
-                    {/* Icon */}
-                    <div
-                      className={`flex-shrink-0 w-14 h-14 rounded-md bg-gradient-to-br ${service.color} text-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform`}
-                    >
-                      <Icon size={28} />
-                    </div>
+                  {/* Ambient radial hover bloom */}
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_100%_at_50%_50%,rgba(255,255,255,0.04),transparent_80%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  {/* Bottom laser sweep on hover */}
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1ec9f2] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-white transition-colors">
+                  <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start lg:items-center">
+                    {/* Left: Number + Floating Sphere Icon + Name */}
+                    <div className="lg:col-span-4 flex items-center gap-4 sm:gap-5">
+                      <span className="font-mono text-xs sm:text-sm font-bold text-white/40 group-hover:text-[#1ec9f2] transition-colors w-6">
+                        {num}
+                      </span>
+                      <div
+                        className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br ${service.color} text-white flex items-center justify-center shadow-[0_0_25px_rgba(255,255,255,0.15)] group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        <Icon size={24} />
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#1ec9f2] transition-colors leading-snug">
                         {service.name}
                       </h3>
-                      <p className="text-white/80 mb-4 text-sm leading-relaxed font-light">{service.description}</p>
+                    </div>
 
-                      {/* Features */}
-                      <div className="flex flex-wrap gap-1.5 mb-5">
+                    {/* Center: Description + Open-Air Feature Stream */}
+                    <div className="lg:col-span-6 space-y-3 lg:border-l lg:border-white/10 lg:pl-8">
+                      <p className="text-white/80 text-sm sm:text-base leading-relaxed font-light">
+                        {service.description}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 pt-1">
                         {service.features.map((feature, i) => (
                           <span
                             key={i}
-                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#181c25] border border-slate-700/60 text-xs text-white"
+                            className="inline-flex items-center gap-2 text-xs text-white/90 font-medium"
                           >
-                            <CheckCircle size={12} className="text-white" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#1ec9f2] shadow-[0_0_8px_#1ec9f2]" />
                             {feature}
                           </span>
                         ))}
                       </div>
+                    </div>
 
-                      {/* CTA */}
-                      <div className="flex items-center text-white font-semibold text-xs tracking-wider uppercase group-hover:underline transition-colors">
-                        Explore Architecture Details <ArrowRight size={14} className="ml-1.5 group-hover:translate-x-1.5 transition-transform" />
-                      </div>
+                    {/* Right: Action Link */}
+                    <div className="lg:col-span-2 flex lg:justify-end">
+                      <span className="inline-flex items-center text-white font-semibold text-xs tracking-wider uppercase group-hover:text-[#1ec9f2] transition-colors">
+                        Explore
+                        <ArrowRight size={15} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                      </span>
                     </div>
                   </div>
-
-                  {/* Metallic hover sheen */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-slate-400/5 via-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 </Link>
               )
             })}
@@ -216,11 +227,11 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Process Overview */}
+      {/* Process Overview — Open-Air Laser Track & Floating Spheres */}
       <section className="section-padding relative z-10 py-20 border-t border-slate-700/40 bg-[#0a0c10]/60 backdrop-blur-sm">
         <div className="section-container">
           <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase bg-slate-500/15 border border-slate-400/30 text-white mb-3">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-slate-500/15 border border-slate-400/30 text-white mb-3">
               Delivery Framework
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
@@ -231,60 +242,72 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { step: "01", title: "Discover", description: "Comprehensive site survey, audit, and requirement gathering" },
-              { step: "02", title: "Design", description: "Standards-aligned solution architecture and detailed BOM" },
-              { step: "03", title: "Deploy", description: "Certified engineering deployment, testing, and system commissioning" },
-              { step: "04", title: "Support", description: "SLA-driven maintenance, 24×7 NOC monitoring, and AMC lifecycle" },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="reveal opacity-0 translate-y-8 transition-all duration-700 p-6 rounded-md bg-[#11141b]/60 border border-slate-700/50 text-center hover:border-slate-500/70 hover:shadow-[0_0_25px_rgba(148,163,184,0.15)] backdrop-blur-xl transition-all"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <div className="w-12 h-12 rounded-md bg-slate-500/15 border border-slate-500/30 text-white font-mono font-bold text-lg flex items-center justify-center mx-auto mb-4">
-                  {item.step}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Horizontal connecting laser line on desktop */}
+            <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-[#1ec9f2]/60 to-transparent pointer-events-none" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 relative">
+              {[
+                { step: "01", title: "Discover", description: "Comprehensive site survey, audit, and requirement gathering" },
+                { step: "02", title: "Design", description: "Standards-aligned solution architecture and detailed BOM" },
+                { step: "03", title: "Deploy", description: "Certified engineering deployment, testing, and system commissioning" },
+                { step: "04", title: "Support", description: "SLA-driven maintenance, 24×7 NOC monitoring, and AMC lifecycle" },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="reveal opacity-0 translate-y-8 transition-all duration-700 relative flex flex-col items-center text-center group"
+                  style={{ transitionDelay: `${idx * 100}ms` }}
+                >
+                  <div className="relative mb-5">
+                    <div className="absolute -inset-2 rounded-full border border-dashed border-white/25 group-hover:border-[#1ec9f2] group-hover:rotate-45 transition-all duration-500" />
+                    <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#0067b8] via-[#0b1b3d] to-[#1ec9f2] text-white font-mono font-extrabold text-xl flex items-center justify-center shadow-[0_0_30px_rgba(30,201,242,0.3)] group-hover:scale-110 transition-transform">
+                      {item.step}
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-lg text-white mb-2 group-hover:text-[#1ec9f2] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed font-light max-w-[220px]">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="font-bold text-base text-white mb-2">{item.title}</h3>
-                <p className="text-white/80 text-xs leading-relaxed font-light">{item.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding relative z-10 py-16 pb-24">
-        <div className="section-container">
-          <div className="rounded-md p-8 sm:p-12 md:p-14 text-center bg-gradient-to-r from-[#0e1017] via-[#1a1e29] to-[#0e1017] border border-slate-600/40 shadow-[0_0_50px_rgba(148,163,184,0.18)] relative overflow-hidden">
-            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-slate-500/10 blur-[80px] pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-zinc-500/10 blur-[80px] pointer-events-none" />
+      {/* CTA — Open-Air Horizon Section */}
+      <section className="section-padding relative z-10 py-20 border-t border-white/15 overflow-hidden">
+        <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-[#1ec9f2]/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(30,201,242,0.10),transparent)] pointer-events-none" />
 
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
-                Need a Custom Infrastructure Sizing?
-              </h2>
-              <p className="text-base sm:text-lg text-white mb-8 leading-relaxed font-light">
-                Every enterprise ecosystem has distinct constraints. Schedule a consultation with our solutions architects to craft a tailored BOM and deployment roadmap.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all group text-center"
-                >
-                  Get a Free Consultation
-                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a
-                  href="tel:+919366355026"
-                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-md hover:bg-slate-800/60 hover:border-slate-400 transition-all gap-2 text-center"
-                >
-                  <Phone size={16} />
-                  Call Our Engineers
-                </a>
-              </div>
-            </div>
+        <div className="section-container relative z-10 max-w-3xl mx-auto text-center">
+          <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.25em] text-[#1ec9f2] mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1ec9f2] animate-pulse" />
+            Custom Architecture
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
+            Need a Custom Infrastructure Sizing?
+          </h2>
+          <p className="text-base sm:text-lg text-white/85 mb-9 leading-relaxed font-light">
+            Every enterprise ecosystem has distinct constraints. Schedule a consultation with our solutions architects to craft a tailored BOM and deployment roadmap.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-full shadow-[0_0_25px_rgba(30,201,242,0.35)] hover:shadow-[0_0_35px_rgba(30,201,242,0.6)] hover:scale-[1.02] transition-all group text-center"
+            >
+              Get a Free Consultation
+              <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <a
+              href="tel:+919366355026"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 border border-white/25 text-white font-semibold text-sm rounded-full hover:bg-white/10 transition-all gap-2 text-center"
+            >
+              <Phone size={16} />
+              Call Our Engineers
+            </a>
           </div>
         </div>
       </section>

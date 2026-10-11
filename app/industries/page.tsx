@@ -147,47 +147,72 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Industries Grid */}
+      {/* Industries — Open-Air Architectural Sector Ledger */}
       <section className="section-padding relative z-10 py-16 border-t border-cyan-500/15">
         <div className="section-container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {industries.map((ind) => {
+          <div className="divide-y divide-cyan-500/15 border-t border-b border-cyan-500/15">
+            {industries.map((ind, idx) => {
               const Icon = iconMap[ind.icon] || Building2
+              const num = String(idx + 1).padStart(2, "0")
               return (
                 <Link
                   key={ind.slug}
                   href={`/industries/${ind.slug}`}
-                  className="group p-6 sm:p-8 rounded-md bg-[#091c44]/65 border border-cyan-500/20 hover:border-cyan-400/60 hover:shadow-[0_0_35px_rgba(6,182,212,0.2)] backdrop-blur-xl transition-all duration-300 flex flex-col"
+                  className="group relative block py-10 sm:py-12 px-2 sm:px-6 transition-all duration-300 overflow-hidden"
                 >
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="w-12 h-12 rounded-md bg-white/[0.06] border border-white/10 text-white flex items-center justify-center group-hover:scale-105 group-hover:bg-white/10 transition-all flex-shrink-0">
-                      <Icon size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <h2 className="text-xl font-bold text-white group-hover:text-white transition-colors">
-                        {ind.name}
-                      </h2>
-                      <div className="text-xs text-white/80 line-clamp-1">{ind.tagline}</div>
-                    </div>
-                  </div>
+                  {/* Ambient hover bloom */}
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_100%_at_50%_50%,rgba(6,182,212,0.06),transparent_80%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  {/* Bottom laser sweep on hover */}
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                  <p className="text-sm text-white leading-relaxed mb-6 flex-1 font-light">
-                    {ind.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/10 mb-6">
-                    {ind.stats.slice(0, 2).map((st, i) => (
-                      <div key={i} className="p-2.5 rounded-md bg-[#040e24] border border-white/10 text-center">
-                        <div className="text-base font-extrabold text-white">
-                          <AnimatedStatValue value={st.value} />
+                  <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start lg:items-center">
+                    {/* Left: Sector Number + Floating Sphere Icon + Name */}
+                    <div className="lg:col-span-4 flex items-center gap-4 sm:gap-5">
+                      <span className="font-mono text-xs sm:text-sm font-bold text-cyan-400/50 group-hover:text-cyan-300 transition-colors w-6">
+                        {num}
+                      </span>
+                      <div className="relative flex-shrink-0">
+                        <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-cyan-500/25 to-blue-600/20 border border-cyan-400/35 text-white flex items-center justify-center group-hover:scale-110 group-hover:border-cyan-300 transition-all shadow-[0_0_25px_rgba(6,182,212,0.25)]">
+                          <Icon size={24} className="text-white" />
                         </div>
-                        <div className="text-[10px] uppercase font-semibold text-white/80">{st.label}</div>
                       </div>
-                    ))}
-                  </div>
+                      <div>
+                        <h2 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                          {ind.name}
+                        </h2>
+                        <div className="text-xs text-cyan-200/80 font-light mt-0.5 line-clamp-1">
+                          {ind.tagline}
+                        </div>
+                      </div>
+                    </div>
 
-                  <div className="flex items-center text-white font-semibold text-xs tracking-wider uppercase group-hover:text-white transition-colors">
-                    Explore Architecture <ArrowRight size={14} className="ml-1.5 group-hover:translate-x-1.5 transition-transform text-white" />
+                    {/* Center: Open-Air Narrative */}
+                    <div className="lg:col-span-5 lg:border-l lg:border-white/10 lg:pl-8">
+                      <p className="text-sm sm:text-base text-white/85 leading-relaxed font-light">
+                        {ind.description}
+                      </p>
+                    </div>
+
+                    {/* Right: Open-Air Animated Telemetry + Action Link */}
+                    <div className="lg:col-span-3 flex flex-col sm:flex-row lg:flex-col justify-between sm:items-center lg:items-end gap-4 lg:border-l lg:border-white/10 lg:pl-8 w-full">
+                      <div className="flex items-center gap-6">
+                        {ind.stats.slice(0, 2).map((st, i) => (
+                          <div key={i} className="text-left lg:text-right">
+                            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-none">
+                              <AnimatedStatValue value={st.value} />
+                            </div>
+                            <div className="text-[10px] uppercase font-semibold tracking-wider text-cyan-200/75 mt-1">
+                              {st.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="inline-flex items-center text-cyan-300 font-semibold text-xs tracking-wider uppercase group-hover:text-white transition-colors mt-1">
+                        Explore Blueprint
+                        <ArrowRight size={14} className="ml-1.5 group-hover:translate-x-1.5 transition-transform" />
+                      </div>
+                    </div>
                   </div>
                 </Link>
               )
@@ -196,23 +221,28 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Consultation Banner */}
-      <section className="section-padding relative z-10 py-16 pb-24">
-        <div className="section-container">
-          <div className="rounded-md p-8 sm:p-12 text-center bg-gradient-to-r from-[#03152c] via-[#07244a] to-[#03152c] border border-white/20 shadow-[0_0_40px_rgba(6,182,212,0.15)] relative overflow-hidden backdrop-blur-xl">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-              Need an Industry-Specific Technology Audit?
-            </h2>
-            <p className="text-sm sm:text-base text-white max-w-xl mx-auto mb-6 font-light">
-              Our principal solution architects will conduct an on-site infrastructure survey aligned with your sector's compliance and operational standards.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-md shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] hover:scale-[1.02] transition-all text-center"
-            >
-              Book an On-Site Audit
-            </Link>
-          </div>
+      {/* Consultation — Open-Air Horizon Section */}
+      <section className="section-padding relative z-10 py-20 border-t border-cyan-500/20 overflow-hidden">
+        <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(6,182,212,0.12),transparent)] pointer-events-none" />
+
+        <div className="section-container relative z-10 max-w-3xl mx-auto text-center">
+          <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.25em] text-cyan-300 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            Sector Advisory
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+            Need an Industry-Specific Technology Audit?
+          </h2>
+          <p className="text-sm sm:text-base lg:text-lg text-white/85 max-w-xl mx-auto mb-8 font-light leading-relaxed">
+            Our principal solution architects will conduct an on-site infrastructure survey aligned with your sector&apos;s compliance and operational standards.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-3.5 bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right text-white font-bold text-sm rounded-full shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.7)] hover:scale-[1.02] transition-all text-center"
+          >
+            Book an On-Site Audit
+          </Link>
         </div>
       </section>
     </main>

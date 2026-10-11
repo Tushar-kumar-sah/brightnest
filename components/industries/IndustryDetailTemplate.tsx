@@ -269,84 +269,119 @@ export default function IndustryDetailTemplate({
         </div>
       </section>
 
-      {/* Challenges & Engineered Solutions Grid */}
+      {/* Challenges & Engineered Solutions — Open-Air Paired Comparison Matrix */}
       <section className={`section-padding relative z-10 py-20 border-t ${theme.cardBorder}`}>
         <div className="section-container">
           <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
-            <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase ${theme.badgeBg} border ${theme.badgeBorder} ${theme.badgeText} mb-3`}>
+            <span className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase ${theme.badgeBg} border ${theme.badgeBorder} ${theme.badgeText} mb-3`}>
               <ShieldCheck size={14} />
               Engineering Blueprint
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
               Operational Challenges vs Our Solution Architecture
             </h2>
-            <p className={`text-base ${theme.subtextColor} max-w-2xl mx-auto`}>
+            <p className={`text-base ${theme.subtextColor} max-w-2xl mx-auto font-light`}>
               We solve complex vertical-specific friction points with standards-aligned technology frameworks.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Left: Challenges */}
-            <div className={`reveal opacity-0 translate-y-8 transition-all duration-700 p-6 sm:p-8 rounded-md bg-red-950/20 border border-red-500/25 backdrop-blur-xl`}>
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-400 mb-6">
-                <AlertTriangle size={18} />
-                Critical Industry Challenges
+          <div className="max-w-6xl mx-auto">
+            {/* Column Headers on Desktop */}
+            <div className="hidden lg:grid lg:grid-cols-12 gap-8 pb-4 border-b border-white/15 text-xs font-mono font-bold uppercase tracking-[0.2em]">
+              <div className="lg:col-span-5 flex items-center gap-2 text-rose-400">
+                <AlertTriangle size={16} />
+                <span>Critical Sector Friction</span>
               </div>
-              <div className="space-y-4">
-                {challenges.map((challenge, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3.5 rounded-md bg-white/[0.03] border border-white/5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0" />
-                    <span className="text-sm text-white font-light leading-relaxed">{challenge}</span>
-                  </div>
-                ))}
+              <div className="lg:col-span-2 text-center text-white/40">
+                TRANSFORMATION
+              </div>
+              <div className={`lg:col-span-5 flex items-center gap-2 ${theme.textHighlight}`}>
+                <Sparkles size={16} />
+                <span>Engineered Turnkey Architecture</span>
               </div>
             </div>
 
-            {/* Right: Solutions */}
-            <div className={`reveal opacity-0 translate-y-8 transition-all duration-700 delay-150 p-6 sm:p-8 rounded-md ${theme.cardBg} border ${theme.cardBorder} backdrop-blur-xl`}>
-              <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${theme.textHighlight} mb-6`}>
-                <Sparkles size={18} />
-                Brightnest Turnkey Solutions
-              </div>
-              <div className="space-y-4">
-                {solutions.map((solution, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3.5 rounded-md bg-white/[0.04] border border-white/10">
-                    <CheckCircle size={16} className={`${theme.textHighlight} mt-0.5 flex-shrink-0`} />
-                    <span className="text-sm text-white font-medium leading-relaxed">{solution}</span>
+            <div className="divide-y divide-white/10 border-b border-white/10">
+              {challenges.map((challenge, idx) => {
+                const solution = solutions[idx] || ""
+                const num = String(idx + 1).padStart(2, "0")
+                return (
+                  <div
+                    key={idx}
+                    className="reveal opacity-0 translate-y-8 transition-all duration-700 py-7 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center group"
+                    style={{ transitionDelay: `${idx * 70}ms` }}
+                  >
+                    {/* Challenge */}
+                    <div className="lg:col-span-5 flex items-start gap-4">
+                      <span className="font-mono text-xs font-bold text-rose-400/70 mt-1 flex-shrink-0">
+                        {num}
+                      </span>
+                      <div>
+                        <span className="lg:hidden inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-rose-400 mb-1">
+                          <AlertTriangle size={12} /> Challenge
+                        </span>
+                        <p className="text-sm sm:text-base text-white/85 font-light leading-relaxed">
+                          {challenge}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Center Laser Bridge */}
+                    <div className="lg:col-span-2 flex items-center justify-start lg:justify-center pl-8 lg:pl-0">
+                      <div className="flex items-center gap-2 text-white/40 group-hover:text-white transition-colors">
+                        <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-rose-500/40 to-white/40" />
+                        <ArrowRight size={16} className={`${theme.textHighlight} group-hover:translate-x-1 transition-transform`} />
+                      </div>
+                    </div>
+
+                    {/* Engineered Solution */}
+                    <div className="lg:col-span-5 flex items-start gap-3.5 pl-8 lg:pl-0">
+                      <CheckCircle size={18} className={`${theme.textHighlight} mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+                      <div>
+                        <span className={`lg:hidden inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider ${theme.textHighlight} mb-1`}>
+                          <Sparkles size={12} /> Turnkey Solution
+                        </span>
+                        <p className="text-sm sm:text-base text-white font-medium leading-relaxed">
+                          {solution}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Deliverables Scope */}
+      {/* Deliverables Scope — Open-Air Architectural Spec Ledger */}
       <section className={`section-padding relative z-10 py-20 border-t ${theme.cardBorder} bg-black/25 backdrop-blur-sm`}>
-        <div className="section-container max-w-5xl">
+        <div className="section-container max-w-6xl">
           <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
-            <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase ${theme.badgeBg} border ${theme.badgeBorder} ${theme.badgeText} mb-3`}>
+            <span className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase ${theme.badgeBg} border ${theme.badgeBorder} ${theme.badgeText} mb-3`}>
               Scope of Work
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
               Turnkey Infrastructure Deliverables
             </h2>
-            <p className={`text-sm ${theme.subtextColor} mt-2`}>
+            <p className={`text-sm ${theme.subtextColor} mt-2 font-light`}>
               Complete physical layer, active networking, security, and AMC deliverables.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-x-12 border-t border-white/10">
             {deliverables.map((item, idx) => (
               <div
                 key={idx}
-                className={`reveal opacity-0 translate-y-8 transition-all duration-700 flex items-start gap-3.5 p-4 rounded-md ${theme.cardBg} border ${theme.cardBorder} ${theme.cardBorderHover} ${theme.cardShadowHover} backdrop-blur-xl group`}
+                className="reveal opacity-0 translate-y-8 transition-all duration-700 relative flex items-center gap-4 py-5 border-b border-white/10 group"
                 style={{ transitionDelay: `${idx * 50}ms` }}
               >
-                <div className={`p-1.5 rounded-md ${theme.badgeBg} ${theme.textHighlight} flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform`}>
-                  <CheckCircle size={18} />
-                </div>
-                <span className={`text-sm font-medium ${theme.subtextColor} group-hover:text-white transition-colors`}>
+                <div className={`absolute bottom-0 left-0 w-0 h-px bg-current ${theme.textHighlight} group-hover:w-full transition-all duration-500`} />
+                <span className={`font-mono text-xs font-bold ${theme.textHighlight} opacity-75 w-6 flex-shrink-0`}>
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <CheckCircle size={18} className={`${theme.textHighlight} flex-shrink-0 group-hover:scale-110 transition-transform`} />
+                <span className={`text-sm sm:text-base font-normal ${theme.subtextColor} group-hover:text-white transition-colors`}>
                   {item}
                 </span>
               </div>
@@ -355,36 +390,30 @@ export default function IndustryDetailTemplate({
         </div>
       </section>
 
-      {/* Bottom CTA Banner */}
-      <section className="section-padding relative z-10 py-16 pb-24">
-        <div className="section-container">
-          <div className={`rounded-md p-6 sm:p-10 md:p-14 text-center bg-black/40 border ${theme.cardBorder} ${theme.cardShadowHover} relative overflow-hidden backdrop-blur-xl`}>
-            <div className={`absolute -top-24 -right-24 w-72 h-72 rounded-full ${theme.glowOrb1} blur-[80px] pointer-events-none`} />
-            <div className={`absolute -bottom-24 -left-24 w-72 h-72 rounded-full ${theme.glowOrb2} blur-[80px] pointer-events-none`} />
-
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight">
-                Modernize Your {name} Infrastructure
-              </h2>
-              <p className={`text-sm sm:text-base lg:text-lg ${theme.subtextColor} mb-6 sm:mb-8 leading-relaxed font-light`}>
-                Connect with our certified enterprise engineers to arrange a comprehensive on-site survey and tailored technical proposal.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
-                <Link
-                  href="/contact"
-                  className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-md ${theme.buttonShadow} hover:scale-[1.02] transition-all text-center w-full sm:w-auto`}
-                >
-                  Book a Site Survey
-                </Link>
-                <a
-                  href="tel:+919366355026"
-                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 border border-white/25 text-white font-semibold text-sm rounded-md hover:bg-white/10 transition-all gap-2 text-center w-full sm:w-auto"
-                >
-                  <Phone size={16} />
-                  (+91) 93663 55026
-                </a>
-              </div>
-            </div>
+      {/* Bottom CTA — Open-Air Horizon Section */}
+      <section className={`section-padding relative z-10 py-20 border-t ${theme.cardBorder} overflow-hidden`}>
+        <div className={`absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent ${theme.laserStreak} to-transparent pointer-events-none`} />
+        <div className="section-container relative z-10 max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+            Modernize Your {name} Infrastructure
+          </h2>
+          <p className={`text-sm sm:text-base lg:text-lg ${theme.subtextColor} mb-8 leading-relaxed font-light`}>
+            Connect with our certified enterprise engineers to arrange a comprehensive on-site survey and tailored technical proposal.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
+            <Link
+              href="/contact"
+              className={`inline-flex items-center justify-center px-8 py-3.5 ${theme.buttonGradient} ${theme.buttonText || "text-white"} font-bold text-sm rounded-full ${theme.buttonShadow} hover:scale-[1.02] transition-all text-center w-full sm:w-auto`}
+            >
+              Book a Site Survey
+            </Link>
+            <a
+              href="tel:+919366355026"
+              className="inline-flex items-center justify-center px-8 py-3.5 border border-white/25 text-white font-semibold text-sm rounded-full hover:bg-white/10 transition-all gap-2 text-center w-full sm:w-auto"
+            >
+              <Phone size={16} />
+              (+91) 93663 55026
+            </a>
           </div>
         </div>
       </section>

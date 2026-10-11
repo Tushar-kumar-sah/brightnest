@@ -167,111 +167,158 @@ export default function CaseStudies() {
         </div>
       </section>
 
-      {/* Case study grid */}
+      {/* Case Studies — Open-Air Alternating Editorial Ledger */}
       <section className="section-padding relative z-10 py-20 border-t border-blue-500/15">
         <div className="section-container">
-          <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase bg-blue-500/10 border border-blue-500/30 text-blue-300 mb-3">
-              Deployments Portfolio
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
-              Featured Case Studies
-            </h2>
-            <p className="text-blue-100/70 text-base max-w-2xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 reveal opacity-0 translate-y-8 transition-all duration-700">
+            <div>
+              <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-blue-300 mb-3">
+                <span className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(56,189,248,0.9)]" />
+                Deployments Portfolio
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                Featured Case Studies
+              </h2>
+            </div>
+            <p className="text-blue-100/70 text-sm sm:text-base max-w-md md:text-right font-light">
               Real engineering solutions delivered across enterprise networking, physical security, structured cabling, smart AV, and telecom.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {caseStudies.map((item, idx) => (
-              <article
-                key={item.title}
-                className="reveal opacity-0 translate-y-8 transition-all duration-700 rounded-md overflow-hidden border border-blue-500/20 bg-[#091c44]/65 hover:border-blue-400/60 hover:shadow-[0_0_35px_rgba(37,99,235,0.22)] backdrop-blur-xl transition-all duration-300 flex flex-col group"
-                style={{ transitionDelay: `${idx * 75}ms` }}
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={600}
-                    height={320}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#091c44] via-transparent to-transparent opacity-80" />
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded-md text-xs font-semibold bg-[#03091a]/85 border border-blue-400/40 text-blue-200 backdrop-blur-md">
-                    {item.category}
-                  </div>
-                </div>
+          <div className="divide-y divide-blue-500/15 border-t border-b border-blue-500/15">
+            {caseStudies.map((item, idx) => {
+              const isEven = idx % 2 === 1
+              return (
+                <article
+                  key={item.title}
+                  className="reveal opacity-0 translate-y-8 transition-all duration-700 py-12 sm:py-16 group relative"
+                  style={{ transitionDelay: `${idx * 60}ms` }}
+                >
+                  {/* Hover ambient glow */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/[0.03] via-sky-400/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                <div className="p-6 space-y-4 flex-1 flex flex-col">
-                  <div className="flex items-center gap-2 text-xs text-blue-200/70">
-                    <Factory size={14} className="text-blue-400" />
-                    <span>{item.client}</span>
-                    <span className="text-blue-500">•</span>
-                    <span>{item.industry}</span>
-                  </div>
+                  <div className="relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    {/* Visual Showcase Column */}
+                    <div className={`lg:col-span-5 ${isEven ? "lg:order-2" : ""}`}>
+                      <div className="relative overflow-hidden">
+                        {/* Architectural Corner Accents */}
+                        <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-sky-400 z-20 pointer-events-none" />
+                        <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-sky-400 z-20 pointer-events-none" />
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">
-                    {item.title}
-                  </h3>
+                        <div className="relative h-56 sm:h-64 overflow-hidden">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            width={640}
+                            height={360}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#03091a] via-[#03091a]/25 to-transparent" />
 
-                  <p className="text-sm text-blue-100/70 leading-relaxed flex-1">{item.description}</p>
+                          {/* Floating Category & Index Tag */}
+                          <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
+                            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-sky-300 bg-[#03091a]/85 backdrop-blur-md px-3 py-1 border-l-2 border-sky-400">
+                              {item.category}
+                            </span>
+                            <span className="text-xs font-mono font-bold text-white/80 bg-[#03091a]/80 backdrop-blur-md px-2.5 py-1">
+                              CASE {String(idx + 1).padStart(2, "0")}
+                            </span>
+                          </div>
+                        </div>
 
-                  <div className="flex flex-wrap gap-1.5 pt-2">
-                    {item.services.map((service) => (
-                      <span
-                        key={service}
-                        className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#040e24] border border-blue-500/25 text-blue-200"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="space-y-2 pt-3 border-t border-blue-500/15">
-                    {item.results.map((result) => (
-                      <div key={result} className="flex items-start gap-2.5 text-xs text-blue-100/80">
-                        <div className="w-1.5 h-1.5 rounded-full mt-1.5 bg-blue-400 shadow-[0_0_6px_rgba(56,189,248,0.8)] flex-shrink-0" />
-                        <span>{result}</span>
+                        {/* Bottom laser sweep */}
+                        <div className="h-[2px] w-full bg-blue-500/20 relative overflow-hidden">
+                          <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-blue-400 to-sky-300 group-hover:w-full transition-all duration-700" />
+                        </div>
                       </div>
-                    ))}
+                    </div>
+
+                    {/* Editorial Content Column */}
+                    <div className={`lg:col-span-7 space-y-5 ${isEven ? "lg:order-1" : ""}`}>
+                      <div className="flex flex-wrap items-center gap-3 text-xs font-mono uppercase tracking-widest text-blue-300/80">
+                        <span className="inline-flex items-center gap-1.5 text-sky-300 font-semibold">
+                          <Factory size={14} className="text-sky-400" />
+                          {item.client}
+                        </span>
+                        <span className="text-blue-400/50">/</span>
+                        <span>{item.industry}</span>
+                      </div>
+
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-sky-300 transition-colors tracking-tight leading-snug">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-sm sm:text-base text-blue-100/75 leading-relaxed border-l-2 border-blue-400/40 pl-4 font-light">
+                        {item.description}
+                      </p>
+
+                      {/* Inline Architectural Stack */}
+                      <div className="flex flex-wrap items-center gap-y-2 pt-1">
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-blue-300/60 mr-3">
+                          Architecture:
+                        </span>
+                        {item.services.map((service, sIdx) => (
+                          <span key={service} className="inline-flex items-center text-xs font-semibold text-blue-200">
+                            {service}
+                            {sIdx < item.services.length - 1 && (
+                              <span className="mx-2.5 text-sky-400/60">•</span>
+                            )}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Open-Air Delivered Outcomes Strip */}
+                      <div className="grid sm:grid-cols-3 gap-4 pt-5 border-t border-blue-500/15">
+                        {item.results.map((result, rIdx) => (
+                          <div
+                            key={result}
+                            className="flex items-start gap-2.5 text-xs text-blue-100/85 sm:border-l sm:first:border-l-0 border-blue-500/15 sm:pl-4 sm:first:pl-0"
+                          >
+                            <span className="text-[10px] font-mono font-bold text-sky-400 mt-0.5 flex-shrink-0">
+                              0{rIdx + 1}
+                            </span>
+                            <span className="leading-relaxed">{result}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding relative z-10 py-16 pb-24">
-        <div className="section-container">
-          <div className="rounded-md p-8 sm:p-12 md:p-14 text-center bg-gradient-to-r from-[#04122d] via-[#09255a] to-[#04122d] border border-blue-500/35 shadow-[0_0_50px_rgba(37,99,235,0.2)] relative overflow-hidden">
-            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-blue-500/15 blur-[80px] pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-sky-500/15 blur-[80px] pointer-events-none" />
+      {/* Open-Air Horizon CTA */}
+      <section className="section-padding relative z-10 py-20 pb-28 border-t border-blue-500/20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.14),transparent_70%)] pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 max-w-xl h-[1px] bg-gradient-to-r from-transparent via-sky-400/70 to-transparent shadow-[0_0_20px_rgba(56,189,248,0.8)]" />
 
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
-                Ready for Your Own Success Story?
-              </h2>
-              <p className="text-base sm:text-lg text-blue-100/80 mb-8 leading-relaxed">
-                Tell us about your networking, surveillance, AV, or cabling modernization goals. We will design an end-to-end blueprint tailored to your operational SLA.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-blue-500 to-sky-400 text-[#020b1c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:scale-[1.02] transition-all text-center"
-                >
-                  Book a Consultation
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 border border-blue-400/40 text-blue-200 font-semibold text-sm rounded-md hover:bg-blue-500/10 hover:border-blue-300 transition-all gap-2 text-center"
-                >
-                  Explore Services <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
+        <div className="section-container relative z-10 text-center max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-sky-300 mb-4">
+            <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
+            Next Deployment
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
+            Ready for Your Own Success Story?
+          </h2>
+          <p className="text-base sm:text-lg text-blue-100/80 mb-10 leading-relaxed font-light">
+            Tell us about your networking, surveillance, AV, or cabling modernization goals. We will design an end-to-end blueprint tailored to your operational SLA.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-500 to-sky-400 text-[#020b1c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:scale-[1.02] transition-all text-center"
+            >
+              Book a Consultation
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 border-b border-blue-400/50 text-blue-200 font-semibold text-sm hover:text-white hover:border-sky-300 transition-all gap-2 text-center"
+            >
+              Explore Services <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

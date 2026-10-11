@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Star, ArrowRight, Shield, Cable, Wifi, Phone, Video, Printer, Wrench, Building2, Factory, Server, Hotel, HeartPulse, GraduationCap } from "lucide-react";
+import { ChevronDown, Star, ArrowRight, Shield, Cable, Wifi, Phone, Video, Printer, Lightbulb, Wrench, Building2, Factory, Server, Hotel, HeartPulse, GraduationCap } from "lucide-react";
 import { Logo, MobileMenu } from "@/components/ui";
 
 const servicesList = [
@@ -12,6 +12,8 @@ const servicesList = [
   { name: "Audio-Visual & Boardrooms", href: "/services/av", icon: Video, description: "Teams/Zoom Rooms, Video Walls, 4K Displays" },
   { name: "Managed IT Services", href: "/services/professional", icon: Wrench, description: "24/7 SLA Support, AMC, Resident Engineers" },
   { name: "Telecom & Unified Comm", href: "/services/telecom", icon: Phone, description: "IP-PBX, SIP Trunking, Contact Center Tech" },
+  { name: "Printing & Large Format", href: "/services/printing", icon: Printer, description: "Enterprise MFDs, CAD Plotters, Managed Print" },
+  { name: "LED Lighting & Power", href: "/services/lighting", icon: Lightbulb, description: "Commercial & Industrial Smart LED Systems" },
 ];
 
 const industriesList = [

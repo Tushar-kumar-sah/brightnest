@@ -186,14 +186,19 @@ export default function About() {
               {companyOverview.description2}
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="mt-8 pt-6 border-y border-emerald-500/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-4 gap-x-6">
               {companyOverview.highlights.map((highlight, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-2 px-3.5 py-2 rounded-md bg-[#052117]/80 border border-emerald-500/25 text-emerald-200 text-sm font-medium shadow-xs hover:border-emerald-400/50 transition-colors"
+                  className="relative flex items-center gap-3 py-1 group"
                 >
-                  <CheckCircle size={16} className="text-emerald-400 flex-shrink-0" />
-                  <span>{highlight}</span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399] flex-shrink-0 group-hover:scale-125 transition-transform" />
+                  <span className="text-emerald-100 text-sm font-medium tracking-wide group-hover:text-white transition-colors">
+                    {highlight}
+                  </span>
+                  {idx < companyOverview.highlights.length - 1 && (
+                    <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-5 w-px bg-emerald-500/20" />
+                  )}
                 </div>
               ))}
             </div>
@@ -207,36 +212,51 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission & Vision — Open-Air Split Editorial Manifesto */}
       <section className="section-padding relative z-10 py-20 border-t border-emerald-500/15">
         <div className="section-container">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="reveal opacity-0 translate-y-8 transition-all duration-700 p-8 rounded-md bg-[#051f16]/60 border border-emerald-500/20 hover:border-emerald-400/50 backdrop-blur-xl transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] group">
-              <div className="p-3.5 rounded-md bg-emerald-500/15 border border-emerald-500/30 inline-flex items-center justify-center mb-5 text-emerald-400 group-hover:scale-105 transition-transform">
-                {(() => {
-                  const Icon = getIcon(mission.icon) || Target
-                  return <Icon size={26} />
-                })()}
+          <div className="relative grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+            {/* Central vertical laser divider on desktop */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-emerald-400/40 to-transparent -translate-x-1/2 pointer-events-none" />
+
+            {/* Mission */}
+            <div className="reveal opacity-0 translate-y-8 transition-all duration-700 relative group pl-5 sm:pl-8 border-l-2 border-emerald-400/50 hover:border-emerald-300">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-[#02110c] shadow-[0_0_25px_rgba(52,211,153,0.4)] group-hover:scale-110 transition-transform">
+                  {(() => {
+                    const Icon = getIcon(mission.icon) || Target
+                    return <Icon size={22} />
+                  })()}
+                </div>
+                <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-emerald-400">
+                  01 / CORE PURPOSE
+                </span>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight">
                 {mission.title}
               </h3>
-              <p className="text-emerald-100/75 leading-relaxed text-base">
+              <p className="text-emerald-100/80 leading-relaxed text-base sm:text-lg font-light">
                 {mission.description}
               </p>
             </div>
 
-            <div className="reveal opacity-0 translate-y-8 transition-all duration-700 delay-100 p-8 rounded-md bg-[#051f16]/60 border border-teal-500/20 hover:border-teal-400/50 backdrop-blur-xl transition-all hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] group">
-              <div className="p-3.5 rounded-md bg-teal-500/15 border border-teal-500/30 inline-flex items-center justify-center mb-5 text-teal-300 group-hover:scale-105 transition-transform">
-                {(() => {
-                  const Icon = getIcon(vision.icon) || Globe
-                  return <Icon size={26} />
-                })()}
+            {/* Vision */}
+            <div className="reveal opacity-0 translate-y-8 transition-all duration-700 delay-100 relative group pl-5 sm:pl-8 border-l-2 border-teal-400/50 hover:border-teal-300">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-teal-300 to-cyan-500 flex items-center justify-center text-[#02110c] shadow-[0_0_25px_rgba(45,212,191,0.4)] group-hover:scale-110 transition-transform">
+                  {(() => {
+                    const Icon = getIcon(vision.icon) || Globe
+                    return <Icon size={22} />
+                  })()}
+                </div>
+                <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-teal-300">
+                  02 / FUTURE HORIZON
+                </span>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight">
                 {vision.title}
               </h3>
-              <p className="text-emerald-100/75 leading-relaxed text-base">
+              <p className="text-emerald-100/80 leading-relaxed text-base sm:text-lg font-light">
                 {vision.description}
               </p>
             </div>
@@ -244,125 +264,149 @@ export default function About() {
         </div>
       </section>
 
-      {/* Project Lifecycle */}
+      {/* Project Lifecycle — Open-Air Laser Spine Stream */}
       <section className="section-padding relative z-10 py-20 border-t border-emerald-500/15 bg-[#02140e]/60 backdrop-blur-sm">
         <div className="section-container">
           <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 mb-4">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 mb-4">
               <Zap size={14} className="text-emerald-400" />
               End-to-End Execution
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
               Complete Project Lifecycle
             </h2>
-            <p className="text-emerald-100/70 text-base max-w-2xl mx-auto mt-3">
+            <p className="text-emerald-100/70 text-base max-w-2xl mx-auto mt-3 font-light">
               Disciplined seven-stage execution model ensuring zero operational disruption from site survey to continuous optimization.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto relative">
-            {/* Timeline center laser line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500 via-teal-400 to-emerald-600 shadow-[0_0_12px_rgba(52,211,153,0.8)] -translate-x-1/2" />
+          <div className="max-w-5xl mx-auto relative">
+            {/* Vertical laser spine */}
+            <div className="absolute left-5 md:left-1/2 top-2 bottom-2 w-px bg-gradient-to-b from-emerald-400/20 via-emerald-400 to-teal-500/20 shadow-[0_0_12px_rgba(52,211,153,0.7)] md:-translate-x-1/2" />
 
-            {timeline.map((item, idx) => (
-              <div
-                key={idx}
-                className={`reveal opacity-0 translate-y-8 transition-all duration-700 relative flex items-center gap-8 mb-10 ${
-                  idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-                style={{ transitionDelay: `${idx * 80}ms` }}
-              >
-                <div className={`flex-1 ${idx % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                  <div className="p-6 rounded-md bg-[#051f16]/70 border border-emerald-500/20 hover:border-emerald-400/60 hover:shadow-[0_0_25px_rgba(16,185,129,0.2)] backdrop-blur-xl transition-all duration-300 group">
-                    <div className="text-emerald-400 font-mono font-bold text-sm tracking-widest mb-1">
-                      PHASE {item.year}
+            <div className="space-y-12">
+              {timeline.map((item, idx) => (
+                <div
+                  key={idx}
+                  className={`reveal opacity-0 translate-y-8 transition-all duration-700 relative flex items-start md:items-center gap-6 md:gap-12 pl-14 md:pl-0 ${
+                    idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
+                  style={{ transitionDelay: `${idx * 80}ms` }}
+                >
+                  {/* Open-Air Milestone Content */}
+                  <div className={`flex-1 group ${idx % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
+                    <div className={`inline-flex items-center gap-2 text-emerald-400 font-mono font-bold text-xs tracking-[0.2em] uppercase mb-1.5 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>PHASE {item.year}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-emerald-100/70 text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-emerald-100/75 text-sm sm:text-base leading-relaxed font-light">
+                      {item.description}
+                    </p>
+                    <div className={`mt-4 h-px w-24 bg-gradient-to-r from-emerald-400/50 to-transparent group-hover:w-40 transition-all duration-500 ${idx % 2 === 0 ? "md:ml-auto md:bg-gradient-to-l" : ""}`} />
                   </div>
-                </div>
 
-                <div className="hidden md:flex w-10 h-10 rounded-full bg-[#02110c] border-2 border-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.7)] flex-shrink-0 items-center justify-center z-10">
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                </div>
+                  {/* Glowing Circular Node */}
+                  <div className="absolute left-0 md:static flex w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#02110c] border border-emerald-400/60 shadow-[0_0_20px_rgba(52,211,153,0.5)] flex-shrink-0 items-center justify-center z-10 font-mono text-xs font-bold text-emerald-300">
+                    {item.year}
+                  </div>
 
-                <div className="flex-1 hidden md:block" />
-              </div>
-            ))}
+                  <div className="flex-1 hidden md:block" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values — Open-Air 4-Column Architectural Strip */}
       <section className="section-padding relative z-10 py-20 border-t border-emerald-500/15">
         <div className="section-container">
           <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold tracking-wider uppercase bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 mb-4">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 mb-4">
               Core Principles
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
               Built for Reliable Execution
             </h2>
-            <p className="text-emerald-100/70 text-base max-w-2xl mx-auto">
+            <p className="text-emerald-100/70 text-base max-w-2xl mx-auto font-light">
               Our engineering philosophy is anchored in long-term reliability, zero compromise on security, and transparent client accountability.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, idx) => {
-              const Icon = getIcon(value.icon) || Star
-              return (
-                <div
-                  key={idx}
-                  className="reveal opacity-0 translate-y-8 transition-all duration-700 p-6 rounded-md bg-[#051f16]/60 border border-emerald-500/20 hover:border-emerald-400/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.18)] backdrop-blur-xl group text-center transition-all duration-300"
-                  style={{ transitionDelay: `${idx * 90}ms` }}
-                >
-                  <div className="p-3.5 rounded-md bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 group-hover:bg-emerald-500/20 group-hover:border-emerald-400/50 group-hover:scale-110 transition-all inline-flex items-center justify-center mb-4">
-                    <Icon size={26} />
+          <div className="pt-12 border-t border-white/10 relative">
+            <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent pointer-events-none" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 relative">
+              {values.map((value, idx) => {
+                const Icon = getIcon(value.icon) || Star
+                return (
+                  <div
+                    key={idx}
+                    className="reveal opacity-0 translate-y-8 transition-all duration-700 relative px-2 sm:px-6 py-2 group flex flex-col items-start"
+                    style={{ transitionDelay: `${idx * 90}ms` }}
+                  >
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.08),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
+
+                    <div className="flex items-center justify-between w-full mb-5">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/10 border border-emerald-400/30 text-emerald-300 flex items-center justify-center group-hover:scale-110 group-hover:border-emerald-300 transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                        <Icon size={22} />
+                      </div>
+                      <span className="font-mono text-xs font-bold text-emerald-400/60 tracking-widest">
+                        0{idx + 1}
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                      {value.title}
+                    </h3>
+                    <p className="text-emerald-100/75 text-sm leading-relaxed font-light">
+                      {value.description}
+                    </p>
+
+                    {idx < values.length - 1 && (
+                      <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-24 w-px bg-gradient-to-b from-transparent via-emerald-500/25 to-transparent pointer-events-none" />
+                    )}
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
-                    {value.title}
-                  </h3>
-                  <p className="text-emerald-100/70 text-sm leading-relaxed">{value.description}</p>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding relative z-10 py-16 pb-24">
-        <div className="section-container">
-          <div className="rounded-md p-8 sm:p-12 md:p-14 text-center bg-gradient-to-r from-[#031d13] via-[#073424] to-[#031d13] border border-emerald-500/35 shadow-[0_0_50px_rgba(16,185,129,0.18)] relative overflow-hidden">
-            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/15 blur-[80px] pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-teal-500/15 blur-[80px] pointer-events-none" />
+      {/* CTA — Open-Air Horizon Section */}
+      <section className="section-padding relative z-10 py-20 border-t border-emerald-500/20 overflow-hidden">
+        <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(16,185,129,0.12),transparent)] pointer-events-none" />
 
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight">
-                Partner With Us
-              </h2>
-              <p className="text-base sm:text-lg text-emerald-100/80 mb-8 leading-relaxed">
-                Engineering intelligent infrastructure for secure, connected, and high-performance organizations across India and globally.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-400 text-[#02110c] font-bold text-sm rounded-md shadow-[0_0_20px_rgba(52,211,153,0.4)] hover:shadow-[0_0_30px_rgba(52,211,153,0.7)] hover:scale-[1.02] transition-all group"
-                >
-                  Start Your Journey
-                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center px-8 py-3.5 border border-emerald-400/40 text-emerald-200 font-semibold text-sm rounded-md hover:bg-emerald-500/10 hover:border-emerald-300 transition-all"
-                >
-                  Explore Services
-                </Link>
-              </div>
-            </div>
+        <div className="section-container relative z-10 text-center max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.25em] text-emerald-400 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Ready to Transform
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-5 text-white tracking-tight">
+            Partner With Us
+          </h2>
+          <p className="text-base sm:text-lg text-emerald-100/80 mb-9 leading-relaxed font-light">
+            Engineering intelligent infrastructure for secure, connected, and high-performance organizations across India and globally.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-400 text-[#02110c] font-bold text-sm rounded-full shadow-[0_0_25px_rgba(52,211,153,0.4)] hover:shadow-[0_0_35px_rgba(52,211,153,0.7)] hover:scale-[1.02] transition-all group"
+            >
+              Start Your Journey
+              <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center px-8 py-3.5 border border-emerald-400/40 text-emerald-200 font-semibold text-sm rounded-full hover:bg-emerald-500/10 hover:border-emerald-300 transition-all"
+            >
+              Explore Services
+            </Link>
           </div>
         </div>
       </section>
