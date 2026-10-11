@@ -7,6 +7,7 @@ import { Building2, Factory, Shield, ArrowRight, CheckCircle, Globe, Sparkles } 
 import { getCaseStudiesData } from "@/lib/data"
 import StructuredData from "@/components/StructuredData"
 import HeroImageSlider from "@/components/ui/HeroImageSlider"
+import { StatsTelemetryStrip } from "@/components/ui"
 
 function useRevealOnScroll() {
   useEffect(() => {
@@ -132,33 +133,37 @@ export default function CaseStudies() {
       </section>
 
       {/* Highlight stats */}
-      <section className="section-padding relative z-10 py-16 border-t border-blue-500/15 bg-[#050f24]/50 backdrop-blur-sm">
+      <section className="section-padding relative z-10 py-14 bg-[#050f24]/50 backdrop-blur-sm">
         <div className="section-container">
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { label: "Projects Delivered", value: "500+", icon: CheckCircle },
-              { label: "Industries Served", value: "10+", icon: Globe },
-              { label: "Deployment Regions", value: "15+", icon: Building2 },
-              { label: "Avg SLA Response", value: "< 30 mins", icon: Shield },
-            ].map((stat, idx) => {
-              const Icon = stat.icon
-              return (
-                <div
-                  key={stat.label}
-                  className="reveal opacity-0 translate-y-8 transition-all duration-700 p-6 rounded-md bg-[#091b40]/60 border border-blue-500/20 hover:border-blue-400/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.2)] backdrop-blur-xl transition-all duration-300"
-                  style={{ transitionDelay: `${idx * 100}ms` }}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2.5 rounded-md bg-blue-500/15 border border-blue-500/30 text-blue-400">
-                      <Icon size={20} />
-                    </div>
-                    <span className="text-xs uppercase font-medium tracking-wider text-blue-200/70">{stat.label}</span>
-                  </div>
-                  <div className="text-3xl font-extrabold text-blue-400 tracking-tight">{stat.value}</div>
-                </div>
-              )
-            })}
-          </div>
+          <StatsTelemetryStrip
+            stats={[
+              {
+                label: "Projects Delivered",
+                value: "500+",
+                subtext: "Enterprise & Campus Scale",
+                icon: CheckCircle,
+              },
+              {
+                label: "Industries Served",
+                value: "10+",
+                subtext: "Mission-Critical Verticals",
+                icon: Globe,
+              },
+              {
+                label: "Deployment Regions",
+                value: "15+",
+                subtext: "Pan-India Field Presence",
+                icon: Building2,
+              },
+              {
+                label: "Avg SLA Response",
+                value: "< 30 mins",
+                subtext: "Rapid Engineering Dispatch",
+                icon: Shield,
+              },
+            ]}
+            laserColorClass="via-blue-400/60"
+          />
         </div>
       </section>
 

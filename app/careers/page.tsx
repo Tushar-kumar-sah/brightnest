@@ -4,6 +4,7 @@ import { getCareersData } from "@/lib/data"
 import { getIcon } from "@/lib/icons"
 import StructuredData from "@/components/StructuredData"
 import HeroImageSlider from "@/components/ui/HeroImageSlider"
+import { StatsTelemetryStrip } from "@/components/ui"
 
 export const metadata = {
     title: "Careers | Brightnest Edutainment",
@@ -165,44 +166,55 @@ export default function Careers() {
             {/* Our Values */}
             <section className="section-padding relative z-10 py-20 border-t border-purple-500/15">
                 <div className="section-container">
-                    <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                        <div>
-                            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-400 mb-3">
-                                Guiding Principles
-                            </span>
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-6">
-                                The Code We Live By
-                            </h2>
-                            <p className="text-base text-purple-100/75 mb-8 leading-relaxed">
-                                At Brightnest, our core tenets govern how we collaborate, take accountability for client uptime, and continuously push technical boundaries.
-                            </p>
-                            <div className="space-y-4">
-                                {values.map((value, idx) => (
-                                    <div key={idx} className="flex items-start gap-3.5 p-4 rounded-md bg-[#14082e]/50 border border-purple-500/15">
-                                        <div className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.8)] mt-2 flex-shrink-0" />
-                                        <div>
-                                            <h4 className="font-bold text-white text-sm">{value.title}</h4>
-                                            <p className="text-xs text-purple-200/70 mt-1 leading-relaxed">{value.description}</p>
-                                        </div>
+                    <div className="max-w-4xl">
+                        <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-purple-400 mb-3">
+                            Guiding Principles
+                        </span>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-6">
+                            The Code We Live By
+                        </h2>
+                        <p className="text-base text-purple-100/75 mb-8 leading-relaxed">
+                            At Brightnest, our core tenets govern how we collaborate, take accountability for client uptime, and continuously push technical boundaries.
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            {values.map((value, idx) => (
+                                <div key={idx} className="flex items-start gap-3.5 p-4 rounded-md bg-[#14082e]/50 border border-purple-500/15">
+                                    <div className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.8)] mt-2 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="font-bold text-white text-sm">{value.title}</h4>
+                                        <p className="text-xs text-purple-200/70 mt-1 leading-relaxed">{value.description}</p>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-4">
-                            {[
-                                { label: "Team Members", value: "100+" },
-                                { label: "Avg Tenure", value: "4.5 yrs" },
-                                { label: "Deployment Regions", value: "15+" },
-                                { label: "Certifications", value: "200+" },
-                            ].map((stat, idx) => (
-                                <div key={idx} className="p-6 rounded-md bg-[#160a33]/70 border border-purple-500/20 text-center hover:border-purple-400/60 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)] backdrop-blur-xl transition-all">
-                                    <div className="text-3xl font-extrabold text-purple-400 mb-1">{stat.value}</div>
-                                    <p className="text-xs uppercase font-medium tracking-wider text-purple-200/70">{stat.label}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
+
+                    <StatsTelemetryStrip
+                        stats={[
+                            {
+                                label: "Team Members",
+                                value: "100+",
+                                subtext: "Certified Engineers & Architects",
+                            },
+                            {
+                                label: "Avg Tenure",
+                                value: "4.5 yrs",
+                                subtext: "High Culture Retention",
+                            },
+                            {
+                                label: "Deployment Regions",
+                                value: "15+",
+                                subtext: "Pan-India Field Operations",
+                            },
+                            {
+                                label: "Certifications",
+                                value: "200+",
+                                subtext: "Tier-1 OEM Accreditations",
+                            },
+                        ]}
+                        laserColorClass="via-purple-400/60"
+                        className="mt-14"
+                    />
                 </div>
             </section>
 

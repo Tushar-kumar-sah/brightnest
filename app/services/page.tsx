@@ -2,11 +2,12 @@
 
 import { useEffect } from "react"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Star, Phone, Sparkles, Layers } from "lucide-react"
+import { ArrowRight, CheckCircle, Star, Phone, Sparkles, Layers, ShieldCheck, Clock } from "lucide-react"
 import { getServicesData } from "@/lib/data"
 import { getIcon } from "@/lib/icons"
 import StructuredData from "@/components/StructuredData"
 import HeroImageSlider from "@/components/ui/HeroImageSlider"
+import { StatsTelemetryStrip } from "@/components/ui"
 
 function useRevealOnScroll() {
   useEffect(() => {
@@ -120,6 +121,41 @@ export default function Services() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Services Telemetry Strip */}
+      <section className="section-padding relative z-10 py-14 bg-[#0a0c10]/60 backdrop-blur-sm">
+        <div className="section-container">
+          <StatsTelemetryStrip
+            stats={[
+              {
+                label: "Core IT Disciplines",
+                value: "12+",
+                subtext: "End-to-End Turnkey Stack",
+                icon: Layers,
+              },
+              {
+                label: "Projects Delivered",
+                value: "500+",
+                subtext: "Enterprise & Campus Scale",
+                icon: CheckCircle,
+              },
+              {
+                label: "Guaranteed Uptime",
+                value: "99.9%",
+                subtext: "SLA-Backed Reliability",
+                icon: ShieldCheck,
+              },
+              {
+                label: "Managed Support",
+                value: "24/7",
+                subtext: "NOC & Rapid Field Dispatch",
+                icon: Clock,
+              },
+            ]}
+            laserColorClass="via-slate-300/60"
+          />
         </div>
       </section>
 

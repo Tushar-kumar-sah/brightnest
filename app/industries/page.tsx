@@ -4,6 +4,7 @@ import { Building2, Factory, Server, Hotel, HeartPulse, GraduationCap, ArrowRigh
 import { getIndustriesData } from "@/lib/data"
 import StructuredData from "@/components/StructuredData"
 import HeroImageSlider from "@/components/ui/HeroImageSlider"
+import { StatsTelemetryStrip, AnimatedStatValue } from "@/components/ui"
 
 export const metadata: Metadata = {
   title: "Industry Verticals | Brightnest Edutainment",
@@ -115,6 +116,37 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      {/* Sector Telemetry Strip */}
+      <section className="section-padding relative z-10 py-14 bg-[#030a1c]/60 backdrop-blur-sm">
+        <div className="section-container">
+          <StatsTelemetryStrip
+            stats={[
+              {
+                label: "Enterprise Verticals",
+                value: "6+",
+                subtext: "Specialized Sector Blueprints",
+              },
+              {
+                label: "Projects Delivered",
+                value: "500+",
+                subtext: "Turnkey Deployments",
+              },
+              {
+                label: "Core Network SLA",
+                value: "99.999%",
+                subtext: "Mission-Critical Uptime",
+              },
+              {
+                label: "NOC & Field Support",
+                value: "24/7",
+                subtext: "Pan-India Engineering",
+              },
+            ]}
+            laserColorClass="via-cyan-400/60"
+          />
+        </div>
+      </section>
+
       {/* Industries Grid */}
       <section className="section-padding relative z-10 py-16 border-t border-cyan-500/15">
         <div className="section-container">
@@ -146,7 +178,9 @@ export default function IndustriesPage() {
                   <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/10 mb-6">
                     {ind.stats.slice(0, 2).map((st, i) => (
                       <div key={i} className="p-2.5 rounded-md bg-[#040e24] border border-white/10 text-center">
-                        <div className="text-base font-extrabold text-white">{st.value}</div>
+                        <div className="text-base font-extrabold text-white">
+                          <AnimatedStatValue value={st.value} />
+                        </div>
                         <div className="text-[10px] uppercase font-semibold text-white/80">{st.label}</div>
                       </div>
                     ))}

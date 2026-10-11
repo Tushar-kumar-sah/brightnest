@@ -26,6 +26,7 @@ export interface IndustryTheme {
 }
 
 import HeroImageSlider, { SlideItem } from "@/components/ui/HeroImageSlider"
+import { StatsTelemetryStrip } from "@/components/ui"
 
 const sectorSlidesMap: Record<string, SlideItem[]> = {
   "gccs-tech-parks": [
@@ -136,7 +137,7 @@ export interface IndustryDetailProps {
   name: string
   tagline: string
   description: string
-  stats: { label: string; value: string }[]
+  stats: { label: string; value: string; subtext?: string }[]
   challenges: string[]
   solutions: string[]
   deliverables: string[]
@@ -259,24 +260,12 @@ export default function IndustryDetailTemplate({
       </section>
 
       {/* Stats Section */}
-      <section className={`section-padding relative z-10 py-14 border-t ${theme.cardBorder} bg-black/20 backdrop-blur-sm`}>
+      <section className={`section-padding relative z-10 py-14 bg-black/20 backdrop-blur-sm`}>
         <div className="section-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            {stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className={`reveal opacity-0 translate-y-8 transition-all duration-700 p-6 rounded-md ${theme.cardBg} border ${theme.cardBorder} ${theme.cardBorderHover} ${theme.cardShadowHover} backdrop-blur-xl text-center`}
-                style={{ transitionDelay: `${idx * 80}ms` }}
-              >
-                <div className={`text-2xl sm:text-4xl font-extrabold ${theme.textHighlight} mb-1 tracking-tight`}>
-                  {stat.value}
-                </div>
-                <div className={`text-xs uppercase font-semibold tracking-wider ${theme.subtextColor}`}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+          <StatsTelemetryStrip
+            stats={stats}
+            laserColorClass={theme.laserStreak}
+          />
         </div>
       </section>
 

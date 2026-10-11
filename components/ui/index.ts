@@ -11,3 +11,5 @@ export { Section, SectionHeader, StatCard, RatingBadge } from "./Section"
 export { ServiceCard, CaseStudyCard, TestimonialCard, IndustryBadge } from "./Cards"
 export { MobileMenu } from "./MobileMenu"
 export { MobileActionBar } from "./MobileActionBar"
+export { StatsTelemetryStrip, CountUp, AnimatedStatValue, type TelemetryStatItem } from "./StatsTelemetryStrip"
+

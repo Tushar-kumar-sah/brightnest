@@ -6,10 +6,10 @@
     "description": "Global Capability Centers (GCCs) and multi-tenant IT parks require resilient, ultra-high density digital connectivity, contactless security, and intelligent building automation to support thousands of concurrent knowledge workers.",
     "icon": "Building2",
     "stats": [
-      { "label": "Uptime SLA", "value": "99.999%" },
-      { "label": "Connected Seats", "value": "10,000+" },
-      { "label": "Campus Latency", "value": "< 1 ms" },
-      { "label": "Redundancy", "value": "Tier-3" }
+      { "label": "Uptime SLA", "value": "99.999%", "subtext": "High-Availability Core" },
+      { "label": "Connected Seats", "value": "10,000+", "subtext": "Campus-Wide Concurrency" },
+      { "label": "Campus Latency", "value": "< 1 ms", "subtext": "Spine-Leaf Switching" },
+      { "label": "Zero-Trust Isolation", "value": "100%", "subtext": "Multi-Tenant Security" }
     ],
     "challenges": [
       "High-density wireless congestion across open office collaboration zones",
@@ -59,10 +59,10 @@
     "description": "Heavy industrial environments, factory floors, and automated distribution centers demand ruggedized networking, thermal heat protection, and 24/7 continuous CCTV monitoring designed to withstand high dust, vibration, and EMI.",
     "icon": "Factory",
     "stats": [
-      { "label": "Ruggedized Rating", "value": "IP67" },
-      { "label": "Warehouse RF Coverage", "value": "100%" },
-      { "label": "Hazard Monitoring", "value": "24×7" },
-      { "label": "Packet Loss", "value": "0%" }
+      { "label": "Ruggedized Rating", "value": "IP67", "subtext": "Dust & Water Sealed" },
+      { "label": "Warehouse RF Coverage", "value": "100%", "subtext": "Zero Dead-Zone Roaming" },
+      { "label": "Hazard Monitoring", "value": "24/7", "subtext": "Thermal AI Surveillance" },
+      { "label": "Roaming Uptime", "value": "99.99%", "subtext": "Continuous AGV Handoff" }
     ],
     "challenges": [
       "Severe metal racking signal reflection and RF interference",
@@ -112,10 +112,10 @@
     "description": "Tier-3 and Tier-4 data centers demand absolute physical containment, zero-downtime structured fiber fabrics, multi-factor biometric mantraps, and automated environmental telemetry.",
     "icon": "Server",
     "stats": [
-      { "label": "Reliability SLA", "value": "99.999%" },
-      { "label": "Optical Fabric", "value": "100G/400G" },
-      { "label": "Hardware Response", "value": "< 15 min" },
-      { "label": "Design Standard", "value": "Tier 3/4" }
+      { "label": "Reliability SLA", "value": "99.999%", "subtext": "Mission-Critical Uptime" },
+      { "label": "Optical Fabric", "value": "400G", "subtext": "Ultra-Low Loss MPO/MTP" },
+      { "label": "Hardware Response", "value": "< 15 min", "subtext": "Rapid NOC Dispatch" },
+      { "label": "Containment Efficiency", "value": "99.9%", "subtext": "Tier-4 Thermal Isolation" }
     ],
     "challenges": [
       "Thermal hot-spots and inefficient airflow leading to excessive PUE",
@@ -165,10 +165,10 @@
     "description": "Luxury hotels, lifestyle resorts, and retail store chains require seamless guest connectivity, cloud-managed POS networks, high-impact digital displays, and integrated security monitoring.",
     "icon": "Hotel",
     "stats": [
-      { "label": "Guest Coverage", "value": "100%" },
-      { "label": "Portal Connect", "value": "< 2 sec" },
-      { "label": "Signage Clarity", "value": "4K UHD" },
-      { "label": "Fleet Management", "value": "Central Cloud" }
+      { "label": "Guest Coverage", "value": "100%", "subtext": "Seamless Property Wi-Fi" },
+      { "label": "Portal Connect", "value": "< 2 sec", "subtext": "Instant Captive Auth" },
+      { "label": "POS Network Uptime", "value": "99.99%", "subtext": "Zero-Drop SD-WAN Retail" },
+      { "label": "Fleet Monitoring", "value": "24/7", "subtext": "Centralized Cloud NOC" }
     ],
     "challenges": [
       "High peak customer Wi-Fi concurrency during check-in or major events",
@@ -217,10 +217,10 @@
     "description": "Multi-specialty hospitals and medical diagnostic centers require mission-critical network reliability, sterile nurse call systems, patient privacy compliance, and cleanroom surveillance.",
     "icon": "HeartPulse",
     "stats": [
-      { "label": "Medical Core Uptime", "value": "99.999%" },
-      { "label": "Nurse Call Response", "value": "Sub-second" },
-      { "label": "Compliance Ready", "value": "HIPAA/NABH" },
-      { "label": "Diagnostic Shielding", "value": "Zero EMI" }
+      { "label": "Medical Core Uptime", "value": "99.999%", "subtext": "Life-Safety LAN Ring" },
+      { "label": "Nurse Call Response", "value": "< 1 sec", "subtext": "Instant Ward Alerting" },
+      { "label": "HIPAA & NABH Ready", "value": "100%", "subtext": "Compliant Medical Security" },
+      { "label": "EMI Shielding", "value": "100%", "subtext": "Zero Diagnostic Interference" }
     ],
     "challenges": [
       "Heavy medical equipment interference (MRI, CT, X-Ray) corrupting network cables",
@@ -270,10 +270,10 @@
     "description": "Universities, engineering colleges, and K-12 schools need robust high-density student Wi-Fi, interactive hybrid classrooms, campus safety surveillance, and broadcast-quality auditorium acoustics.",
     "icon": "GraduationCap",
     "stats": [
-      { "label": "Concurrent Devices", "value": "15,000+" },
-      { "label": "Video Surveillance", "value": "100%" },
-      { "label": "Interactive Panels", "value": "4K UHD" },
-      { "label": "Inter-Building Fiber", "value": "10 Gbps" }
+      { "label": "Concurrent Devices", "value": "15,000+", "subtext": "High-Density Student Wi-Fi" },
+      { "label": "Video Surveillance", "value": "100%", "subtext": "Perimeter & Dorm Safety" },
+      { "label": "Smart Classrooms", "value": "500+", "subtext": "Interactive 4K AV Suites" },
+      { "label": "Inter-Building Fiber", "value": "10 Gbps", "subtext": "Armored Optical Backbone" }
     ],
     "challenges": [
       "Massive bandwidth surges between classes and during campus exams",

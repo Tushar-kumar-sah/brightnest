@@ -16,24 +16,28 @@
         ],
         "stats": [
             {
-                "label": "Deployment Coverage",
-                "value": "Pan-India",
-                "icon": "Target"
-            },
-            {
-                "label": "Managed Support",
-                "value": "24×7",
+                "label": "Enterprise Deployments",
+                "value": "500+",
+                "subtext": "Across India",
                 "icon": "Users"
             },
             {
-                "label": "Project Lifecycle",
-                "value": "End-to-End",
-                "icon": "Clock"
+                "label": "System Uptime SLA",
+                "value": "99.9%",
+                "subtext": "High-Availability Guarantee",
+                "icon": "Zap"
             },
             {
-                "label": "Market Alignment",
-                "value": "Global",
-                "icon": "Globe"
+                "label": "Years of Excellence",
+                "value": "10+",
+                "subtext": "Trusted IT & Security Partner",
+                "icon": "Star"
+            },
+            {
+                "label": "Rapid Response Desk",
+                "value": "24/7",
+                "subtext": "PAN-India Field Dispatch",
+                "icon": "CheckCircle"
             }
         ]
     },

@@ -2,8 +2,9 @@
 
 import { useEffect } from "react"
 import Link from "next/link"
-import { CheckCircle, ArrowRight, ShieldCheck, Sparkles, Layers, Phone } from "lucide-react"
+import { CheckCircle, ArrowRight, ShieldCheck, Sparkles, Layers, Phone, Clock } from "lucide-react"
 import HeroImageSlider, { SlideItem } from "@/components/ui/HeroImageSlider"
+import { StatsTelemetryStrip } from "@/components/ui"
 
 export interface ServiceTheme {
   bgGradient: string
@@ -146,8 +147,8 @@ export default function ServiceDetailTemplate({
 
       {/* Overview Section */}
       <section className={`section-padding relative z-10 py-16 border-t ${theme.cardBorder} bg-black/20 backdrop-blur-sm`}>
-        <div className="section-container max-w-4xl">
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 p-8 sm:p-10 rounded-md bg-white/[0.03] border border-white/10 backdrop-blur-xl">
+        <div className="section-container">
+          <div className="max-w-4xl mx-auto reveal opacity-0 translate-y-8 transition-all duration-700 p-8 sm:p-10 rounded-md bg-white/[0.03] border border-white/10 backdrop-blur-xl">
             <span className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${theme.textHighlight} mb-3`}>
               <ShieldCheck size={16} />
               Architecture Overview
@@ -159,6 +160,37 @@ export default function ServiceDetailTemplate({
               {overview}
             </p>
           </div>
+
+          <StatsTelemetryStrip
+            stats={[
+              {
+                label: "Projects Delivered",
+                value: "500+",
+                subtext: "Turnkey Commissioning",
+                icon: CheckCircle,
+              },
+              {
+                label: "Operational Uptime",
+                value: "99.9%",
+                subtext: "SLA-Backed Reliability",
+                icon: ShieldCheck,
+              },
+              {
+                label: "Standards Compliance",
+                value: "100%",
+                subtext: "ISO & TIA Certified",
+                icon: Layers,
+              },
+              {
+                label: "NOC & Field Support",
+                value: "24/7",
+                subtext: "Rapid Engineering Dispatch",
+                icon: Clock,
+              },
+            ]}
+            laserColorClass={theme.laserStreak}
+            className="mt-14"
+          />
         </div>
       </section>
 

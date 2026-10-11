@@ -3,9 +3,10 @@
 import type React from "react"
 import { useState, useEffect, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
-import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle, Sparkles } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle, Sparkles, ShieldCheck } from "lucide-react"
 import StructuredData from "@/components/StructuredData"
 import HeroImageSlider from "@/components/ui/HeroImageSlider"
+import { StatsTelemetryStrip } from "@/components/ui"
 
 function ContactContent() {
   const searchParams = useSearchParams()
@@ -238,6 +239,37 @@ function ContactContent() {
               )
             })}
           </div>
+
+          <StatsTelemetryStrip
+            stats={[
+              {
+                label: "Response SLA",
+                value: "< 24 hrs",
+                subtext: "Guaranteed Proposal Turnaround",
+                icon: Clock,
+              },
+              {
+                label: "Projects Delivered",
+                value: "500+",
+                subtext: "Enterprise & Campus Scale",
+                icon: CheckCircle,
+              },
+              {
+                label: "Guaranteed Uptime",
+                value: "99.9%",
+                subtext: "SLA-Backed Reliability",
+                icon: ShieldCheck,
+              },
+              {
+                label: "Engineering Support",
+                value: "24/7",
+                subtext: "NOC & Rapid Field Dispatch",
+                icon: Phone,
+              },
+            ]}
+            laserColorClass="via-cyan-400/60"
+            className="mt-12"
+          />
         </div>
       </section>
 

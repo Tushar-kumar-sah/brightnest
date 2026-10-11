@@ -7,6 +7,7 @@ import { getAboutData } from "@/lib/data"
 import { getIcon } from "@/lib/icons"
 import StructuredData from "@/components/StructuredData"
 import HeroImageSlider from "@/components/ui/HeroImageSlider"
+import { StatsTelemetryStrip } from "@/components/ui"
 
 // Reveal hook
 function useRevealOnScroll() {
@@ -39,6 +40,48 @@ export default function About() {
     timeline,
     values,
   } = getAboutData()
+
+  const overviewStats = companyOverview.stats.map((stat, idx) => {
+    const Icon = getIcon(stat.icon) || Star
+    const themeMap = [
+      {
+        accentText: "text-emerald-400",
+        accentBg: "bg-emerald-500/15",
+        accentBorder: "border-emerald-500/30",
+        glowHover: "from-emerald-500/15 via-emerald-500/5 to-transparent",
+        dotColor: "bg-emerald-400 shadow-[0_0_10px_#34d399]",
+      },
+      {
+        accentText: "text-cyan-400",
+        accentBg: "bg-cyan-500/15",
+        accentBorder: "border-cyan-500/30",
+        glowHover: "from-cyan-500/15 via-cyan-500/5 to-transparent",
+        dotColor: "bg-cyan-400 shadow-[0_0_10px_#22d3ee]",
+      },
+      {
+        accentText: "text-teal-400",
+        accentBg: "bg-teal-500/15",
+        accentBorder: "border-teal-500/30",
+        glowHover: "from-teal-500/15 via-teal-500/5 to-transparent",
+        dotColor: "bg-teal-400 shadow-[0_0_10px_#2dd4bf]",
+      },
+      {
+        accentText: "text-amber-400",
+        accentBg: "bg-amber-500/15",
+        accentBorder: "border-amber-500/30",
+        glowHover: "from-amber-500/15 via-amber-500/5 to-transparent",
+        dotColor: "bg-amber-400 shadow-[0_0_10px_#fbbf24]",
+      },
+    ]
+    const t = themeMap[idx % themeMap.length]
+    return {
+      value: stat.value,
+      label: stat.label,
+      subtext: (stat as { subtext?: string }).subtext || "Verified Enterprise Metric",
+      icon: Icon,
+      ...t,
+    }
+  })
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#02110c] via-[#051c14] to-[#010906] text-white relative overflow-hidden">
@@ -128,55 +171,39 @@ export default function About() {
       {/* Company Overview */}
       <section className="section-padding relative z-10 py-16 border-t border-emerald-500/15 bg-[#02140e]/50 backdrop-blur-sm">
         <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400 mb-3">
-                <ShieldCheck size={16} />
-                Global Delivery Standards
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                {companyOverview.title}
-              </h2>
-              <p className="text-base sm:text-lg text-emerald-100/80 mb-4 leading-relaxed">
-                {companyOverview.description1}
-              </p>
-              <p className="text-base sm:text-lg text-emerald-100/70 mb-8 leading-relaxed">
-                {companyOverview.description2}
-              </p>
-
-              <div className="flex flex-wrap gap-3">
-                {companyOverview.highlights.map((highlight, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2 px-3.5 py-2 rounded-md bg-[#052117]/80 border border-emerald-500/25 text-emerald-200 text-sm font-medium shadow-xs hover:border-emerald-400/50 transition-colors"
-                  >
-                    <CheckCircle size={16} className="text-emerald-400 flex-shrink-0" />
-                    <span>{highlight}</span>
-                  </div>
-                ))}
-              </div>
+          <div className="max-w-4xl reveal opacity-0 translate-y-8 transition-all duration-700">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400 mb-3">
+              <ShieldCheck size={16} />
+              Global Delivery Standards
             </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              {companyOverview.title}
+            </h2>
+            <p className="text-base sm:text-lg text-emerald-100/80 mb-4 leading-relaxed">
+              {companyOverview.description1}
+            </p>
+            <p className="text-base sm:text-lg text-emerald-100/70 mb-8 leading-relaxed">
+              {companyOverview.description2}
+            </p>
 
-            <div className="reveal opacity-0 translate-y-8 transition-all duration-700 delay-200 grid grid-cols-2 gap-4">
-              {companyOverview.stats.map((stat, idx) => {
-                const Icon = getIcon(stat.icon) || Star
-                return (
-                  <div
-                    key={idx}
-                    className="p-6 rounded-md bg-[#051f16]/70 border border-emerald-500/20 hover:border-emerald-400/60 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] backdrop-blur-xl transition-all duration-300 group"
-                  >
-                    <div className="w-10 h-10 rounded-md bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 group-hover:bg-emerald-500/25 transition-all">
-                      <Icon size={20} />
-                    </div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 group-hover:text-emerald-300 tracking-tight mb-1">
-                      {stat.value}
-                    </div>
-                    <p className="text-xs uppercase font-medium tracking-wider text-emerald-200/70">{stat.label}</p>
-                  </div>
-                )
-              })}
+            <div className="flex flex-wrap gap-3">
+              {companyOverview.highlights.map((highlight, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-md bg-[#052117]/80 border border-emerald-500/25 text-emerald-200 text-sm font-medium shadow-xs hover:border-emerald-400/50 transition-colors"
+                >
+                  <CheckCircle size={16} className="text-emerald-400 flex-shrink-0" />
+                  <span>{highlight}</span>
+                </div>
+              ))}
             </div>
           </div>
+
+          <StatsTelemetryStrip
+            stats={overviewStats}
+            laserColorClass="via-emerald-400/60"
+            className="mt-14"
+          />
         </div>
       </section>
 
