@@ -18,7 +18,6 @@ const partners: Partner[] = [
   { name: "Poly", category: "AV & Unified Communications", logo: "/company/6.png" },
   { name: "Bosch", category: "Security & Sound Systems", logo: "/company/7.png" },
   { name: "CommScope", category: "Structured Cabling", logo: "/company/8.png" },
-  { name: "CP Plus", category: "Smart Surveillance & Security", logo: "/company/9.png" },
 ];
 
 export default function PartnerEcosystem() {
