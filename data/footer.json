@@ -31,11 +31,6 @@
             "icon": "Printer"
         },
         {
-            "name": "LED Lighting",
-            "href": "/services/lighting",
-            "icon": "Lightbulb"
-        },
-        {
             "name": "Professional Services",
             "href": "/services/professional",
             "icon": "Award"
