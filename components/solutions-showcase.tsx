@@ -150,34 +150,25 @@ export default function SolutionsShowcase({
       <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#070c1e] to-transparent pointer-events-none z-10" />
       <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#070c1e] to-transparent pointer-events-none z-10" />
 
-      {/* Ambient Glow Orbs in Royal Blue, Electric Cyan & Violet */}
+      {/* Ambient Subtle Slate & Deep Blue Glow Orbs */}
       <motion.div
         animate={{
-          x: [0, 60, -40, 0],
-          y: [0, -35, 30, 0],
-          scale: [1, 1.2, 0.95, 1],
+          x: [0, 40, -30, 0],
+          y: [0, -25, 20, 0],
+          scale: [1, 1.1, 0.95, 1],
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-24 -left-20 w-[550px] h-[550px] bg-gradient-to-br from-[#0067b8]/35 via-[#1ec9f2]/20 to-transparent rounded-full blur-[140px] pointer-events-none -z-0"
+        className="absolute -top-24 -left-20 w-[550px] h-[550px] bg-gradient-to-br from-blue-900/20 via-slate-800/10 to-transparent rounded-full blur-[140px] pointer-events-none -z-0"
       />
 
       <motion.div
         animate={{
-          x: [0, -50, 40, 0],
-          y: [0, 40, -40, 0],
-          scale: [1, 0.95, 1.2, 1],
+          x: [0, -30, 30, 0],
+          y: [0, 30, -30, 0],
+          scale: [1, 0.95, 1.1, 1],
         }}
         transition={{ duration: 24, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute -bottom-24 -right-20 w-[600px] h-[600px] bg-gradient-to-tl from-[#9266fd]/30 via-[#2563eb]/20 to-transparent rounded-full blur-[150px] pointer-events-none -z-0"
-      />
-
-      <motion.div
-        animate={{
-          scale: [1, 1.25, 0.9, 1],
-          opacity: [0.15, 0.35, 0.15],
-        }}
-        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-r from-[#0369a1]/25 via-[#1ec9f2]/20 to-[#9266fd]/20 rounded-full blur-[160px] pointer-events-none -z-0"
+        className="absolute -bottom-24 -right-20 w-[600px] h-[600px] bg-gradient-to-tl from-slate-800/20 via-blue-950/15 to-transparent rounded-full blur-[150px] pointer-events-none -z-0"
       />
 
       {/* Cyber Grid Texture with Elliptical Radial Mask */}
@@ -220,19 +211,19 @@ export default function SolutionsShowcase({
                   onClick={() => setActiveIndex(index)}
                   className={`group relative flex min-w-[200px] sm:min-w-[240px] items-center gap-2.5 sm:gap-3 rounded-lg border p-2.5 sm:p-3 text-left transition-all duration-300 lg:min-w-0 ${
                     isActive
-                      ? "border-[#1ec9f2]/70 bg-gradient-to-r from-[#1ec9f2]/20 via-[#0067b8]/20 to-white/[0.08] backdrop-blur-2xl shadow-[0_12px_30px_rgba(30,201,242,0.22),inset_0_1px_1px_rgba(255,255,255,0.3)]"
-                      : "border-white/10 bg-white/[0.04] backdrop-blur-xl hover:border-[#1ec9f2]/40 hover:bg-white/[0.08] text-white"
+                      ? "border-white/25 bg-white/[0.08] backdrop-blur-2xl shadow-[0_8px_24px_rgba(0,0,0,0.4)]"
+                      : "border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-white/20 hover:bg-white/[0.06] text-white"
                   }`}
                 >
-                  {/* Active Right Neon Indicator Bar */}
+                  {/* Active Right Indicator Bar */}
                   {isActive && (
-                    <span className="absolute right-0 top-2 bottom-2 w-1 rounded-l-md bg-gradient-to-b from-[#1ec9f2] to-[#0067b8] shadow-[0_0_12px_#1ec9f2]" />
+                    <span className="absolute right-0 top-2 bottom-2 w-1 rounded-l-md bg-white/80" />
                   )}
                   <span
-                    className={`flex h-9 w-9 sm:h-10 sm:w-10 flex-none items-center justify-center rounded-md text-xs font-bold transition-all duration-300 ${
+                    className={`flex h-9 w-9 sm:h-10 sm:w-10 flex-none items-center justify-center rounded-md text-xs font-mono font-bold transition-all duration-300 ${
                       isActive
-                        ? `bg-gradient-to-br ${solution.accent} text-white shadow-[0_0_15px_rgba(30,201,242,0.5)]`
-                        : "bg-white/10 text-white border border-white/10 group-hover:bg-white/15 group-hover:text-white"
+                        ? "bg-white/20 text-white border border-white/30"
+                        : "bg-white/5 text-white/60 border border-white/10 group-hover:bg-white/10 group-hover:text-white"
                     }`}
                   >
                     {solution.number}
@@ -261,20 +252,18 @@ export default function SolutionsShowcase({
             ref={panelRef}
             className="relative min-h-0 h-auto md:min-h-[480px] lg:h-[500px] overflow-hidden rounded-xl border border-white/15 bg-white/[0.04] backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] flex flex-col"
           >
-            {/* Top Active Solution Accent Bar */}
-            <div className={`absolute inset-x-0 top-0 h-1.5 rounded-t-xl bg-gradient-to-r ${activeSolution.accent}`} />
+            {/* Top Hairline Accent */}
+            <div className="absolute inset-x-0 top-0 h-px bg-white/20" />
             
             {/* Ambient card background glow */}
-            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border-[44px] border-[#1ec9f2]/10 blur-[2px]" />
-            <div className="pointer-events-none absolute -bottom-28 -left-28 h-72 w-72 rounded-full border-[44px] border-[#9266fd]/10 blur-[2px]" />
+            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full border-[44px] border-white/[0.03] blur-[2px]" />
+            <div className="pointer-events-none absolute -bottom-28 -left-28 h-72 w-72 rounded-full border-[44px] border-white/[0.03] blur-[2px]" />
 
             <div className="relative grid md:grid-cols-[200px_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1fr)] flex-1 min-h-0">
               <div className="flex items-center justify-center bg-white/[0.02] border-b md:border-b-0 md:border-r border-white/10 p-3 sm:p-6 md:p-8 shrink-0 md:h-full relative overflow-hidden">
-                {/* Ambient pulsing aura behind number */}
-                <div className="absolute w-28 h-28 sm:w-44 sm:h-44 rounded-full bg-gradient-to-r from-[#1ec9f2]/30 via-[#0067b8]/20 to-[#9266fd]/25 blur-2xl pointer-events-none" />
                 <div
                   data-solution-content
-                  className={`relative z-10 flex h-12 w-12 sm:h-20 sm:w-20 md:h-32 md:w-32 items-center justify-center rounded-xl bg-gradient-to-br ${activeSolution.accent} text-lg sm:text-3xl md:text-5xl font-light text-white shadow-[0_15px_35px_rgba(30,201,242,0.35)] ring-2 sm:ring-4 md:ring-8 ring-white/10 ring-offset-2 sm:ring-offset-4 ring-offset-[#070c1e]/60`}
+                  className="relative z-10 flex h-14 w-14 sm:h-20 sm:w-20 md:h-28 md:w-28 items-center justify-center rounded-2xl bg-white/[0.06] border border-white/15 text-2xl sm:text-3xl md:text-5xl font-light font-mono text-white shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur-md"
                 >
                   {activeSolution.number}
                 </div>
@@ -315,7 +304,7 @@ export default function SolutionsShowcase({
                 <div data-solution-content className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
                   <Link
                     href={activeSolution.href}
-                    className="group inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#0067b8] via-[#1ec9f2] to-[#0067b8] bg-[length:200%_auto] hover:bg-right px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_10px_25px_rgba(30,201,242,0.35)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(30,201,242,0.5)] hover:-translate-y-0.5 text-center w-full sm:w-auto"
+                    className="group inline-flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 border border-white/25 px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_4px_16px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_6px_20px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 text-center w-full sm:w-auto backdrop-blur-sm"
                   >
                     Explore this solution
                     <ArrowRight size={15} className="ml-2 transition-transform group-hover:translate-x-1" />
@@ -334,7 +323,7 @@ export default function SolutionsShowcase({
                       type="button"
                       onClick={selectNext}
                       aria-label="Next solution"
-                      className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg bg-gradient-to-r from-[#0067b8] to-[#1ec9f2] text-white shadow-[0_10px_25px_rgba(30,201,242,0.35)] transition-transform hover:scale-105"
+                      className="flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg border border-white/20 bg-white/[0.12] text-white hover:border-white/40 hover:bg-white/25 transition-transform hover:scale-105"
                     >
                       <ArrowRight size={16} />
                     </button>
@@ -350,7 +339,7 @@ export default function SolutionsShowcase({
                   onClick={() => setActiveIndex(index)}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
                     index === activeIndex
-                      ? "w-6 sm:w-8 bg-[#1ec9f2] shadow-[0_0_12px_#1ec9f2]"
+                      ? "w-6 sm:w-8 bg-white/80 shadow-[0_0_8px_rgba(255,255,255,0.4)]"
                       : "w-1.5 sm:w-2 bg-white/20 hover:bg-white/40"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
