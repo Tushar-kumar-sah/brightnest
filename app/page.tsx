@@ -2,7 +2,6 @@ import HeroSlider from "@/components/HeroSlider";
 import AboutTeaser from "@/components/AboutTeaser";
 import PartnerEcosystem from "@/components/PartnerEcosystem";
 import SolutionsShowcase from "@/components/solutions-showcase";
-import IndustryReach from "@/components/IndustryReach";
 import HowWeOperate from "@/components/how-we-operate";
 import BuildYourSolution from "@/components/build-your-solution";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
@@ -30,22 +29,19 @@ export default function Home() {
         heading={sectionHeadings.solutions}
       />
 
-      {/* 5. Industry Reach: Purpose-Built Sector Solutions */}
-      <IndustryReach />
-
-      {/* 6. How We Operate: 7-Step Turnkey Delivery Methodology */}
+      {/* 5. How We Operate: 7-Step Turnkey Delivery Methodology */}
       <HowWeOperate />
 
-      {/* 7. Build Your Solution: Interactive Tech Configurator */}
+      {/* 6. Build Your Solution: Interactive Tech Configurator */}
       <BuildYourSolution />
 
-      {/* 8. Case Studies: Proven Enterprise Deployments & Real Results */}
+      {/* 7. Case Studies: Proven Enterprise Deployments & Real Results */}
       <CaseStudiesSection />
 
-      {/* 9. Client Endorsements & Testimonials */}
+      {/* 8. Client Endorsements & Testimonials */}
       <TestimonialsSection />
 
-      {/* 10. Let's Connect: Unified Contact & Site Survey Request */}
+      {/* 9. Let's Connect: Unified Contact & Site Survey Request */}
       <UnifiedContactSection />
     </div>
   );

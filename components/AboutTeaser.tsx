@@ -188,7 +188,7 @@ export default function AboutTeaser() {
               <span>Who We Are</span>
             </div>
 
-            {/* Headline: Slim Montserrat Typography */}
+            {/* Headline: Slim Lato Typography */}
             <h2
               style={{ fontWeight: 300 }}
               className="text-2xl sm:text-4xl lg:text-5xl font-light font-[300] !font-[300] text-white tracking-tight leading-[1.2]"

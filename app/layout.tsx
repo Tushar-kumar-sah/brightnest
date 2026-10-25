@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Montserrat, Geist_Mono } from "next/font/google"
+import { Lato, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Header from "@/components/header"
@@ -16,10 +16,10 @@ export const viewport: Viewport = {
   themeColor: "#070c1e",
 }
 
-const montserrat = Montserrat({
+const lato = Lato({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-  variable: "--font-montserrat",
+  weight: ["100", "300", "400", "700", "900"],
+  variable: "--font-lato",
 })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
@@ -121,7 +121,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${montserrat.className} ${montserrat.variable} antialiased overflow-x-hidden w-full`} suppressHydrationWarning>
+      <body className={`${lato.className} ${lato.variable} antialiased overflow-x-hidden w-full`} suppressHydrationWarning>
         <GoogleAnalytics />
         <StructuredData data={organizationSchema} id="org-schema" />
         <StructuredData data={localBusinessSchema} id="local-schema" />
