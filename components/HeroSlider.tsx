@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -19,9 +18,9 @@ interface HeroSlide {
 const slides: HeroSlide[] = [
   {
     id: "networking",
-    headline: "Empowering\nCompanies To Scale\nEnterprise Networks\nAcross India",
-    subhead1: "Network Deployment,",
-    subhead2: "PAN-India",
+    headline: "Empowering\nCompanies To Scale\nEnterprise Networks\nGlobally",
+    subhead1: "Enterprise Network,",
+    subhead2: "Globally",
     image: "/indian-network-noc-engineer.jpg",
     href: "/services/networking",
     imageClass: "hero-img-networking",
@@ -206,17 +205,6 @@ export default function HeroSlider() {
                     >
                       {activeSlide.subhead1} <br />
                       {activeSlide.subhead2}
-                    </div>
-
-                    {/* Learn More Pill Button (Cyan to Emerald Gradient) */}
-                    <div>
-                      <Link
-                        href={activeSlide.href}
-                        className="inline-flex items-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#1ec9f2] to-[#0db16a] hover:from-[#38d7f8] hover:to-[#10c477] shadow-[0_4px_20px_rgba(30,201,242,0.45)] hover:shadow-[0_4px_30px_rgba(30,201,242,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 group whitespace-nowrap"
-                      >
-                        <span>Learn More</span>
-                        <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-                      </Link>
                     </div>
                   </div>
                 </motion.div>
