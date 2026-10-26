@@ -4,7 +4,6 @@ import PartnerEcosystem from "@/components/PartnerEcosystem";
 import SolutionsShowcase from "@/components/solutions-showcase";
 import HowWeOperate from "@/components/how-we-operate";
 import BuildYourSolution from "@/components/build-your-solution";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import UnifiedContactSection from "@/components/UnifiedContactSection";
 import { getHeroData } from "@/lib/data";
@@ -35,13 +34,10 @@ export default function Home() {
       {/* 6. Build Your Solution: Interactive Tech Configurator */}
       <BuildYourSolution />
 
-      {/* 7. Case Studies: Proven Enterprise Deployments & Real Results */}
-      <CaseStudiesSection />
-
-      {/* 8. Client Endorsements & Testimonials */}
+      {/* 7. Client Endorsements & Testimonials */}
       <TestimonialsSection />
 
-      {/* 9. Let's Connect: Unified Contact & Site Survey Request */}
+      {/* 8. Let's Connect: Unified Contact & Site Survey Request */}
       <UnifiedContactSection />
     </div>
   );

@@ -106,22 +106,22 @@ export default function PartnerEcosystem() {
             {row1.map((p, idx) => (
               <div
                 key={`r1-${idx}`}
-                className="flex items-center gap-2.5 sm:gap-3.5 px-3.5 sm:px-5 py-2 sm:py-3 rounded-lg bg-white/[0.05] border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#1ec9f2]/60 hover:bg-white/[0.09] hover:shadow-[0_20px_45px_rgba(30,201,242,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 transition-all duration-300 group"
+                className="flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-white/[0.05] border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#1ec9f2]/60 hover:bg-white/[0.09] hover:shadow-[0_20px_45px_rgba(30,201,242,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 transition-all duration-300 group"
               >
-                <div className="relative h-8 sm:h-10 w-20 sm:w-28 flex-shrink-0 bg-white/95 rounded-md p-1 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+                <div className="relative h-10 sm:h-12 w-28 sm:w-36 flex-shrink-0 bg-white rounded-lg px-2.5 sm:px-3 py-1 flex items-center justify-center shadow-md border border-white/20 group-hover:scale-105 transition-transform">
                   <Image
                     src={p.logo}
                     alt={`${p.name} logo`}
                     fill
-                    className="object-contain p-1"
-                    sizes="120px"
+                    className="object-contain"
+                    sizes="160px"
                   />
                 </div>
-                <div className="border-l border-white/15 pl-2.5 sm:pl-3">
-                  <div className="text-xs font-semibold text-white group-hover:text-white transition-colors">
+                <div className="border-l border-white/15 pl-3 sm:pl-4">
+                  <div className="text-xs sm:text-sm font-semibold text-white group-hover:text-white transition-colors whitespace-nowrap">
                     {p.name}
                   </div>
-                  <div className="text-[10px] text-white/80 font-normal mt-0.5">
+                  <div className="text-[10px] sm:text-xs text-white/80 font-normal mt-0.5 whitespace-nowrap">
                     {p.category}
                   </div>
                 </div>
@@ -140,22 +140,22 @@ export default function PartnerEcosystem() {
             {row2.map((p, idx) => (
               <div
                 key={`r2-${idx}`}
-                className="flex items-center gap-2.5 sm:gap-3.5 px-3.5 sm:px-5 py-2 sm:py-3 rounded-lg bg-white/[0.05] border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#1ec9f2]/60 hover:bg-white/[0.09] hover:shadow-[0_20px_45px_rgba(30,201,242,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 transition-all duration-300 group"
+                className="flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-white/[0.05] border border-white/15 backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.2)] hover:border-[#1ec9f2]/60 hover:bg-white/[0.09] hover:shadow-[0_20px_45px_rgba(30,201,242,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 transition-all duration-300 group"
               >
-                <div className="relative h-8 sm:h-10 w-20 sm:w-28 flex-shrink-0 bg-white/95 rounded-md p-1 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+                <div className="relative h-10 sm:h-12 w-28 sm:w-36 flex-shrink-0 bg-white rounded-lg px-2.5 sm:px-3 py-1 flex items-center justify-center shadow-md border border-white/20 group-hover:scale-105 transition-transform">
                   <Image
                     src={p.logo}
                     alt={`${p.name} logo`}
                     fill
-                    className="object-contain p-1"
-                    sizes="120px"
+                    className="object-contain"
+                    sizes="160px"
                   />
                 </div>
-                <div className="border-l border-white/15 pl-2.5 sm:pl-3">
-                  <div className="text-xs font-semibold text-white group-hover:text-white transition-colors">
+                <div className="border-l border-white/15 pl-3 sm:pl-4">
+                  <div className="text-xs sm:text-sm font-semibold text-white group-hover:text-white transition-colors whitespace-nowrap">
                     {p.name}
                   </div>
-                  <div className="text-[10px] text-white/80 font-normal mt-0.5">
+                  <div className="text-[10px] sm:text-xs text-white/80 font-normal mt-0.5 whitespace-nowrap">
                     {p.category}
                   </div>
                 </div>

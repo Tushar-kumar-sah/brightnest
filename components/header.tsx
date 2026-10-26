@@ -90,16 +90,18 @@ export default function Header() {
                         key={item.name}
                         href={item.href}
                         onClick={() => setWhatWeDoOpen(false)}
-                        className="flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-white/15 hover:bg-white/10 transition-all duration-200 group"
+                        className="flex items-start gap-3 p-2.5 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/[0.08] transition-all duration-200 group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-white/[0.06] border border-white/15 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-105 group-hover:bg-white/15 transition-all mt-0.5">
-                          <Icon size={16} className="text-white" />
-                        </div>
+                        <Icon
+                          size={18}
+                          strokeWidth={1.8}
+                          className="text-white/80 group-hover:text-white group-hover:scale-110 flex-shrink-0 mt-0.5 transition-all duration-200"
+                        />
                         <div>
                           <div className="text-xs font-semibold text-white group-hover:text-white transition-colors">
                             {item.name}
                           </div>
-                          <div className="text-[11px] text-white/80 leading-snug mt-0.5">
+                          <div className="text-[11px] text-white/70 leading-snug mt-0.5">
                             {item.description}
                           </div>
                         </div>
@@ -151,16 +153,18 @@ export default function Header() {
                         key={item.name}
                         href={item.href}
                         onClick={() => setIndustriesOpen(false)}
-                        className="flex items-start gap-3 p-3 rounded-xl border border-transparent hover:border-white/15 hover:bg-white/10 transition-all duration-200 group"
+                        className="flex items-start gap-3 p-2.5 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/[0.08] transition-all duration-200 group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-white/[0.06] border border-white/15 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-105 group-hover:bg-white/15 transition-all mt-0.5">
-                          <Icon size={16} className="text-white" />
-                        </div>
+                        <Icon
+                          size={18}
+                          strokeWidth={1.8}
+                          className="text-white/80 group-hover:text-white group-hover:scale-110 flex-shrink-0 mt-0.5 transition-all duration-200"
+                        />
                         <div>
                           <div className="text-xs font-semibold text-white group-hover:text-white transition-colors">
                             {item.name}
                           </div>
-                          <div className="text-[11px] text-white/80 leading-snug mt-0.5">
+                          <div className="text-[11px] text-white/70 leading-snug mt-0.5">
                             {item.description}
                           </div>
                         </div>
