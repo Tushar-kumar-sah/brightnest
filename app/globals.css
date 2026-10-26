@@ -602,47 +602,47 @@ svg {
    Prevents people and focal elements from being cut off on mobile & tablet
    ========================================================================== */
 .hero-img-networking {
-  object-position: 50% center;
+  object-position: 50% 20%;
 }
 @media (min-width: 1024px) {
   .hero-img-networking {
-    object-position: center center;
+    object-position: 60% 15%;
   }
 }
 
 .hero-img-security {
-  object-position: 70% center;
+  object-position: 70% 20%;
 }
 @media (min-width: 1024px) {
   .hero-img-security {
-    object-position: right center;
+    object-position: right 15%;
   }
 }
 
 .hero-img-av {
-  object-position: 72% center;
+  object-position: 72% 20%;
 }
 @media (min-width: 1024px) {
   .hero-img-av {
-    object-position: right center;
+    object-position: right 20%;
   }
 }
 
 .hero-img-cabling {
-  object-position: 50% center;
+  object-position: 50% 15%;
 }
 @media (min-width: 1024px) {
   .hero-img-cabling {
-    object-position: center center;
+    object-position: 60% 15%;
   }
 }
 
 .hero-img-managed {
-  object-position: 78% center;
+  object-position: 78% 20%;
 }
 @media (min-width: 1024px) {
   .hero-img-managed {
-    object-position: right center;
+    object-position: right 15%;
   }
 }
 

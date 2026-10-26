@@ -151,8 +151,8 @@ export default function HeroSlider() {
           exit="exit"
           className="absolute inset-0 w-full h-full"
         >
-          {/* Full-Bleed Background Image - shifted down on desktop view as requested with top pure dark */}
-          <div className="absolute inset-0 w-full h-full lg:translate-y-24">
+          {/* Full-Bleed Background Image */}
+          <div className="absolute inset-0 w-full h-full">
             <Image
               src={activeSlide.image}
               alt={activeSlide.headline.replace(/\n/g, " ")}
@@ -166,49 +166,23 @@ export default function HeroSlider() {
           {/* Seamless Gradients blending with unified #070c1e theme */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#070c1e] via-[#070c1e]/85 to-transparent w-full lg:w-[65%] z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-transparent to-[#070c1e]/60 z-10" />
-          <div className="absolute top-0 inset-x-0 h-36 lg:h-56 bg-gradient-to-b from-[#070c1e] via-[#070c1e]/90 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 inset-x-0 h-24 lg:h-32 bg-gradient-to-b from-[#070c1e]/80 via-[#070c1e]/30 to-transparent z-10 pointer-events-none" />
           {/* Bottom Seamless Dissolve into next section */}
           <div className="absolute bottom-0 inset-x-0 h-40 sm:h-56 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/75 to-transparent z-10 pointer-events-none" />
 
           {/* Slide Text Content Container */}
           <div className="relative z-20 h-full max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 flex flex-col justify-center pt-24 sm:pt-28 pb-32 sm:pb-32">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-end">
-              {/* Left Column: Headline (slim, balanced, elegant size) */}
-              <div className="lg:col-span-7">
-                <motion.h1
-                  initial={{ opacity: 0, y: 25 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.15 }}
-                  style={{ fontWeight: 300 }}
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[2.85rem] font-light font-[300] !font-[300] text-white tracking-normal leading-[1.2] whitespace-pre-line"
-                >
-                  {activeSlide.headline}
-                </motion.h1>
-              </div>
-
-              {/* Right / Center Column: Subhead with Vertical Cyan Line & Learn More Pill Button */}
-              <div className="lg:col-span-5 pb-1 lg:pb-2">
-                <motion.div
-                  initial={{ opacity: 0, y: 25 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.25 }}
-                  className="flex items-stretch gap-3.5 sm:gap-5"
-                >
-                  {/* Tall Vertical Cyan Line */}
-                  <div className="w-[2.5px] bg-[#1ec9f2] rounded-full flex-shrink-0 shadow-[0_0_12px_#1ec9f2]" />
-
-                  <div className="space-y-3 sm:space-y-4 py-1">
-                    {/* Subhead */}
-                    <div
-                      style={{ fontWeight: 300 }}
-                      className="text-sm sm:text-lg md:text-xl lg:text-2xl font-light font-[300] !font-[300] text-white/95 leading-snug"
-                    >
-                      {activeSlide.subhead1} <br />
-                      {activeSlide.subhead2}
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+            <div className="max-w-3xl">
+              {/* Headline (slim, balanced, elegant size) */}
+              <motion.h1
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                style={{ fontWeight: 300 }}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[2.85rem] font-light font-[300] !font-[300] text-white tracking-normal leading-[1.2] whitespace-pre-line"
+              >
+                {activeSlide.headline}
+              </motion.h1>
             </div>
           </div>
         </motion.div>
