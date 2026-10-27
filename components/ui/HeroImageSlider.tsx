@@ -37,6 +37,7 @@ export default function HeroImageSlider({
   const [direction, setDirection] = useState(1)
   const [isPaused, setIsPaused] = useState(false)
   const touchStartX = useRef<number | null>(null)
+  const touchStartY = useRef<number | null>(null)
 
   const nextSlide = useCallback(() => {
     setDirection(1)
@@ -56,18 +57,23 @@ export default function HeroImageSlider({
     return () => clearInterval(interval)
   }, [isPaused, nextSlide, slides.length])
 
+  // Touch swipe gesture handlers (with vertical page scroll protection)
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
   }
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return
-    const diff = touchStartX.current - e.changedTouches[0].clientX
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) nextSlide()
+    if (touchStartX.current === null || touchStartY.current === null) return
+    const diffX = touchStartX.current - e.changedTouches[0].clientX
+    const diffY = touchStartY.current - e.changedTouches[0].clientY
+    // Only advance slide if horizontal movement is dominant over vertical scrolling
+    if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY) * 1.2) {
+      if (diffX > 0) nextSlide()
       else prevSlide()
     }
     touchStartX.current = null
+    touchStartY.current = null
   }
 
   if (!slides || slides.length === 0) return null
@@ -76,14 +82,14 @@ export default function HeroImageSlider({
 
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-md border ${borderColor} ${resolvedGlowShadow} bg-black/40 backdrop-blur-xl group select-none ${className}`}
+      className={`relative w-full overflow-hidden rounded-xl border ${borderColor} ${resolvedGlowShadow} bg-black/40 backdrop-blur-xl group select-none ${className}`}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* 16:10 or responsive height container */}
-      <div className="relative w-full h-[210px] sm:h-[300px] md:h-[380px] lg:h-[420px] overflow-hidden">
+      {/* Responsive height container across mobile, tablet, and desktop */}
+      <div className="relative w-full h-[250px] xs:h-[280px] sm:h-[330px] md:h-[390px] lg:h-[440px] overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={current}
@@ -104,60 +110,62 @@ export default function HeroImageSlider({
             />
 
             {/* Gradient Overlays for depth and contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
           </motion.div>
         </AnimatePresence>
 
         {/* Optional Badge top-left */}
         {badgeText && (
-          <div className="absolute top-2.5 sm:top-3.5 left-2.5 sm:left-3.5 z-20 px-2.5 py-1 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/75 border border-white/20 text-white backdrop-blur-md flex items-center gap-1.5">
+          <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-20 px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase bg-black/80 border border-white/20 text-white backdrop-blur-md flex items-center gap-1.5 shadow-md">
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: accentColor }} />
             {badgeText}
           </div>
         )}
 
         {/* Counter Badge top-right */}
-        <div className="absolute top-2.5 sm:top-3.5 right-2.5 sm:right-3.5 z-20 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-mono font-bold tracking-wider bg-black/70 border border-white/20 text-white backdrop-blur-md">
+        <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-20 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[10px] sm:text-[11px] font-mono font-bold tracking-wider bg-black/80 border border-white/20 text-white backdrop-blur-md shadow-md">
           <span style={{ color: accentColor }}>0{current + 1}</span> / 0{slides.length}
         </div>
 
-        {/* Caption Overlay at bottom (prevent overlap with bottom-right dots) */}
+        {/* Caption Overlay at bottom (with responsive text sizing and generous right padding to prevent collision with dots) */}
         {(currentSlide.title || currentSlide.caption) && (
-          <div className="absolute bottom-0 left-0 right-16 sm:right-24 p-3 sm:p-5 z-20">
-            {currentSlide.title && (
-              <h4 className="text-white font-bold text-xs sm:text-base leading-snug drop-shadow-md mb-0.5 sm:mb-1 line-clamp-1">
-                {currentSlide.title}
-              </h4>
-            )}
-            {currentSlide.caption && (
-              <p className="text-white text-[11px] sm:text-sm line-clamp-2 leading-relaxed drop-shadow-sm font-light">
-                {currentSlide.caption}
-              </p>
-            )}
+          <div className="absolute inset-x-0 bottom-0 p-3.5 sm:p-5 z-20 bg-gradient-to-t from-black/95 via-black/75 to-transparent pt-10 sm:pt-14">
+            <div className="max-w-[76%] xs:max-w-[80%] sm:max-w-[84%]">
+              {currentSlide.title && (
+                <h4 className="text-white font-bold text-xs sm:text-sm md:text-base leading-snug drop-shadow-md mb-0.5 sm:mb-1 line-clamp-1">
+                  {currentSlide.title}
+                </h4>
+              )}
+              {currentSlide.caption && (
+                <p className="text-slate-200/90 text-[10.5px] xs:text-[11px] sm:text-xs md:text-sm line-clamp-2 leading-relaxed drop-shadow font-light">
+                  {currentSlide.caption}
+                </p>
+              )}
+            </div>
           </div>
         )}
 
-        {/* Previous & Next Arrows */}
+        {/* Previous & Next Arrows (with ample tap targets for mobile & desktop) */}
         <button
           type="button"
           onClick={prevSlide}
           aria-label="Previous slide"
-          className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-9 sm:h-9 rounded-md bg-black/60 border border-white/20 text-white flex items-center justify-center opacity-85 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-black/90 hover:scale-105 transition-all cursor-pointer"
+          className="absolute left-2.5 sm:left-3.5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/70 border border-white/25 text-white flex items-center justify-center opacity-90 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-black/95 active:scale-90 transition-all cursor-pointer backdrop-blur-md shadow-lg"
         >
-          <ChevronLeft size={16} />
+          <ChevronLeft size={18} />
         </button>
         <button
           type="button"
           onClick={nextSlide}
           aria-label="Next slide"
-          className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-9 sm:h-9 rounded-md bg-black/60 border border-white/20 text-white flex items-center justify-center opacity-85 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-black/90 hover:scale-105 transition-all cursor-pointer"
+          className="absolute right-2.5 sm:right-3.5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/70 border border-white/25 text-white flex items-center justify-center opacity-90 sm:opacity-0 sm:group-hover:opacity-100 hover:bg-black/95 active:scale-90 transition-all cursor-pointer backdrop-blur-md shadow-lg"
         >
-          <ChevronRight size={16} />
+          <ChevronRight size={18} />
         </button>
 
-        {/* Dots Indicator */}
-        <div className="absolute bottom-2.5 sm:bottom-3 right-3 sm:right-4 z-20 flex items-center gap-1.5">
+        {/* Dots Indicator (encapsulated in a sleek frosted pill container) */}
+        <div className="absolute bottom-2.5 sm:bottom-3.5 right-2.5 sm:right-4 z-30 flex items-center gap-1.5 bg-black/70 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-white/15 shadow-md">
           {slides.map((_, idx) => (
             <button
               key={idx}
@@ -167,8 +175,8 @@ export default function HeroImageSlider({
                 setCurrent(idx)
               }}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                idx === current ? `w-6 ${activeDotClass}` : "w-1.5 bg-white/40 hover:bg-white/70"
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                idx === current ? `w-5 sm:w-6 ${activeDotClass}` : "w-1.5 sm:w-2 bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}

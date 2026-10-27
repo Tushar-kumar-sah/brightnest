@@ -602,16 +602,26 @@ svg {
    Prevents people and focal elements from being cut off on mobile & tablet
    ========================================================================== */
 .hero-img-networking {
-  object-position: 50% 20%;
+  object-position: 82% 20%;
+}
+@media (min-width: 640px) {
+  .hero-img-networking {
+    object-position: 72% 18%;
+  }
 }
 @media (min-width: 1024px) {
   .hero-img-networking {
-    object-position: 60% 15%;
+    object-position: 65% 15%;
   }
 }
 
 .hero-img-security {
   object-position: 65% 15%;
+}
+@media (min-width: 640px) {
+  .hero-img-security {
+    object-position: 65% 15%;
+  }
 }
 @media (min-width: 1024px) {
   .hero-img-security {
@@ -620,16 +630,26 @@ svg {
 }
 
 .hero-img-av {
-  object-position: 72% 20%;
+  object-position: 62% 20%;
+}
+@media (min-width: 640px) {
+  .hero-img-av {
+    object-position: 68% 20%;
+  }
 }
 @media (min-width: 1024px) {
   .hero-img-av {
-    object-position: right 20%;
+    object-position: 72% 20%;
   }
 }
 
 .hero-img-cabling {
-  object-position: 50% center;
+  object-position: 75% center;
+}
+@media (min-width: 640px) {
+  .hero-img-cabling {
+    object-position: 70% center;
+  }
 }
 @media (min-width: 1024px) {
   .hero-img-cabling {
@@ -638,11 +658,16 @@ svg {
 }
 
 .hero-img-managed {
-  object-position: 75% 15%;
+  object-position: 65% 15%;
+}
+@media (min-width: 640px) {
+  .hero-img-managed {
+    object-position: 70% 15%;
+  }
 }
 @media (min-width: 1024px) {
   .hero-img-managed {
-    object-position: 82% 15%;
+    object-position: 78% 15%;
   }
 }
 

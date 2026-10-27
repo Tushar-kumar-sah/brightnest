@@ -335,8 +335,8 @@ export default function HowWeOperate() {
             <div className="relative py-4 px-2">
               {/* Desktop Stepper Track */}
               <div className="hidden lg:block relative">
-                {/* Connecting Track Line */}
-                <div className="absolute top-7 left-10 right-10 h-[2px] bg-white/10 z-0">
+                {/* Connecting Track Line (Positioned cleanly behind milestone nodes, spanning node centers 1 through 7) */}
+                <div className="absolute top-7 left-[calc(100%/14)] right-[calc(100%/14)] h-[2px] bg-white/15 z-0 pointer-events-none">
                   {/* Active Progress Fill Line */}
                   <motion.div
                     className="h-full bg-gradient-to-r from-[#1ec9f2] via-[#6366f1] to-[#c084fc] shadow-[0_0_12px_#1ec9f2]"
@@ -359,7 +359,7 @@ export default function HowWeOperate() {
                       <button
                         key={step.id}
                         onClick={() => setActiveIdx(idx)}
-                        className="group flex flex-col items-center focus:outline-none"
+                        className="group flex flex-col items-center focus:outline-none cursor-pointer"
                       >
                         {/* Node Bubble */}
                         <div className="relative mb-3">
@@ -367,19 +367,19 @@ export default function HowWeOperate() {
                           {isActive && (
                             <motion.div
                               layoutId="activeStepperRing"
-                              className="absolute -inset-2.5 rounded-full border-2 border-[#1ec9f2] shadow-[0_0_20px_#1ec9f2]"
+                              className="absolute -inset-2.5 rounded-full border-2 border-[#1ec9f2] shadow-[0_0_20px_#1ec9f2] -z-10"
                               transition={{ type: "spring", stiffness: 350, damping: 28 }}
                             />
                           )}
 
-                          {/* Node Icon Circle */}
+                          {/* Node Icon Circle (Solid opaque background completely concealing connecting line behind it) */}
                           <div
-                            className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
+                            className={`relative z-10 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
                               isActive
                                 ? "bg-gradient-to-br from-[#1ec9f2] via-[#2563eb] to-[#7c3aed] text-white shadow-[0_0_25px_rgba(30,201,242,0.6)] scale-110"
                                 : isCompleted
-                                ? "bg-white/[0.08] border border-[#1ec9f2]/60 text-[#1ec9f2] hover:bg-white/[0.15]"
-                                : "bg-white/[0.03] border border-white/15 text-gray-400 group-hover:border-white/30 group-hover:text-white"
+                                ? "bg-[#091129] border border-[#1ec9f2]/70 text-[#1ec9f2] shadow-[0_0_15px_rgba(30,201,242,0.25)] hover:bg-[#0c183a]"
+                                : "bg-[#090e24] border border-white/20 text-gray-400 group-hover:border-white/40 group-hover:text-white"
                             }`}
                           >
                             {isCompleted ? (
@@ -391,7 +391,7 @@ export default function HowWeOperate() {
 
                           {/* Step Number Badge */}
                           <span
-                            className={`absolute -bottom-1 -right-1 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border ${
+                            className={`absolute -bottom-1 -right-1 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border z-20 ${
                               isActive
                                 ? "bg-[#070c1e] text-[#1ec9f2] border-[#1ec9f2]"
                                 : isCompleted

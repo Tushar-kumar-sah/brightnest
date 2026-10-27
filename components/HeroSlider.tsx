@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -70,6 +71,7 @@ export default function HeroSlider() {
   const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
 
   const nextSlide = useCallback(() => {
     setDirection(1);
@@ -90,19 +92,24 @@ export default function HeroSlider() {
     return () => clearInterval(interval);
   }, [isPaused, nextSlide]);
 
-  // Touch Swipe Handlers for Mobile
+  // Touch Swipe Handlers for Mobile (with vertical scroll pass-through protection)
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) nextSlide();
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const diffX = touchStartX.current - e.changedTouches[0].clientX;
+    const diffY = touchStartY.current - e.changedTouches[0].clientY;
+
+    // Only advance slide if horizontal movement is dominant over vertical scrolling
+    if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY) * 1.2) {
+      if (diffX > 0) nextSlide();
       else prevSlide();
     }
     touchStartX.current = null;
+    touchStartY.current = null;
   };
 
   const activeSlide = slides[current];
@@ -133,7 +140,7 @@ export default function HeroSlider() {
 
   return (
     <section
-      className="relative w-full h-[100dvh] min-h-[560px] max-h-[960px] overflow-hidden bg-[#070c1e] select-none touch-pan-y"
+      className="relative w-full h-[100dvh] min-h-[580px] sm:min-h-[620px] max-h-[960px] overflow-hidden bg-[#070c1e] select-none touch-pan-y"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -163,52 +170,79 @@ export default function HeroSlider() {
             />
           </div>
 
-          {/* Seamless Gradients blending with unified #070c1e theme */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070c1e] via-[#070c1e]/85 to-transparent w-full lg:w-[65%] z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-transparent to-[#070c1e]/60 z-10" />
-          <div className="absolute top-0 inset-x-0 h-24 lg:h-32 bg-gradient-to-b from-[#070c1e]/80 via-[#070c1e]/30 to-transparent z-10 pointer-events-none" />
+          {/* Gradients: Left-to-right on desktop, bottom-up on mobile for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070c1e]/95 via-[#070c1e]/75 to-transparent w-full sm:w-[85%] lg:w-[65%] z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/45 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 inset-x-0 h-28 sm:h-36 bg-gradient-to-b from-[#070c1e]/90 via-[#070c1e]/40 to-transparent z-10 pointer-events-none" />
           {/* Bottom Seamless Dissolve into next section */}
-          <div className="absolute bottom-0 inset-x-0 h-40 sm:h-56 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/75 to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 inset-x-0 h-36 sm:h-52 bg-gradient-to-t from-[#070c1e] via-[#070c1e]/80 to-transparent z-10 pointer-events-none" />
 
           {/* Slide Text Content Container */}
-          <div className="relative z-20 h-full max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 flex flex-col justify-center pt-24 sm:pt-28 pb-32 sm:pb-32">
+          <div className="relative z-20 h-full max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 flex flex-col justify-center pt-20 sm:pt-28 pb-32 sm:pb-36">
             <div className="max-w-3xl">
-              {/* Headline (slim, balanced, elegant size) */}
-              <motion.h1
-                initial={{ opacity: 0, y: 25 }}
+              {/* Category Eyebrow Pill */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/[0.08] border border-white/20 text-[#38bdf8] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-3.5 sm:mb-5 backdrop-blur-md shadow-sm"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#1ec9f2] animate-pulse shadow-[0_0_8px_#1ec9f2]" />
+                <span>{activeSlide.subhead1} {activeSlide.subhead2}</span>
+              </motion.div>
+
+              {/* Headline (slim, balanced, responsive size) */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 style={{ fontWeight: 300 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[2.85rem] font-light font-[300] !font-[300] text-white tracking-normal leading-[1.2] whitespace-pre-line"
+                className="text-[1.65rem] xs:text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[2.85rem] font-light font-[300] !font-[300] text-white tracking-normal leading-[1.25] sm:leading-[1.2] whitespace-pre-line"
               >
                 {activeSlide.headline}
               </motion.h1>
+
+              {/* Quick Action Link */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mt-5 sm:mt-7 flex items-center gap-3"
+              >
+                <Link
+                  href={activeSlide.href}
+                  className="group inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 border border-white/25 hover:border-white/50 text-white text-xs sm:text-sm font-medium tracking-wide backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all cursor-pointer"
+                >
+                  <span>Explore Solution</span>
+                  <ArrowRight size={14} className="transition-transform group-hover:translate-x-1 text-[#38bdf8]" />
+                </Link>
+              </motion.div>
             </div>
           </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* Bottom Circular Arrows and Slide Dots aligned directly with content container, safely positioned above mobile bar */}
-      <div className="absolute bottom-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:bottom-10 inset-x-0 z-30 pointer-events-none">
+      {/* Bottom Circular Arrows and Slide Dots (positioned safely above mobile bottom bar) */}
+      <div className="absolute bottom-24 sm:bottom-24 md:bottom-10 lg:bottom-12 inset-x-0 z-30 pointer-events-none">
         <div className="max-w-7xl mx-auto px-5 sm:px-12 lg:px-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5 sm:gap-3 pointer-events-auto">
             <button
               onClick={prevSlide}
               aria-label="Previous Slide"
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/60 hover:border-white text-white flex items-center justify-center transition-all duration-200 bg-black/35 hover:bg-white/20 backdrop-blur-sm active:scale-90"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/50 hover:border-white text-white flex items-center justify-center transition-all duration-200 bg-[#070c1e]/75 hover:bg-white/20 backdrop-blur-md active:scale-90 shadow-[0_4px_16px_rgba(0,0,0,0.5)] cursor-pointer"
             >
               <ArrowLeft size={18} />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next Slide"
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/60 hover:border-white text-white flex items-center justify-center transition-all duration-200 bg-black/35 hover:bg-white/20 backdrop-blur-sm active:scale-90"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/50 hover:border-white text-white flex items-center justify-center transition-all duration-200 bg-[#070c1e]/75 hover:bg-white/20 backdrop-blur-md active:scale-90 shadow-[0_4px_16px_rgba(0,0,0,0.5)] cursor-pointer"
             >
               <ArrowRight size={18} />
             </button>
 
             {/* Slide Dots Indicator */}
-            <div className="flex items-center gap-1.5 ml-2 bg-black/30 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-white/10">
+            <div className="flex items-center gap-1.5 ml-2 bg-[#070c1e]/75 backdrop-blur-md px-3 py-2 rounded-full border border-white/15 shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
               {slides.map((_, idx) => (
                 <button
                   key={idx}
@@ -217,10 +251,10 @@ export default function HeroSlider() {
                     setCurrent(idx);
                   }}
                   aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                     idx === current
-                      ? "w-5 sm:w-6 bg-[#1ec9f2] shadow-[0_0_10px_#1ec9f2]"
-                      : "w-1.5 bg-white/40 hover:bg-white/70"
+                      ? "w-6 bg-[#1ec9f2] shadow-[0_0_10px_#1ec9f2]"
+                      : "w-2 bg-white/40 hover:bg-white/70"
                   }`}
                 />
               ))}
