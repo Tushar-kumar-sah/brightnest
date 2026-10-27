@@ -611,11 +611,11 @@ svg {
 }
 
 .hero-img-security {
-  object-position: 70% 20%;
+  object-position: 65% 15%;
 }
 @media (min-width: 1024px) {
   .hero-img-security {
-    object-position: right 15%;
+    object-position: 70% 15%;
   }
 }
 
@@ -629,20 +629,20 @@ svg {
 }
 
 .hero-img-cabling {
-  object-position: 50% 15%;
+  object-position: 50% center;
 }
 @media (min-width: 1024px) {
   .hero-img-cabling {
-    object-position: 60% 15%;
+    object-position: 65% center;
   }
 }
 
 .hero-img-managed {
-  object-position: 78% 20%;
+  object-position: 75% 15%;
 }
 @media (min-width: 1024px) {
   .hero-img-managed {
-    object-position: right 15%;
+    object-position: 82% 15%;
   }
 }
 

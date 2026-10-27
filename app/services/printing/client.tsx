@@ -61,19 +61,19 @@ export default function PrintingClient() {
       }}
       slides={[
         {
-          image: "/male-finance-professional-in-office.jpg",
+          image: "/enterprise-mps-office-printer.jpg",
           title: "Managed Print Services (MPS)",
-          caption: "Cost-optimized enterprise printer fleet leasing and automated toner replenishment."
+          caption: "Cost-optimized enterprise printer fleet leasing, proactive diagnostics, and automated toner replenishment."
         },
         {
-          image: "/female-business-consultant-smiling.jpg",
+          image: "/secure-pull-printing-badge-mfd.jpg",
           title: "Secure Pull-Printing & Badges",
-          caption: "Follow-me printing with RFID badges, encrypted spooling, and zero-waste auditing."
+          caption: "Follow-me secure printing with RFID badge release, encrypted spooling, and zero-waste audit trails."
         },
         {
-          image: "/professional-man-with-glasses-analyzing-code-on-sc.jpg",
-          title: "Fleet Monitoring & Governance",
-          caption: "Centralized printer diagnostics, rule-based quota controls, and compliance tracking."
+          image: "/cad-large-format-plotter-studio.jpg",
+          title: "Wide-Format CAD Plotters & Fleet Governance",
+          caption: "High-precision 24-to-44 inch AEC blueprint plotters, centralized quota controls, and preventive AMC maintenance."
         }
       ]}
     />

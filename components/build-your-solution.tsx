@@ -226,53 +226,53 @@ export default function BuildYourSolution() {
                 variants={itemVariants}
                 onClick={() => toggleService(service.id)}
                 className={`
-                  relative cursor-pointer rounded-lg p-3 sm:p-4 md:p-5 transition-all duration-300 group
+                  relative cursor-pointer rounded-xl p-3.5 sm:p-4 md:p-5 transition-all duration-300 group overflow-hidden
                   ${isSelected
-                    ? 'bg-gradient-to-br from-[#3b82f6]/20 via-[#8b5cf6]/20 to-white/[0.06] border-2 border-[#818cf8] backdrop-blur-2xl shadow-[0_0_25px_rgba(129,140,248,0.4),inset_0_1px_2px_rgba(255,255,255,0.3)] scale-[1.02]'
-                    : 'bg-white/[0.04] border border-white/10 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.12)] hover:bg-white/[0.08] hover:border-[#818cf8]/50 hover:shadow-[0_15px_35px_rgba(99,102,241,0.25)] hover:-translate-y-1'
+                    ? 'bg-white/[0.09] border-2 border-[#1ec9f2] backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.5),0_0_25px_rgba(30,201,242,0.25),inset_0_1px_1px_rgba(255,255,255,0.25)] -translate-y-1'
+                    : 'bg-white/[0.035] border border-white/15 backdrop-blur-2xl shadow-[0_10px_25px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.12)] hover:bg-white/[0.07] hover:border-white/35 hover:shadow-[0_16px_35px_rgba(0,0,0,0.45),0_0_20px_rgba(30,201,242,0.1)] hover:-translate-y-1'
                   }
                 `}
-                whileHover={!isSelected ? { scale: 1.03 } : {}}
-                whileTap={{ scale: 0.97 }}
+                whileHover={!isSelected ? { scale: 1.02 } : {}}
+                whileTap={{ scale: 0.98 }}
               >
-                {/* Selected Glow Aura / Crazy Halo Animation */}
-                {isSelected && (
-                  <motion.div
-                    animate={{ scale: [1, 1.05, 1], opacity: [0.35, 0.7, 0.35] }}
-                    transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#a855f7] blur-md -z-10 pointer-events-none"
+                {/* Top Glass Hairline */}
+                <div
+                  className={`absolute inset-x-0 top-0 h-px transition-opacity duration-300 ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-transparent via-[#1ec9f2] to-transparent opacity-100'
+                      : 'bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-60 group-hover:opacity-100 group-hover:via-white/40'
+                  }`}
+                />
+
+                {/* Selection Checkmark Indicator */}
+                <div
+                  className={`
+                    absolute top-2.5 right-2.5 sm:top-3 sm:right-3 w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300
+                    ${isSelected
+                      ? 'bg-[#1ec9f2] text-[#070c1e] shadow-[0_0_10px_#1ec9f2] scale-100 opacity-100'
+                      : 'border border-white/20 text-transparent opacity-0 group-hover:opacity-50 scale-90'
+                    }
+                  `}
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 stroke-[2.5]" />
+                </div>
+
+                {/* Sleek Standalone Icon */}
+                <div className="mb-2.5 sm:mb-3.5 flex items-center">
+                  <Icon
+                    className={`w-6 h-6 sm:w-7 sm:h-7 transition-all duration-300 ${
+                      isSelected
+                        ? 'text-[#1ec9f2] scale-105 drop-shadow-[0_0_10px_rgba(30,201,242,0.6)]'
+                        : 'text-white/80 group-hover:text-white group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.35)]'
+                    }`}
+                    strokeWidth={1.75}
                   />
-                )}
-
-                {/* Selection Badge with Pop Animation */}
-                <AnimatePresence>
-                  {isSelected && (
-                    <motion.div
-                      initial={{ scale: 0, opacity: 0, rotate: -45 }}
-                      animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                      exit={{ scale: 0, opacity: 0, rotate: 45 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                      className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 text-white"
-                    >
-                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 fill-white text-[#070c1e] drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                <div className={`
-                  w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-md flex items-center justify-center mb-2.5 sm:mb-3 transition-all duration-300
-                  ${isSelected
-                    ? 'bg-white/20 text-white border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.2)] scale-105'
-                    : 'bg-white/[0.06] text-white/80 border border-white/10 group-hover:bg-white/10 group-hover:text-white group-hover:scale-105'
-                  }
-                `}>
-                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 
-                <h3 className="text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight text-white transition-colors">
+                <h3 className="text-xs sm:text-sm md:text-base font-semibold mb-1 leading-tight text-white transition-colors group-hover:text-white">
                   {service.title}
                 </h3>
-                <p className="text-[11px] sm:text-xs text-white/80 font-light leading-relaxed hidden sm:block">
+                <p className="text-[11px] sm:text-xs text-white/70 font-light leading-relaxed hidden sm:block">
                   {service.description}
                 </p>
               </motion.div>
@@ -291,17 +291,17 @@ export default function BuildYourSolution() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed bottom-[calc(4.75rem+env(safe-area-inset-bottom,0px))] md:bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-3xl"
           >
-            <div className="bg-[#08091f]/95 text-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(99,102,241,0.3)] p-3 sm:px-5 sm:py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border border-[#818cf8]/35 backdrop-blur-2xl">
+            <div className="bg-[#070c1e]/95 text-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(30,201,242,0.25)] p-3 sm:px-5 sm:py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border border-white/20 backdrop-blur-2xl">
               <div className="flex items-center gap-3">
-                <div className="bg-white/10 p-2 sm:p-2.5 rounded-md flex-shrink-0 border border-white/20">
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="bg-[#1ec9f2]/15 p-2 sm:p-2.5 rounded-md flex-shrink-0 border border-[#1ec9f2]/30 text-[#1ec9f2]">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#1ec9f2]" />
                 </div>
                 <div className="min-w-0">
                   <h4 className="text-sm sm:text-base font-bold leading-tight text-white flex items-center gap-2">
                     <span>{selectedServices.length} {selectedServices.length === 1 ? 'Service' : 'Services'} Selected</span>
-                    <span className="w-2 h-2 rounded-full bg-white/70 animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-[#1ec9f2] animate-ping" />
                   </h4>
-                  <p className="text-[11px] sm:text-xs text-white/80 font-light hidden sm:block">
+                  <p className="text-[11px] sm:text-xs text-white/70 font-light hidden sm:block">
                     Ready to build your custom turnkey enterprise infrastructure
                   </p>
                 </div>
@@ -317,7 +317,7 @@ export default function BuildYourSolution() {
                     <motion.button
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className="w-full sm:w-auto justify-center bg-gradient-to-r from-[#2563eb] via-[#6366f1] to-[#9333ea] hover:opacity-95 text-white font-semibold py-2.5 px-4 sm:px-6 rounded-lg flex items-center gap-2 shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all text-xs sm:text-sm md:text-base"
+                      className="w-full sm:w-auto justify-center bg-[#1ec9f2] hover:bg-[#38d7f8] text-[#070c1e] font-bold py-2.5 px-4 sm:px-6 rounded-lg flex items-center gap-2 shadow-[0_0_20px_rgba(30,201,242,0.4)] transition-all text-xs sm:text-sm md:text-base"
                     >
                       <span>Book a Site Survey</span>
                       <ArrowRight className="w-4 h-4" />

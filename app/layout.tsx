@@ -38,11 +38,20 @@ export const metadata: Metadata = {
     title: "Brightnest Edutainment | Intelligent IT Infrastructure & System Integration",
     description: "Engineering intelligent infrastructure through globally aligned turnkey IT solutions and managed services.",
     siteName: "Brightnest Edutainment",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Brightnest Edutainment - Intelligent IT Infrastructure & System Integration",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Brightnest Edutainment | Intelligent IT Infrastructure & System Integration",
     description: "Engineering intelligent infrastructure through globally aligned turnkey IT solutions and managed services.",
+    images: ["/og-image.jpg"],
   },
 }
 
